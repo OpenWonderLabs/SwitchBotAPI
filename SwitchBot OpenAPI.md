@@ -95,32 +95,32 @@ GET /v1.0/devices
 Get a list of devices, which include physical devices and virtual infrared remote devices that have been added to the current user's account.
 
 Physical devices refer to the following SwitchBot products,
-● Hub
-● Hub Plus
-● Hub Mini
-● Bot
-● Curtain
-● Remote
-● Plug
-● Meter
-● Humidifier
-● Smart Fan
+ -  Hub
+ -  Hub Plus
+ -  Hub Mini
+ -  Bot
+ -  Curtain
+ -  Remote
+ -  Plug
+ -  Meter
+ -  Humidifier
+ -  Smart Fan
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus / Hub Mini is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
-● Air Conditioner
-● TV
-● Light
-● IPTV/Streamer
-● Set Top Box
-● DVD
-● Fan
-● Projector
-● Camera
-● Air Purifier
-● Speaker
-● Water Heater
-● Vacuum Cleaner
-● Others
+ -  Air Conditioner
+ -  TV
+ -  Light
+ -  IPTV/Streamer
+ -  Set Top Box
+ -  DVD
+ -  Fan
+ -  Projector
+ -  Camera
+ -  Air Purifier
+ -  Speaker
+ -  Water Heater
+ -  Vacuum Cleaner
+ -  Others
 
 #### Responses
 
@@ -182,7 +182,7 @@ GET https://api.switch-bot.com/v1.0/devices
 
 Response
 
-```json
+```js
 {
     "statusCode": 100,
     "body": {
@@ -221,12 +221,12 @@ Get the status of a physical device that has been added to the current user's ac
 
 Physical devices refer to the following SwitchBot products,
 
-● Bot
-● Plug
-● Curtain
-● Meter
-● Humidifier
-● Smart Fan
+ -  Bot
+ -  Plug
+ -  Curtain
+ -  Meter
+ -  Humidifier
+ -  Smart Fan
 
 #### Path parameters
 
@@ -290,7 +290,7 @@ GET https://api.switch-bot.com/v1.0/devices/C271111EC0AB/status
 Response
 
 
-```json
+```js
 {
     "statusCode": 100,
     "body": {
@@ -317,7 +317,7 @@ GET https://api.switch-bot.com/v1.0/devices/E2F6032048AB/status
 Response
 
 
-```json
+```js
 {
     "statusCode": 100,
     "body": {
@@ -452,7 +452,7 @@ Request
 POST https://api.switch-bot.com/v1.0/devices/210/commands
 ```
 
-```json
+```js
 {
     "command": "turnOn",
 	  "parameter": "default",
@@ -462,7 +462,7 @@ POST https://api.switch-bot.com/v1.0/devices/210/commands
 
 Response
 
-```json
+```js
 {
     "statusCode": 100,
     "body": {},
@@ -482,7 +482,7 @@ Request
 POST https://api.switch-bot.com/v1.0/devices/02-202007201626-70/commands
 ```
 
-```json
+```js
 {
     "command": "setAll",
   	"parameter": "26,1,3,on",
@@ -492,7 +492,7 @@ POST https://api.switch-bot.com/v1.0/devices/02-202007201626-70/commands
 
 Response
 
-```json
+```js
 {
     "statusCode": 100,
     "body": {},
@@ -510,7 +510,7 @@ Request
 POST https://api.switch-bot.com/v1.0/devices/02-202007201626-10/commands
 ```
 
-```json
+```js
 {
     "command": "ボタン", // the name of the customized button
   	"parameter": "default",
@@ -520,7 +520,7 @@ POST https://api.switch-bot.com/v1.0/devices/02-202007201626-10/commands
 
 Response
 
-```json
+```js
 {
     "statusCode": 100,
     "body": {},
@@ -580,7 +580,7 @@ GET https://api.switch-bot.com/v1.0/scenes
 
 Response
 
-```json
+```js
 {
     "statusCode": 100,
     "body": [
@@ -652,7 +652,7 @@ POST https://api.switch-bot.com/v1.0/scenes/T02-202009221414-48924101/execute
 
 Response
 
-```json
+```js
 {
     "statusCode": 100,
     "body": {},
