@@ -455,8 +455,8 @@ POST https://api.switch-bot.com/v1.0/devices/210/commands
 ```js
 {
     "command": "turnOn",
-	  "parameter": "default",
-  	"commandType": "command"
+    "parameter": "default",
+    "commandType": "command"
 }
 ```
 
@@ -485,8 +485,8 @@ POST https://api.switch-bot.com/v1.0/devices/02-202007201626-70/commands
 ```js
 {
     "command": "setAll",
-  	"parameter": "26,1,3,on",
-  	"commandType": "command"
+    "parameter": "26,1,3,on",
+    "commandType": "command"
 }
 ```
 
@@ -513,8 +513,8 @@ POST https://api.switch-bot.com/v1.0/devices/02-202007201626-10/commands
 ```js
 {
     "command": "ボタン", // the name of the customized button
-  	"parameter": "default",
-		"commandType": "customize"
+    "parameter": "default",
+    "commandType": "customize"
 }
 ```
 
