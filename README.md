@@ -26,7 +26,6 @@
       - [Sample](#sample-1)
         - [SwitchBot Meter example](#switchbot-meter-example)
         - [SwitchBot Curtain example](#switchbot-curtain-example)
-        - [](#)
     - [Send device control commands](#send-device-control-commands)
       - [Description](#description-2)
       - [Command set for physical devices](#command-set-for-physical-devices)
@@ -57,9 +56,9 @@ This document describes a collection of SwitchBot API methods, examples, and bes
 
 ## Getting Started
 Please follow these steps,
-1. Download SwitchBot App on App Store or Google Play Store
+1. Download the SwitchBot app on App Store or Google Play Store
 2. Register a SwitchBot account and log in into your account
-3. Generate an Open Token within the App
+3. Generate an Open Token within the app (release date to be announced)
 4. Roll up your sleeves and get your hands dirty with SwitchBot OpenAPI!
 
 ## Authentication
@@ -82,8 +81,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Plug          | Short for SwitchBot Plug Model No. SP11                      |
 | Meter         | Short for SwitchBot Thermometer and Hygrometer Model No. SwitchBot MeterTH S1 |
 | Smart Fan     | Short for SwitchBot Smart Fan Model No. W0601100             |
-| Remote        | Short for SwitchBot Remote Model No. W0301700                |
-| Cloud Service | An SwitchBot App feature that 1. enables SwitchBot products to be discovered and communicated with third-party services voice control services, 2. allows users to create customized smart scenes and Android widgets |
+| Cloud Service | An SwitchBot app feature that 1. enables SwitchBot products to be discovered and communicated with third-party services voice control services, 2. allows users to create customized smart scenes and Android widgets. For BLE-based devices such as Bot and Curtain, you MUST first add a Hub/Hub Mini/Hub Plus and then enable Cloud Service on the Settings page in order to make use of the web API! |
 
 
 
@@ -148,9 +146,8 @@ Physical devices refer to the following SwitchBot products,
  -  Hub
  -  Hub Plus
  -  Hub Mini
- -  Bot
- -  Curtain
- -  Remote
+ -  Bot (MUST enable Cloud Service first)
+ -  Curtain (MUST enable Cloud Service first)
  -  Plug
  -  Meter
  -  Humidifier
@@ -383,7 +380,7 @@ Response
 }
 ```
 
-##### 
+
 
 ### Send device control commands
 
@@ -407,8 +404,8 @@ The table below describes all the available commands for phsyical devices,
 | Plug     | command | turnOn | default | set to ON state |
 | Plug | command | turnOff | default | set to OFF state |
 | Curtain     | command |  setPosition    | index0,mode0,postion0<br />e.g. `0,ff,80` |  mode: 0 (Performance Mode), 1 (Silent Mode), ff (default mode) <br />postion: 0~100 (0 means opened, 100 means closed)  |
-| Curtain | command |  turnOff    | default | equivalent to set position to 0 |
-| Curtain | command |  turnOn    | default | equivalent to set position to 100 |
+| Curtain | command |  turnOff    | default | equivalent to set position to 100 |
+| Curtain | command |  turnOn    | default | equivalent to set position to 0 |
 | Humidifier | command | turnOff | default | set to OFF state                                             |
 | Humidifier | command | turnOn | default | set to ON state                                              |
 | Humidifier | command |setMode  | `auto`or `101` or<br />  `102` or `103` or `{0~100}` | auto, set to Auto Mode,<br />101, set atomization efficiency to 34%,<br />102, set atomization efficiency to 67%,<br />103, set atomization efficiency to 100% |
