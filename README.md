@@ -58,8 +58,13 @@ This document describes a collection of SwitchBot API methods, examples, and bes
 Please follow these steps,
 1. Download the SwitchBot app on App Store or Google Play Store
 2. Register a SwitchBot account and log in into your account
-3. Generate an Open Token within the app (release date to be announced)
+3. Generate an Open Token within the app
+	a. Go to Profile > Preference
+	b. Tap App Version 10 times. Developer Options will show up
+	c. Tap Developer Options
+	d. Tap Get Token
 4. Roll up your sleeves and get your hands dirty with SwitchBot OpenAPI!
+(Currently the Generate Token feature is only available on Android v5.0.0)
 
 ## Authentication
 ### Open Token
