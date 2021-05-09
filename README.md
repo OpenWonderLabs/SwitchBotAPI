@@ -489,7 +489,7 @@ The response is basically a JSON object, which contains the following properties
 | 160                         | command is not supported                                     |
 | 161                         | device offline                                               |
 | 171                         | hub device is offline                                        |
-| 190                         | Device internal error due to device states not synchronized with server. Or command fomrat is invalid. |
+| 190                         | Device internal error due to device states not synchronized with server. Or command format is invalid. |
 
 #### Sample
 
