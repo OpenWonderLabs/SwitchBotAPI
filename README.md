@@ -398,7 +398,7 @@ Send control commands to physical devices and virtual infrared remote devices.
 
 #### Command set for physical devices
 
-The table below describes all the available commands for phsyical devices,
+The table below describes all the available commands for physical devices,
 
 | deviceType     | commandType     | Command     |  command parameter    |  Description    |
 | ---- | ---- | ---- | ---- | ---- |
@@ -407,12 +407,12 @@ The table below describes all the available commands for phsyical devices,
 | Bot | command | press | default | trigger press |
 | Plug     | command | turnOn | default | set to ON state |
 | Plug | command | turnOff | default | set to OFF state |
-| Curtain     | command |  setPosition    | index0,mode0,postion0<br />e.g. `0,ff,80` |  mode: 0 (Performance Mode), 1 (Silent Mode), ff (default mode) <br />postion: 0~100 (0 means opened, 100 means closed)  |
+| Curtain     | command |  setPosition    | index0,mode0,position0<br />e.g. `0,ff,80` |  mode: 0 (Performance Mode), 1 (Silent Mode), ff (default mode) <br />position: 0~100 (0 means opened, 100 means closed)  |
 | Curtain | command |  turnOff    | default | equivalent to set position to 100 |
 | Curtain | command |  turnOn    | default | equivalent to set position to 0 |
 | Humidifier | command | turnOff | default | set to OFF state                                             |
 | Humidifier | command | turnOn | default | set to ON state                                              |
-| Humidifier | command |setMode  | `auto`or `101` or<br />  `102` or `103` or `{0~100}` | auto, set to Auto Mode,<br />101, set atomization efficiency to 34%,<br />102, set atomization efficiency to 67%,<br />103, set atomization efficiency to 100% |
+| Humidifier | command |setMode  | `auto` or `101` or<br />  `102` or `103` or `{0~100}` | auto, set to Auto Mode,<br />101, set atomization efficiency to 34%,<br />102, set atomization efficiency to 67%,<br />103, set atomization efficiency to 100% |
 | Smart Fan | command |turnOn | default | set to ON state |
 | Smart Fan | command |turnOff | default | set to OFF state |
 | Smart Fan | command | setAllStatus | power,fanMode,<br />fanSpeed,shakeRange<br/>e.g. `on,1,1,60` | power: off/on,<br />fanMode: 1/2,<br />fanSpeed: 1/2/3/4,<br />shakeRange: 0~120<br/>fanMode: 1 (Standard), 2 (Natural) |
