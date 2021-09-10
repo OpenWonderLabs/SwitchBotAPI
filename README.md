@@ -84,6 +84,9 @@ The following table provides definitions to the terms to be frequently mentioned
 | Curtain       | Short for SwitchBot Curtain Model No. W0701600               |
 | Plug          | Short for SwitchBot Plug Model No. SP11                      |
 | Meter         | Short for SwitchBot Thermometer and Hygrometer Model No. SwitchBot MeterTH S1 |
+| Motion Sensor | Short for SwitchBot Motion Sensor Model No. W1101500 |
+| Contact Sensor | Short for SwitchBot Contact Sensor Model No. W1201500 |
+| Color Bulb | Short for SwitchBot Color Bulb Model No. W1401400 |
 | Smart Fan     | Short for SwitchBot Smart Fan Model No. W0601100             |
 | Cloud Service | An SwitchBot app feature that 1. enables SwitchBot products to be discovered and communicated with third-party services voice control services, 2. allows users to create customized smart scenes and Android widgets. For BLE-based devices such as Bot and Curtain, you MUST first add a Hub/Hub Mini/Hub Plus and then enable Cloud Service on the Settings page in order to make use of the web API! |
 
@@ -153,7 +156,10 @@ Physical devices refer to the following SwitchBot products,
  -  Bot (MUST enable Cloud Service first)
  -  Curtain (MUST enable Cloud Service first)
  -  Plug
- -  Meter
+ -  Meter (MUST enable Cloud Service first)
+ - `new` Motion Sensor (MUST enable Cloud Service first)
+ - `new` Contact Sensor (MUST enable Cloud Service first)
+ - `new` Color Bulb
  -  Humidifier
  -  Smart Fan
 
@@ -276,6 +282,9 @@ Physical devices refer to the following SwitchBot products,
  -  Plug
  -  Curtain
  -  Meter
+ -  Motion Sensor
+ -  Contact Sensor
+ -  Color Bulb
  -  Humidifier
  -  Smart Fan
 
@@ -300,7 +309,7 @@ body object contains the following properties,
 | deviceId               | String     | device ID                                                    |
 | deviceType             | String     | device type                                                  |
 | hubDeviceId            | String     | device's parent Hub ID                                       |
-| power                  | String     | only available for Bot/Plug/Humidifier devices. ON/OFF state |
+| power                  | String     | only available for Bot/Plug/Humidifier/Color Bulb devices. ON/OFF state |
 | humidity               | Integer    | only available for Meter/Humidifier devices. humidity percentage |
 | temperature            | Float      | only available for Meter/Humidifier devices. temperature in celsius |
 | nebulizationEfficiency | Integer    | only available for Humidifier devices. atomization efficiency % |
@@ -312,11 +321,17 @@ body object contains the following properties,
 | moving                 | Boolean    | only available for Curtain devices. determines if a Curtain is moving or not |
 | slidePosition          | Integer    | only available for Curtain devices. the percentage of the distance between the calibrated open position and close position that a Curtain has moved to |
 | mode                   | Integer    | only available for Smart Fan devices. the fan mode           |
-| speed                  | Intger     | only available for Smart Fan devices. the fan speed          |
+| speed                  | Integer    | only available for Smart Fan devices. the fan speed          |
 | shaking                | Boolean    | only available for Smart Fan devices. determines if the fan is swinging or not |
-| shakeCenter            | Intger     | only available for Smart Fan devices. the fan's swing direciton |
-| shakeRange             | Intger     | only available for Smart Fan devices. the fan's swing range, 0~120° |
-|                        |            |                                                              |
+| shakeCenter            | Integer    | only available for Smart Fan devices. the fan's swing direciton |
+| shakeRange             | Integer    | only available for Smart Fan devices. the fan's swing range, 0~120° |
+| moveDetected  | Boolean | only available for Motion Sensor, Contact Sensor devices. determines if motion is detected |
+| brightness  | String | only available for Motion Sensor, Contact Sensor devices. tell the ambient environment is bright or dim |
+| openState | String | only available for Contact Sensor devices. open/close/timeOutNotClose |
+| brightness | Integer | only available for Color Bulb devices. the brightness value, range from 1 to 100 |
+| color | String | only available for Color Bulb devices. the color value, RGB "255:255:255" |
+| colorTemperature | Integer | only available for Color Bulb devices. the color temperature value, range from 2700 to 6500 |
+| lackWater | Boolean | only available for Humidifier devices. determines if the water tank empty or not |
 
 The reponses may contain the following codes and message,
 
@@ -416,6 +431,12 @@ The table below describes all the available commands for physical devices,
 | Smart Fan | command |turnOn | default | set to ON state |
 | Smart Fan | command |turnOff | default | set to OFF state |
 | Smart Fan | command | setAllStatus | power,fanMode,<br />fanSpeed,shakeRange<br/>e.g. `on,1,1,60` | power: off/on,<br />fanMode: 1/2,<br />fanSpeed: 1/2/3/4,<br />shakeRange: 0~120<br/>fanMode: 1 (Standard), 2 (Natural) |
+| Color Bulb | command |turnOn | default | set to ON state |
+| Color Bulb | command |turnOff | default | set to OFF state |
+| Color Bulb | command |toggle | default | toggle state |
+| Color Bulb | command |setBrightness | `{1-100}` | set brightness |
+| Color Bulb | command |setColor | "{0-255}:{0-255}:{0-255}" | set RGB color value |
+| Color Bulb | command |setColorTemperature | `{2000-6500}` | set color temperature |
 
 #### Command set for virtual infrared remote devices
 
@@ -521,6 +542,32 @@ Response
 }
 ```
 
+
+
+Set the color value of a Color Bulb
+Request
+
+```http
+POST https://api.switch-bot.com/v1.0/devices/84F70353A411/commands
+```
+
+```js
+{
+    "command": "setColor",
+    "parameter": "122:80:20", // yellow
+    "commandType": "command"
+}
+```
+
+Response
+
+```js
+{
+    "statusCode": 100,
+    "body": {},
+    "message": "success"
+}
+```
 
 
 ##### Infrared remote device example
