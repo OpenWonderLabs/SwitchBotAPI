@@ -331,7 +331,7 @@ body object contains the following properties,
 | brightness | Integer | only available for Color Bulb devices. the brightness value, range from 1 to 100 |
 | color | String | only available for Color Bulb devices. the color value, RGB "255:255:255" |
 | colorTemperature | Integer | only available for Color Bulb devices. the color temperature value, range from 2700 to 6500 |
-| lackWater | Boolean | only available for Humidifier devices. determines if the water tank empty or not |
+| lackWater | Boolean | only available for Humidifier devices. determines if the water tank is empty or not |
 
 The reponses may contain the following codes and message,
 
@@ -435,8 +435,8 @@ The table below describes all the available commands for physical devices,
 | Color Bulb | command |turnOff | default | set to OFF state |
 | Color Bulb | command |toggle | default | toggle state |
 | Color Bulb | command |setBrightness | `{1-100}` | set brightness |
-| Color Bulb | command |setColor | "{0-255}:{0-255}:{0-255}" | set RGB color value |
-| Color Bulb | command |setColorTemperature | `{2000-6500}` | set color temperature |
+| Color Bulb | command |setColor | `"{0-255}:{0-255}:{0-255}"` | set RGB color value |
+| Color Bulb | command |setColorTemperature | `{2700-6500}` | set color temperature |
 
 #### Command set for virtual infrared remote devices
 
