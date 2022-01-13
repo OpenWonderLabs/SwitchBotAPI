@@ -287,6 +287,7 @@ Physical devices refer to the following SwitchBot products,
  -  Color Bulb
  -  Humidifier
  -  Smart Fan
+ -  Meter Plus
 
 #### Path parameters
 
