@@ -162,6 +162,7 @@ Physical devices refer to the following SwitchBot products,
  - `new` Color Bulb
  -  Humidifier
  -  Smart Fan
+ - Meter Plus
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus / Hub Mini is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
