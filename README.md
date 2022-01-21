@@ -75,7 +75,7 @@ The token returned from the SwitchBot Cloud is an encrypted open token that gran
 
 The following table provides definitions to the terms to be frequently mentioned in the subsequent sections.
 
-| Term          | Description                                                  |
+| Term         | Description                                                  |
 | ------------- | ------------------------------------------------------------ |
 | Hub           | Generally referred to these devices, SwitchBot Hub Model No. SwitchBot Hub S1/SwitchBot Hub Mini Model No. W0202200/SwitchBot Hub Plus Model No. SwitchBot Hub S1 |
 | Hub Mini      | Short for SwitchBot Hub Mini Model No. W0202200              |
@@ -88,6 +88,9 @@ The following table provides definitions to the terms to be frequently mentioned
 | Contact Sensor | Short for SwitchBot Contact Sensor Model No. W1201500 |
 | Color Bulb | Short for SwitchBot Color Bulb Model No. W1401400 |
 | Smart Fan     | Short for SwitchBot Smart Fan Model No. W0601100             |
+| Strip Light   | Short for SwitchBot LED Strip Light Model No. W1701100             |
+| Plug Mini (US) | Short for SwitchBot Plug Mini (US) Model No. W1901400             |
+| Plug Mini (JP) | Short for SwitchBot Plug Mini (JP) Model No. W2001400             |
 | Cloud Service | An SwitchBot app feature that 1. enables SwitchBot products to be discovered and communicated with third-party services voice control services, 2. allows users to create customized smart scenes and Android widgets. For BLE-based devices such as Bot and Curtain, you MUST first add a Hub/Hub Mini/Hub Plus and then enable Cloud Service on the Settings page in order to make use of the web API! |
 
 
@@ -162,6 +165,9 @@ Physical devices refer to the following SwitchBot products,
  - `new` Color Bulb
  -  Humidifier
  -  Smart Fan
+ -  Strip Light
+ -  Plug Mini (US)
+ -  Plug Mini (JP)
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus / Hub Mini is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
@@ -287,6 +293,9 @@ Physical devices refer to the following SwitchBot products,
  -  Color Bulb
  -  Humidifier
  -  Smart Fan
+ -  Strip Light
+ -  Plug Mini (US)
+ -  Plug Mini (JP)
 
 #### Path parameters
 
@@ -309,7 +318,7 @@ body object contains the following properties,
 | deviceId               | String     | device ID                                                    |
 | deviceType             | String     | device type                                                  |
 | hubDeviceId            | String     | device's parent Hub ID                                       |
-| power                  | String     | only available for Bot/Plug/Humidifier/Color Bulb devices. ON/OFF state |
+| power                  | String     | only available for Bot/Plug/Humidifier/Color Bulb/Strip Light/Plug Mini (US)/Plug Mini (JP) devices. ON/OFF state |
 | humidity               | Integer    | only available for Meter/Humidifier devices. humidity percentage |
 | temperature            | Float      | only available for Meter/Humidifier devices. temperature in celsius |
 | nebulizationEfficiency | Integer    | only available for Humidifier devices. atomization efficiency % |
@@ -328,10 +337,14 @@ body object contains the following properties,
 | moveDetected  | Boolean | only available for Motion Sensor, Contact Sensor devices. determines if motion is detected |
 | brightness  | String | only available for Motion Sensor, Contact Sensor devices. tell the ambient environment is bright or dim |
 | openState | String | only available for Contact Sensor devices. open/close/timeOutNotClose |
-| brightness | Integer | only available for Color Bulb devices. the brightness value, range from 1 to 100 |
-| color | String | only available for Color Bulb devices. the color value, RGB "255:255:255" |
+| brightness | Integer | only available for Color Bulb/Strip Light devices. the brightness value, range from 1 to 100 |
+| color | String | only available for Color Bulb/Strip Light devices. the color value, RGB "255:255:255" |
 | colorTemperature | Integer | only available for Color Bulb devices. the color temperature value, range from 2700 to 6500 |
 | lackWater | Boolean | only available for Humidifier devices. determines if the water tank is empty or not |
+| voltage | Integer | only available for Plug Mini (US)/Plug Mini (JP). Current voltage of the device (Unit: V). |
+| weight | Integer | only available for Plug Mini (US)/Plug Mini (JP). The power consumption of the device for the day (Unit: W/min). |
+| electricityOfDay | Integer | only available for Plug Mini (US)/Plug Mini (JP). How long the device has been used for the day (Unit: min). |
+| electricCurrent | Integer | only available for Plug Mini (US)/Plug Mini (JP). Current current of the device (Unit: A). |
 
 The reponses may contain the following codes and message,
 
@@ -437,6 +450,14 @@ The table below describes all the available commands for physical devices,
 | Color Bulb | command |setBrightness | `{1-100}` | set brightness |
 | Color Bulb | command |setColor | `"{0-255}:{0-255}:{0-255}"` | set RGB color value |
 | Color Bulb | command |setColorTemperature | `{2700-6500}` | set color temperature |
+| Strip Light | command |turnOn | default | set to ON state |
+| Strip Light | command |turnOff | default | set to OFF state |
+| Strip Light | command |toggle | default | toggle state |
+| Strip Light | command |setBrightness | `{1-100}` | set brightness |
+| Strip Light | command |setColor | `"{0-255}:{0-255}:{0-255}"` | set RGB color value |
+| Plug Mini (US/JP) | command | turnOn | default | set to ON state |
+| Plug Mini (US/JP) | command | turnOff | default | set to OFF state |
+| Plug Mini (US/JP) | command | toggle | default | toggle state |
 
 #### Command set for virtual infrared remote devices
 
