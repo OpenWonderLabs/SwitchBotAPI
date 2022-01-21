@@ -91,8 +91,8 @@ The following table provides definitions to the terms to be frequently mentioned
 | Strip Light   | Short for SwitchBot LED Strip Light Model No. W1701100             |
 | Plug Mini (US) | Short for SwitchBot Plug Mini (US) Model No. W1901400             |
 | Plug Mini (JP) | Short for SwitchBot Plug Mini (JP) Model No. W2001400             |
-| Meter Plus (US)| Short for SwitchBot Thermometer and Hygrometer Plus US Model No.W2301500|
-| Meter Plus (JP)| Short for SwitchBot Thermometer and Hygrometer Plus JP Model No.W2201500|
+| Meter Plus (US) | Short for SwitchBot Thermometer and Hygrometer Plus US Model No.W2301500|
+| Meter Plus (JP) | Short for SwitchBot Thermometer and Hygrometer Plus JP Model No.W2201500|
 | Cloud Service | An SwitchBot app feature that 1. enables SwitchBot products to be discovered and communicated with third-party services voice control services, 2. allows users to create customized smart scenes and Android widgets. For BLE-based devices such as Bot and Curtain, you MUST first add a Hub/Hub Mini/Hub Plus and then enable Cloud Service on the Settings page in order to make use of the web API! |
 
 
@@ -325,8 +325,8 @@ body object contains the following properties,
 | deviceType             | String     | device type                                                  |
 | hubDeviceId            | String     | device's parent Hub ID                                       |
 | power                  | String     | only available for Bot/Plug/Humidifier/Color Bulb/Strip Light/Plug Mini (US)/Plug Mini (JP) devices. ON/OFF state |
-| humidity               | Integer    | only available for Meter/Meter Plus（US）/Meter Plus（JP）/Humidifier devices. humidity percentage |
-| temperature            | Float      | only available for Meter/Meter Plus（US）/Meter Plus（JP）/Humidifier devices. temperature in celsius |
+| humidity               | Integer    | only available for Meter/Meter Plus (US)/Meter Plus (JP)/Humidifier devices. humidity percentage |
+| temperature            | Float      | only available for Meter/Meter Plus (US)/Meter Plus (JP)/Humidifier devices. temperature in celsius |
 | nebulizationEfficiency | Integer    | only available for Humidifier devices. atomization efficiency % |
 | auto                   | Boolean    | only available for Humidifier devices. determines if a Humidifier is in Auto Mode or not |
 | childLock              | Boolean    | only available for Humidifier devices. determines if a Humidifier's safety lock is on or not |
