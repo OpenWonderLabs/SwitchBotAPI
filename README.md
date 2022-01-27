@@ -348,8 +348,8 @@ body object contains the following properties,
 | weight | Integer | only available for Plug Mini (US)/Plug Mini (JP). The power consumption of the device for the day (Unit: W/min). |
 | electricityOfDay | Integer | only available for Plug Mini (US)/Plug Mini (JP). How long the device has been used for the day (Unit: min). |
 | electricCurrent | Integer | only available for Plug Mini (US)/Plug Mini (JP). Current current of the device (Unit: A). |
-| lockState | String | only available for Lock devices.determines if the lock is locked or not. |
-| doorState | String | only available for Lock devices.determines if the door is closed or not. |
+| lockState | String | only available for Lock devices. determines if the lock is locked or not. |
+| doorState | String | only available for Lock devices. determines if the door is closed or not. |
 
 The reponses may contain the following codes and message,
 
