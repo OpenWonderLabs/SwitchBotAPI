@@ -214,7 +214,7 @@ The deviceList array contains a list of objects with the following key-value att
 | enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String          | device's parent Hub ID                                       |
 | curtainDevicesIds  | Array<deviceId> | only available for Curtain devices. a list of Curtain device IDs such that the Curtain devices are being paired or grouped |
-| calibrate          | Boolean         | only available for Curtain devices. determines if the open position and the close position of a Curtain have been properly calibrated or not |
+| calibrate          | Boolean         | only available for Curtain/Lock devices. determines if the open position and the close position of a device have been properly calibrated or not |
 | group              | Boolean         | only available for Curtain devices. determines if a Curtain is paired with or grouped with another Curtain or not |
 | master             | Boolean         | only available for Curtain devices. determines if a Curtain is the master device or not when paired with or grouped with another Curtain |
 | openDirection      | String          | only available for Curtain devices. the opening direction of a Curtain |
