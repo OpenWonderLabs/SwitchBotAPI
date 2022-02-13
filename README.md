@@ -161,15 +161,15 @@ Physical devices refer to the following SwitchBot products,
  -  Curtain (MUST enable Cloud Service first)
  -  Plug
  -  Meter (MUST enable Cloud Service first)
- - `new` Motion Sensor (MUST enable Cloud Service first)
- - `new` Contact Sensor (MUST enable Cloud Service first)
- - `new` Color Bulb
+ -  Motion Sensor (MUST enable Cloud Service first)
+ -  Contact Sensor (MUST enable Cloud Service first)
+ -  Color Bulb
  -  Humidifier
  -  Smart Fan
- -  Strip Light
- -  Plug Mini (US)
- -  Plug Mini (JP)
- -  Lock
+ -  `new` Strip Light
+ -  `new` Plug Mini (US)
+ -  `new` Plug Mini (JP)
+ -  `new` Lock
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus / Hub Mini is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
