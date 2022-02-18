@@ -93,6 +93,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Plug Mini (JP) | Short for SwitchBot Plug Mini (JP) Model No. W2001400             |
 | Meter Plus (US) | Short for SwitchBot Thermometer and Hygrometer Plus US Model No.W2301500|
 | Meter Plus (JP) | Short for SwitchBot Thermometer and Hygrometer Plus JP Model No.W2201500|
+| Lock           | Short for SwitchBot Lock Model No. W1601700 |
 | Cloud Service | An SwitchBot app feature that 1. enables SwitchBot products to be discovered and communicated with third-party services voice control services, 2. allows users to create customized smart scenes and Android widgets. For BLE-based devices such as Bot and Curtain, you MUST first add a Hub/Hub Mini/Hub Plus and then enable Cloud Service on the Settings page in order to make use of the web API! |
 
 
@@ -162,9 +163,9 @@ Physical devices refer to the following SwitchBot products,
  -  Curtain (MUST enable Cloud Service first)
  -  Plug
  -  Meter (MUST enable Cloud Service first)
- - `new` Motion Sensor (MUST enable Cloud Service first)
- - `new` Contact Sensor (MUST enable Cloud Service first)
- - `new` Color Bulb
+ -  Motion Sensor (MUST enable Cloud Service first)
+ -  Contact Sensor (MUST enable Cloud Service first)
+ -  Color Bulb
  -  Humidifier
  -  Smart Fan
  -  Strip Light
@@ -172,7 +173,10 @@ Physical devices refer to the following SwitchBot products,
  -  Plug Mini (JP)
  -  Meter Plus (US) (MUST enable Cloud Service first)
  -  Meter Plus (JP) (MUST enable Cloud Service first)
- 
+ -  `new` Lock
+
+
+
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus / Hub Mini is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
  -  TV
@@ -216,7 +220,7 @@ The deviceList array contains a list of objects with the following key-value att
 | enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String          | device's parent Hub ID                                       |
 | curtainDevicesIds  | Array<deviceId> | only available for Curtain devices. a list of Curtain device IDs such that the Curtain devices are being paired or grouped |
-| calibrate          | Boolean         | only available for Curtain devices. determines if the open position and the close position of a Curtain have been properly calibrated or not |
+| calibrate          | Boolean         | only available for Curtain/Lock devices. determines if the open position and the close position of a device have been properly calibrated or not |
 | group              | Boolean         | only available for Curtain devices. determines if a Curtain is paired with or grouped with another Curtain or not |
 | master             | Boolean         | only available for Curtain devices. determines if a Curtain is the master device or not when paired with or grouped with another Curtain |
 | openDirection      | String          | only available for Curtain devices. the opening direction of a Curtain |
@@ -302,6 +306,7 @@ Physical devices refer to the following SwitchBot products,
  -  Plug Mini (JP)
  -  Meter Plus (US)
  -  Meter Plus (JP)
+ -  Lock
 
 #### Path parameters
 
@@ -331,7 +336,7 @@ body object contains the following properties,
 | auto                   | Boolean    | only available for Humidifier devices. determines if a Humidifier is in Auto Mode or not |
 | childLock              | Boolean    | only available for Humidifier devices. determines if a Humidifier's safety lock is on or not |
 | sound                  | Boolean    | only available for Humidifier devices. determines if a Humidifier is muted or not |
-| calibrate              | Boolean    | only available for Curtain devices. determines if a Curtain has been calibrated or not |
+| calibrate              | Boolean    | only available for Curtain/Lock devices. determines if a device has been calibrated or not |
 | group                  | Boolean    | only available for Curtain devices. determines if a Curtain is paired with or grouped with another Curtain or not |
 | moving                 | Boolean    | only available for Curtain devices. determines if a Curtain is moving or not |
 | slidePosition          | Integer    | only available for Curtain devices. the percentage of the distance between the calibrated open position and close position that a Curtain has moved to |
@@ -351,6 +356,8 @@ body object contains the following properties,
 | weight | Integer | only available for Plug Mini (US)/Plug Mini (JP). The power consumption of the device for the day (Unit: W/min). |
 | electricityOfDay | Integer | only available for Plug Mini (US)/Plug Mini (JP). How long the device has been used for the day (Unit: min). |
 | electricCurrent | Integer | only available for Plug Mini (US)/Plug Mini (JP). Current current of the device (Unit: A). |
+| lockState | String | only available for Lock devices. determines if the lock is locked or not. |
+| doorState | String | only available for Lock devices. determines if the door is closed or not. |
 
 The reponses may contain the following codes and message,
 
