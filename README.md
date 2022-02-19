@@ -91,9 +91,9 @@ The following table provides definitions to the terms to be frequently mentioned
 | Strip Light   | Short for SwitchBot LED Strip Light Model No. W1701100             |
 | Plug Mini (US) | Short for SwitchBot Plug Mini (US) Model No. W1901400             |
 | Plug Mini (JP) | Short for SwitchBot Plug Mini (JP) Model No. W2001400             |
-| Meter Plus (US) | Short for SwitchBot Thermometer and Hygrometer Plus US Model No.W2301500|
-| Meter Plus (JP) | Short for SwitchBot Thermometer and Hygrometer Plus JP Model No.W2201500|
 | Lock           | Short for SwitchBot Lock Model No. W1601700 |
+| Meter Plus (US) | Short for SwitchBot Thermometer and Hygrometer Plus (US) Model No.W2301500|
+| Meter Plus (JP) | Short for SwitchBot Thermometer and Hygrometer Plus (JP) Model No.W2201500|
 | Cloud Service | An SwitchBot app feature that 1. enables SwitchBot products to be discovered and communicated with third-party services voice control services, 2. allows users to create customized smart scenes and Android widgets. For BLE-based devices such as Bot and Curtain, you MUST first add a Hub/Hub Mini/Hub Plus and then enable Cloud Service on the Settings page in order to make use of the web API! |
 
 
@@ -168,14 +168,12 @@ Physical devices refer to the following SwitchBot products,
  -  Color Bulb
  -  Humidifier
  -  Smart Fan
- -  Strip Light
- -  Plug Mini (US)
- -  Plug Mini (JP)
- -  Meter Plus (US) (MUST enable Cloud Service first)
- -  Meter Plus (JP) (MUST enable Cloud Service first)
+ -  `new` Strip Light
+ -  `new` Plug Mini (US)
+ -  `new` Plug Mini (JP)
  -  `new` Lock
-
-
+ -  `new` Meter Plus (US) (MUST enable Cloud Service first)
+ -  `new` Meter Plus (JP) (MUST enable Cloud Service first)
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus / Hub Mini is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
@@ -304,9 +302,9 @@ Physical devices refer to the following SwitchBot products,
  -  Strip Light
  -  Plug Mini (US)
  -  Plug Mini (JP)
- -  Meter Plus (US)
- -  Meter Plus (JP)
  -  Lock
+ -  Meter Plus (US) 
+ -  Meter Plus (JP)
 
 #### Path parameters
 
