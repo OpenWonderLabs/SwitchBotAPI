@@ -84,6 +84,8 @@ The following table provides definitions to the terms to be frequently mentioned
 | Curtain       | Short for SwitchBot Curtain Model No. W0701600               |
 | Plug          | Short for SwitchBot Plug Model No. SP11                      |
 | Meter         | Short for SwitchBot Thermometer and Hygrometer Model No. SwitchBot MeterTH S1 |
+| Meter Plus (JP) | Short for SwitchBot Thermometer and Hygrometer Plus (JP) Model No. W2201500 |
+| Meter Plus (US) | Short for SwitchBot Thermometer and Hygrometer Plus (US) Model No. W2301500 |
 | Motion Sensor | Short for SwitchBot Motion Sensor Model No. W1101500 |
 | Contact Sensor | Short for SwitchBot Contact Sensor Model No. W1201500 |
 | Color Bulb | Short for SwitchBot Color Bulb Model No. W1401400 |
@@ -170,6 +172,8 @@ Physical devices refer to the following SwitchBot products,
  -  `new` Plug Mini (US)
  -  `new` Plug Mini (JP)
  -  `new` Lock
+ -  `new` Meter Plus (JP) (MUST enable Cloud Service first)
+ -  `new` Meter Plus (US) (MUST enable Cloud Service first)
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus / Hub Mini is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
@@ -299,6 +303,8 @@ Physical devices refer to the following SwitchBot products,
  -  Plug Mini (US)
  -  Plug Mini (JP)
  -  Lock
+ -  Meter Plus (JP)
+ -  Meter Plus (US)
 
 #### Path parameters
 
@@ -316,40 +322,40 @@ The response is basically a JSON object, which contains the following properties
 | body       | Object<body> |
 
 body object contains the following properties,
-| Key                    | Value Type | Description                                                  |
-| ---------------------- | ---------- | ------------------------------------------------------------ |
-| deviceId               | String     | device ID                                                    |
-| deviceType             | String     | device type                                                  |
-| hubDeviceId            | String     | device's parent Hub ID                                       |
-| power                  | String     | only available for Bot/Plug/Humidifier/Color Bulb/Strip Light/Plug Mini (US)/Plug Mini (JP) devices. ON/OFF state |
-| humidity               | Integer    | only available for Meter/Humidifier devices. humidity percentage |
-| temperature            | Float      | only available for Meter/Humidifier devices. temperature in celsius |
-| nebulizationEfficiency | Integer    | only available for Humidifier devices. atomization efficiency % |
-| auto                   | Boolean    | only available for Humidifier devices. determines if a Humidifier is in Auto Mode or not |
-| childLock              | Boolean    | only available for Humidifier devices. determines if a Humidifier's safety lock is on or not |
-| sound                  | Boolean    | only available for Humidifier devices. determines if a Humidifier is muted or not |
-| calibrate              | Boolean    | only available for Curtain/Lock devices. determines if a device has been calibrated or not |
-| group                  | Boolean    | only available for Curtain devices. determines if a Curtain is paired with or grouped with another Curtain or not |
-| moving                 | Boolean    | only available for Curtain devices. determines if a Curtain is moving or not |
-| slidePosition          | Integer    | only available for Curtain devices. the percentage of the distance between the calibrated open position and close position that a Curtain has moved to |
-| mode                   | Integer    | only available for Smart Fan devices. the fan mode           |
-| speed                  | Integer    | only available for Smart Fan devices. the fan speed          |
-| shaking                | Boolean    | only available for Smart Fan devices. determines if the fan is swinging or not |
-| shakeCenter            | Integer    | only available for Smart Fan devices. the fan's swing direciton |
-| shakeRange             | Integer    | only available for Smart Fan devices. the fan's swing range, 0~120° |
-| moveDetected  | Boolean | only available for Motion Sensor, Contact Sensor devices. determines if motion is detected |
-| brightness  | String | only available for Motion Sensor, Contact Sensor devices. tell the ambient environment is bright or dim |
-| openState | String | only available for Contact Sensor devices. open/close/timeOutNotClose |
-| brightness | Integer | only available for Color Bulb/Strip Light devices. the brightness value, range from 1 to 100 |
-| color | String | only available for Color Bulb/Strip Light devices. the color value, RGB "255:255:255" |
-| colorTemperature | Integer | only available for Color Bulb devices. the color temperature value, range from 2700 to 6500 |
-| lackWater | Boolean | only available for Humidifier devices. determines if the water tank is empty or not |
-| voltage | Integer | only available for Plug Mini (US)/Plug Mini (JP). Current voltage of the device (Unit: V). |
-| weight | Integer | only available for Plug Mini (US)/Plug Mini (JP). The power consumption of the device for the day (Unit: W/min). |
-| electricityOfDay | Integer | only available for Plug Mini (US)/Plug Mini (JP). How long the device has been used for the day (Unit: min). |
-| electricCurrent | Integer | only available for Plug Mini (US)/Plug Mini (JP). Current current of the device (Unit: A). |
-| lockState | String | only available for Lock devices. determines if the lock is locked or not. |
-| doorState | String | only available for Lock devices. determines if the door is closed or not. |
+| Key                    | Value Type | Used by Products | Description                                                  |
+| ---------------------- | ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| deviceId               | String     | All | device ID                                                    |
+| deviceType             | String     | All  | device type                                                  |
+| hubDeviceId            | String     | All  | device's parent Hub ID                                       |
+| power                  | String     | Bot/Plug/Humidifier/Color Bulb/Strip Light/Plug Mini | ON/OFF state |
+| humidity               | Integer    | Meter/Meter Plus/Humidifier | humidity percentage |
+| temperature            | Float      | Meter/Meter Plus/Humidifier | temperature in celsius |
+| nebulizationEfficiency | Integer    | Humidifier | atomization efficiency % |
+| auto                   | Boolean    | Humidifier | determines if a Humidifier is in Auto Mode or not |
+| childLock              | Boolean    | Humidifier | determines if a Humidifier's safety lock is on or not |
+| sound                  | Boolean    | Humidifier | determines if a Humidifier is muted or not |
+| calibrate              | Boolean    | Curtain/Lock | determines if a device has been calibrated or not |
+| group                  | Boolean    | Curtain | determines if a Curtain is paired with or grouped with another Curtain or not |
+| moving                 | Boolean    | Curtain | determines if a Curtain is moving or not |
+| slidePosition          | Integer    | Curtain | the percentage of the distance between the calibrated open position and closed position that Curtain has traversed |
+| mode                   | Integer    | Smart Fan | fan mode           |
+| speed                  | Integer    | Smart Fan | fan speed          |
+| shaking                | Boolean    | Smart Fan | determines if the fan is swinging or not |
+| shakeCenter            | Integer    | Smart Fan | the fan's swing direciton |
+| shakeRange             | Integer    | Smart Fan | the fan's swing range, 0~120° |
+| moveDetected  | Boolean | Motion Sensor/Contact Sensor | determines if motion is detected |
+| brightness  | String | Motion Sensor/Contact Sensor | if the ambient environment is bright or dim |
+| openState | String | Contact Sensor | open/close/timeOutNotClose |
+| brightness | Integer | Color Bulb/Strip Light | the brightness value, range from 1 to 100 |
+| color | String | Color Bulb/Strip Light | the color value, RGB "255:255:255" |
+| colorTemperature | Integer | Color Bulb | the color temperature value, range from 2700 to 6500 |
+| lackWater | Boolean | Humidifier | determines if the water tank is empty or not |
+| voltage | Integer | Plug Mini | Current voltage of the device (Unit: V) |
+| weight | Integer | Plug Mini | the power consumption of the device for the day (Unit: W/min) |
+| electricityOfDay | Integer | Plug Mini | How long the device has been used for the day (Unit: min) |
+| electricCurrent | Integer | Plug Mini | current of the device (Unit: A) at the moment |
+| lockState | String | Lock | determines if the lock is locked or not |
+| doorState | String | Lock | determines if the door is closed or not |
 
 The reponses may contain the following codes and message,
 
