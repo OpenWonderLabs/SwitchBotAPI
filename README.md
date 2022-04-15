@@ -1,6 +1,6 @@
-# SwitchBotAPI
+# SwitchBot API
 
-- [SwitchBotAPI](#switchbotapi)
+- [SwitchBot API](#switchbot-api)
   - [Introduction](#introduction)
   - [Getting Started](#getting-started)
   - [Authentication](#authentication)
@@ -20,36 +20,73 @@
       - [Sample](#sample)
         - [Get all devices](#get-all-devices)
     - [Get device status](#get-device-status)
-      - [Description](#description-1)
+      - [Description](#description)
       - [Path parameters](#path-parameters)
-      - [Responses](#responses-1)
-      - [Sample](#sample-1)
+      - [Responses](#responses)
+      - [Sample](#sample)
         - [SwitchBot Meter example](#switchbot-meter-example)
         - [SwitchBot Curtain example](#switchbot-curtain-example)
     - [Send device control commands](#send-device-control-commands)
-      - [Description](#description-2)
+      - [Description](#description)
       - [Command set for physical devices](#command-set-for-physical-devices)
       - [Command set for virtual infrared remote devices](#command-set-for-virtual-infrared-remote-devices)
-      - [Path parameters](#path-parameters-1)
+      - [Path parameters](#path-parameters)
       - [Request body parameters](#request-body-parameters)
       - [Response](#response)
       - [Errors](#errors)
-      - [Sample](#sample-2)
+      - [Sample](#sample)
         - [Bot example](#bot-example)
         - [Infrared remote device example](#infrared-remote-device-example)
   - [Scenes](#scenes)
     - [Get scene list](#get-scene-list)
-      - [Description](#description-3)
-      - [Response](#response-1)
-      - [Errors](#errors-1)
-      - [Sample](#sample-3)
+      - [Description](#description)
+      - [Response](#response)
+      - [Errors](#errors)
+      - [Sample](#sample)
         - [Get all scenes](#get-all-scenes)
     - [Execute manual scenes](#execute-manual-scenes)
-      - [Description](#description-4)
-      - [Path parameters](#path-parameters-2)
-      - [Errors](#errors-2)
-      - [Sample](#sample-4)
+      - [Description](#description)
+      - [Path parameters](#path-parameters)
+      - [Errors](#errors)
+      - [Sample](#sample)
         - [Execute a scene](#execute-a-scene)
+  - [Webhook](#webhook)
+    - [Setup webhook](#setup-webhook)
+      - [Description](#description)
+      - [Request](#request)
+        - [Request body parameters](#request-body-parameters)
+      - [Response](#response)
+    - [Query webhook](#query-webhook)
+      - [Description](#description)
+      - [Request](#request)
+        - [Request body parameters](#request-body-parameters)
+        - [queryUrl](#queryurl)
+        - [queryDetails](#querydetails)
+      - [Response](#response)
+        - [queryUrl](#queryurl)
+        - [queryDetails](#querydetails)
+    - [Update webhook](#update-webhook)
+      - [Description](#description)
+      - [Request](#request)
+        - [Request body parameters](#request-body-parameters)
+      - [Response](#response)
+    - [Delete webhook](#delete-webhook)
+      - [Description](#description)
+      - [Request](#request)
+        - [Request body parameters](#request-body-parameters)
+      - [Response](#response)
+    - [Receive events from webhook](#receive-events-from-webhook)
+      - [Motion Sensor](#motion-sensor)
+      - [Contact Sensor](#contact-sensor)
+      - [Meter](#meter)
+      - [Meter Plus](#meter-plus)
+      - [Lock](#lock)
+      - [Indoor Cam](#indoor-cam)
+      - [Pan/Tilt Cam](#pantilt-cam)
+      - [Color Bulb](#color-bulb)
+      - [LED Strip Light](#led-strip-light)
+      - [Plug Mini (US)](#plug-mini-us)
+      - [Plug Mini (JP)](#plug-mini-jp)
 
 ## Introduction
 This document describes a collection of SwitchBot API methods, examples, and best practices for, but not limited to, IoT hobbyists, developers, and gurus to make their own smart home programs or applications. 
@@ -140,6 +177,12 @@ The following table lists the most common HTTP error response,
 | 422  | Unprocessable Entity   | The client has made a valid request, but the server cannot process it. This is often used for APIs for which certain limits have been exceeded. |
 | 429  | Too Many Requests      | The client has exceeded the number of requests allowed for a given time window. |
 | 500  | Internal Server Error  | An unexpected error on the SmartThings servers has occurred. These errors should be rare. |
+
+
+
+
+
+
 
 
 
@@ -276,8 +319,6 @@ Response
     "message": "success"
 }
 ```
-
-
 
 
 ### Get device status
@@ -789,6 +830,544 @@ Response
     "message": "success"
 }
 ```
+
+## Webhook
+
+### Configure webhook
+
+#### Description
+Configure the url that all the webhook events will be sent to
+
+#### Request
+```http
+POST https://api.switch-bot.com/v1.0/webhook/setupWebhook
+```
+
+##### Request body parameters
+| Key Name   | Value Type | Description                                           |
+| ---------- | ---------- | ----------------------------------------------------- |
+| action     | String     | the type of actions                                   |
+| url        | String     | the url where all the events are sent to              |
+| deviceList | String     | the list of device ids, currently only supports "ALL" |
+
+Head
+
+```js
+{
+    "Content-type":"application/json",
+    "Authorization":your_token // enter your API token
+}
+```
+
+Body
+
+```js
+{
+    "action":"setupWebhook",
+    "url":url1, // enter your url
+    "deviceList":"ALL"
+}
+```
+
+#### Response
+
+Sample
+
+```js
+{
+    "statusCode": 100,
+    "body": {},
+    "message": ""
+}
+```
+
+### Get webhook configuration
+#### Description
+Get the current configuration info of the webhook
+
+#### Request
+```http
+POST https://api.switch-bot.com/v1.0/webhook/queryWebhook
+```
+
+##### Request body parameters
+
+| Key Name | Value Type | Description                                                  |
+| -------- | ---------- | ------------------------------------------------------------ |
+| action   | String     | the type of actions, currently supports "queryUrl", "queryDetails" |
+| url      | String     | the url where all the events are sent to. you need to specify the url when using queryDetails |
+
+##### queryUrl
+
+Head
+
+```js
+{
+    "Content-type":"application/json",
+    "Authorization":your_token // enter your API token
+}
+```
+
+Body
+
+```js
+{
+    "action": "queryUrl"
+}
+```
+
+##### queryDetails
+Head
+
+```js
+{
+    "Content-type":"application/json",
+    "Authorization":your_token // enter your API token
+}
+```
+
+Body
+
+```js
+{
+    "action": "queryDetails",
+    "urls":[url1] // get infos of a url
+}
+```
+
+
+#### Response
+
+##### queryUrl
+
+```js
+{
+    "statusCode": 100,
+    "body": {
+        "urls": [url1] // the target url
+    },
+    "message": ""
+}
+```
+
+##### queryDetails
+```js
+{
+    "statusCode": 100,
+    "body": [
+        {
+            "url":url1,
+            "createTime":123456,
+            "lastUpdateTime":123456,
+            "deviceList": "ALL",
+            "enable":true
+        }
+    ],
+    "message": ""
+}
+```
+### Update webhook configuration
+#### Description
+Update the configuration of the webhook
+
+#### Request
+```http
+POST https://api.switch-bot.com/v1.0/webhook/queryWebhook
+```
+
+##### Request body parameters
+| Key Name | Value Type | Description                                                  |
+| -------- | ---------- | ------------------------------------------------------------ |
+| action   | String     | the type of actions                                          |
+| config   | Object     | the configuration details you want to update. you can change the current url or enable/disable the webhook. refer to the example below |
+
+Head
+
+```js
+{
+    "Content-type":"application/json",
+    "Authorization":your_token // enter your API token
+}
+```
+
+Body
+
+```js
+{
+    "action": "updateWebhook",
+    "config":{
+        "url":url1,
+        "enable":true
+    }
+}
+```
+
+#### Response
+```js
+{
+    "statusCode": 100,
+    "body": {},
+    "message": ""
+}
+```
+
+### Delete webhook
+#### Description
+Delete the configuration of the webhook
+
+#### Request
+```http
+POST https://api.switch-bot.com/v1.0/webhook/deleteWebhook
+```
+
+##### Request body parameters
+| Key Name | Value Type | Description                                                  |
+| -------- | ---------- | ------------------------------------------------------------ |
+| action     | String     | the type of actions                                   |
+| url        | String     | the url where all the events are sent to              |
+
+Head
+
+```js
+{
+    "Content-type":"application/json",
+    "Authorization":your_token // enter your API token
+}
+```
+
+Body
+
+```js
+{
+    "action": "deleteWebhook",
+    "url":url1
+}
+```
+
+#### Response
+```js
+{
+    "statusCode": 100,
+    "body": {},
+    "message": ""
+}
+```
+
+
+
+### Receive events from webhook
+
+When an event gets triggered, SwitchBot server will send a `POST` request to the url you have configured. Refer to the table below for a list of products that support webhook.
+
+| Device Type  | **Product**     |
+| ------------ | --------------- |
+| WoPresence   | Motion Sensor   |
+| WoContact    | Contact Sensor  |
+| WoLock       | Lock            |
+| WoCamera     | Indoor Cam      |
+| WoPanTiltCam | Pan/Tilt Cam    |
+| WoBulb       | Color Bulb      |
+| WoStrip      | LED Strip Light |
+| WoPlugUS     | Plug Mini (US)  |
+| WoPlugJP     | Plug Mini (JP)  |
+| WoMeter      | Meter           |
+| WoMeterPlus  | Meter Plus      |
+
+#### Motion Sensor
+
+| Key Name       | Value Type | Description                                                  |
+| -------------- | ---------- | ------------------------------------------------------------ |
+| eventType      | String     | the type of events                                           |
+| eventVersion   | String     | the current event version                                    |
+| context        | Object     | the detail info of the event                                 |
+| deviceType     | String     | the type of the device                                       |
+| deviceMac      | String     | the MAC address of the device                                |
+| detectionState | String     | the motion state of the device, "DETECTED" stands for motion is detected; "NOT_DETECTED" stands for motion has not been detected for some time |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoPresence",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "detectionState": "NOT_DETECTED",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Contact Sensor
+
+| Key Name       | Value Type | Description                                                  |
+| -------------- | ---------- | ------------------------------------------------------------ |
+| eventType      | String     | the type of events                                           |
+| eventVersion   | String     | the current event version                                    |
+| context        | Object     | the detail info of the event                                 |
+| deviceType     | String     | the type of the device                                       |
+| deviceMac      | String     | the MAC address of the device                                |
+| detectionState | String     | the motion state of the device, "DETECTED" stands for motion is detected; "NOT_DETECTED" stands for motion has not been detected for some time |
+| doorMode       | String     | when the enter or exit mode gets triggered, "IN_DOOR" or "OUT_DOOR" is returned |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoContact",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "detectionState": "NOT_DETECTED",
+        "doorMode":"OUT_DOOR",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Meter
+
+| Key Name     | Value Type | Description                                |
+| ------------ | ---------- | ------------------------------------------ |
+| eventType    | String     | the type of events                         |
+| eventVersion | String     | the current event version                  |
+| context      | Object     | the detail info of the event               |
+| deviceType   | String     | the type of the device                     |
+| deviceMac    | String     | the MAC address of the device              |
+| temperature  | Float      | the current temperature reading            |
+| scale        | String     | the current temperature unit being used    |
+| humidity     | Integer    | the current humidity reading in percentage |
+| timeOfSample | Long       | the time stamp when the event is sent      |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoMeter",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "temperature": 22.5,
+        "scale": "CELSIUS",
+        "humidity": 31,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Meter Plus
+
+| Key Name     | Value Type | Description                                |
+| ------------ | ---------- | ------------------------------------------ |
+| eventType    | String     | the type of events                         |
+| eventVersion | String     | the current event version                  |
+| context      | Object     | the detail info of the event               |
+| deviceType   | String     | the type of the device                     |
+| deviceMac    | String     | the MAC address of the device              |
+| temperature  | Float      | the current temperature reading            |
+| scale        | String     | the current temperature unit being used    |
+| humidity     | Integer    | the current humidity reading in percentage |
+| timeOfSample | Long       | the time stamp when the event is sent      |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoMeter",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "temperature": 22.5,
+        "scale": "CELSIUS",
+        "humidity": 31,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Lock
+
+| Key Name     | Value Type | Description                                                  |
+| ------------ | ---------- | ------------------------------------------------------------ |
+| eventType    | String     | the type of events                                           |
+| eventVersion | String     | the current event version                                    |
+| context      | Object     | the detail info of the event                                 |
+| deviceType   | String     | the type of the device                                       |
+| deviceMac    | String     | the MAC address of the device                                |
+| lockState    | String     | the state of the device, "LOCKED" stands for the motor is rotated to locking position; "UNLOCKED" stands for the motor is rotated to unlocking position; "JAMMED" stands for the motor is jammed while rotating |
+| timeOfSample | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoLock",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "lockState": "LOCKED",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Indoor Cam
+
+| Key Name       | Value Type | Description                                                  |
+| -------------- | ---------- | ------------------------------------------------------------ |
+| eventType      | String     | the type of events                                           |
+| eventVersion   | String     | the current event version                                    |
+| context        | Object     | the detail info of the event                                 |
+| deviceType     | String     | the type of the device                                       |
+| deviceMac      | String     | the MAC address of the device                                |
+| detectionState | String     | the detection state of the device, "DETECTED" stands for motion is detected |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoCamera",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "detectionState": "DETECTED",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Pan/Tilt Cam
+
+| Key Name       | Value Type | Description                                                  |
+| -------------- | ---------- | ------------------------------------------------------------ |
+| eventType      | String     | the type of events                                           |
+| eventVersion   | String     | the current event version                                    |
+| context        | Object     | the detail info of the event                                 |
+| deviceType     | String     | the type of the device                                       |
+| deviceMac      | String     | the MAC address of the device                                |
+| detectionState | String     | the detection state of the device, "DETECTED" stands for motion is detected |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoPanTiltCam",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "detectionState": "DETECTED",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Color Bulb
+
+| Key Name         | Value Type | Description                                                |
+| ---------------- | ---------- | ---------------------------------------------------------- |
+| eventType        | String     | the type of events                                         |
+| eventVersion     | String     | the current event version                                  |
+| context          | Object     | the detail info of the event                               |
+| deviceType       | String     | the type of the device                                     |
+| deviceMac        | String     | the MAC address of the device                              |
+| powerState       | String     | the current power state of the device, "ON" or "OFF"       |
+| brightness       | Integer    | the brightness value, range from 1 to 100                  |
+| color            | String     | the color value, in the format of RGB value, "255:255:255" |
+| colorTemperature | Integer    | the color temperature value, range from 2700 to 6500       |
+| timeOfSample     | Long       | the time stamp when the event is sent                      |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoBulb",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "powerState": "ON",
+        "brightness": 10,
+        "color":"255:245:235",
+        "colorTemperature":3500,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### LED Strip Light
+
+| Key Name     | Value Type | Description                                                |
+| ------------ | ---------- | ---------------------------------------------------------- |
+| eventType    | String     | the type of events                                         |
+| eventVersion | String     | the current event version                                  |
+| context      | Object     | the detail info of the event                               |
+| deviceType   | String     | the type of the device                                     |
+| deviceMac    | String     | the MAC address of the device                              |
+| powerState   | String     | the current power state of the device, "ON" or "OFF"       |
+| brightness   | Integer    | the brightness value, range from 1 to 100                  |
+| color        | String     | the color value, in the format of RGB value, "255:255:255" |
+| timeOfSample | Long       | the time stamp when the event is sent                      |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoStrip",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "powerState": "ON",
+        "brightness": 10,
+        "color": "255:245:235",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Plug Mini (US)
+
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | the type of the device                               |
+| deviceMac    | String     | the MAC address of the device                        |
+| powerState   | String     | the current power state of the device, "ON" or "OFF" |
+| timeOfSample | Long       | the time stamp when the event is sent                |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoPlugUS",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "powerState": "ON",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Plug Mini (JP)
+
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | the type of the device                               |
+| deviceMac    | String     | the MAC address of the device                        |
+| powerState   | String     | the current power state of the device, "ON" or "OFF" |
+| timeOfSample | Long       | the time stamp when the event is sent                |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoPlugJP",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "powerState": "ON",
+        "timeOfSample": 123456789
+    }
+}
+```
+
 
 
 ----
