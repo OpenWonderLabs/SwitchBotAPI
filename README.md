@@ -1109,6 +1109,8 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | deviceMac      | String     | the MAC address of the device                                |
 | detectionState | String     | the motion state of the device, "DETECTED" stands for motion is detected; "NOT_DETECTED" stands for motion has not been detected for some time |
 | doorMode       | String     | when the enter or exit mode gets triggered, "IN_DOOR" or "OUT_DOOR" is returned |
+| brightness     | String     | the level of brightness, can be "bright" or "dim"            |
+| openState      | String     | the state of the contact sensor, can be "open" or "close" or "timeOutNotClose"  |
 | timeOfSample   | Long       | the time stamp when the event is sent                        |
 
 ```js
@@ -1120,6 +1122,8 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "deviceMac": DEVICE_MAC_ADDR,
         "detectionState": "NOT_DETECTED",
         "doorMode":"OUT_DOOR",
+        "brightness": "dim",
+        "openState": "open",
         "timeOfSample": 123456789
     }
 }
