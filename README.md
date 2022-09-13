@@ -131,6 +131,8 @@ The following table provides definitions to the terms to be frequently mentioned
 | Plug Mini (US) | Short for SwitchBot Plug Mini (US) Model No. W1901400             |
 | Plug Mini (JP) | Short for SwitchBot Plug Mini (JP) Model No. W2001400             |
 | Lock           | Short for SwitchBot Lock Model No. W1601700 |
+| Robot Vacuum Cleaner S1 | Short for SwitchBot Robot Vacuum Cleaner S1 Model No. W3011000; currently only available in Japan |
+| Robot Vacuum Cleaner S1 Plus | Short for SwitchBot Robot Vacuum Cleaner S1 Plus Model No. W3011010; currently only available in Japan |
 | Cloud Service | An SwitchBot app feature that 1. enables SwitchBot products to be discovered and communicated with third-party services voice control services, 2. allows users to create customized smart scenes and Android widgets. For BLE-based devices such as Bot and Curtain, you MUST first add a Hub/Hub Mini/Hub Plus and then enable Cloud Service on the Settings page in order to make use of the web API! |
 
 
@@ -211,12 +213,14 @@ Physical devices refer to the following SwitchBot products,
  -  Color Bulb
  -  Humidifier
  -  Smart Fan
- -  `new` Strip Light
- -  `new` Plug Mini (US)
- -  `new` Plug Mini (JP)
- -  `new` Lock
- -  `new` Meter Plus (JP) (MUST enable Cloud Service first)
- -  `new` Meter Plus (US) (MUST enable Cloud Service first)
+ -  Strip Light
+ -  Plug Mini (US)
+ -  Plug Mini (JP)
+ -  Lock
+ -  Meter Plus (JP) (MUST enable Cloud Service first)
+ -  Meter Plus (US) (MUST enable Cloud Service first)
+ -  `new` Robot Vacuum Cleaner S1
+ -  `new` Robot Vacuum Cleaner S1 Plus
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus / Hub Mini is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
@@ -346,6 +350,8 @@ Physical devices refer to the following SwitchBot products,
  -  Lock
  -  Meter Plus (JP)
  -  Meter Plus (US)
+ -   `new` Robot Vacuum Cleaner S1
+ -   `new` Robot Vacuum Cleaner S1 Plus
 
 #### Path parameters
 
@@ -397,6 +403,9 @@ body object contains the following properties,
 | electricCurrent | Integer | Plug Mini | current of the device (Unit: A) at the moment |
 | lockState | String | Lock | determines if the lock is locked or not |
 | doorState | String | Lock | determines if the door is closed or not |
+| workingStatus | String | Robot Vacuum Cleaner S1/ S1 Plus | the working status of the device, e.g. Cleaning, Paused  |
+| onlineStatus | String | Robot Vacuum Cleaner S1/ S1 Plus | determines if the device is online or offline |
+| battery | Integer | Robot Vacuum Cleaner S1/ S1 Plus | the battery level |
 
 The reponses may contain the following codes and message,
 
@@ -510,6 +519,14 @@ The table below describes all the available commands for physical devices,
 | Plug Mini (US/JP) | command | turnOn | default | set to ON state |
 | Plug Mini (US/JP) | command | turnOff | default | set to OFF state |
 | Plug Mini (US/JP) | command | toggle | default | toggle state |
+| Robot Vacuum Cleaner S1 | command | start | default | start vacuuming |
+| Robot Vacuum Cleaner S1 | command | stop | default | stop vacuuming |
+| Robot Vacuum Cleaner S1 | command | dock | default | return to charging dock |
+| Robot Vacuum Cleaner S1 | command | PowLevel | `{0-3}` | set suction power level: 0 (Quiet), 1 (Standard), 2 (Strong), 3 (MAX) |
+| Robot Vacuum Cleaner S1 Plus | command | start | default | start vacuuming |
+| Robot Vacuum Cleaner S1 Plus | command | stop | default | stop vacuuming |
+| Robot Vacuum Cleaner S1 Plus | command | dock | default | return to charging dock |
+| Robot Vacuum Cleaner S1 Plus | command | PowLevel | `{0-3}` | set suction power level: 0 (Quiet), 1 (Standard), 2 (Strong), 3 (MAX) |
 
 #### Command set for virtual infrared remote devices
 
