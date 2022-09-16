@@ -1,12 +1,10 @@
-# SwitchBot API v1.1
+# SwitchBot API v1.0
 
 - [SwitchBot API](#switchbot-api)
   - [Introduction](#introduction)
-  - [About the New Version](#about-the-new-version)
   - [Getting Started](#getting-started)
   - [Authentication](#authentication)
-    - [Open Token and Secret Key](#open-token-and-secret-key)
-    - [How to Sign](#how-to-sign)
+    - [Open Token](#open-token)
   - [Glossary](#glossary)
   - [API Usage](#api-usage)
     - [Host Domain](#host-domain)
@@ -93,12 +91,6 @@
 ## Introduction
 This document describes a collection of SwitchBot API methods, examples, and best practices for, but not limited to, IoT hobbyists, developers, and gurus to make their own smart home programs or applications. 
 
-## About the New Version
-
-We will stop adding support for new products on `v1.0` as we release `v1.1`.
-
-Hence, we strongly recommend all SwitchBot users to migrate to the new API version because we have improved the authentication method. This will make the communication between your server and the SwitchBot server more secure.
-
 ## Getting Started
 Please follow these steps,
 1. Download the SwitchBot app on App Store or Google Play Store
@@ -111,92 +103,8 @@ d) Tap Get Token
 4. Roll up your sleeves and get your hands dirty with SwitchBot OpenAPI!
 
 ## Authentication
-### Open Token and Secret Key
-
-Note: You must update the app to the latest version, `V6.14` or later, in order to get the secret key.
-
-In SwitchBot API `v1.1`, the authentication method has been improved. In order to gain access to private data through the API, you must generate a unique signature using a token and a secret key. When you make a request, the Authorization token and signature will be validated simultaneously.
-
-You as a developer will then be able to add, delete, edit, and look up your data including profile data and data associated with the devices that have been added to your SwitchBot account.
-
-To continue to use SwitchBot API `v1.0`, refer to the legacy document.
-
-
-
-### How to Sign?
-
-We have attached a python script for you to quickly generate a sign. If you prefer to write your own script or routine, here is the procedure.
-
-1. Print the 13 digit timestamp and concatenate it with your `token`
-2. Create a signature using your `secret` and the string produced in the previous step
-3. Convert the signature to upper case
-
-
-
-For instance,
-
-```
-# secret key
-secret = "" # copy and paste from the SwitchBot app V6.14 or later
-# open token
-token = "" # copy and paste from the SwitchBot app V6.14 or later
-t = 1661927531000
-sign = HMAC-SHA256(token + t, secret).toUpperCase()
-```
-
-
-
-Python 2 example code
-
-```python
-import time
-import hashlib
-import hmac
-import base64
-
-# open token
-token = '' # copy and paste from the SwitchBot app V6.14 or later
-# secret key
-secret = '' # copy and paste from the SwitchBot app V6.14 or later
-nonce = ''
-t = int(round(time.time() * 1000))
-string_to_sign = '{}{}{}'.format(token, t, nonce)
-
-sign = base64.b64encode(hmac.new(secret, msg=string_to_sign, digestmod=hashlib.sha256).digest())
-print ('Authorization: {}'.format(token))
-print ('t: {}'.format(t))
-print ('sign: {}'.format(sign))
-print ('nonce: {}'.format(nonce))
-
-```
-
-
-
-Python 3 example code
-
-```python
-import time
-import hashlib
-import hmac
-import base64
-
-# open token
-token = '' # copy and paste from the SwitchBot app V6.14 or later
-# secret key
-secret = '' # copy and paste from the SwitchBot app V6.14 or later
-nonce = ''
-t = int(round(time.time() * 1000))
-string_to_sign = '{}{}{}'.format(token, t, nonce)
-
-string_to_sign = bytes(string_to_sign, 'utf-8')
-secret = bytes(secret, 'utf-8')
-
-sign = base64.b64encode(hmac.new(secret, msg=string_to_sign, digestmod=hashlib.sha256).digest())
-print ('Authorization: {}'.format(token))
-print ('t: {}'.format(t))
-print ('sign: {}'.format(str(sign, 'utf-8')))
-print ('nonce: {}'.format(nonce))
-```
+### Open Token
+The token returned from the SwitchBot Cloud is an encrypted open token that grants the user developer-level permissions. The user will be able to add, delete, edit, and look up his or her user data including profile data and data associated with the devices that have been added to the user's account.
 
 
 
@@ -204,28 +112,28 @@ print ('nonce: {}'.format(nonce))
 
 The following table provides definitions to the terms to be frequently mentioned in the subsequent sections.
 
-| Term                         | Description                                                  |
-| ---------------------------- | ------------------------------------------------------------ |
-| Hub                          | Generally referred to these devices, SwitchBot Hub Model No. SwitchBot Hub S1/SwitchBot Hub Mini Model No. W0202200/SwitchBot Hub Plus Model No. SwitchBot Hub S1 |
-| Hub Mini                     | Short for SwitchBot Hub Mini Model No. W0202200              |
-| Hub Plus                     | Short for SwitchBot Hub Plus Model No. SwitchBot Hub S1      |
-| Bot                          | Short for SwitchBot Bot Model No. SwitchBot S1               |
-| Curtain                      | Short for SwitchBot Curtain Model No. W0701600               |
-| Plug                         | Short for SwitchBot Plug Model No. SP11                      |
-| Meter                        | Short for SwitchBot Thermometer and Hygrometer Model No. SwitchBot MeterTH S1 |
-| Meter Plus (JP)              | Short for SwitchBot Thermometer and Hygrometer Plus (JP) Model No. W2201500 |
-| Meter Plus (US)              | Short for SwitchBot Thermometer and Hygrometer Plus (US) Model No. W2301500 |
-| Motion Sensor                | Short for SwitchBot Motion Sensor Model No. W1101500         |
-| Contact Sensor               | Short for SwitchBot Contact Sensor Model No. W1201500        |
-| Color Bulb                   | Short for SwitchBot Color Bulb Model No. W1401400            |
-| Smart Fan                    | Short for SwitchBot Smart Fan Model No. W0601100             |
-| Strip Light                  | Short for SwitchBot LED Strip Light Model No. W1701100       |
-| Plug Mini (US)               | Short for SwitchBot Plug Mini (US) Model No. W1901400        |
-| Plug Mini (JP)               | Short for SwitchBot Plug Mini (JP) Model No. W2001400        |
-| Lock                         | Short for SwitchBot Lock Model No. W1601700                  |
-| Robot Vacuum Cleaner S1      | Short for SwitchBot Robot Vacuum Cleaner S1 Model No. W3011000; currently only available in Japan |
+| Term         | Description                                                  |
+| ------------- | ------------------------------------------------------------ |
+| Hub           | Generally referred to these devices, SwitchBot Hub Model No. SwitchBot Hub S1/SwitchBot Hub Mini Model No. W0202200/SwitchBot Hub Plus Model No. SwitchBot Hub S1 |
+| Hub Mini      | Short for SwitchBot Hub Mini Model No. W0202200              |
+| Hub Plus      | Short for SwitchBot Hub Plus Model No. SwitchBot Hub S1      |
+| Bot           | Short for SwitchBot Bot Model No. SwitchBot S1               |
+| Curtain       | Short for SwitchBot Curtain Model No. W0701600               |
+| Plug          | Short for SwitchBot Plug Model No. SP11                      |
+| Meter         | Short for SwitchBot Thermometer and Hygrometer Model No. SwitchBot MeterTH S1 |
+| Meter Plus (JP) | Short for SwitchBot Thermometer and Hygrometer Plus (JP) Model No. W2201500 |
+| Meter Plus (US) | Short for SwitchBot Thermometer and Hygrometer Plus (US) Model No. W2301500 |
+| Motion Sensor | Short for SwitchBot Motion Sensor Model No. W1101500 |
+| Contact Sensor | Short for SwitchBot Contact Sensor Model No. W1201500 |
+| Color Bulb | Short for SwitchBot Color Bulb Model No. W1401400 |
+| Smart Fan     | Short for SwitchBot Smart Fan Model No. W0601100             |
+| Strip Light   | Short for SwitchBot LED Strip Light Model No. W1701100             |
+| Plug Mini (US) | Short for SwitchBot Plug Mini (US) Model No. W1901400             |
+| Plug Mini (JP) | Short for SwitchBot Plug Mini (JP) Model No. W2001400             |
+| Lock           | Short for SwitchBot Lock Model No. W1601700 |
+| Robot Vacuum Cleaner S1 | Short for SwitchBot Robot Vacuum Cleaner S1 Model No. W3011000; currently only available in Japan |
 | Robot Vacuum Cleaner S1 Plus | Short for SwitchBot Robot Vacuum Cleaner S1 Plus Model No. W3011010; currently only available in Japan |
-| Cloud Service                | An SwitchBot app feature that 1. enables SwitchBot products to be discovered and communicated with third-party services voice control services, 2. allows users to create customized smart scenes and Android widgets. For BLE-based devices such as Bot and Curtain, you MUST first add a Hub/Hub Mini/Hub Plus and then enable Cloud Service on the Settings page in order to make use of the web API! |
+| Cloud Service | An SwitchBot app feature that 1. enables SwitchBot products to be discovered and communicated with third-party services voice control services, 2. allows users to create customized smart scenes and Android widgets. For BLE-based devices such as Bot and Curtain, you MUST first add a Hub/Hub Mini/Hub Plus and then enable Cloud Service on the Settings page in order to make use of the web API! |
 
 
 
@@ -252,11 +160,9 @@ The amount of API calls per day is limited to **10000** times. Going over that l
 
 The following parameters need to be included into the header,
 
-| Parameter     | Type   | Location | Required | Description                                                  |
-| ------------- | ------ | -------- | -------- | ------------------------------------------------------------ |
-| Authorization | String | header   | Yes      | Open Token acquired                                          |
-| sign          | String | header   | No       | A signature generated from the token and secret key using a specific algorithm. Required for the API `v1.1`. |
-| t             | Long   | header   | No       | A 13 digit timestamp (standard time). Required for the API `v1.1`. |
+| Parameter | Type | Location | Required | Description     |
+| ------------- | -------- | ------------ | ------------ | ------------------- |
+| Authorization | String   | header       | Yes          | Open Token acquired |
 
 ### Standard HTTP Error Codes
 
@@ -278,13 +184,17 @@ The following table lists the most common HTTP error response,
 
 
 
+
+
+
+
 ## Devices
 
 The devices API is used to access the properties and states of SwitchBot devices and to send control commands to those devices.
 
 ### Get device list
 ```http
-GET /v1.1/devices
+GET /v1.0/devices
 ```
 
 #### Description
@@ -370,11 +280,11 @@ The infraredRemoteList array contains a list of objects with the following key-v
 
 The response may contain the following codes and messages,
 
-| Status Code | Body Content       | Message      | Description                                                  |
-| ----------- | ------------------ | ------------ | ------------------------------------------------------------ |
-| 100         | Device list object | success      | Returns an object that contains two device lists             |
-| n/a         | n/a                | Unauthorized | Http 401 Error. User permission is denied due to invalid token. |
-| 190         | n/a                | System error | Device internal error due to device states not synchronized with server |
+| Status Code | Body Content       | Message      | Description |
+| ----------- | ------------ | ----------- | ----------- |
+| 100         | Device list object | success      | Returns an object that contains two device lists |
+| n/a       | n/a | Unauthorized | Http 401 Error. User permission is denied due to invalid token. |
+| 190         | n/a | System error | Device internal error due to device states not synchronized with server |
 
 #### Sample
 
@@ -383,41 +293,41 @@ The response may contain the following codes and messages,
 Request
 
 ```http
-GET https://api.switch-bot.com/v1.1/devices
+GET https://api.switch-bot.com/v1.0/devices
 ```
 
 Response
 
 ```js
 {
-    "statusCode": 100,
-    "body": {
-        "deviceList": [
-            {
-                "deviceId": "500291B269BE",
-                "deviceName": "Living Room Humidifier",
-                "deviceType": "Humidifier",
-                "enableCloudService": true,
-                "hubDeviceId": "000000000000"
-            }
-        ],
-        "infraredRemoteList": [
-            {
-                "deviceId": "02-202008110034-13",
-                "deviceName": "Living Room TV",
-                "remoteType": "TV",
-                "hubDeviceId": "FA7310762361"
-            }
-        ]
-    },
-    "message": "success"
+    "statusCode": 100,
+    "body": {
+        "deviceList": [
+            {
+                "deviceId": "500291B269BE",
+                "deviceName": "Living Room Humidifier",
+                "deviceType": "Humidifier",
+                "enableCloudService": true,
+                "hubDeviceId": "000000000000"
+            }
+        ],
+        "infraredRemoteList": [
+            {
+                "deviceId": "02-202008110034-13",
+                "deviceName": "Living Room TV",
+                "remoteType": "TV",
+                "hubDeviceId": "FA7310762361"
+            }
+        ]
+    },
+    "message": "success"
 }
 ```
 
 
 ### Get device status
 ```http
-GET /v1.1/devices/{deviceId}/status
+GET /v1.0/devices/{deviceId}/status
 ```
 
 #### Description
@@ -459,51 +369,51 @@ The response is basically a JSON object, which contains the following properties
 | body       | Object<body> |
 
 body object contains the following properties,
-| Key                    | Value Type | Used by Products                                     | Description                                                  |
-| ---------------------- | ---------- | ---------------------------------------------------- | ------------------------------------------------------------ |
-| deviceId               | String     | All                                                  | device ID                                                    |
-| deviceType             | String     | All                                                  | device type                                                  |
-| hubDeviceId            | String     | All                                                  | device's parent Hub ID                                       |
-| power                  | String     | Bot/Plug/Humidifier/Color Bulb/Strip Light/Plug Mini | ON/OFF state                                                 |
-| humidity               | Integer    | Meter/Meter Plus/Humidifier                          | humidity percentage                                          |
-| temperature            | Float      | Meter/Meter Plus/Humidifier                          | temperature in celsius                                       |
-| nebulizationEfficiency | Integer    | Humidifier                                           | atomization efficiency %                                     |
-| auto                   | Boolean    | Humidifier                                           | determines if a Humidifier is in Auto Mode or not            |
-| childLock              | Boolean    | Humidifier                                           | determines if a Humidifier's safety lock is on or not        |
-| sound                  | Boolean    | Humidifier                                           | determines if a Humidifier is muted or not                   |
-| calibrate              | Boolean    | Curtain/Lock                                         | determines if a device has been calibrated or not            |
-| group                  | Boolean    | Curtain                                              | determines if a Curtain is paired with or grouped with another Curtain or not |
-| moving                 | Boolean    | Curtain                                              | determines if a Curtain is moving or not                     |
-| slidePosition          | Integer    | Curtain                                              | the percentage of the distance between the calibrated open position and closed position that Curtain has traversed |
-| mode                   | Integer    | Smart Fan                                            | fan mode                                                     |
-| speed                  | Integer    | Smart Fan                                            | fan speed                                                    |
-| shaking                | Boolean    | Smart Fan                                            | determines if the fan is swinging or not                     |
-| shakeCenter            | Integer    | Smart Fan                                            | the fan's swing direciton                                    |
-| shakeRange             | Integer    | Smart Fan                                            | the fan's swing range, 0~120°                                |
-| moveDetected           | Boolean    | Motion Sensor/Contact Sensor                         | determines if motion is detected                             |
-| brightness             | String     | Motion Sensor/Contact Sensor                         | if the ambient environment is bright or dim                  |
-| openState              | String     | Contact Sensor                                       | open/close/timeOutNotClose                                   |
-| brightness             | Integer    | Color Bulb/Strip Light                               | the brightness value, range from 1 to 100                    |
-| color                  | String     | Color Bulb/Strip Light                               | the color value, RGB "255:255:255"                           |
-| colorTemperature       | Integer    | Color Bulb                                           | the color temperature value, range from 2700 to 6500         |
-| lackWater              | Boolean    | Humidifier                                           | determines if the water tank is empty or not                 |
-| voltage                | Integer    | Plug Mini                                            | Current voltage of the device (Unit: V)                      |
-| weight                 | Integer    | Plug Mini                                            | the power consumption of the device for the day (Unit: W/min) |
-| electricityOfDay       | Integer    | Plug Mini                                            | How long the device has been used for the day (Unit: min)    |
-| electricCurrent        | Integer    | Plug Mini                                            | current of the device (Unit: A) at the moment                |
-| lockState              | String     | Lock                                                 | determines if the lock is locked or not                      |
-| doorState              | String     | Lock                                                 | determines if the door is closed or not                      |
-| workingStatus          | String     | Robot Vacuum Cleaner S1/ S1 Plus                     | the working status of the device, e.g. Cleaning, Paused      |
-| onlineStatus           | String     | Robot Vacuum Cleaner S1/ S1 Plus                     | determines if the device is online or offline                |
-| battery                | Integer    | Robot Vacuum Cleaner S1/ S1 Plus                     | the battery level                                            |
+| Key                    | Value Type | Used by Products | Description                                                  |
+| ---------------------- | ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| deviceId               | String     | All | device ID                                                    |
+| deviceType             | String     | All  | device type                                                  |
+| hubDeviceId            | String     | All  | device's parent Hub ID                                       |
+| power                  | String     | Bot/Plug/Humidifier/Color Bulb/Strip Light/Plug Mini | ON/OFF state |
+| humidity               | Integer    | Meter/Meter Plus/Humidifier | humidity percentage |
+| temperature            | Float      | Meter/Meter Plus/Humidifier | temperature in celsius |
+| nebulizationEfficiency | Integer    | Humidifier | atomization efficiency % |
+| auto                   | Boolean    | Humidifier | determines if a Humidifier is in Auto Mode or not |
+| childLock              | Boolean    | Humidifier | determines if a Humidifier's safety lock is on or not |
+| sound                  | Boolean    | Humidifier | determines if a Humidifier is muted or not |
+| calibrate              | Boolean    | Curtain/Lock | determines if a device has been calibrated or not |
+| group                  | Boolean    | Curtain | determines if a Curtain is paired with or grouped with another Curtain or not |
+| moving                 | Boolean    | Curtain | determines if a Curtain is moving or not |
+| slidePosition          | Integer    | Curtain | the percentage of the distance between the calibrated open position and closed position that Curtain has traversed |
+| mode                   | Integer    | Smart Fan | fan mode           |
+| speed                  | Integer    | Smart Fan | fan speed          |
+| shaking                | Boolean    | Smart Fan | determines if the fan is swinging or not |
+| shakeCenter            | Integer    | Smart Fan | the fan's swing direciton |
+| shakeRange             | Integer    | Smart Fan | the fan's swing range, 0~120° |
+| moveDetected  | Boolean | Motion Sensor/Contact Sensor | determines if motion is detected |
+| brightness  | String | Motion Sensor/Contact Sensor | if the ambient environment is bright or dim |
+| openState | String | Contact Sensor | open/close/timeOutNotClose |
+| brightness | Integer | Color Bulb/Strip Light | the brightness value, range from 1 to 100 |
+| color | String | Color Bulb/Strip Light | the color value, RGB "255:255:255" |
+| colorTemperature | Integer | Color Bulb | the color temperature value, range from 2700 to 6500 |
+| lackWater | Boolean | Humidifier | determines if the water tank is empty or not |
+| voltage | Integer | Plug Mini | Current voltage of the device (Unit: V) |
+| weight | Integer | Plug Mini | the power consumption of the device for the day (Unit: W/min) |
+| electricityOfDay | Integer | Plug Mini | How long the device has been used for the day (Unit: min) |
+| electricCurrent | Integer | Plug Mini | current of the device (Unit: A) at the moment |
+| lockState | String | Lock | determines if the lock is locked or not |
+| doorState | String | Lock | determines if the door is closed or not |
+| workingStatus | String | Robot Vacuum Cleaner S1/ S1 Plus | the working status of the device, e.g. Cleaning, Paused  |
+| onlineStatus | String | Robot Vacuum Cleaner S1/ S1 Plus | determines if the device is online or offline |
+| battery | Integer | Robot Vacuum Cleaner S1/ S1 Plus | the battery level |
 
 The reponses may contain the following codes and message,
 
-| Status Code | Body Content       | Message      | Description                                                  |
-| ----------- | ------------------ | ------------ | ------------------------------------------------------------ |
-| 100         | Device list object | success      | Returns an object that contains two device lists             |
-| n/a         | n/a                | Unauthorized | Http 401 Error. User permission is denied due to invalid token. |
-| 190         | n/a                | System error | Device internal error due to device states not synchronized with server |
+| Status Code | Body Content       | Message      | Description |
+| ----------- | ------------------ | ------------ | ----------- |
+| 100         | Device list object | success      | Returns an object that contains two device lists |
+| n/a       | n/a | Unauthorized | Http 401 Error. User permission is denied due to invalid token. |
+| 190         | n/a | System error | Device internal error due to device states not synchronized with server |
 
 #### Sample
 
@@ -514,7 +424,7 @@ Request the status of a SwitchBot Thermometer and Hygrometer
 Request
 
 ```http
-GET https://api.switch-bot.com/v1.1/devices/C271111EC0AB/status
+GET https://api.switch-bot.com/v1.0/devices/C271111EC0AB/status
 ```
 
 Response
@@ -522,15 +432,15 @@ Response
 
 ```js
 {
-    "statusCode": 100,
-    "body": {
-        "deviceId": "C271111EC0AB",
-        "deviceType": "Meter",
-        "hubDeviceId": "FA7310762361",
-        "humidity": 52,
-        "temperature": 26.1
-    },
-    "message": "success"
+    "statusCode": 100,
+    "body": {
+        "deviceId": "C271111EC0AB",
+        "deviceType": "Meter",
+        "hubDeviceId": "FA7310762361",
+        "humidity": 52,
+        "temperature": 26.1
+    },
+    "message": "success"
 }
 ```
 
@@ -541,7 +451,7 @@ Request the status of a SwitchBot Curtain
 Request
 
 ```http
-GET https://api.switch-bot.com/v1.1/devices/E2F6032048AB/status
+GET https://api.switch-bot.com/v1.0/devices/E2F6032048AB/status
 ```
 
 Response
@@ -568,7 +478,7 @@ Response
 ### Send device control commands
 
 ```http
-POST /v1.1/devices/{deviceId}/commands
+POST /v1.0/devices/{deviceId}/commands
 ```
 
 #### Description
@@ -579,46 +489,44 @@ Send control commands to physical devices and virtual infrared remote devices.
 
 The table below describes all the available commands for physical devices,
 
-| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
-| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Bot                          | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Bot                          | command     | turnOn              | default                                                      | set to ON state                                              |
-| Bot                          | command     | press               | default                                                      | trigger press                                                |
-| Plug                         | command     | turnOn              | default                                                      | set to ON state                                              |
-| Plug                         | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Curtain                      | command     | setPosition         | index0,mode0,position0<br />e.g. `0,ff,80`                   | mode: 0 (Performance Mode), 1 (Silent Mode), ff (default mode) <br />position: 0~100 (0 means opened, 100 means closed) |
-| Curtain                      | command     | turnOff             | default                                                      | equivalent to set position to 100                            |
-| Curtain                      | command     | turnOn              | default                                                      | equivalent to set position to 0                              |
-| Humidifier                   | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Humidifier                   | command     | turnOn              | default                                                      | set to ON state                                              |
-| Humidifier                   | command     | setMode             | `auto` or `101` or<br />  `102` or `103` or `{0~100}`        | auto, set to Auto Mode,<br />101, set atomization efficiency to 34%,<br />102, set atomization efficiency to 67%,<br />103, set atomization efficiency to 100% |
-| Smart Fan                    | command     | turnOn              | default                                                      | set to ON state                                              |
-| Smart Fan                    | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Smart Fan                    | command     | setAllStatus        | power,fanMode,<br />fanSpeed,shakeRange<br/>e.g. `on,1,1,60` | power: off/on,<br />fanMode: 1/2,<br />fanSpeed: 1/2/3/4,<br />shakeRange: 0~120<br/>fanMode: 1 (Standard), 2 (Natural) |
-| Color Bulb                   | command     | turnOn              | default                                                      | set to ON state                                              |
-| Color Bulb                   | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Color Bulb                   | command     | toggle              | default                                                      | toggle state                                                 |
-| Color Bulb                   | command     | setBrightness       | `{1-100}`                                                    | set brightness                                               |
-| Color Bulb                   | command     | setColor            | `"{0-255}:{0-255}:{0-255}"`                                  | set RGB color value                                          |
-| Color Bulb                   | command     | setColorTemperature | `{2700-6500}`                                                | set color temperature                                        |
-| Strip Light                  | command     | turnOn              | default                                                      | set to ON state                                              |
-| Strip Light                  | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Strip Light                  | command     | toggle              | default                                                      | toggle state                                                 |
-| Strip Light                  | command     | setBrightness       | `{1-100}`                                                    | set brightness                                               |
-| Strip Light                  | command     | setColor            | `"{0-255}:{0-255}:{0-255}"`                                  | set RGB color value                                          |
-| Plug Mini (US/JP)            | command     | turnOn              | default                                                      | set to ON state                                              |
-| Plug Mini (US/JP)            | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Plug Mini (US/JP)            | command     | toggle              | default                                                      | toggle state                                                 |
-| Robot Vacuum Cleaner S1      | command     | start               | default                                                      | start vacuuming                                              |
-| Robot Vacuum Cleaner S1      | command     | stop                | default                                                      | stop vacuuming                                               |
-| Robot Vacuum Cleaner S1      | command     | dock                | default                                                      | return to charging dock                                      |
-| Robot Vacuum Cleaner S1      | command     | PowLevel            | `{0-3}`                                                      | set suction power level: 0 (Quiet), 1 (Standard), 2 (Strong), 3 (MAX) |
-| Robot Vacuum Cleaner S1 Plus | command     | start               | default                                                      | start vacuuming                                              |
-| Robot Vacuum Cleaner S1 Plus | command     | stop                | default                                                      | stop vacuuming                                               |
-| Robot Vacuum Cleaner S1 Plus | command     | dock                | default                                                      | return to charging dock                                      |
-| Robot Vacuum Cleaner S1 Plus | command     | PowLevel            | `{0-3}`                                                      | set suction power level: 0 (Quiet), 1 (Standard), 2 (Strong), 3 (MAX) |
-| Lock                         | command     | lock                | default                                                      | rotate to locked position                                    |
-| Lock                         | command     | unlock              | default                                                      | rotate to unlocked position                                  |
+| deviceType     | commandType     | Command     |  command parameter    |  Description    |
+| ---- | ---- | ---- | ---- | ---- |
+|  Bot    |  command    | turnOff     | default     | set to OFF state |
+| Bot | command | turnOn | default | set to ON state |
+| Bot | command | press | default | trigger press |
+| Plug     | command | turnOn | default | set to ON state |
+| Plug | command | turnOff | default | set to OFF state |
+| Curtain     | command |  setPosition    | index0,mode0,position0<br />e.g. `0,ff,80` |  mode: 0 (Performance Mode), 1 (Silent Mode), ff (default mode) <br />position: 0~100 (0 means opened, 100 means closed)  |
+| Curtain | command |  turnOff    | default | equivalent to set position to 100 |
+| Curtain | command |  turnOn    | default | equivalent to set position to 0 |
+| Humidifier | command | turnOff | default | set to OFF state                                             |
+| Humidifier | command | turnOn | default | set to ON state                                              |
+| Humidifier | command |setMode  | `auto` or `101` or<br />  `102` or `103` or `{0~100}` | auto, set to Auto Mode,<br />101, set atomization efficiency to 34%,<br />102, set atomization efficiency to 67%,<br />103, set atomization efficiency to 100% |
+| Smart Fan | command |turnOn | default | set to ON state |
+| Smart Fan | command |turnOff | default | set to OFF state |
+| Smart Fan | command | setAllStatus | power,fanMode,<br />fanSpeed,shakeRange<br/>e.g. `on,1,1,60` | power: off/on,<br />fanMode: 1/2,<br />fanSpeed: 1/2/3/4,<br />shakeRange: 0~120<br/>fanMode: 1 (Standard), 2 (Natural) |
+| Color Bulb | command |turnOn | default | set to ON state |
+| Color Bulb | command |turnOff | default | set to OFF state |
+| Color Bulb | command |toggle | default | toggle state |
+| Color Bulb | command |setBrightness | `{1-100}` | set brightness |
+| Color Bulb | command |setColor | `"{0-255}:{0-255}:{0-255}"` | set RGB color value |
+| Color Bulb | command |setColorTemperature | `{2700-6500}` | set color temperature |
+| Strip Light | command |turnOn | default | set to ON state |
+| Strip Light | command |turnOff | default | set to OFF state |
+| Strip Light | command |toggle | default | toggle state |
+| Strip Light | command |setBrightness | `{1-100}` | set brightness |
+| Strip Light | command |setColor | `"{0-255}:{0-255}:{0-255}"` | set RGB color value |
+| Plug Mini (US/JP) | command | turnOn | default | set to ON state |
+| Plug Mini (US/JP) | command | turnOff | default | set to OFF state |
+| Plug Mini (US/JP) | command | toggle | default | toggle state |
+| Robot Vacuum Cleaner S1 | command | start | default | start vacuuming |
+| Robot Vacuum Cleaner S1 | command | stop | default | stop vacuuming |
+| Robot Vacuum Cleaner S1 | command | dock | default | return to charging dock |
+| Robot Vacuum Cleaner S1 | command | PowLevel | `{0-3}` | set suction power level: 0 (Quiet), 1 (Standard), 2 (Strong), 3 (MAX) |
+| Robot Vacuum Cleaner S1 Plus | command | start | default | start vacuuming |
+| Robot Vacuum Cleaner S1 Plus | command | stop | default | stop vacuuming |
+| Robot Vacuum Cleaner S1 Plus | command | dock | default | return to charging dock |
+| Robot Vacuum Cleaner S1 Plus | command | PowLevel | `{0-3}` | set suction power level: 0 (Quiet), 1 (Standard), 2 (Strong), 3 (MAX) |
 
 #### Command set for virtual infrared remote devices
 
@@ -631,7 +539,7 @@ The table below describes all the available commands for virtual infrared remote
 | Others                                 | `customize` | {user-defined button name} | default                                                      | all user-defined buttons must be configured with commandType=customize |
 | Air Conditioner                        | command     | setAll                     | {temperature},{mode},{fan speed},{power state}<br />e.g. `26,1,3,on` | the unit of temperature is in celsius; <br />modes include 1 (auto), 2 (cool), 3 (dry), 4 (fan), 5 (heat); <br />fan speed includes 1 (auto), 2 (low), 3 (medium), 4 (high); <br />power state includes on and off |
 |                                        |             |                            |                                                              |                                                              |
-| TV, IPTV/Streamer,  Set Top Box        | command     | SetChannel                 | {channel number}, e.g. 15                                    | set the TV channel to switch to                              |
+| TV, IPTV/Streamer,  Set Top Box         | command     | SetChannel                 | {channel number}, e.g. 15                                | set the TV channel to switch to                              ||                                        | command     | setMute                    | default                                                      | mute/unmute                                                  |
 |                                        | command     | volumeAdd                  | default                                                      | volume up                                                    |
 |                                        | command     | volumeSub                  | default                                                      | volume down                                                  |
 |                                        | command     | channelAdd                 | default                                                      | next channel                                                 |
@@ -703,7 +611,7 @@ Turn a Bot on
 Request
 
 ```http
-POST https://api.switch-bot.com/v1.1/devices/210/commands
+POST https://api.switch-bot.com/v1.0/devices/210/commands
 ```
 
 ```js
@@ -730,7 +638,7 @@ Set the color value of a Color Bulb
 Request
 
 ```http
-POST https://api.switch-bot.com/v1.1/devices/84F70353A411/commands
+POST https://api.switch-bot.com/v1.0/devices/84F70353A411/commands
 ```
 
 ```js
@@ -759,7 +667,7 @@ Set an Air Conditioner
 Request
 
 ```http
-POST https://api.switch-bot.com/v1.1/devices/02-202007201626-70/commands
+POST https://api.switch-bot.com/v1.0/devices/02-202007201626-70/commands
 ```
 
 ```js
@@ -787,7 +695,7 @@ Trigger a customized button
 Request
 
 ```http
-POST https://api.switch-bot.com/v1.1/devices/02-202007201626-10/commands
+POST https://api.switch-bot.com/v1.0/devices/02-202007201626-10/commands
 ```
 
 ```js
@@ -817,7 +725,7 @@ The scenes API is used to access the smart scenes created by a user and to execu
 ### Get scene list
 
 ```http
-GET /v1.1/scenes
+GET /v1.0/scenes
 ```
 
 #### Description
@@ -855,7 +763,7 @@ The body object contains a list of objects, which has the following properties,
 Request
 
 ```http
-GET https://api.switch-bot.com/v1.1/scenes
+GET https://api.switch-bot.com/v1.0/scenes
 ```
 
 Response
@@ -892,7 +800,7 @@ Response
 ### Execute manual scenes
 
 ```http
-POST /v1.1/scenes/{sceneId}/execute
+POST /v1.0/scenes/{sceneId}/execute
 ```
 
 #### Description
@@ -927,16 +835,16 @@ The response is basically a JSON object, which contains the following properties
 Request
 
 ```http
-POST https://api.switch-bot.com/v1.1/scenes/T02-202009221414-48924101/execute
+POST https://api.switch-bot.com/v1.0/scenes/T02-202009221414-48924101/execute
 ```
 
 Response
 
 ```js
 {
-    "statusCode": 100,
-    "body": {},
-    "message": "success"
+    "statusCode": 100,
+    "body": {},
+    "message": "success"
 }
 ```
 
@@ -949,7 +857,7 @@ Configure the url that all the webhook events will be sent to
 
 #### Request
 ```http
-POST https://api.switch-bot.com/v1.1/webhook/setupWebhook
+POST https://api.switch-bot.com/v1.0/webhook/setupWebhook
 ```
 
 ##### Request body parameters
@@ -996,7 +904,7 @@ Get the current configuration info of the webhook
 
 #### Request
 ```http
-POST https://api.switch-bot.com/v1.1/webhook/queryWebhook
+POST https://api.switch-bot.com/v1.0/webhook/queryWebhook
 ```
 
 ##### Request body parameters
@@ -1081,7 +989,7 @@ Update the configuration of the webhook
 
 #### Request
 ```http
-POST https://api.switch-bot.com/v1.1/webhook/queryWebhook
+POST https://api.switch-bot.com/v1.0/webhook/queryWebhook
 ```
 
 ##### Request body parameters
@@ -1126,14 +1034,14 @@ Delete the configuration of the webhook
 
 #### Request
 ```http
-POST https://api.switch-bot.com/v1.1/webhook/deleteWebhook
+POST https://api.switch-bot.com/v1.0/webhook/deleteWebhook
 ```
 
 ##### Request body parameters
-| Key Name | Value Type | Description                              |
-| -------- | ---------- | ---------------------------------------- |
-| action   | String     | the type of actions                      |
-| url      | String     | the url where all the events are sent to |
+| Key Name | Value Type | Description                                                  |
+| -------- | ---------- | ------------------------------------------------------------ |
+| action     | String     | the type of actions                                   |
+| url        | String     | the url where all the events are sent to              |
 
 Head
 
@@ -1219,7 +1127,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | detectionState | String     | the motion state of the device, "DETECTED" stands for motion is detected; "NOT_DETECTED" stands for motion has not been detected for some time |
 | doorMode       | String     | when the enter or exit mode gets triggered, "IN_DOOR" or "OUT_DOOR" is returned |
 | brightness     | String     | the level of brightness, can be "bright" or "dim"            |
-| openState      | String     | the state of the contact sensor, can be "open" or "close" or "timeOutNotClose" |
+| openState      | String     | the state of the contact sensor, can be "open" or "close" or "timeOutNotClose"  |
 | timeOfSample   | Long       | the time stamp when the event is sent                        |
 
 ```js
