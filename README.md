@@ -202,7 +202,7 @@ print ('nonce: {}'.format(nonce))
 
 Javasscript example code
 
-```
+```javascript
     const token = "yourToken";
     const secret = "yourSecret";
     const t = Date.now();
