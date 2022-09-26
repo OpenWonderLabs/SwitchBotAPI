@@ -539,10 +539,10 @@ body object contains the following properties,
 | color                  | String     | Color Bulb/Strip Light                               | the color value, RGB "255:255:255"                           |
 | colorTemperature       | Integer    | Color Bulb                                           | the color temperature value, range from 2700 to 6500         |
 | lackWater              | Boolean    | Humidifier                                           | determines if the water tank is empty or not                 |
-| voltage                | Integer    | Plug Mini                                            | Current voltage of the device (Unit: V)                      |
-| weight                 | Integer    | Plug Mini                                            | the power consumption of the device for the day (Unit: W/min) |
+| voltage                | Float      | Plug Mini                                            | Current voltage of the device (Unit: V)                      |
+| weight                 | Float      | Plug Mini                                            | the power consumption of the device for the day (Unit: W/min) |
 | electricityOfDay       | Integer    | Plug Mini                                            | How long the device has been used for the day (Unit: min)    |
-| electricCurrent        | Integer    | Plug Mini                                            | current of the device (Unit: A) at the moment                |
+| electricCurrent        | Float      | Plug Mini                                            | current of the device (Unit: A) at the moment                |
 | lockState              | String     | Lock                                                 | determines if the lock is locked or not                      |
 | doorState              | String     | Lock                                                 | determines if the door is closed or not                      |
 | workingStatus          | String     | Robot Vacuum Cleaner S1/ S1 Plus                     | the working status of the device, e.g. Cleaning, Paused      |
