@@ -262,20 +262,27 @@ The following table provides definitions to the terms to be frequently mentioned
 | Hub Plus                     | Short for SwitchBot Hub Plus Model No. SwitchBot Hub S1      |
 | Bot                          | Short for SwitchBot Bot Model No. SwitchBot S1               |
 | Curtain                      | Short for SwitchBot Curtain Model No. W0701600               |
-| Plug                         | Short for SwitchBot Plug Model No. SP11                      |
+| Plug                         | Short for SwitchBot Plug Model No. SP11. Currently only available in Japan |
 | Meter                        | Short for SwitchBot Thermometer and Hygrometer Model No. SwitchBot MeterTH S1 |
 | Meter Plus (JP)              | Short for SwitchBot Thermometer and Hygrometer Plus (JP) Model No. W2201500 |
 | Meter Plus (US)              | Short for SwitchBot Thermometer and Hygrometer Plus (US) Model No. W2301500 |
 | Motion Sensor                | Short for SwitchBot Motion Sensor Model No. W1101500         |
 | Contact Sensor               | Short for SwitchBot Contact Sensor Model No. W1201500        |
 | Color Bulb                   | Short for SwitchBot Color Bulb Model No. W1401400            |
-| Smart Fan                    | Short for SwitchBot Smart Fan Model No. W0601100             |
 | Strip Light                  | Short for SwitchBot LED Strip Light Model No. W1701100       |
-| Plug Mini (US)               | Short for SwitchBot Plug Mini (US) Model No. W1901400        |
-| Plug Mini (JP)               | Short for SwitchBot Plug Mini (JP) Model No. W2001400        |
+| Plug Mini (US)               | Short for SwitchBot Plug Mini (US) Model No. W1901400 and W1901401 |
+| Plug Mini (JP)               | Short for SwitchBot Plug Mini (JP) Model No. W2001400 and W2001401 |
 | Lock                         | Short for SwitchBot Lock Model No. W1601700                  |
-| Robot Vacuum Cleaner S1      | Short for SwitchBot Robot Vacuum Cleaner S1 Model No. W3011000; currently only available in Japan |
-| Robot Vacuum Cleaner S1 Plus | Short for SwitchBot Robot Vacuum Cleaner S1 Plus Model No. W3011010; currently only available in Japan |
+| Keypad                         | Short for SwitchBot Lock Model No. W2500010                  |
+| Keypad Touch                         | Short for SwitchBot Lock Model No. W2500020                  |
+| Robot Vacuum Cleaner S1      | Short for SwitchBot Robot Vacuum Cleaner S1 Model No. W3011000. Currently only available in Japan. |
+| Robot Vacuum Cleaner S1 Plus | Short for SwitchBot Robot Vacuum Cleaner S1 Plus Model No. W3011010. Currently only available in Japan. |
+| Ceiling Light      | Short for SwitchBot Ceiling Light Model No. W2612230 and W2612240. Currently only available in Japan. |
+| Ceiling Light Pro | Short for SwitchBot Ceiling Light Pro Model No. W2612210 and W2612220. Currently only available in Japan. |
+| Indoor Cam | Short for SwitchBot Indoor Cam Model No. W1301200                  |
+| Pan/Tilt Cam | Short for SwitchBot Pan/Tilt Cam Model No. W1801200                  |
+| Pan/Tilt Cam 2K | Short for SwitchBot Pan/Tilt Cam 2K Model No. W3101100                  |
+
 | Cloud Service                | An SwitchBot app feature that 1. enables SwitchBot products to be discovered and communicated with third-party services voice control services, 2. allows users to create customized smart scenes and Android widgets. For BLE-based devices such as Bot and Curtain, you MUST first add a Hub/Hub Mini/Hub Plus and then enable Cloud Service on the Settings page in order to make use of the web API! |
 
 
@@ -363,6 +370,10 @@ Physical devices refer to the following SwitchBot products,
  -  Meter Plus (US) (MUST enable Cloud Service first)
  -  `new` Robot Vacuum Cleaner S1
  -  `new` Robot Vacuum Cleaner S1 Plus
+ -  `new` Keypad (MUST enable Cloud Service first)
+ -  `new` Keypad Touch (MUST enable Cloud Service first)
+ -  `new` Ceiling Light
+ -  `new` Ceiling Light Pro
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus / Hub Mini is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
@@ -390,35 +401,12 @@ The response is basically a JSON object, which contains the following properties
 | message    | String       |
 | body       | Object<body> |
 
-The body object contains the following properties,
+The `body` object contains the following properties,
 
 | Key Name           | Value Type            | Description                               |
 | ------------------ | --------------------- | ----------------------------------------- |
 | deviceList         | Array<device>         | a list of physical devices                |
 | infraredRemoteList | Array<infraredRemote> | a list of virtual infrared remote devices |
-
-The deviceList array contains a list of objects with the following key-value attributes,
-
-| Key                | Value Type      | Description                                                  |
-| ------------------ | --------------- | ------------------------------------------------------------ |
-| deviceId           | String          | device ID                                                    |
-| deviceName         | String          | device name                                                  |
-| deviceType         | String          | device type                                                  |
-| enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
-| hubDeviceId        | String          | device's parent Hub ID                                       |
-| curtainDevicesIds  | Array<deviceId> | only available for Curtain devices. a list of Curtain device IDs such that the Curtain devices are being paired or grouped |
-| calibrate          | Boolean         | only available for Curtain/Lock devices. determines if the open position and the close position of a device have been properly calibrated or not |
-| group              | Boolean         | only available for Curtain devices. determines if a Curtain is paired with or grouped with another Curtain or not |
-| master             | Boolean         | only available for Curtain devices. determines if a Curtain is the master device or not when paired with or grouped with another Curtain |
-| openDirection      | String          | only available for Curtain devices. the opening direction of a Curtain |
-
-The infraredRemoteList array contains a list of objects with the following key-value attributes,
-| Key         | Value Type | Description                   |
-| ----------- | ---------- | ----------------------------- |
-| deviceId    | String     | device ID                     |
-| deviceName  | String     | device name                   |
-| remoteType  | String     | device type                   |
-| hubDeviceId | String     | remote device's parent Hub ID |
 
 The response may contain the following codes and messages,
 
@@ -427,6 +415,282 @@ The response may contain the following codes and messages,
 | 100         | Device list object | success      | Returns an object that contains two device lists             |
 | n/a         | n/a                | Unauthorized | Http 401 Error. User permission is denied due to invalid token. |
 | 190         | n/a                | System error | Device internal error due to device states not synchronized with server |
+
+The `deviceList` array contains a list of objects with the following key-value attributes,
+
+##### Bot
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Bot*                                           |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+##### Curtain
+| Key                | Value Type      | Description                                                  |
+| ------------------ | --------------- | ------------------------------------------------------------ |
+| deviceId           | String          | device ID                                                    |
+| deviceName         | String          | device name                                                  |
+| deviceType         | String          | device type. *Curtain*                                       |
+| enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String          | device's parent Hub ID                                       |
+| curtainDevicesIds  | Array<deviceId> | a list of Curtain device IDs such that the Curtain devices are being paired or grouped |
+| calibrate          | Boolean         | determines if the open position and the close position of a device have been properly calibrated or not |
+| group              | Boolean         | determines if a Curtain is paired with or grouped with another Curtain or not |
+| master             | Boolean         | determines if a Curtain is the master device or not when paired with or grouped with another Curtain |
+| openDirection      | String          | the opening direction of a Curtain                           |
+
+##### Hub/Hub Plus/Hub Mini
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Hub*, *Hub Plus*, or *Hub Mini*.               |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Meter
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Meter*                                         |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+##### Meter Plus
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *MeterPlus*                                     |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+##### Lock
+| Key                | Value Type      | Description                                                  |
+| ------------------ | --------------- | ------------------------------------------------------------ |
+| deviceId           | String          | device ID                                                    |
+| deviceName         | String          | device name                                                  |
+| deviceType         | String          | device type. *Smart Lock*                                  |
+| enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String          | device's parent Hub ID                                       |
+| group              | Boolean         | determines if a Lock is grouped with another Lock or not |
+| master             | Boolean         | determines if a Lock is the master device or not when grouped with another Lock in Dual Lock mode |
+| groupName              | Boolean         | the name of the Lock group |
+| lockDevicesIds              | Array<deviceId>         | a list of Lock device IDs such that the Lock devices are being grouped in Dual Lock mode |
+
+##### Keypad
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Keypad*                                        |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| lockDeviceId       | String     | MAC address of the Lock that the current device is paired with |
+| keyList            | Object     | a list of passcodes                                          |
+
+`keyList` maintains a list of passcodes,
+
+| Key        | Value Type | Description                                                  |
+| ---------- | ---------- | ------------------------------------------------------------ |
+| id         | Integer    | passcode ID                                                  |
+| name       | String     | name of the passcode                                         |
+| type       | String     | type of the passcode. *permanent*, a permanent passcode. *timeLimit*, a temporary passcode. *disposable*, a one-time passcode. *urgent*, an emergency passcode. |
+| password   | String     | the passcode string encrypted with the developer secret key using the aes-128-cbc algorithm |
+| iv         | String     | an arbitrary number used for the encryption                  |
+| status     | String     | validity of the passcode. *normal*, the passcode is valid. *expired*, the passcode is invalid. |
+| createTime | Long       | the time when the passcode is generated                      |
+
+##### Keypad Touch
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Keypad Touch*                                  |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| lockDeviceId       | String     | MAC address of the Lock that the current device is paired with |
+| keyList            | Object     | a list of passcodes                                          |
+
+`keyList` maintains a list of passcodes,
+
+| Key        | Value Type | Description                                                  |
+| ---------- | ---------- | ------------------------------------------------------------ |
+| id         | Integer    | passcode ID                                                  |
+| name       | String     | name of the passcode                                         |
+| type       | String     | type of the passcode. *permanent*, a permanent passcode. *timeLimit*, a temporary passcode. *disposable*, a one-time passcode. *urgent*, an emergency passcode. |
+| password   | String     | the passcode string encrypted with the developer secret key using the aes-128-cbc algorithm |
+| iv         | String     | an arbitrary number used for the encryption                  |
+| status     | String     | validity of the passcode. *normal*, the passcode is valid. *expired*, the passcode is invalid. |
+| createTime | Long       | the time when the passcode is generated                      |
+
+##### Remote
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Remote*                                        |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+##### Motion Sensor
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Motion Sensor*                                 |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+##### Contact Sensor
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Contact Sensor*                                |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+##### Ceiling Light
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Ceiling Light*                                 |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Ceiling Light Pro
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Ceiling Light Pro*                             |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Plug Mini (US)
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Plug Mini (US)*                                |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Plug Mini (JP)
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Plug Mini (JP)*                                |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Plug
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Plug*                                          |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Strip Light
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Strip Light*                                   |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Color Bulb
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Color Bulb*                                    |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Robot Vacuum Cleaner S1
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Robot Vacuum Cleaner S1*                       |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Robot Vacuum Cleaner S1 Plus
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Robot Vacuum Cleaner S1 Plus*                  |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Humidifier
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Humidifier*                                    |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Indoor Cam
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Indoor Cam*                                    |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Pan/Tilt Cam
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Pan/Tilt Cam*                                    |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Pan/Tilt Cam 2K
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Pan/Tilt Cam*                                    |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+
+##### Virtual infrared remote devices
+
+
+The `infraredRemoteList` array contains a list of objects with the following key-value attributes,
+
+| Key         | Value Type | Description                   |
+| ----------- | ---------- | ----------------------------- |
+| deviceId    | String     | device ID                     |
+| deviceName  | String     | device name                   |
+| remoteType  | String     | device type                   |
+| hubDeviceId | String     | remote device's parent Hub ID |
 
 #### Sample
 
@@ -494,6 +758,10 @@ Physical devices refer to the following SwitchBot products,
  -  Meter Plus (US)
  -   `new` Robot Vacuum Cleaner S1
  -   `new` Robot Vacuum Cleaner S1 Plus
+ -   `new` Keypad (MUST enable Cloud Service first)
+ -  `new` Keypad Touch (MUST enable Cloud Service first)
+ -  `new` Ceiling Light
+ -  `new` Ceiling Light Pro
 
 #### Path parameters
 
@@ -510,45 +778,6 @@ The response is basically a JSON object, which contains the following properties
 | message    | String       |
 | body       | Object<body> |
 
-body object contains the following properties,
-| Key                    | Value Type | Used by Products                                     | Description                                                  |
-| ---------------------- | ---------- | ---------------------------------------------------- | ------------------------------------------------------------ |
-| deviceId               | String     | All                                                  | device ID                                                    |
-| deviceType             | String     | All                                                  | device type                                                  |
-| hubDeviceId            | String     | All                                                  | device's parent Hub ID                                       |
-| power                  | String     | Bot/Plug/Humidifier/Color Bulb/Strip Light/Plug Mini | ON/OFF state                                                 |
-| humidity               | Integer    | Meter/Meter Plus/Humidifier                          | humidity percentage                                          |
-| temperature            | Float      | Meter/Meter Plus/Humidifier                          | temperature in celsius                                       |
-| nebulizationEfficiency | Integer    | Humidifier                                           | atomization efficiency %                                     |
-| auto                   | Boolean    | Humidifier                                           | determines if a Humidifier is in Auto Mode or not            |
-| childLock              | Boolean    | Humidifier                                           | determines if a Humidifier's safety lock is on or not        |
-| sound                  | Boolean    | Humidifier                                           | determines if a Humidifier is muted or not                   |
-| calibrate              | Boolean    | Curtain/Lock                                         | determines if a device has been calibrated or not            |
-| group                  | Boolean    | Curtain                                              | determines if a Curtain is paired with or grouped with another Curtain or not |
-| moving                 | Boolean    | Curtain                                              | determines if a Curtain is moving or not                     |
-| slidePosition          | Integer    | Curtain                                              | the percentage of the distance between the calibrated open position and closed position that Curtain has traversed |
-| mode                   | Integer    | Smart Fan                                            | fan mode                                                     |
-| speed                  | Integer    | Smart Fan                                            | fan speed                                                    |
-| shaking                | Boolean    | Smart Fan                                            | determines if the fan is swinging or not                     |
-| shakeCenter            | Integer    | Smart Fan                                            | the fan's swing direciton                                    |
-| shakeRange             | Integer    | Smart Fan                                            | the fan's swing range, 0~120°                                |
-| moveDetected           | Boolean    | Motion Sensor/Contact Sensor                         | determines if motion is detected                             |
-| brightness             | String     | Motion Sensor/Contact Sensor                         | if the ambient environment is bright or dim                  |
-| openState              | String     | Contact Sensor                                       | open/close/timeOutNotClose                                   |
-| brightness             | Integer    | Color Bulb/Strip Light                               | the brightness value, range from 1 to 100                    |
-| color                  | String     | Color Bulb/Strip Light                               | the color value, RGB "255:255:255"                           |
-| colorTemperature       | Integer    | Color Bulb                                           | the color temperature value, range from 2700 to 6500         |
-| lackWater              | Boolean    | Humidifier                                           | determines if the water tank is empty or not                 |
-| voltage                | Float      | Plug Mini                                            | Current voltage of the device (Unit: V)                      |
-| weight                 | Float      | Plug Mini                                            | the power consumption of the device for the day (Unit: W/min) |
-| electricityOfDay       | Integer    | Plug Mini                                            | How long the device has been used for the day (Unit: min)    |
-| electricCurrent        | Float      | Plug Mini                                            | current of the device (Unit: A) at the moment                |
-| lockState              | String     | Lock                                                 | determines if the lock is locked or not                      |
-| doorState              | String     | Lock                                                 | determines if the door is closed or not                      |
-| workingStatus          | String     | Robot Vacuum Cleaner S1/ S1 Plus                     | the working status of the device, e.g. Cleaning, Paused      |
-| onlineStatus           | String     | Robot Vacuum Cleaner S1/ S1 Plus                     | determines if the device is online or offline                |
-| battery                | Integer    | Robot Vacuum Cleaner S1/ S1 Plus                     | the battery level                                            |
-
 The reponses may contain the following codes and message,
 
 | Status Code | Body Content       | Message      | Description                                                  |
@@ -556,6 +785,212 @@ The reponses may contain the following codes and message,
 | 100         | Device list object | success      | Returns an object that contains two device lists             |
 | n/a         | n/a                | Unauthorized | Http 401 Error. User permission is denied due to invalid token. |
 | 190         | n/a                | System error | Device internal error due to device states not synchronized with server |
+
+The `body` object contains the following properties,
+
+##### Bot
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Bot*                                           |
+| power              | String     | ON/OFF state                                                 |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+##### Curtain
+
+| Key                | Value Type      | Description                                                  |
+| ------------------ | --------------- | ------------------------------------------------------------ |
+| deviceId           | String          | device ID                                                    |
+| deviceType         | String          | device type. *Curtain*                                       |
+| hubDeviceId        | String          | device's parent Hub ID                                       |
+| calibrate          | Boolean         | determines if the open position and the close position of a device have been properly calibrated or not |
+| group              | Boolean         | determines if a Curtain is paired with or grouped with another Curtain or not |
+| moving             | Boolean         | determines if a Curtain is moving or not |
+| slidePosition      | String          | the percentage of the distance between the calibrated open position and closed position that Curtain has traversed |
+
+##### Meter
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Meter*                                         |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| temperature            | Float      |  temperature in celsius                                       |
+| humidity               | Integer    | humidity percentage |
+
+
+##### Meter Plus
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Meter*                                         |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| temperature            | Float      |  temperature in celsius                                       |
+| humidity               | Integer    | humidity percentage |
+
+##### Lock
+| Key                | Value Type      | Description                                                  |
+| ------------------ | --------------- | ------------------------------------------------------------ |
+| deviceId           | String          | device ID                                                    |
+| deviceType         | String          | device type. *Smart Lock*                                    |
+| hubDeviceId        | String          | device's parent Hub ID                                       |
+| lockState              | String     | determines if locked or not |
+| doorState              | String     | determines if the door is closed or not  |
+| calibrate          | Boolean         | determines if Lock has been calibrated or not |
+
+##### Keypad
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Keypad*                                        |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+##### Keypad Touch
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Keypad Touch*                                  |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+##### Motion Sensor
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Motion Sensor*                                 |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| moveDetected           | Boolean    | determines if motion is detected |
+| brightness             | String     | the ambient brightness picked up by the sensor. *bright*  or *dim* |
+
+##### Contact Sensor
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Contact Sensor*                                |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| moveDetected           | Boolean    | determines if motion is detected |
+| openState  | String | the open state of the sensor. *open*, *close*, or *timeOutNotClose* |
+| brightness             | String     | the ambient brightness picked up by the sensor. *bright*  or *dim* |
+
+##### Ceiling Light
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Ceiling Light*                                 |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| power | String | ON/OFF state |
+| brightness | Integer | the brightness value, range from 1 to 100 |
+| colorTemperature | Integer | the color temperature value, range from 2700 to 6500 |
+
+##### Ceiling Light Pro
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Ceiling Light Pro*                             |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| power | String | ON/OFF state |
+| brightness | Integer | the brightness value, range from 1 to 100 |
+| colorTemperature | Integer | the color temperature value, range from 2700 to 6500 |
+
+##### Plug Mini (US) 
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Plug Mini (US)*                                |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| voltage                | Float      | the voltage of the device, measured in Volt |
+| weight                 | Float      | the power consumed in a day, measured in Watts |
+| electricityOfDay       | Integer    | the duration that the device has been used during a day, measured in minutes  |
+| electricCurrent        | Float      | the current of the device at the moment, measured in Amp |
+
+
+##### Plug Mini (JP)
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Plug Mini (JP)*                                |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| voltage                | Float      | the voltage of the device, measured in Volt |
+| weight                 | Float      | the power consumed in a day, measured in Watts |
+| electricityOfDay       | Integer    | the duration that the device has been used during a day, measured in minutes  |
+| electricCurrent        | Float      | the current of the device at the moment, measured in Amp |
+
+##### Plug
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Plug*                        |
+| power | String | ON/OFF state |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Strip Light
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Strip Light*                                   |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| power                  | String     | ON/OFF state                                                 |
+| brightness             | Integer    | the brightness value, range from 1 to 100                    |
+| color                  | String     |  the color value, RGB "255:255:255"                           |
+
+##### Color Bulb
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Color Bulb*                                    |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| power                  | String     | ON/OFF state                                                 |
+| brightness             | Integer    | the brightness value, range from 1 to 100                    |
+| color                  | String     |  the color value, RGB "255:255:255"                           |
+| colorTemperature | Integer | the color temperature value, range from 2700 to 6500 |
+
+##### Robot Vacuum Cleaner S1
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Robot Vacuum Cleaner S1*                       |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| workingStatus    | String     | the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
+| onlineStatus    | String     | the connection status of the device. *online* or *offline* |
+| battery                | Integer    |  the current battery level                                            |
+
+##### Robot Vacuum Cleaner S1 Plus
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Robot Vacuum Cleaner S1 Plus*                  |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| workingStatus    | String     | the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
+| onlineStatus    | String     | the connection status of the device. *online* or *offline* |
+| battery                | Integer    |  the current battery level                                            |
+
+##### Humidifier
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Humidifier*                                    |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| power                  | String     | ON/OFF state                                                 |
+| humidity               | Integer    | humidity percentage                                          |
+| temperature            | Float      | temperature in celsius                                       |
+| nebulizationEfficiency | Integer    | atomization efficiency percentage |
+| auto                   | Boolean    | determines if a Humidifier is in Auto Mode or not            |
+| childLock              | Boolean    | determines if a Humidifier's safety lock is on or not        |
+| sound                  | Boolean    | determines if a Humidifier is muted or not                   |
+| lackWater | Boolean | determines if the water tank is empty or not |
 
 #### Sample
 
@@ -629,48 +1064,156 @@ Send control commands to physical devices and virtual infrared remote devices.
 
 #### Command set for physical devices
 
-The table below describes all the available commands for physical devices,
-
+##### Bot
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Bot                          | command     | turnOff             | default                                                      | set to OFF state                                             |
 | Bot                          | command     | turnOn              | default                                                      | set to ON state                                              |
 | Bot                          | command     | press               | default                                                      | trigger press                                                |
-| Plug                         | command     | turnOn              | default                                                      | set to ON state                                              |
-| Plug                         | command     | turnOff             | default                                                      | set to OFF state                                             |
+
+##### Curtain
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Curtain                      | command     | setPosition         | index0,mode0,position0<br />e.g. `0,ff,80`                   | mode: 0 (Performance Mode), 1 (Silent Mode), ff (default mode) <br />position: 0~100 (0 means opened, 100 means closed) |
 | Curtain                      | command     | turnOff             | default                                                      | equivalent to set position to 100                            |
 | Curtain                      | command     | turnOn              | default                                                      | equivalent to set position to 0                              |
+
+##### Lock
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Lock                         | command     | lock                | default                                                      | rotate to locked position                                    |
+| Lock                         | command     | unlock              | default                                                      | rotate to unlocked position                                  |
+
+##### Humidifier
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Humidifier                   | command     | turnOff             | default                                                      | set to OFF state                                             |
 | Humidifier                   | command     | turnOn              | default                                                      | set to ON state                                              |
 | Humidifier                   | command     | setMode             | `auto` or `101` or<br />  `102` or `103` or `{0~100}`        | auto, set to Auto Mode,<br />101, set atomization efficiency to 34%,<br />102, set atomization efficiency to 67%,<br />103, set atomization efficiency to 100% |
-| Smart Fan                    | command     | turnOn              | default                                                      | set to ON state                                              |
-| Smart Fan                    | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Smart Fan                    | command     | setAllStatus        | power,fanMode,<br />fanSpeed,shakeRange<br/>e.g. `on,1,1,60` | power: off/on,<br />fanMode: 1/2,<br />fanSpeed: 1/2/3/4,<br />shakeRange: 0~120<br/>fanMode: 1 (Standard), 2 (Natural) |
+
+##### Plug
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Plug                         | command     | turnOn              | default                                                      | set to ON state                                              |
+| Plug                         | command     | turnOff             | default                                                      | set to OFF state                                             |
+
+##### Plug Mini (US)
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Plug Mini (US)           | command     | turnOn              | default                                                      | set to ON state                                              |
+| Plug Mini (US)            | command     | turnOff             | default                                                      | set to OFF state                                             |
+| Plug Mini (US)            | command     | toggle              | default                                                      | toggle state                                                 |
+
+##### Plug Mini (JP)
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Plug Mini (JP)        | command     | turnOn              | default                                                      | set to ON state                                              |
+| Plug Mini (JP)            | command     | turnOff             | default                                                      | set to OFF state                                             |
+| Plug Mini (JP)            | command     | toggle              | default                                                      | toggle state                                                 |
+
+##### Color Bulb
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Color Bulb                   | command     | turnOn              | default                                                      | set to ON state                                              |
 | Color Bulb                   | command     | turnOff             | default                                                      | set to OFF state                                             |
 | Color Bulb                   | command     | toggle              | default                                                      | toggle state                                                 |
 | Color Bulb                   | command     | setBrightness       | `{1-100}`                                                    | set brightness                                               |
 | Color Bulb                   | command     | setColor            | `"{0-255}:{0-255}:{0-255}"`                                  | set RGB color value                                          |
 | Color Bulb                   | command     | setColorTemperature | `{2700-6500}`                                                | set color temperature                                        |
+
+##### Strip Light
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Strip Light                  | command     | turnOn              | default                                                      | set to ON state                                              |
 | Strip Light                  | command     | turnOff             | default                                                      | set to OFF state                                             |
 | Strip Light                  | command     | toggle              | default                                                      | toggle state                                                 |
 | Strip Light                  | command     | setBrightness       | `{1-100}`                                                    | set brightness                                               |
 | Strip Light                  | command     | setColor            | `"{0-255}:{0-255}:{0-255}"`                                  | set RGB color value                                          |
-| Plug Mini (US/JP)            | command     | turnOn              | default                                                      | set to ON state                                              |
-| Plug Mini (US/JP)            | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Plug Mini (US/JP)            | command     | toggle              | default                                                      | toggle state                                                 |
+
+##### Robot Vacuum Cleaner S1
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Robot Vacuum Cleaner S1      | command     | start               | default                                                      | start vacuuming                                              |
 | Robot Vacuum Cleaner S1      | command     | stop                | default                                                      | stop vacuuming                                               |
 | Robot Vacuum Cleaner S1      | command     | dock                | default                                                      | return to charging dock                                      |
 | Robot Vacuum Cleaner S1      | command     | PowLevel            | `{0-3}`                                                      | set suction power level: 0 (Quiet), 1 (Standard), 2 (Strong), 3 (MAX) |
+
+##### Robot Vacuum Cleaner S1 Plus
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Robot Vacuum Cleaner S1 Plus | command     | start               | default                                                      | start vacuuming                                              |
 | Robot Vacuum Cleaner S1 Plus | command     | stop                | default                                                      | stop vacuuming                                               |
 | Robot Vacuum Cleaner S1 Plus | command     | dock                | default                                                      | return to charging dock                                      |
 | Robot Vacuum Cleaner S1 Plus | command     | PowLevel            | `{0-3}`                                                      | set suction power level: 0 (Quiet), 1 (Standard), 2 (Strong), 3 (MAX) |
-| Lock                         | command     | lock                | default                                                      | rotate to locked position                                    |
-| Lock                         | command     | unlock              | default                                                      | rotate to unlocked position                                  |
+
+##### Ceiling Light
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Ceiling Light | command     | turnOn              | default                                                      | set to ON state                                              |
+| Ceiling Light | command     | turnOff             | default                                                      | set to OFF state                                             |
+| Ceiling Light | command     | toggle              | default                                                      | toggle state                                                 |
+| Ceiling Light | command     | setBrightness       | `{1-100}`                                                    | set brightness                                               |
+| Ceiling Light | command     | setColorTemperature | `{2700-6500}`                                  | set the color temperature |
+
+##### Ceiling Light Pro
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Ceiling Light Pro | command     | turnOn              | default                                                      | set to ON state                                              |
+| Ceiling Light Pro | command     | turnOff             | default                                                      | set to OFF state                                             |
+| Ceiling Light Pro | command     | toggle              | default                                                      | toggle state                                                 |
+| Ceiling Light Pro | command     | setBrightness       | `{1-100}`                                                    | set brightness                                               |
+| Ceiling Light Pro | command     | setColorTemperature | `{2700-6500}`                                  | set the color temperature |
+
+##### Keypad
+
+The control commands for this product work differently than the other products. Due to security concerns, the passcodes are stored locally. This mechanism dramatically prolongs the time needed to successfully create a passcode and get the correct result through the Web API. Hence, the actual results of the following commands are returned from the SwitchBot server asynchronously and are delivered through a webhook. 
+
+You need to configure a webhook to receive the correct result. Refer to this product's webhook definition.
+
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Keypad | command     | createKey | { "name": passcode _name_str, "type": passcode_type_str, "password": passcode_str, "startTime": valid_from_long, "endTime": valid_to_long } | create a new passcode |
+| Keypad | command     | deleteKey | { "id": passcode_id_int }  | delete an existing passcode |
+
+The following table describes the parameter object for `createKey`,
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| name | String | a unique name for the passcode. duplicates under the same device are not allowed. |
+| type |String | type of the passcode. *permanent*, a permanent passcode. *timeLimit*, a temporary passcode. *disposable*, a one-time passcode. *urgent*, an emergency passcode. |
+| password | String | a 6 to 12-digit passcode in plain text                       |
+| startTime | Long |set the time the passcode becomes valid from, mandatory for one-time passcode and temporary passcode. a 10-digit timestamp.|
+| endTime | Long |set the time the passcode becomes expired, mandatory for one-time passcode and temporary passcode. a 10-digit timestamp.|
+
+The following table describes the parameter object for `deleteKey`,
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| id | String | the id of the passcode |
+
+##### Keypad Touch
+
+The control commands for this product work differently than the other products. Due to security concerns, the passcodes are stored locally. This mechanism dramatically prolongs the time needed to successfully create a passcode and get the correct result through the Web API. Hence, the actual results of the following commands are returned from the SwitchBot server asynchronously and are delivered through a webhook. 
+
+You need to configure a webhook to receive the correct result. Refer to this product's webhook definition.
+
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Keypad Touch | command     | createKey | { "name": passcode _name_str, "type": passcode_type_str, "password": passcode_str, "startTime": valid_from_long, "endTime": valid_to_long } | create a new passcode |
+| Keypad Touch | command     | deleteKey | { "id": passcode_id_int }  | delete an existing passcode |
+
+The following table describes the parameter object for `createKey`,
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| name | String | a unique name for the passcode. duplicates under the same device are not allowed. |
+| type |String | type of the passcode. *permanent*, a permanent passcode. *timeLimit*, a temporary passcode. *disposable*, a one-time passcode. *urgent*, an emergency passcode. |
+| password | String | a 6 to 12-digit passcode in plain text                       |
+| startTime | Long |set the time the passcode becomes valid from, mandatory for one-time passcode and temporary passcode. a 10-digit timestamp.|
+| endTime | Long |set the time the passcode becomes expired, mandatory for one-time passcode and temporary passcode. a 10-digit timestamp.|
+
+The following table describes the parameter object for `deleteKey`,
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| id | String | the id of the passcode |
+
 
 #### Command set for virtual infrared remote devices
 
@@ -747,6 +1290,45 @@ The response is basically a JSON object, which contains the following properties
 | 190                         | Device internal error due to device states not synchronized with server. Or command format is invalid. |
 
 #### Sample
+
+##### Keypad example
+
+Create a temporary passcode
+
+Request
+
+```http
+POST https://api.switch-bot.com/v1.1/devices/F7538E1ABCEB/commands
+```
+
+```js
+{
+    "commandType": "command",
+    "command": "createKey",
+    "parameter": {
+        "name": "Guest Code",
+        "type": "timeLimit",
+        "password": "12345678",
+        "startTime": 1664640056,
+        "endTime": 1665331432
+    }
+}
+```
+
+Response
+
+```js
+{
+    "statusCode": 100,
+    "body": {
+        "commandId": "CMD166444044923602"
+    },
+    "message": "success"
+}
+```
+
+
+
 
 ##### Bot example
 
@@ -1220,19 +1802,25 @@ Body
 
 When an event gets triggered, SwitchBot server will send a `POST` request to the url you have configured. Refer to the table below for a list of products that support webhook.
 
-| Device Type  | **Product**     |
-| ------------ | --------------- |
-| WoPresence   | Motion Sensor   |
-| WoContact    | Contact Sensor  |
-| WoLock       | Lock            |
-| WoCamera     | Indoor Cam      |
-| WoPanTiltCam | Pan/Tilt Cam    |
-| WoBulb       | Color Bulb      |
-| WoStrip      | LED Strip Light |
-| WoPlugUS     | Plug Mini (US)  |
-| WoPlugJP     | Plug Mini (JP)  |
-| WoMeter      | Meter           |
-| WoMeterPlus  | Meter Plus      |
+| Device Type   | **Product**     |
+| ------------- | --------------- |
+| WoPresence    | Motion Sensor   |
+| WoContact     | Contact Sensor  |
+| WoLock        | Lock            |
+| WoCamera      | Indoor Cam      |
+| WoPanTiltCam  | Pan/Tilt Cam    |
+| WoBulb        | Color Bulb      |
+| WoStrip       | LED Strip Light |
+| WoPlugUS      | Plug Mini (US)  |
+| WoPlugJP      | Plug Mini (JP)  |
+| WoMeter       | Meter           |
+| WoMeterPlus   | Meter Plus      |
+| WoSweeper | Robot Vacuum Cleaner S1 |
+| WoSweeperPlus | Robot Vacuum Cleaner S1 Plus |
+| WoCeiling | Ceiling Light |
+| WoCeilingPro | Ceiling Light Pro |
+| WoKeypad      | Keypad |
+| WoKeypadTouch | Keypad Touch |
 
 #### Motion Sensor
 
@@ -1533,7 +2121,208 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 }
 ```
 
+#### Robot Vacuum Cleaner S1
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | attributes of the context object. the type of the device |
+| deviceMac    | String     | attributes of the context object. the MAC address of the device |
+| workingStatus    | String     | attributes of the context object. the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
+| onlineStatus    | String     | attributes of the context object. the connection status of the device. *online* or *offline* |
+| battery | Integer | attributes of the context object. the battery level, range from 0 to 100 |
+| timeOfSample    | Long | attributes of the context object. the time stamp when the event is sent |
 
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoSweeper",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "workingStatus"："StandBy",
+        "onlineStatus": "online",
+        "battery": 100,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Robot Vacuum Cleaner S1 Plus
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | attributes of the context object. the type of the device |
+| deviceMac    | String     | attributes of the context object. the MAC address of the device |
+| workingStatus    | String     | attributes of the context object. the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
+| onlineStatus    | String     | attributes of the context object. the connection status of the device. *online* or *offline* |
+| battery | Integer | attributes of the context object. the battery level, range from 0 to 100 |
+| timeOfSample    | Long | attributes of the context object. the time stamp when the event is sent |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoSweeperPlus",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "workingStatus"："StandBy",
+        "onlineStatus": "online",
+        "battery": 100,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Ceiling Light
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | attributes of the context object. the type of the device |
+| deviceMac    | String     | attributes of the context object. the MAC address of the device |
+| powerState | String | attributes of the context object. ON/OFF state |
+| brightness | Integer | attributes of the context object. the brightness value, range from 1 to 100 |
+| colorTemperature | Integer | attributes of the context object. the color temperature value, range from 2700 to 6500 |
+| timeOfSample    | Long | attributes of the context object. the time stamp when the event is sent |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoCeiling",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "powerState": "ON",
+        "brightness": 10,
+        "colorTemperature": 3500,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Ceiling Light Pro
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | attributes of the context object. the type of the device |
+| deviceMac    | String     | attributes of the context object. the MAC address of the device |
+| powerState | String | attributes of the context object. ON/OFF state |
+| brightness | Integer | attributes of the context object. the brightness value, range from 1 to 100 |
+| colorTemperature | Integer | attributes of the context object. the color temperature value, range from 2700 to 6500 |
+| timeOfSample    | Long | attributes of the context object. the time stamp when the event is sent |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoCeilingPro",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "powerState": "ON",
+        "brightness": 10,
+        "colorTemperature": 3500,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Keypad
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | attributes of the context object. the type of the device |
+| deviceMac    | String     | attributes of the context object. the MAC address of the device |
+| eventName    | String     | attributes of the context object. the name of the command being sent |
+| commandId    | String     | attributes of the context object. the command id |
+| result    | String     | attributes of the context object. the result of the command. *success*, *failed*, or *timeout*. timeout duration is 1 minute |
+| timeOfSample    | Long     | attributes of the context object. the time stamp when the event is sent |
+
+
+##### Create a passcode
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoKeypad",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "eventName": "createKey",
+        "commandId": "CMD-1663558451952-01",
+        "result": "success",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+##### Delete a passcode
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoKeypad",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "eventName": "deleteKey ",
+        "commandId": "CMD-1663558451952-01",
+        "result": "success",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Keypad Touch
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | attributes of the context object. the type of the device |
+| deviceMac    | String     | attributes of the context object. the MAC address of the device |
+| eventName    | String     | attributes of the context object. the name of the command being sent |
+| commandId    | String     | attributes of the context object. the command id |
+| result    | String     | attributes of the context object. the result of the command. *success*, *failed*, or *timeout*. timeout duration is 1 minute |
+| timeOfSample    | Long     | attributes of the context object. the time stamp when the event is sent |
+
+##### Create a passcode
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoKeypadTouch",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "eventName": "createKey",
+        "commandId": "CMD-1663558451952-01",
+        "result": "success",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+##### Delete a passcode
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoKeypadTouch",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "eventName": "deleteKey ",
+        "commandId": "CMD-1663558451952-01",
+        "result": "success",
+        "timeOfSample": 123456789
+    }
+}
+```
 
 ----
 
