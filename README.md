@@ -353,6 +353,55 @@ var response = await client.SendAsync(request);
 Console.WriteLine(await response.Content.ReadAsStringAsync());
 ```
 
+Java 11+ example code 
+```java
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.net.http.HttpResponse.BodyHandlers;
+import java.time.Instant;
+import java.util.Base64;
+import java.util.UUID;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+    	
+      String token = args[0];
+      String secret = args[1];
+      String nonce = UUID.randomUUID().toString();
+      String time= "" + Instant.now().toEpochMilli();
+      String data = token + time + nonce;
+      
+      SecretKeySpec secretKeySpec = new SecretKeySpec(secret.getBytes("UTF-8"), "HmacSHA256");
+      Mac mac = Mac.getInstance("HmacSHA256");
+      mac.init(secretKeySpec);
+      String signature = new String(Base64.getEncoder().encode(mac.doFinal(data.getBytes("UTF-8"))));      
+      
+      HttpRequest getDevices = HttpRequest.newBuilder()
+      .uri(new URI("https://api.switch-bot.com/v1.1/devices"))
+      .header("Authorization", token)
+      .header("sign", signature)
+      .header("nonce", nonce)
+      .header("t", time)
+      .GET()
+      .build();
+      
+      HttpResponse<String> response = HttpClient.newBuilder().build().send(getDevices, BodyHandlers.ofString());
+      
+      System.out.println(response.body());
+    	
+    	
+    }
+    
+}
+
+```
+
+
 ## Glossary
 
 The following table provides definitions to the terms to be frequently mentioned in the subsequent sections.
