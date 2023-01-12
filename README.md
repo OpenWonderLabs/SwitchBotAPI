@@ -5,7 +5,7 @@
 - [Getting Started](#getting-started)
 - [Authentication](#authentication)
   * [Open Token and Secret Key](#open-token-and-secret-key)
-  * [How to Sign?](#how-to-sign-)
+  * [How to Sign?](#how-to-sign)
 - [Glossary](#glossary)
 - [API Usage](#api-usage)
   * [Host Domain](#host-domain)
@@ -42,6 +42,7 @@
       - [Indoor Cam](#indoor-cam)
       - [Pan/Tilt Cam](#pan-tilt-cam)
       - [Pan/Tilt Cam 2K](#pan-tilt-cam-2k)
+      - [Blind Tilt](#blind-tilt)
       - [Virtual infrared remote devices](#virtual-infrared-remote-devices)
     + [Sample](#sample)
       - [Get all devices](#get-all-devices)
@@ -68,6 +69,7 @@
       - [Robot Vacuum Cleaner S1](#robot-vacuum-cleaner-s1-1)
       - [Robot Vacuum Cleaner S1 Plus](#robot-vacuum-cleaner-s1-plus-1)
       - [Humidifier](#humidifier-1)
+      - [Blind Tilt](#blind-tilt-1)
     + [Sample](#sample-1)
       - [SwitchBot Meter example](#switchbot-meter-example)
       - [SwitchBot Curtain example](#switchbot-curtain-example)
@@ -89,6 +91,7 @@
       - [Ceiling Light Pro](#ceiling-light-pro-2)
       - [Keypad](#keypad-2)
       - [Keypad Touch](#keypad-touch-2)
+      - [Blind Tilt](#blind-tilt-2)
     + [Command set for virtual infrared remote devices](#command-set-for-virtual-infrared-remote-devices)
     + [Path parameters](#path-parameters-1)
     + [Request body parameters](#request-body-parameters)
@@ -473,7 +476,8 @@ The following table provides definitions to the terms to be frequently mentioned
 | Indoor Cam | Short for SwitchBot Indoor Cam Model No. W1301200                  |
 | Pan/Tilt Cam | Short for SwitchBot Pan/Tilt Cam Model No. W1801200                  |
 | Pan/Tilt Cam 2K | Short for SwitchBot Pan/Tilt Cam 2K Model No. W3101100                  |
-| Cloud Service                | An SwitchBot app feature that 1. enables SwitchBot products to be discovered and communicated with third-party services voice control services, 2. allows users to create customized smart scenes and Android widgets. For BLE-based devices such as Bot and Curtain, you MUST first add a Hub/Hub Mini/Hub Plus and then enable Cloud Service on the Settings page in order to make use of the web API! |
+| Blind Tilt | Short for SwitchBot Blind Tilt Model No. W2701600 |
+| Cloud Services               | A SwitchBot app feature that 1. enables SwitchBot products to be discovered and communicated with third-party services such as Alexa, Google Home, IFTTT, and so forth 2. allows users to create customized smart scenes and  widgets. For BLE-based devices such as Bot and Curtain, you MUST first add a Hub/Hub Mini/Hub Plus and then enable Cloud Services on the Settings page in order to make use of the web API! |
 
 
 
@@ -543,12 +547,12 @@ Physical devices refer to the following SwitchBot products,
  -  Hub
  -  Hub Plus
  -  Hub Mini
- -  Bot (MUST enable Cloud Service first)
- -  Curtain (MUST enable Cloud Service first)
+ -  Bot (MUST enable Cloud Services on SwitchBot app first)
+ -  Curtain (MUST enable Cloud Services on SwitchBot app first)
  -  Plug
- -  Meter (MUST enable Cloud Service first)
- -  Motion Sensor (MUST enable Cloud Service first)
- -  Contact Sensor (MUST enable Cloud Service first)
+ -  Meter (MUST enable Cloud Services on SwitchBot app first)
+ -  Motion Sensor (MUST enable Cloud Services on SwitchBot app first)
+ -  Contact Sensor (MUST enable Cloud Services on SwitchBot app first)
  -  Color Bulb
  -  Humidifier
  -  Smart Fan
@@ -556,29 +560,30 @@ Physical devices refer to the following SwitchBot products,
  -  Plug Mini (US)
  -  Plug Mini (JP)
  -  Lock
- -  Meter Plus (JP) (MUST enable Cloud Service first)
- -  Meter Plus (US) (MUST enable Cloud Service first)
- -  `new` Robot Vacuum Cleaner S1
- -  `new` Robot Vacuum Cleaner S1 Plus
- -  `new` Keypad (MUST enable Cloud Service first)
- -  `new` Keypad Touch (MUST enable Cloud Service first)
- -  `new` Ceiling Light
- -  `new` Ceiling Light Pro
+ -  Meter Plus (JP) (MUST enable Cloud Services on SwitchBot app first)
+ -  Meter Plus (US) (MUST enable Cloud Services on SwitchBot app first)
+ -  Robot Vacuum Cleaner S1
+ -  Robot Vacuum Cleaner S1 Plus
+ -  Keypad (MUST enable Cloud Services on SwitchBot app first)
+ -  Keypad Touch (MUST enable Cloud Services on SwitchBot app first)
+ -  Ceiling Light
+ -  Ceiling Light Pro
+ -  `new` Blind Tilt (MUST enable Cloud Services on SwitchBot app first)
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus / Hub Mini is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
  -  TV
  -  Light
- -  IPTV/Streamer
+ -  Streamer
  -  Set Top Box
- -  DVD
+ -  DVD Player
  -  Fan
  -  Projector
  -  Camera
  -  Air Purifier
  -  Speaker
  -  Water Heater
- -  Vacuum Cleaner
+ -  Robot Vacuum Cleaner
  -  Others
 
 #### Responses
@@ -869,6 +874,21 @@ The `deviceList` array contains a list of objects with the following key-value a
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
+##### Blind Tilt
+| Key                 | Value Type      | Description                                                  |
+| ------------------- | --------------- | ------------------------------------------------------------ |
+| deviceId            | String          | device ID                                                    |
+| deviceName          | String          | device name                                                  |
+| deviceType          | String          | device type. *Blind Tilt*                                    |
+| version             | Integer         | the version of the device                                    |
+| enableCloudService  | Boolean         | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId         | String          | device's parent Hub ID                                       |
+| blindTiltDevicesIds | Array<deviceId> | a list of Blind Tilt device IDs such that the Blind Tilt devices are being paired or grouped |
+| calibrate           | Boolean         | determines if the open and the closed positions have been properly calibrated or not |
+| group               | Boolean         | determines if a Blind Tilt device is paired with or grouped with one or more devices of the same type or not |
+| master              | Boolean         | determines if a Blind Tilt device is the master device or not when paired with or grouped with one or more devices of the same type |
+| direction           | String          | the opening direction of a Blind Tilt device                 |
+| slidePosition       | Integer         | the current position, 0-100                                  |
 
 ##### Virtual infrared remote devices
 
@@ -1182,6 +1202,19 @@ The `body` object contains the following properties,
 | sound                  | Boolean    | determines if a Humidifier is muted or not                   |
 | lackWater | Boolean | determines if the water tank is empty or not |
 
+##### Blind Tilt
+| Key           | Value Type | Description                                                  |
+| ------------- | ---------- | ------------------------------------------------------------ |
+| deviceId      | String     | device ID                                                    |
+| deviceType    | String     | device type. *Blind Tilt*                                    |
+| hubDeviceId   | String     | device's parent Hub ID                                       |
+| version       | Integer    | the version of the device                                    |
+| calibrate     | Boolean    | determines if the open and the closed positions have been properly calibrated or not |
+| group         | Boolean    | determines if a Blind Tilt device is paired with or grouped with one or more devices of the same type or not |
+| moving        | Boolean    | determines if the device is moving or not                    |
+| direction     | String     | the opening direction of a Blind Tilt device                 |
+| slidePosition | Integer    | the current position, 0-100                                  |
+
 #### Sample
 
 ##### SwitchBot Meter example
@@ -1262,11 +1295,11 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Bot                          | command     | press               | default                                                      | trigger press                                                |
 
 ##### Curtain
-| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
-| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Curtain                      | command     | setPosition         | index0,mode0,position0<br />e.g. `0,ff,80`                   | mode: 0 (Performance Mode), 1 (Silent Mode), ff (default mode) <br />position: 0~100 (0 means opened, 100 means closed) |
-| Curtain                      | command     | turnOff             | default                                                      | equivalent to set position to 100                            |
-| Curtain                      | command     | turnOn              | default                                                      | equivalent to set position to 0                              |
+| deviceType | commandType | Command     | command parameter                          | Description                                                  |
+| ---------- | ----------- | ----------- | ------------------------------------------ | ------------------------------------------------------------ |
+| Curtain    | command     | setPosition | index0,mode0,position0<br />e.g. `0,ff,80` | mode: 0 (Performance Mode), 1 (Silent Mode), ff (default mode) <br />position: 0~100 (0 means open, 100 means closed) |
+| Curtain    | command     | turnOff     | default                                    | equivalent to set position to 100                            |
+| Curtain    | command     | turnOn      | default                                    | equivalent to set position to 0                              |
 
 ##### Lock
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
@@ -1404,6 +1437,14 @@ The following table describes the parameter object for `deleteKey`,
 | ------------ | ---------- | ---------------------------------------------------- |
 | id | String | the id of the passcode |
 
+##### Blind Tilt
+
+| deviceType | commandType | Command     | command parameter                    | Description                                                  |
+| ---------- | ----------- | ----------- | ------------------------------------ | ------------------------------------------------------------ |
+| Blind Tilt | command     | setPosition | direction;position<br />e.g. `up;60` | direction: up/down<br />position: 0~100 (0 means closed, 100 means open, it MUST be set to a multiple of 2. e.g. `up;48` or `up; 36`) |
+| Blind Tilt | command     | fullyOpen   | default                              | Set the position of Blind Tilt to open, equivalent to setting the position to `up;100` or `down;100` |
+| Blind Tilt | command     | closeUp     | default                              | Set the position of Blind Tilt to closed up, equivalent to setting the position to `up;0` |
+| Blind Tilt | command     | closeDown   | default                              | Set the position of Blind Tilt to closed down, equivalent to setting the position to `down;0` |
 
 #### Command set for virtual infrared remote devices
 
