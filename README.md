@@ -1946,7 +1946,7 @@ Update the configuration of the webhook
 
 #### Request
 ```http
-POST https://api.switch-bot.com/v1.1/webhook/queryWebhook
+POST https://api.switch-bot.com/v1.1/webhook/updateWebhook
 ```
 
 ##### Request body parameters
