@@ -140,6 +140,8 @@
       - [Request body parameters](#request-body-parameters-4)
     + [Response](#response-5)
   * [Receive events from webhook](#receive-events-from-webhook)
+    + [Bot](#bot-3)
+    + [Curtain](#curtain-3)
     + [Motion Sensor](#motion-sensor-2)
     + [Contact Sensor](#contact-sensor-2)
     + [Meter](#meter-2)
@@ -999,16 +1001,17 @@ The reponses may contain the following codes and message,
 The `body` object contains the following properties,
 
 ##### Bot
-
 | Key                | Value Type | Description                                                  |
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
 | deviceType         | String     | device type. *Bot*                                           |
 | power              | String     | ON/OFF state                                                 |
+| battery              | Integer | the current battery level, 0-100 |
+| version              | String     | the current firmware version, e.g. V6.3 |
+| deviceMode              | String     | *pressMode*, *switchMode*, or *customizeMode*                                                 |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 
 ##### Curtain
-
 | Key                | Value Type      | Description                                                  |
 | ------------------ | --------------- | ------------------------------------------------------------ |
 | deviceId           | String          | device ID                                                    |
@@ -1017,6 +1020,8 @@ The `body` object contains the following properties,
 | calibrate          | Boolean         | determines if the open position and the close position of a device have been properly calibrated or not |
 | group              | Boolean         | determines if a Curtain is paired with or grouped with another Curtain or not |
 | moving             | Boolean         | determines if a Curtain is moving or not |
+| battery              | Integer | the current battery level, 0-100 |
+| version              | String     | the current firmware version, e.g. V4.2 |
 | slidePosition      | String          | the percentage of the distance between the calibrated open position and closed position that Curtain has traversed |
 
 ##### Meter
@@ -1026,6 +1031,8 @@ The `body` object contains the following properties,
 | deviceType         | String     | device type. *Meter*                                         |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 | temperature            | Float      |  temperature in celsius                                       |
+| version              | String     | the current firmware version, e.g. V4.2 |
+| battery              | Integer | the current battery level, 0-100 |
 | humidity               | Integer    | humidity percentage |
 
 
@@ -1035,6 +1042,8 @@ The `body` object contains the following properties,
 | deviceId           | String     | device ID                                                    |
 | deviceType         | String     | device type. *Meter*                                         |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
+| battery              | Integer | the current battery level, 0-100 |
+| version              | String     | the current firmware version, e.g. V4.2 |
 | temperature            | Float      |  temperature in celsius                                       |
 | humidity               | Integer    | humidity percentage |
 
@@ -1044,6 +1053,8 @@ The `body` object contains the following properties,
 | deviceId           | String          | device ID                                                    |
 | deviceType         | String          | device type. *Smart Lock*                                    |
 | hubDeviceId        | String          | device's parent Hub ID                                       |
+| battery              | Integer | the current battery level, 0-100 |
+| version              | String     | the current firmware version, e.g. V4.2 |
 | lockState              | String     | determines if locked or not |
 | doorState              | String     | determines if the door is closed or not  |
 | calibrate          | Boolean         | determines if Lock has been calibrated or not |
@@ -1071,6 +1082,8 @@ The `body` object contains the following properties,
 | deviceId           | String     | device ID                                                    |
 | deviceType         | String     | device type. *Motion Sensor*                                 |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
+| battery              | Integer | the current battery level, 0-100 |
+| version              | String     | the current firmware version, e.g. V4.2 |
 | moveDetected           | Boolean    | determines if motion is detected |
 | brightness             | String     | the ambient brightness picked up by the sensor. *bright*  or *dim* |
 
@@ -1081,6 +1094,8 @@ The `body` object contains the following properties,
 | deviceId           | String     | device ID                                                    |
 | deviceType         | String     | device type. *Contact Sensor*                                |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
+| battery              | Integer | the current battery level, 0-100 |
+| version              | String     | the current firmware version, e.g. V4.2 |
 | moveDetected           | Boolean    | determines if motion is detected |
 | openState  | String | the open state of the sensor. *open*, *close*, or *timeOutNotClose* |
 | brightness             | String     | the ambient brightness picked up by the sensor. *bright*  or *dim* |
@@ -1093,6 +1108,7 @@ The `body` object contains the following properties,
 | deviceType         | String     | device type. *Ceiling Light*                                 |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 | power | String | ON/OFF state |
+| version              | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
 | brightness | Integer | the brightness value, range from 1 to 100 |
 | colorTemperature | Integer | the color temperature value, range from 2700 to 6500 |
 
@@ -1103,6 +1119,7 @@ The `body` object contains the following properties,
 | deviceId           | String     | device ID                                                    |
 | deviceType         | String     | device type. *Ceiling Light Pro*                             |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| version              | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
 | power | String | ON/OFF state |
 | brightness | Integer | the brightness value, range from 1 to 100 |
 | colorTemperature | Integer | the color temperature value, range from 2700 to 6500 |
@@ -1115,6 +1132,7 @@ The `body` object contains the following properties,
 | deviceType         | String     | device type. *Plug Mini (US)*                                |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 | voltage                | Float      | the voltage of the device, measured in Volt |
+| version              | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
 | weight                 | Float      | the power consumed in a day, measured in Watts |
 | electricityOfDay       | Integer    | the duration that the device has been used during a day, measured in minutes  |
 | electricCurrent        | Float      | the current of the device at the moment, measured in Amp |
@@ -1128,6 +1146,7 @@ The `body` object contains the following properties,
 | deviceType         | String     | device type. *Plug Mini (JP)*                                |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 | voltage                | Float      | the voltage of the device, measured in Volt |
+| version              | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
 | weight                 | Float      | the power consumed in a day, measured in Watts |
 | electricityOfDay       | Integer    | the duration that the device has been used during a day, measured in minutes  |
 | electricCurrent        | Float      | the current of the device at the moment, measured in Amp |
@@ -1138,6 +1157,7 @@ The `body` object contains the following properties,
 | deviceId           | String     | device ID                                                    |
 | deviceType         | String     | device type. *Plug*                        |
 | power | String | ON/OFF state |
+| version              | String     | the current Wi-Fi firmware version, e.g. V4.2 |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
 ##### Strip Light
@@ -1148,6 +1168,7 @@ The `body` object contains the following properties,
 | deviceType         | String     | device type. *Strip Light*                                   |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 | power                  | String     | ON/OFF state                                                 |
+| version              | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
 | brightness             | Integer    | the brightness value, range from 1 to 100                    |
 | color                  | String     |  the color value, RGB "255:255:255"                           |
 
@@ -1160,6 +1181,7 @@ The `body` object contains the following properties,
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 | power                  | String     | ON/OFF state                                                 |
 | brightness             | Integer    | the brightness value, range from 1 to 100                    |
+| version              | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
 | color                  | String     |  the color value, RGB "255:255:255"                           |
 | colorTemperature | Integer | the color temperature value, range from 2700 to 6500 |
 
@@ -1208,7 +1230,7 @@ The `body` object contains the following properties,
 | deviceId      | String     | device ID                                                    |
 | deviceType    | String     | device type. *Blind Tilt*                                    |
 | hubDeviceId   | String     | device's parent Hub ID                                       |
-| version       | Integer    | the version of the device                                    |
+| version       | Integer    | the firmware version of the device                                    |
 | calibrate     | Boolean    | determines if the open and the closed positions have been properly calibrated or not |
 | group         | Boolean    | determines if a Blind Tilt device is paired with or grouped with one or more devices of the same type or not |
 | moving        | Boolean    | determines if the device is moving or not                    |
@@ -2035,6 +2057,8 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 
 | Device Type   | **Product**     |
 | ------------- | --------------- |
+| WoHand    | Bot   |
+| WoCurtain | Curtain |
 | WoPresence    | Motion Sensor   |
 | WoContact     | Contact Sensor  |
 | WoLock        | Lock            |
@@ -2052,6 +2076,62 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | WoCeilingPro | Ceiling Light Pro |
 | WoKeypad      | Keypad |
 | WoKeypadTouch | Keypad Touch |
+
+#### Bot
+| Key Name       | Value Type | Description                                                  |
+| -------------- | ---------- | ------------------------------------------------------------ |
+| eventType      | String     | the type of events                                           |
+| eventVersion   | String     | the current event version                                    |
+| context        | Object     | the detail info of the event                                 |
+| deviceType     | String     | the type of the device                                       |
+| deviceMac      | String     | the MAC address of the device                                |
+| power | String     | the current state of the device. This state is only valid for Switch Mode, where "on" stands for on and "off" stands for off. It will return "on" or "off" in Press Mode or Customize Mode, but the returned value can be neglected. |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoHand",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "power": "on",//"on"or"off"
+        "battery": 10,
+        "deviceMode": "pressMode",//pressMode,switchMode,customizeMode
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Curtain
+| Key Name       | Value Type | Description                                                  |
+| -------------- | ---------- | ------------------------------------------------------------ |
+| eventType      | String     | the type of events                                           |
+| eventVersion   | String     | the current event version                                    |
+| context        | Object     | the detail info of the event                                 |
+| deviceType     | String     | the type of the device                                       |
+| deviceMac      | String     | the MAC address of the device                                |
+| calibrate          | Boolean         | determines if the open position and the close position of a device have been properly calibrated or not |
+| group              | Boolean         | determines if a Curtain is paired with or grouped with another Curtain or not |
+| slidePosition             | Integer         | the percentage of the distance between the calibrated open position and closed position that Curtain has traversed |
+| battery      | Integer          | the battery level of a Curtain                           |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoCurtain",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "calibrate":false,
+        "group":false,
+        "slidePosition":50, //0~100
+        "battery":100,
+        "timeOfSample": 123456789
+    }
+}
+```
 
 #### Motion Sensor
 
