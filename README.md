@@ -249,16 +249,20 @@ print ('nonce: {}'.format(nonce))
 Python 3 example code
 
 ```python
+import json
 import time
 import hashlib
 import hmac
 import base64
+import uuid
 
+# Declare empty header dictionary
+apiHeader = {}
 # open token
 token = '' # copy and paste from the SwitchBot app V6.14 or later
 # secret key
 secret = '' # copy and paste from the SwitchBot app V6.14 or later
-nonce = ''
+nonce = uuid.uuid4()
 t = int(round(time.time() * 1000))
 string_to_sign = '{}{}{}'.format(token, t, nonce)
 
@@ -270,6 +274,15 @@ print ('Authorization: {}'.format(token))
 print ('t: {}'.format(t))
 print ('sign: {}'.format(str(sign, 'utf-8')))
 print ('nonce: {}'.format(nonce))
+
+#Build api header JSON
+apiHeader['Authorization']=token
+apiHeader['Content-Type']='application/json'
+apiHeader['charset']='utf8'
+apiHeader['t']=str(t)
+apiHeader['sign']=sign
+apiHeader['nonce']=str(nonce)
+
 ```
 
 
