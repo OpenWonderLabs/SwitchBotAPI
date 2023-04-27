@@ -20,7 +20,7 @@
     + [Responses](#responses)
       - [Bot](#bot)
       - [Curtain](#curtain)
-      - [Hub/Hub Plus/Hub Mini](#hub-hub-plus-hub-mini)
+      - [Hub/Hub Plus/Hub Mini/Hub 2](#hub-hub-plus-hub-mini-hub-2)
       - [Meter](#meter)
       - [Meter Plus](#meter-plus)
       - [Lock](#lock)
@@ -70,6 +70,7 @@
       - [Robot Vacuum Cleaner S1 Plus](#robot-vacuum-cleaner-s1-plus-1)
       - [Humidifier](#humidifier-1)
       - [Blind Tilt](#blind-tilt-1)
+      - [Hub 2](#hub-2-1)
     + [Sample](#sample-1)
       - [SwitchBot Meter example](#switchbot-meter-example)
       - [SwitchBot Curtain example](#switchbot-curtain-example)
@@ -163,6 +164,7 @@
     + [Keypad Touch](#keypad-touch-3)
       - [Create a passcode](#create-a-passcode-1)
       - [Delete a passcode](#delete-a-passcode-1)
+    + [Hub 2](#hub-2-1)
 
 ## Introduction
 This document describes a collection of SwitchBot API methods, examples, and best practices for, but not limited to, IoT hobbyists, developers, and gurus to make their own smart home programs or applications. 
@@ -469,6 +471,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Hub                          | Generally referred to these devices, SwitchBot Hub Model No. SwitchBot Hub S1/SwitchBot Hub Mini Model No. W0202200/SwitchBot Hub Plus Model No. SwitchBot Hub S1 |
 | Hub Mini                     | Short for SwitchBot Hub Mini Model No. W0202200              |
 | Hub Plus                     | Short for SwitchBot Hub Plus Model No. SwitchBot Hub S1      |
+| Hub 2                     | Short for SwitchBot Hub 2 Model No. W3202100      |
 | Bot                          | Short for SwitchBot Bot Model No. SwitchBot S1               |
 | Curtain                      | Short for SwitchBot Curtain Model No. W0701600               |
 | Plug                         | Short for SwitchBot Plug Model No. SP11. Currently only available in Japan |
@@ -583,9 +586,10 @@ Physical devices refer to the following SwitchBot products,
  -  Keypad Touch (MUST enable Cloud Services on SwitchBot app first)
  -  Ceiling Light
  -  Ceiling Light Pro
- -  `new` Blind Tilt (MUST enable Cloud Services on SwitchBot app first)
+ -  Blind Tilt (MUST enable Cloud Services on SwitchBot app first)
+ -  `new` Hub 2
 
-Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus / Hub Mini is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
+Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
  -  TV
  -  Light
@@ -651,12 +655,12 @@ The `deviceList` array contains a list of objects with the following key-value a
 | master             | Boolean         | determines if a Curtain is the master device or not when paired with or grouped with another Curtain |
 | openDirection      | String          | the opening direction of a Curtain                           |
 
-##### Hub/Hub Plus/Hub Mini
+##### Hub/Hub Plus/Hub Mini/Hub 2
 | Key                | Value Type | Description                                                  |
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
 | deviceName         | String     | device name                                                  |
-| deviceType         | String     | device type. *Hub*, *Hub Plus*, or *Hub Mini*.               |
+| deviceType         | String     | device type. *Hub*, *Hub Plus*, *Hub Mini*, or *Hub 2*.      |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
@@ -981,12 +985,13 @@ Physical devices refer to the following SwitchBot products,
  -  Lock
  -  Meter Plus (JP)
  -  Meter Plus (US)
- -   `new` Robot Vacuum Cleaner S1
- -   `new` Robot Vacuum Cleaner S1 Plus
- -   `new` Keypad (MUST enable Cloud Service first)
- -  `new` Keypad Touch (MUST enable Cloud Service first)
- -  `new` Ceiling Light
- -  `new` Ceiling Light Pro
+ -  Robot Vacuum Cleaner S1
+ -  Robot Vacuum Cleaner S1 Plus
+ -  Keypad (MUST enable Cloud Service first)
+ -  Keypad Touch (MUST enable Cloud Service first)
+ -  Ceiling Light
+ -  Ceiling Light Pro
+ -  `new` Hub 2
 
 #### Path parameters
 
@@ -1249,6 +1254,18 @@ The `body` object contains the following properties,
 | moving        | Boolean    | determines if the device is moving or not                    |
 | direction     | String     | the opening direction of a Blind Tilt device                 |
 | slidePosition | Integer    | the current position, 0-100                                  |
+
+##### Hub 2
+
+| Key         | Value Type | Description                             |
+| ----------- | ---------- | --------------------------------------- |
+| deviceId    | String     | device ID                               |
+| deviceType  | String     | device type. *Hub 2*                    |
+| hubDeviceId | String     | Hub ID, equivalent to device ID |
+| temperature | Float      | temperature in celsius                  |
+| lightLevel | Integer      | the level of illuminance of the ambience light, 1~20 |
+| version     | String     | the current firmware version, e.g. V4.2 |
+| humidity    | Integer    | humidity percentage                     |
 
 #### Sample
 
@@ -2089,6 +2106,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | WoCeilingPro | Ceiling Light Pro |
 | WoKeypad      | Keypad |
 | WoKeypadTouch | Keypad Touch |
+| WoHub2 | Hub 2 |
 
 #### Bot
 | Key Name       | Value Type | Description                                                  |
@@ -2643,6 +2661,36 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "eventName": "deleteKey ",
         "commandId": "CMD-1663558451952-01",
         "result": "success",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Hub 2
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | attributes of the context object. the type of the device |
+| deviceMac    | String     | attributes of the context object. the MAC address of the device |
+| temperature  | Float      | the current temperature reading            |
+| humidity     | Integer    | the current humidity reading in percentage |
+| lightLevel  | Integer      | the level of illuminance of the ambience light, 1~20            |
+| scale        | String     | the current temperature unit being used    |
+| timeOfSample    | Long | attributes of the context object. the time stamp when the event is sent |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoHub2",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "temperature":13,
+        "humidity":18,
+        "lightLevel": 19,
+        "scale": "CELSIUS",
         "timeOfSample": 123456789
     }
 }
