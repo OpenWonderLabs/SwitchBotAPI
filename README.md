@@ -282,7 +282,7 @@ apiHeader['Authorization']=token
 apiHeader['Content-Type']='application/json'
 apiHeader['charset']='utf8'
 apiHeader['t']=str(t)
-apiHeader['sign']=sign
+apiHeader['sign']=str(sign, 'utf-8')
 apiHeader['nonce']=str(nonce)
 
 ```
