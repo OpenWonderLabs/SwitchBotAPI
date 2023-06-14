@@ -23,6 +23,7 @@
       - [Hub/Hub Plus/Hub Mini/Hub 2](#hub-hub-plus-hub-mini-hub-2)
       - [Meter](#meter)
       - [Meter Plus](#meter-plus)
+      - [Outdoor Meter](#outdoor-meter)
       - [Lock](#lock)
       - [Keypad](#keypad)
       - [Keypad Touch](#keypad-touch)
@@ -54,6 +55,7 @@
       - [Curtain](#curtain-1)
       - [Meter](#meter-1)
       - [Meter Plus](#meter-plus-1)
+      - [Outdoor Meter](#outdoor-meter-1)
       - [Lock](#lock-1)
       - [Keypad](#keypad-1)
       - [Keypad Touch](#keypad-touch-1)
@@ -147,6 +149,7 @@
     + [Contact Sensor](#contact-sensor-2)
     + [Meter](#meter-2)
     + [Meter Plus](#meter-plus-2)
+    + [Outdoor Meter](#outdoor-meter-2)
     + [Lock](#lock-3)
     + [Indoor Cam](#indoor-cam-1)
     + [Pan/Tilt Cam](#pan-tilt-cam-1)
@@ -478,6 +481,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Meter                        | Short for SwitchBot Thermometer and Hygrometer Model No. SwitchBot MeterTH S1 |
 | Meter Plus (JP)              | Short for SwitchBot Thermometer and Hygrometer Plus (JP) Model No. W2201500 |
 | Meter Plus (US)              | Short for SwitchBot Thermometer and Hygrometer Plus (US) Model No. W2301500 |
+| Outdoor Meter | Short for Indoor/Outdoor Thermo-Hygrometer Model No. W3400010 |
 | Motion Sensor                | Short for SwitchBot Motion Sensor Model No. W1101500         |
 | Contact Sensor               | Short for SwitchBot Contact Sensor Model No. W1201500        |
 | Color Bulb                   | Short for SwitchBot Color Bulb Model No. W1401400            |
@@ -588,6 +592,7 @@ Physical devices refer to the following SwitchBot products,
  -  Ceiling Light Pro
  -  Blind Tilt (MUST enable Cloud Services on SwitchBot app first)
  -  `new` Hub 2
+ -  `new` Outdoor Meter
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
@@ -682,7 +687,18 @@ The `deviceList` array contains a list of objects with the following key-value a
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 
+##### Outdoor Meter
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *WoIOSensor*                                    |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+
 ##### Lock
+
 | Key                | Value Type      | Description                                                  |
 | ------------------ | --------------- | ------------------------------------------------------------ |
 | deviceId           | String          | device ID                                                    |
@@ -992,6 +1008,7 @@ Physical devices refer to the following SwitchBot products,
  -  Ceiling Light
  -  Ceiling Light Pro
  -  `new` Hub 2
+ -  `new` Outdoor Meter
 
 #### Path parameters
 
@@ -1058,12 +1075,24 @@ The `body` object contains the following properties,
 | Key                | Value Type | Description                                                  |
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
-| deviceType         | String     | device type. *Meter*                                         |
+| deviceType         | String     | device type. *MeterPlus*                                         |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 | battery              | Integer | the current battery level, 0-100 |
 | version              | String     | the current firmware version, e.g. V4.2 |
 | temperature            | Float      |  temperature in celsius                                       |
 | humidity               | Integer    | humidity percentage |
+
+##### Outdoor Meter
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *WoIOSensor*                                         |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| battery              | Integer | the current battery level, 0-100 |
+| version              | String     | the current firmware version, e.g. V4.2 |
+| temperature            | Float      |  temperature in celsius                                       |
+| humidity               | Integer    | humidity percentage |
+
 
 ##### Lock
 | Key                | Value Type      | Description                                                  |
@@ -1504,7 +1533,7 @@ The table below describes all the available commands for virtual infrared remote
 
 | deviceType                             | commandType | Command                    | command parameter                                            | Description                                                  |
 | -------------------------------------- | ----------- | -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| All home appliance types except Others | ""          | turnOn                     | default                                                      | every home appliance can be turned on by default             |
+| All home appliance types except Others | command     | turnOn                     | default                                                      | every home appliance can be turned on by default             |
 | All home appliance types except Others | command     | turnOff                    | default                                                      | every home appliance can be turned off by default            |
 | Others                                 | `customize` | {user-defined button name} | default                                                      | all user-defined buttons must be configured with commandType=customize |
 | Air Conditioner                        | command     | setAll                     | {temperature},{mode},{fan speed},{power state}<br />e.g. `26,1,3,on` | the unit of temperature is in celsius; <br />modes include 1 (auto), 2 (cool), 3 (dry), 4 (fan), 5 (heat); <br />fan speed includes 1 (auto), 2 (low), 3 (medium), 4 (high); <br />power state includes on and off |
@@ -2100,6 +2129,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | WoPlugJP      | Plug Mini (JP)  |
 | WoMeter       | Meter           |
 | WoMeterPlus   | Meter Plus      |
+| WoIOSensor | Outdoor Meter |
 | WoSweeper | Robot Vacuum Cleaner S1 |
 | WoSweeperPlus | Robot Vacuum Cleaner S1 Plus |
 | WoCeiling | Ceiling Light |
@@ -2269,6 +2299,35 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
     "eventVersion": "1",
     "context": {
         "deviceType": "WoMeter",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "temperature": 22.5,
+        "scale": "CELSIUS",
+        "humidity": 31,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Outdoor Meter
+
+| Key Name     | Value Type | Description                                |
+| ------------ | ---------- | ------------------------------------------ |
+| eventType    | String     | the type of events                         |
+| eventVersion | String     | the current event version                  |
+| context      | Object     | the detail info of the event               |
+| deviceType   | String     | the type of the device                     |
+| deviceMac    | String     | the MAC address of the device              |
+| temperature  | Float      | the current temperature reading            |
+| scale        | String     | the current temperature unit being used    |
+| humidity     | Integer    | the current humidity reading in percentage |
+| timeOfSample | Long       | the time stamp when the event is sent      |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoIOSensor",
         "deviceMac": DEVICE_MAC_ADDR,
         "temperature": 22.5,
         "scale": "CELSIUS",
