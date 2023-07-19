@@ -708,7 +708,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | hubDeviceId        | String          | device's parent Hub ID                                       |
 | group              | Boolean         | determines if a Lock is grouped with another Lock or not |
 | master             | Boolean         | determines if a Lock is the master device or not when grouped with another Lock in Dual Lock mode |
-| groupName              | Boolean         | the name of the Lock group |
+| groupName              | String         | the name of the Lock group |
 | lockDevicesIds              | Array<deviceId>         | a list of Lock device IDs such that the Lock devices are being grouped in Dual Lock mode |
 
 ##### Keypad
