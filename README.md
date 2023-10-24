@@ -6,6 +6,12 @@
 - [Authentication](#authentication)
   * [Open Token and Secret Key](#open-token-and-secret-key)
   * [How to Sign?](#how-to-sign)
+    + [Python 2 example code](#python-2-example-code)
+    + [Python 3 example code](#python-3-example-code)
+    + [JavaScript example code](#javascript-example-code)
+    + [C# example code](#c-example-code)
+    + [Java 11+ example code](#java-11-example-code)
+    + [PHP example code](#php-example-code)
 - [Glossary](#glossary)
 - [API Usage](#api-usage)
   * [Host Domain](#host-domain)
@@ -204,13 +210,11 @@ To continue to use SwitchBot API `v1.0`, refer to the legacy document.
 
 ### How to Sign?
 
-We have attached a python script for you to quickly generate a sign. If you prefer to write your own script or routine, here is the procedure.
+We have attached some scripts for you to quickly generate a sign. If you prefer to write your own script or routine, here is the procedure.
 
 1. Print the 13 digit timestamp and concatenate it with your `token`
 2. Create a signature using your `secret` and the string produced in the previous step
 3. Convert the signature to upper case
-
-
 
 For instance,
 
@@ -223,9 +227,7 @@ t = 1661927531000
 sign = HMAC-SHA256(token + t, secret).toUpperCase()
 ```
 
-
-
-Python 2 example code
+#### Python 2 example code
 
 ```python
 import time
@@ -249,9 +251,7 @@ print ('nonce: {}'.format(nonce))
 
 ```
 
-
-
-Python 3 example code
+#### Python 3 example code
 
 ```python
 import json
@@ -290,11 +290,12 @@ apiHeader['nonce']=str(nonce)
 
 ```
 
-
-
-JavaScript example code
+#### JavaScript example code
 
 ```javascript
+const crypto = require('crypto');
+const https = require('https');
+
 const token = "yourToken";
 const secret = "yourSecret";
 const t = Date.now();
@@ -342,7 +343,7 @@ req.write(body);
 req.end();
 ```
 
-C# example code
+#### C# example code
 
 ```c#
 using System;
@@ -376,7 +377,8 @@ var response = await client.SendAsync(request);
 Console.WriteLine(await response.Content.ReadAsStringAsync());
 ```
 
-Java 11+ example code 
+#### Java 11+ example code
+
 ```java
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -416,14 +418,12 @@ public class Main {
       HttpResponse<String> response = HttpClient.newBuilder().build().send(getDevices, BodyHandlers.ofString());
       
       System.out.println(response.body());
-    	
-    	
     }
-    
 }
-
 ```
-PHP example code 
+
+#### PHP example code 
+
 ```php
 <?php
 $token = 'XXXXXXXXXXXXXXXXXXX';
