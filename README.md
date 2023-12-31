@@ -1381,6 +1381,7 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Curtain    | command     | setPosition | index0,mode0,position0<br />e.g. `0,ff,80` | mode: 0 (Performance Mode), 1 (Silent Mode), ff (default mode) <br />position: 0~100 (0 means open, 100 means closed) |
 | Curtain    | command     | turnOff     | default                                    | equivalent to set position to 100                            |
 | Curtain    | command     | turnOn      | default                                    | equivalent to set position to 0                              |
+| Curtain    | command     | pause       | default                                    | set to PAUSE state                                           |
 
 ##### Lock
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
