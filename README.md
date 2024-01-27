@@ -20,6 +20,7 @@
     + [Responses](#responses)
       - [Bot](#bot)
       - [Curtain](#curtain)
+      - [Curtain 3](#curtain-3)
       - [Hub/Hub Plus/Hub Mini/Hub 2](#hub-hub-plus-hub-mini-hub-2)
       - [Meter](#meter)
       - [Meter Plus](#meter-plus)
@@ -44,6 +45,7 @@
       - [Pan/Tilt Cam](#pan-tilt-cam)
       - [Pan/Tilt Cam 2K](#pan-tilt-cam-2k)
       - [Blind Tilt](#blind-tilt)
+      - [Battery Circulator Fan](#battery-circulator-fan)
       - [Virtual infrared remote devices](#virtual-infrared-remote-devices)
     + [Sample](#sample)
       - [Get all devices](#get-all-devices)
@@ -53,6 +55,7 @@
     + [Responses](#responses-1)
       - [Bot](#bot-1)
       - [Curtain](#curtain-1)
+      - [Curtain 3](#curtain-3-1)
       - [Meter](#meter-1)
       - [Meter Plus](#meter-plus-1)
       - [Outdoor Meter](#outdoor-meter-1)
@@ -73,6 +76,7 @@
       - [Humidifier](#humidifier-1)
       - [Blind Tilt](#blind-tilt-1)
       - [Hub 2](#hub-2-1)
+      - [Battery Circulator Fan](#battery-circulator-fan-1)
     + [Sample](#sample-1)
       - [SwitchBot Meter example](#switchbot-meter-example)
       - [SwitchBot Curtain example](#switchbot-curtain-example)
@@ -81,6 +85,7 @@
     + [Command set for physical devices](#command-set-for-physical-devices)
       - [Bot](#bot-2)
       - [Curtain](#curtain-2)
+      - [Curtain 3](#curtain-3-2)
       - [Lock](#lock-2)
       - [Humidifier](#humidifier-2)
       - [Plug](#plug-2)
@@ -95,6 +100,7 @@
       - [Keypad](#keypad-2)
       - [Keypad Touch](#keypad-touch-2)
       - [Blind Tilt](#blind-tilt-2)
+      - [Battery Circulator Fan](#battery-circulator-fan-2)
     + [Command set for virtual infrared remote devices](#command-set-for-virtual-infrared-remote-devices)
     + [Path parameters](#path-parameters-1)
     + [Request body parameters](#request-body-parameters)
@@ -145,6 +151,7 @@
   * [Receive events from webhook](#receive-events-from-webhook)
     + [Bot](#bot-3)
     + [Curtain](#curtain-3)
+    + [Curtain 3](#curtain-3-3)
     + [Motion Sensor](#motion-sensor-2)
     + [Contact Sensor](#contact-sensor-2)
     + [Meter](#meter-2)
@@ -168,6 +175,7 @@
       - [Create a passcode](#create-a-passcode-1)
       - [Delete a passcode](#delete-a-passcode-1)
     + [Hub 2](#hub-2-1)
+    + [Battery Circulator Fan](#battery-circulator-fan-3)
 
 ## Introduction
 This document describes a collection of SwitchBot API methods, examples, and best practices for, but not limited to, IoT hobbyists, developers, and gurus to make their own smart home programs or applications. 
@@ -1449,6 +1457,7 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Curtain 3  | command     | setPosition | index0,mode0,position0<br />e.g. `0,ff,80` | mode: 0 (Performance Mode), 1 (Silent Mode), ff (default mode) <br />position: 0~100 (0 means open, 100 means closed) |
 | Curtain 3  | command     | turnOff     | default                                    | equivalent to set position to 100                            |
 | Curtain 3  | command     | turnOn      | default                                    | equivalent to set position to 0                              |
+| Curtain 3  | command     | pause       | default                                    | set to PAUSE state                                           |
 
 ##### Lock
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
