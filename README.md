@@ -26,6 +26,7 @@
     + [Responses](#responses)
       - [Bot](#bot)
       - [Curtain](#curtain)
+      - [Curtain 3](#curtain-3)
       - [Hub/Hub Plus/Hub Mini/Hub 2](#hubhub-plushub-minihub-2)
       - [Meter](#meter)
       - [Meter Plus](#meter-plus)
@@ -50,6 +51,7 @@
       - [Pan/Tilt Cam](#pantilt-cam)
       - [Pan/Tilt Cam 2K](#pantilt-cam-2k)
       - [Blind Tilt](#blind-tilt)
+      - [Battery Circulator Fan](#battery-circulator-fan)
       - [Virtual infrared remote devices](#virtual-infrared-remote-devices)
     + [Sample](#sample)
       - [Get all devices](#get-all-devices)
@@ -59,6 +61,7 @@
     + [Responses](#responses-1)
       - [Bot](#bot-1)
       - [Curtain](#curtain-1)
+      - [Curtain 3](#curtain-3-1)
       - [Meter](#meter-1)
       - [Meter Plus](#meter-plus-1)
       - [Outdoor Meter](#outdoor-meter-1)
@@ -79,6 +82,7 @@
       - [Humidifier](#humidifier-1)
       - [Blind Tilt](#blind-tilt-1)
       - [Hub 2](#hub-2)
+      - [Battery Circulator Fan](#battery-circulator-fan-1)
     + [Sample](#sample-1)
       - [SwitchBot Meter example](#switchbot-meter-example)
       - [SwitchBot Curtain example](#switchbot-curtain-example)
@@ -87,6 +91,7 @@
     + [Command set for physical devices](#command-set-for-physical-devices)
       - [Bot](#bot-2)
       - [Curtain](#curtain-2)
+      - [Curtain 3](#curtain-3-2)
       - [Lock](#lock-2)
       - [Humidifier](#humidifier-2)
       - [Plug](#plug-2)
@@ -101,6 +106,7 @@
       - [Keypad](#keypad-2)
       - [Keypad Touch](#keypad-touch-2)
       - [Blind Tilt](#blind-tilt-2)
+      - [Battery Circulator Fan](#battery-circulator-fan-2)
     + [Command set for virtual infrared remote devices](#command-set-for-virtual-infrared-remote-devices)
     + [Path parameters](#path-parameters-1)
     + [Request body parameters](#request-body-parameters)
@@ -151,6 +157,7 @@
   * [Receive events from webhook](#receive-events-from-webhook)
     + [Bot](#bot-3)
     + [Curtain](#curtain-3)
+    + [Curtain 3](#curtain-3-3)
     + [Motion Sensor](#motion-sensor-2)
     + [Contact Sensor](#contact-sensor-2)
     + [Meter](#meter-2)
@@ -174,6 +181,7 @@
       - [Create a passcode](#create-a-passcode-1)
       - [Delete a passcode](#delete-a-passcode-1)
     + [Hub 2](#hub-2-1)
+    + [Battery Circulator Fan](#battery-circulator-fan-3)
 
 ## Introduction
 This document describes a collection of SwitchBot API methods, examples, and best practices for, but not limited to, IoT hobbyists, developers, and gurus to make their own smart home programs or applications. 
@@ -477,6 +485,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Hub 2                     | Short for SwitchBot Hub 2 Model No. W3202100      |
 | Bot                          | Short for SwitchBot Bot Model No. SwitchBot S1               |
 | Curtain                      | Short for SwitchBot Curtain Model No. W0701600               |
+| Curtain 3 | Short for SwitchBot Curtain Model No. W2400000 |
 | Plug                         | Short for SwitchBot Plug Model No. SP11. Currently only available in Japan |
 | Meter                        | Short for SwitchBot Thermometer and Hygrometer Model No. SwitchBot MeterTH S1 |
 | Meter Plus (JP)              | Short for SwitchBot Thermometer and Hygrometer Plus (JP) Model No. W2201500 |
@@ -499,6 +508,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Pan/Tilt Cam | Short for SwitchBot Pan/Tilt Cam Model No. W1801200                  |
 | Pan/Tilt Cam 2K | Short for SwitchBot Pan/Tilt Cam 2K Model No. W3101100                  |
 | Blind Tilt | Short for SwitchBot Blind Tilt Model No. W2701600 |
+| Battery Circulator Fan | Short for SwitchBot Battery Circulator Fan Model No. W3800510 |
 | Cloud Services               | A SwitchBot app feature that 1. enables SwitchBot products to be discovered and communicated with third-party services such as Alexa, Google Home, IFTTT, and so forth 2. allows users to create customized smart scenes and  widgets. For BLE-based devices such as Bot and Curtain, you MUST first add a Hub/Hub Mini/Hub Plus and then enable Cloud Services on the Settings page in order to make use of the web API! |
 
 
@@ -565,16 +575,18 @@ GET /v1.1/devices
 #### Description
 Get a list of devices, which include physical devices and virtual infrared remote devices that have been added to the current user's account.
 
+> Note: For devices that communicate via BLE, please enable Cloud Services on SwitchBot app first.
+
 Physical devices refer to the following SwitchBot products,
  -  Hub
  -  Hub Plus
  -  Hub Mini
- -  Bot (MUST enable Cloud Services on SwitchBot app first)
- -  Curtain (MUST enable Cloud Services on SwitchBot app first)
+ -  Bot
+ -  Curtain
  -  Plug
- -  Meter (MUST enable Cloud Services on SwitchBot app first)
- -  Motion Sensor (MUST enable Cloud Services on SwitchBot app first)
- -  Contact Sensor (MUST enable Cloud Services on SwitchBot app first)
+ -  Meter
+ -  Motion Sensor
+ -  Contact Sensor
  -  Color Bulb
  -  Humidifier
  -  Smart Fan
@@ -582,17 +594,19 @@ Physical devices refer to the following SwitchBot products,
  -  Plug Mini (US)
  -  Plug Mini (JP)
  -  Lock
- -  Meter Plus (JP) (MUST enable Cloud Services on SwitchBot app first)
- -  Meter Plus (US) (MUST enable Cloud Services on SwitchBot app first)
+ -  Meter Plus (JP)
+ -  Meter Plus (US)
  -  Robot Vacuum Cleaner S1
  -  Robot Vacuum Cleaner S1 Plus
- -  Keypad (MUST enable Cloud Services on SwitchBot app first)
- -  Keypad Touch (MUST enable Cloud Services on SwitchBot app first)
+ -  Keypad
+ -  Keypad Touch
  -  Ceiling Light
  -  Ceiling Light Pro
- -  Blind Tilt (MUST enable Cloud Services on SwitchBot app first)
- -  `new` Hub 2
- -  `new` Outdoor Meter
+ -  Blind Tilt
+ -  Hub 2
+ -  Outdoor Meter
+ -  `new` Battery Circulator Fan
+ -  `new` Curtain 3
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
@@ -660,7 +674,23 @@ The `deviceList` array contains a list of objects with the following key-value a
 | master             | Boolean         | determines if a Curtain is the master device or not when paired with or grouped with another Curtain |
 | openDirection      | String          | the opening direction of a Curtain                           |
 
+##### Curtain 3
+
+| Key                | Value Type      | Description                                                  |
+| ------------------ | --------------- | ------------------------------------------------------------ |
+| deviceId           | String          | device ID                                                    |
+| deviceName         | String          | device name                                                  |
+| deviceType         | String          | device type. *Curtain3*                                      |
+| enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String          | device's parent Hub ID                                       |
+| curtainDevicesIds  | Array<deviceId> | a list of Curtain device IDs such that the Curtain devices are being paired or grouped |
+| calibrate          | Boolean         | determines if the open position and the close position of a device have been properly calibrated or not |
+| group              | Boolean         | determines if a Curtain is paired with or grouped with another Curtain or not |
+| master             | Boolean         | determines if a Curtain is the master device or not when paired with or grouped with another Curtain |
+| openDirection      | String          | the opening direction of a Curtain                           |
+
 ##### Hub/Hub Plus/Hub Mini/Hub 2
+
 | Key                | Value Type | Description                                                  |
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
@@ -925,6 +955,15 @@ The `deviceList` array contains a list of objects with the following key-value a
 | direction           | String          | the opening direction of a Blind Tilt device                 |
 | slidePosition       | Integer         | the current position, 0-100                                  |
 
+##### Battery Circulator Fan
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Battery Circulator Fan*                        |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
 ##### Virtual infrared remote devices
 
 
@@ -1007,8 +1046,9 @@ Physical devices refer to the following SwitchBot products,
  -  Keypad Touch (MUST enable Cloud Service first)
  -  Ceiling Light
  -  Ceiling Light Pro
- -  `new` Hub 2
- -  `new` Outdoor Meter
+ -  Hub 2
+ -  Outdoor Meter
+ -  `new` Battery Circulator Fan
 
 #### Path parameters
 
@@ -1051,6 +1091,19 @@ The `body` object contains the following properties,
 | ------------------ | --------------- | ------------------------------------------------------------ |
 | deviceId           | String          | device ID                                                    |
 | deviceType         | String          | device type. *Curtain*                                       |
+| hubDeviceId        | String          | device's parent Hub ID                                       |
+| calibrate          | Boolean         | determines if the open position and the close position of a device have been properly calibrated or not |
+| group              | Boolean         | determines if a Curtain is paired with or grouped with another Curtain or not |
+| moving             | Boolean         | determines if a Curtain is moving or not |
+| battery              | Integer | the current battery level, 0-100 |
+| version              | String     | the current firmware version, e.g. V4.2 |
+| slidePosition      | String          | the percentage of the distance between the calibrated open position and closed position that Curtain has traversed |
+
+##### Curtain 3
+| Key                | Value Type      | Description                                                  |
+| ------------------ | --------------- | ------------------------------------------------------------ |
+| deviceId           | String          | device ID                                                    |
+| deviceType         | String          | device type. *Curtain3*                           |
 | hubDeviceId        | String          | device's parent Hub ID                                       |
 | calibrate          | Boolean         | determines if the open position and the close position of a device have been properly calibrated or not |
 | group              | Boolean         | determines if a Curtain is paired with or grouped with another Curtain or not |
@@ -1296,6 +1349,22 @@ The `body` object contains the following properties,
 | version     | String     | the current firmware version, e.g. V4.2 |
 | humidity    | Integer    | humidity percentage                     |
 
+##### Battery Circulator Fan
+| Key                 | Value Type      | Description                                                  |
+| ------------------- | --------------- | ------------------------------------------------------------ |
+| deviceId            | String          | device ID                                                    |
+| deviceName          | String          | device name                                                  |
+| deviceType          | String          | device type. *Battery Circulator Fan*                                    |
+| mode     | String     |fan mode. direct mode: *direct*; natural mode: "natural"; sleep mode: "sleep"; ultra quiet mode: "baby" |
+| version     | String     | the current firmware version, e.g. V4.2 |
+| battery                | Integer    |  the current battery level                                            |
+| power                  | String     | ON/OFF state                                                 |
+| nightStatus                | Integer    |  set nightlight status. turn off: *off*; mode 1: *1*; mode 2: *2*  |
+| oscillation | String | set horizontal oscillation. turn on: *on*; turn off: *off* |
+| verticalOscillation | String | set vertical oscillation. turn on: *on*; turn off: *off* |
+| chargingStatus | String | battery charge status. *charging* or *uncharged* |
+| fanSpeed | Integer | fan speed. 1~100 |
+
 #### Sample
 
 ##### SwitchBot Meter example
@@ -1382,6 +1451,14 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Curtain    | command     | turnOff     | default                                    | equivalent to set position to 100                            |
 | Curtain    | command     | turnOn      | default                                    | equivalent to set position to 0                              |
 | Curtain    | command     | pause       | default                                    | set to PAUSE state                                           |
+
+##### Curtain 3
+| deviceType | commandType | Command     | command parameter                          | Description                                                  |
+| ---------- | ----------- | ----------- | ------------------------------------------ | ------------------------------------------------------------ |
+| Curtain 3  | command     | setPosition | index0,mode0,position0<br />e.g. `0,ff,80` | mode: 0 (Performance Mode), 1 (Silent Mode), ff (default mode) <br />position: 0~100 (0 means open, 100 means closed) |
+| Curtain 3  | command     | turnOff     | default                                    | equivalent to set position to 100                            |
+| Curtain 3  | command     | turnOn      | default                                    | equivalent to set position to 0                              |
+| Curtain 3  | command     | pause       | default                                    | set to PAUSE state                                           |
 
 ##### Lock
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
@@ -1527,6 +1604,16 @@ The following table describes the parameter object for `deleteKey`,
 | Blind Tilt | command     | fullyOpen   | default                              | Set the position of Blind Tilt to open, equivalent to setting the position to `up;100` or `down;100` |
 | Blind Tilt | command     | closeUp     | default                              | Set the position of Blind Tilt to closed up, equivalent to setting the position to `up;0` |
 | Blind Tilt | command     | closeDown   | default                              | Set the position of Blind Tilt to closed down, equivalent to setting the position to `down;0` |
+
+##### Battery Circulator Fan
+
+| deviceType             | commandType | Command           | command parameter                       | Description                                                  |
+| ---------------------- | ----------- | ----------------- | --------------------------------------- | ------------------------------------------------------------ |
+| Battery Circulator Fan | command     | turnOff           | default                                 | Set to OFF state                                             |
+| Battery Circulator Fan | command     | turnOn            | default                                 | Set to ON state                                              |
+| Battery Circulator Fan | command     | setNightLightMode | `off`, `1`, or `2`                      | `off`, turn off nightlight,<br />`1`, bright <br />`2`, dim  |
+| Battery Circulator Fan | command     | setWindMode       | `direct`, `natural`, `sleep`, or `baby` | Set fan mode. `direct`: direct mode. `natural`:  natural mode. `sleep`: sleep mode. `baby`: ultra quiet mode |
+| Battery Circulator Fan | command     | setWindSpeed      | `{1-100}` e.g. `10`                     | Set fan speed.1~100                                          |
 
 #### Command set for virtual infrared remote devices
 
@@ -2195,6 +2282,36 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 }
 ```
 
+#### Curtain 3
+| Key Name       | Value Type | Description                                                  |
+| -------------- | ---------- | ------------------------------------------------------------ |
+| eventType      | String     | the type of events                                           |
+| eventVersion   | String     | the current event version                                    |
+| context        | Object     | the detail info of the event                                 |
+| deviceType     | String     | the type of the device                                       |
+| deviceMac      | String     | the MAC address of the device                                |
+| calibrate          | Boolean         | determines if the open position and the close position of a device have been properly calibrated or not |
+| group              | Boolean         | determines if a Curtain is paired with or grouped with another Curtain or not |
+| slidePosition             | Integer         | the percentage of the distance between the calibrated open position and closed position that Curtain has traversed |
+| battery      | Integer          | the battery level of a Curtain                           |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoCurtain3",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "calibrate":false,
+        "group":false,
+        "slidePosition":50, //0~100
+        "battery":100,
+        "timeOfSample": 123456789
+    }
+}
+```
+
 #### Motion Sensor
 
 | Key Name       | Value Type | Description                                                  |
@@ -2751,6 +2868,47 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "humidity":18,
         "lightLevel": 19,
         "scale": "CELSIUS",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Battery Circulator Fan
+
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | the type of the device                               |
+| deviceMac    | String     | the MAC address of the device                        |
+| mode                | String  | fan mode. direct mode: *direct*; natural mode: "natural"; sleep mode: "sleep"; ultra quiet mode: "baby" |
+| version             | String  | the current firmware version, e.g. V4.2                      |
+| battery             | Integer | the current battery level                                    |
+| powerState     | String  | ON/OFF state                                                 |
+| nightStatus         | Integer | set nightlight status. turn off: *off*; mode 1: *1*; mode 2: *2* |
+| oscillation         | String  | set horizontal oscillation. turn on: *on*; turn off: *off*   |
+| verticalOscillation | String  | set vertical oscillation. turn on: *on*; turn off: *off*     |
+| chargingStatus      | String  | battery charge status. *charging* or *uncharged*             |
+| fanSpeed            | Integer | fan speed. 1~100                                             |
+| timeOfSample | Long       | the time stamp when the event is sent                |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoFan2",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "mode": "direct",
+        "version": "V3.1",
+        "battery": 22,
+        "powerState": "ON",
+        "nightStatus": "off",
+        "oscillation": "on",
+        "verticalOscillation": "on",
+        "chargingStatus": "charging",
+        "fanSpeed": 3,
         "timeOfSample": 123456789
     }
 }
