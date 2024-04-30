@@ -32,6 +32,7 @@
       - [Meter Plus](#meter-plus)
       - [Outdoor Meter](#outdoor-meter)
       - [Lock](#lock)
+      - [Lock Pro](#lock-pro)
       - [Keypad](#keypad)
       - [Keypad Touch](#keypad-touch)
       - [Remote](#remote)
@@ -66,6 +67,7 @@
       - [Meter Plus](#meter-plus-1)
       - [Outdoor Meter](#outdoor-meter-1)
       - [Lock](#lock-1)
+      - [Lock Pro](#lock-pro-1)
       - [Keypad](#keypad-1)
       - [Keypad Touch](#keypad-touch-1)
       - [Motion Sensor](#motion-sensor-1)
@@ -93,6 +95,7 @@
       - [Curtain](#curtain-2)
       - [Curtain 3](#curtain-3-2)
       - [Lock](#lock-2)
+      - [Lock Pro](#lock-pro-2)
       - [Humidifier](#humidifier-2)
       - [Plug](#plug-2)
       - [Plug Mini (US)](#plug-mini-us-2)
@@ -164,6 +167,7 @@
     + [Meter Plus](#meter-plus-2)
     + [Outdoor Meter](#outdoor-meter-2)
     + [Lock](#lock-3)
+    + [Lock Pro](#lock-pro-3)
     + [Indoor Cam](#indoor-cam-1)
     + [Pan/Tilt Cam](#pantilt-cam-1)
     + [Color Bulb](#color-bulb-3)
@@ -498,6 +502,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Plug Mini (US)               | Short for SwitchBot Plug Mini (US) Model No. W1901400 and W1901401 |
 | Plug Mini (JP)               | Short for SwitchBot Plug Mini (JP) Model No. W2001400 and W2001401 |
 | Lock                         | Short for SwitchBot Lock Model No. W1601700                  |
+| Lock Pro                         | Short for SwitchBot Lock Pro Model No. W3500000                  |
 | Keypad                         | Short for SwitchBot Lock Model No. W2500010                  |
 | Keypad Touch                         | Short for SwitchBot Lock Model No. W2500020                  |
 | Robot Vacuum Cleaner S1      | Short for SwitchBot Robot Vacuum Cleaner S1 Model No. W3011000. Currently only available in Japan. |
@@ -607,6 +612,7 @@ Physical devices refer to the following SwitchBot products,
  -  Outdoor Meter
  -  `new` Battery Circulator Fan
  -  `new` Curtain 3
+ -  `new` Lock Pro
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
@@ -734,6 +740,20 @@ The `deviceList` array contains a list of objects with the following key-value a
 | deviceId           | String          | device ID                                                    |
 | deviceName         | String          | device name                                                  |
 | deviceType         | String          | device type. *Smart Lock*                                  |
+| enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String          | device's parent Hub ID                                       |
+| group              | Boolean         | determines if a Lock is grouped with another Lock or not |
+| master             | Boolean         | determines if a Lock is the master device or not when grouped with another Lock in Dual Lock mode |
+| groupName              | String         | the name of the Lock group |
+| lockDevicesIds              | Array<deviceId>         | a list of Lock device IDs such that the Lock devices are being grouped in Dual Lock mode |
+
+##### Lock Pro
+
+| Key                | Value Type      | Description                                                  |
+| ------------------ | --------------- | ------------------------------------------------------------ |
+| deviceId           | String          | device ID                                                    |
+| deviceName         | String          | device name                                                  |
+| deviceType         | String          | device type. *Smart Lock Pro*                |
 | enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String          | device's parent Hub ID                                       |
 | group              | Boolean         | determines if a Lock is grouped with another Lock or not |
@@ -1159,6 +1179,18 @@ The `body` object contains the following properties,
 | doorState              | String     | determines if the door is closed or not  |
 | calibrate          | Boolean         | determines if Lock has been calibrated or not |
 
+##### Lock Pro
+| Key                | Value Type      | Description                                                  |
+| ------------------ | --------------- | ------------------------------------------------------------ |
+| deviceId           | String          | device ID                                                    |
+| deviceType         | String          | device type. *Smart Lock Pro*                                |
+| hubDeviceId        | String          | device's parent Hub ID                                       |
+| battery              | Integer | the current battery level, 0-100 |
+| version              | String     | the current firmware version, e.g. V4.2 |
+| lockState              | String     | determines if locked or not, *jammed*, *unlock* or *lock* |
+| doorState              | String     | determines if the door is closed or not, *open* or *close* |
+| calibrate          | Boolean         | determines if Lock has been calibrated or not |
+
 ##### Keypad
 
 | Key                | Value Type | Description                                                  |
@@ -1461,6 +1493,12 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Curtain 3  | command     | pause       | default                                    | set to PAUSE state                                           |
 
 ##### Lock
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Lock                         | command     | lock                | default                                                      | rotate to locked position                                    |
+| Lock                         | command     | unlock              | default                                                      | rotate to unlocked position                                  |
+
+##### Lock Pro
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Lock                         | command     | lock                | default                                                      | rotate to locked position                                    |
@@ -2473,6 +2511,31 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
     "eventVersion": "1",
     "context": {
         "deviceType": "WoLock",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "lockState": "LOCKED",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Lock Pro
+
+| Key Name     | Value Type | Description                                                  |
+| ------------ | ---------- | ------------------------------------------------------------ |
+| eventType    | String     | the type of events                                           |
+| eventVersion | String     | the current event version                                    |
+| context      | Object     | the detail info of the event                                 |
+| deviceType   | String     | the type of the device                                       |
+| deviceMac    | String     | the MAC address of the device                                |
+| lockState    | String     | the state of the device, "LOCKED" stands for the motor is rotated to locking position; "UNLOCKED" stands for the motor is rotated to unlocking position; "JAMMED" stands for the motor is jammed while rotating |
+| timeOfSample | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoLockPro",
         "deviceMac": DEVICE_MAC_ADDR,
         "lockState": "LOCKED",
         "timeOfSample": 123456789
