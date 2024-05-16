@@ -38,6 +38,7 @@
       - [Remote](#remote)
       - [Motion Sensor](#motion-sensor)
       - [Contact Sensor](#contact-sensor)
+      - [Water Leak Detector](#water-leak-detector)
       - [Ceiling Light](#ceiling-light)
       - [Ceiling Light Pro](#ceiling-light-pro)
       - [Plug Mini (US)](#plug-mini-us)
@@ -47,6 +48,7 @@
       - [Color Bulb](#color-bulb)
       - [Robot Vacuum Cleaner S1](#robot-vacuum-cleaner-s1)
       - [Robot Vacuum Cleaner S1 Plus](#robot-vacuum-cleaner-s1-plus)
+      - [Floor Cleaning Robot S10](#floor-cleaning-robot-s10)
       - [Humidifier](#humidifier)
       - [Indoor Cam](#indoor-cam)
       - [Pan/Tilt Cam](#pantilt-cam)
@@ -72,6 +74,7 @@
       - [Keypad Touch](#keypad-touch-1)
       - [Motion Sensor](#motion-sensor-1)
       - [Contact Sensor](#contact-sensor-1)
+      - [Water Leak Detector](#water-leak-detector-1)
       - [Ceiling Light](#ceiling-light-1)
       - [Ceiling Light Pro](#ceiling-light-pro-1)
       - [Plug Mini (US)](#plug-mini-us-1)
@@ -81,6 +84,7 @@
       - [Color Bulb](#color-bulb-1)
       - [Robot Vacuum Cleaner S1](#robot-vacuum-cleaner-s1-1)
       - [Robot Vacuum Cleaner S1 Plus](#robot-vacuum-cleaner-s1-plus-1)
+      - [Floor Cleaning Robot S10](#floor-cleaning-robot-s10-1)
       - [Humidifier](#humidifier-1)
       - [Blind Tilt](#blind-tilt-1)
       - [Hub 2](#hub-2)
@@ -104,6 +108,7 @@
       - [Strip Light](#strip-light-2)
       - [Robot Vacuum Cleaner S1](#robot-vacuum-cleaner-s1-2)
       - [Robot Vacuum Cleaner S1 Plus](#robot-vacuum-cleaner-s1-plus-2)
+      - [Floor Cleaning Robot S10](#floor-cleaning-robot-s10-2)
       - [Ceiling Light](#ceiling-light-2)
       - [Ceiling Light Pro](#ceiling-light-pro-2)
       - [Keypad](#keypad-2)
@@ -116,6 +121,7 @@
     + [Response](#response)
     + [Errors](#errors)
     + [Sample](#sample-2)
+      - [Floor Cleaning Robot S10 example](#floor-cleaning-robot-s10-example)
       - [Keypad example](#keypad-example)
       - [Bot example](#bot-example)
       - [Infrared remote device example](#infrared-remote-device-example)
@@ -163,6 +169,7 @@
     + [Curtain 3](#curtain-3-3)
     + [Motion Sensor](#motion-sensor-2)
     + [Contact Sensor](#contact-sensor-2)
+    + [Water Leak Detector](#water-leak-detector-2)
     + [Meter](#meter-2)
     + [Meter Plus](#meter-plus-2)
     + [Outdoor Meter](#outdoor-meter-2)
@@ -176,6 +183,7 @@
     + [Plug Mini (JP)](#plug-mini-jp-3)
     + [Robot Vacuum Cleaner S1](#robot-vacuum-cleaner-s1-3)
     + [Robot Vacuum Cleaner S1 Plus](#robot-vacuum-cleaner-s1-plus-3)
+    + [Floor Cleaning Robot S10](#floor-cleaning-robot-s10-3)
     + [Ceiling Light](#ceiling-light-3)
     + [Ceiling Light Pro](#ceiling-light-pro-3)
     + [Keypad](#keypad-3)
@@ -497,6 +505,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Outdoor Meter | Short for Indoor/Outdoor Thermo-Hygrometer Model No. W3400010 |
 | Motion Sensor                | Short for SwitchBot Motion Sensor Model No. W1101500         |
 | Contact Sensor               | Short for SwitchBot Contact Sensor Model No. W1201500        |
+| Water Leak Detector | Short for SwitchBot Water Leak Detector Model No. W4402000 |
 | Color Bulb                   | Short for SwitchBot Color Bulb Model No. W1401400            |
 | Strip Light                  | Short for SwitchBot LED Strip Light Model No. W1701100       |
 | Plug Mini (US)               | Short for SwitchBot Plug Mini (US) Model No. W1901400 and W1901401 |
@@ -505,8 +514,9 @@ The following table provides definitions to the terms to be frequently mentioned
 | Lock Pro                         | Short for SwitchBot Lock Pro Model No. W3500000                  |
 | Keypad                         | Short for SwitchBot Lock Model No. W2500010                  |
 | Keypad Touch                         | Short for SwitchBot Lock Model No. W2500020                  |
-| Robot Vacuum Cleaner S1      | Short for SwitchBot Robot Vacuum Cleaner S1 Model No. W3011000. Currently only available in Japan. |
-| Robot Vacuum Cleaner S1 Plus | Short for SwitchBot Robot Vacuum Cleaner S1 Plus Model No. W3011010. Currently only available in Japan. |
+| Robot Vacuum Cleaner S1      | Short for SwitchBot Robot Vacuum Cleaner S1 Model No. W3011000 |
+| Robot Vacuum Cleaner S1 Plus | Short for SwitchBot Robot Vacuum Cleaner S1 Plus Model No. W3011010 |
+| Floor Cleaning Robot S10 | Short for SwitchBot Floor Cleaning Robot S10 Model No. W3211800 |
 | Ceiling Light      | Short for SwitchBot Ceiling Light Model No. W2612230 and W2612240. Currently only available in Japan. |
 | Ceiling Light Pro | Short for SwitchBot Ceiling Light Pro Model No. W2612210 and W2612220. Currently only available in Japan. |
 | Indoor Cam | Short for SwitchBot Indoor Cam Model No. W1301200                  |
@@ -610,9 +620,11 @@ Physical devices refer to the following SwitchBot products,
  -  Blind Tilt
  -  Hub 2
  -  Outdoor Meter
- -  `new` Battery Circulator Fan
- -  `new` Curtain 3
+ -  Battery Circulator Fan
+ -  Curtain 3
  -  `new` Lock Pro
+ -  `new` Floor Cleaning Robot S10
+ -  `new` Water Leak Detector
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
@@ -836,6 +848,15 @@ The `deviceList` array contains a list of objects with the following key-value a
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 
+##### Water Leak Detector
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Water Detector*                                |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
 ##### Ceiling Light
 | Key                | Value Type | Description                                                  |
 | ------------------ | ---------- | ------------------------------------------------------------ |
@@ -919,6 +940,15 @@ The `deviceList` array contains a list of objects with the following key-value a
 | deviceId           | String     | device ID                                                    |
 | deviceName         | String     | device name                                                  |
 | deviceType         | String     | device type. *Robot Vacuum Cleaner S1 Plus*                  |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Floor Cleaning Robot S10
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Robot Vacuum Cleaner S10*                  |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
@@ -1068,7 +1098,10 @@ Physical devices refer to the following SwitchBot products,
  -  Ceiling Light Pro
  -  Hub 2
  -  Outdoor Meter
- -  `new` Battery Circulator Fan
+ -  Battery Circulator Fan
+ -  `new` Lock Pro
+ -  `new` Floor Cleaning Robot S10
+ -  `new` Water Leak Detector
 
 #### Path parameters
 
@@ -1232,6 +1265,17 @@ The `body` object contains the following properties,
 | openState  | String | the open state of the sensor. *open*, *close*, or *timeOutNotClose* |
 | brightness             | String     | the ambient brightness picked up by the sensor. *bright*  or *dim* |
 
+##### Water Leak Detector
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Water Detector*                  |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| battery              | Integer | the current battery level, `0-100` |
+| version              | String     | the current firmware version, e.g. V4.2 |
+| status | Integer | `0`, dry. `1`, leak detected |
+
 ##### Ceiling Light
 
 | Key                | Value Type | Description                                                  |
@@ -1339,6 +1383,19 @@ The `body` object contains the following properties,
 | workingStatus    | String     | the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
 | onlineStatus    | String     | the connection status of the device. *online* or *offline* |
 | battery                | Integer    |  the current battery level                                            |
+
+##### Floor Cleaning Robot S10
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Robot Vacuum Cleaner S10*                  |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| workingStatus    | String     | the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
+| onlineStatus    | String     | the connection status of the device. *online* or *offline* |
+| battery                | Integer    |  the current battery level `0-100` |
+| waterBaseBattery | Integer | the current battery level `0-100` |
+| taskType | String | the current task in progress. *standBy*, *explore*, *cleanAll*, *cleanArea*, *cleanRoom*, *fillWater*, *deepWashing*, *backToCharge*, *markingWaterBase*, *drying*, *collectDust*, *remoteControl*, *cleanWithExplorer*, *fillWaterForHumi*, *markingHumi* |
 
 ##### Humidifier
 
@@ -1566,6 +1623,17 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Robot Vacuum Cleaner S1 Plus | command     | dock                | default                                                      | return to charging dock                                      |
 | Robot Vacuum Cleaner S1 Plus | command     | PowLevel            | `{0-3}`                                                      | set suction power level: 0 (Quiet), 1 (Standard), 2 (Strong), 3 (MAX) |
 
+##### Floor Cleaning Robot S10
+| deviceType               | commandType | Command         | command parameter                                            | Description                                                  |
+| ------------------------ | ----------- | --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Floor Cleaning Robot S10 | command     | startClean      | {"action": clean_mode_str, "param": {"fanLevel": fan_level_int, "waterLevel": water_level_int, "times": clean_cycle_int}} | start cleaning.<br />`action`, the cleaning mode, *sweep* or *sweep_mop*.<br />`fanLevel`, the vacuum level, `1-4`.<br />`waterLevel`, the mop moisture level, `1-2`.<br />`times`, the number of cycles, `1-2639999`, in theory. |
+| Floor Cleaning Robot S10 | command     | addWaterForHumi | default                                                      | refill the mind blowing Evaporative Humidifier (Auto-refill). |
+| Floor Cleaning Robot S10 | command     | pause           | default                                                      | pause.                                                       |
+| Floor Cleaning Robot S10 | command     | dock            | default                                                      | return to Auto-empty Station and charge.                     |
+| Floor Cleaning Robot S10 | command     | setVolume       | `0-100`                                                      | set volume, `1-100`                                          |
+| Floor Cleaning Robot S10 | command     | selfClean       | `1` or `2` or `3`                                            | mode `1`, wash the mop.<br />mode `2`, dry itself.<br /> mode `3`, terminate. |
+| Floor Cleaning Robot S10 | command     | changeParam     | {"fanLevel": fan_level_int, "waterLevel": water_level_int, "times": clean_cycle_int} | `fanLevel`, the vacuum level, `1-4`.<br />`waterLevel`, the mop moisture level, `1-2`.<br />`times`, the number of cycles, `1-2639999`, in theory. |
+
 ##### Ceiling Light
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -1728,6 +1796,75 @@ The response is basically a JSON object, which contains the following properties
 | 190                         | Device internal error due to device states not synchronized with server. Or command format is invalid. |
 
 #### Sample
+
+##### Floor Cleaning Robot S10 example
+Clean with vacuum mode
+
+Request
+
+```http
+POST https://api.switch-bot.com/v1.1/devices/F7538E1ABC23/commands
+```
+
+```js
+{
+    "commandType": "command",
+    "command": "startClean", // start cleaning
+    "parameter": {
+        "action": "sweep", // clean with vacuum mode
+        "param": {
+            "fanLevel": 1, // vacuum level set to 1
+            "waterLevel": 1, // mop moisture level set to 1
+            "times": 1 // number of cyclyes to clean set to 1
+        }
+    }
+}
+```
+
+Response
+
+```js
+{
+    "statusCode": 100,
+    "body": {
+        "commandId": "CMD166444044923602"
+    },
+    "message": "success"
+}
+```
+
+Change the cleaning settings
+
+Request
+
+```http
+POST https://api.switch-bot.com/v1.1/devices/F7538E1ABC23/commands
+```
+
+```js
+{
+    "commandType": "command",
+    "command": "changeParam",
+    "parameter": {
+      	"fanLevel": 2, // vacuum level set to 1
+        "waterLevel": 1, // mop moisture level set to 1
+        "times": 1 // number of times to clean set to 2
+    }
+}
+```
+
+Response
+
+```js
+{
+    "statusCode": 100,
+    "body": {
+        "commandId": "CMD166444044923602"
+    },
+    "message": "success"
+}
+```
+
 
 ##### Keypad example
 
@@ -2247,6 +2384,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | WoPresence    | Motion Sensor   |
 | WoContact     | Contact Sensor  |
 | WoLock        | Lock            |
+| WoLockPro | Lock Pro |
 | WoCamera      | Indoor Cam      |
 | WoPanTiltCam  | Pan/Tilt Cam    |
 | WoBulb        | Color Bulb      |
@@ -2263,6 +2401,8 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | WoKeypad      | Keypad |
 | WoKeypadTouch | Keypad Touch |
 | WoHub2 | Hub 2 |
+| Robot Vacuum Cleaner S10 | Floor Cleaning Robot S10 |
+| Water Detector | Water Leak Detector |
 
 #### Bot
 | Key Name       | Value Type | Description                                                  |
@@ -2401,6 +2541,33 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "doorMode":"OUT_DOOR",
         "brightness": "dim",
         "openState": "open",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Water Leak Detector
+
+| Key Name     | Value Type | Description                                |
+| ------------ | ---------- | ------------------------------------------ |
+| eventType    | String     | the type of events                         |
+| eventVersion | String     | the current event version                  |
+| context      | Object     | the detail info of the event               |
+| deviceType   | String     | the type of the device                     |
+| deviceMac    | String     | the MAC address of the device |
+| detectionState | Integer | `0`, dry. `1`, leak detected |
+| battery              | Integer | the current battery level, `0-100` |
+| timeOfSample | Long       | the time stamp when the event is sent      |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Water Detector",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "detectionState": 0,
+        "battery":100,
         "timeOfSample": 123456789
     }
 }
@@ -2759,7 +2926,40 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 }
 ```
 
+#### Floor Cleaning Robot S10
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | attributes of the context object. the type of the device |
+| deviceMac    | String     | attributes of the context object. the MAC address of the device |
+| workingStatus    | String     | attributes of the context object. the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
+| onlineStatus    | String     | attributes of the context object. the connection status of the device. *online* or *offline* |
+| battery | Integer | attributes of the context object. the battery level, `0-100` |
+| waterBaseBattery | Integer | the current battery level `0-100` |
+| taskType | String | the current task in progress. *standBy*, *explore*, *cleanAll*, *cleanArea*, *cleanRoom*, *fillWater*, *deepWashing*, *backToCharge*, *markingWaterBase*, *drying*, *collectDust*, *remoteControl*, *cleanWithExplorer*, *fillWaterForHumi*, *markingHumi* |
+| timeOfSample    | Long | attributes of the context object. the time stamp when the event is sent |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Robot Vacuum Cleaner S10",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "workingStatus"："StandBy",
+        "onlineStatus": "online",
+        "battery": 100,// 0-100
+        "waterBaseBattery": 100,
+        "taskType": "explore",
+        "timeOfSample": 123456789
+    }
+}
+```
+
 #### Ceiling Light
+
 | Key Name     | Value Type | Description                                          |
 | ------------ | ---------- | ---------------------------------------------------- |
 | eventType    | String     | the type of events                                   |
