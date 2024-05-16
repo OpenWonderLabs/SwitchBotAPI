@@ -489,42 +489,46 @@ function guidv4($data = null) {
 
 The following table provides definitions to the terms to be frequently mentioned in the subsequent sections.
 
-| Term                         | Description                                                  |
-| ---------------------------- | ------------------------------------------------------------ |
-| Hub                          | Generally referred to these devices, SwitchBot Hub Model No. SwitchBot Hub S1/SwitchBot Hub Mini Model No. W0202200/SwitchBot Hub Plus Model No. SwitchBot Hub S1 |
-| Hub Mini                     | Short for SwitchBot Hub Mini Model No. W0202200              |
-| Hub Plus                     | Short for SwitchBot Hub Plus Model No. SwitchBot Hub S1      |
-| Hub 2                     | Short for SwitchBot Hub 2 Model No. W3202100      |
-| Bot                          | Short for SwitchBot Bot Model No. SwitchBot S1               |
-| Curtain                      | Short for SwitchBot Curtain Model No. W0701600               |
-| Curtain 3 | Short for SwitchBot Curtain Model No. W2400000 |
-| Plug                         | Short for SwitchBot Plug Model No. SP11. Currently only available in Japan |
-| Meter                        | Short for SwitchBot Thermometer and Hygrometer Model No. SwitchBot MeterTH S1 |
-| Meter Plus (JP)              | Short for SwitchBot Thermometer and Hygrometer Plus (JP) Model No. W2201500 |
-| Meter Plus (US)              | Short for SwitchBot Thermometer and Hygrometer Plus (US) Model No. W2301500 |
-| Outdoor Meter | Short for Indoor/Outdoor Thermo-Hygrometer Model No. W3400010 |
-| Motion Sensor                | Short for SwitchBot Motion Sensor Model No. W1101500         |
-| Contact Sensor               | Short for SwitchBot Contact Sensor Model No. W1201500        |
-| Water Leak Detector | Short for SwitchBot Water Leak Detector Model No. W4402000 |
-| Color Bulb                   | Short for SwitchBot Color Bulb Model No. W1401400            |
-| Strip Light                  | Short for SwitchBot LED Strip Light Model No. W1701100       |
-| Plug Mini (US)               | Short for SwitchBot Plug Mini (US) Model No. W1901400 and W1901401 |
-| Plug Mini (JP)               | Short for SwitchBot Plug Mini (JP) Model No. W2001400 and W2001401 |
-| Lock                         | Short for SwitchBot Lock Model No. W1601700                  |
-| Lock Pro                         | Short for SwitchBot Lock Pro Model No. W3500000                  |
-| Keypad                         | Short for SwitchBot Lock Model No. W2500010                  |
-| Keypad Touch                         | Short for SwitchBot Lock Model No. W2500020                  |
-| Robot Vacuum Cleaner S1      | Short for SwitchBot Robot Vacuum Cleaner S1 Model No. W3011000 |
-| Robot Vacuum Cleaner S1 Plus | Short for SwitchBot Robot Vacuum Cleaner S1 Plus Model No. W3011010 |
-| Floor Cleaning Robot S10 | Short for SwitchBot Floor Cleaning Robot S10 Model No. W3211800 |
-| Ceiling Light      | Short for SwitchBot Ceiling Light Model No. W2612230 and W2612240. Currently only available in Japan. |
-| Ceiling Light Pro | Short for SwitchBot Ceiling Light Pro Model No. W2612210 and W2612220. Currently only available in Japan. |
-| Indoor Cam | Short for SwitchBot Indoor Cam Model No. W1301200                  |
-| Pan/Tilt Cam | Short for SwitchBot Pan/Tilt Cam Model No. W1801200                  |
-| Pan/Tilt Cam 2K | Short for SwitchBot Pan/Tilt Cam 2K Model No. W3101100                  |
-| Blind Tilt | Short for SwitchBot Blind Tilt Model No. W2701600 |
-| Battery Circulator Fan | Short for SwitchBot Battery Circulator Fan Model No. W3800510 |
-| Cloud Services               | A SwitchBot app feature that 1. enables SwitchBot products to be discovered and communicated with third-party services such as Alexa, Google Home, IFTTT, and so forth 2. allows users to create customized smart scenes and  widgets. For BLE-based devices such as Bot and Curtain, you MUST first add a Hub/Hub Mini/Hub Plus and then enable Cloud Services on the Settings page in order to make use of the web API! |
+| Term                         | Description                                                  | Model No.             | Availability                      |
+| ---------------------------- | ------------------------------------------------------------ | --------------------- | --------------------------------- |
+| Hub Mini                     | Short for SwitchBot Hub Mini                                 | W0202200              |                                   |
+| Hub Plus                     | Short for SwitchBot Hub Plus                                 | SwitchBot Hub S1      |                                   |
+| Hub 2                        | Short for SwitchBot Hub 2                                    | W3202100              |                                   |
+| Bot                          | Short for SwitchBot Bot                                      | SwitchBot S1          |                                   |
+| Curtain                      | Short for SwitchBot Curtain                                  | W0701600              |                                   |
+| Curtain 3                    | Short for SwitchBot Curtain 3                                | W2400000              |                                   |
+| Plug                         | Short for SwitchBot Plug                                     | SP11                  | Currently only available in Japan |
+| Meter                        | Short for SwitchBot Thermometer and Hygrometer               | SwitchBot MeterTH S1  |                                   |
+| Meter Plus (JP)              | Short for SwitchBot Thermometer and Hygrometer Plus (JP).    | W2201500              |                                   |
+| Meter Plus (US)              | Short for SwitchBot Thermometer and Hygrometer Plus (US)     | W2301500              |                                   |
+| Outdoor Meter                | Short for Indoor/Outdoor Thermo-Hygrometer                   | W3400010              |                                   |
+| Motion Sensor                | Short for SwitchBot Motion Sensor                            | W1101500              |                                   |
+| Contact Sensor               | Short for SwitchBot Contact Sensor                           | W1201500              |                                   |
+| Water Leak Detector | Short for SwitchBot Water Leak Detector                               | W4402000              |                                   |
+| Color Bulb                   | Short for SwitchBot Color Bulb                               | W1401400              |                                   |
+| Strip Light                  | Short for SwitchBot LED Strip Light                          | W1701100              |                                   |
+| Plug Mini (US)               | Short for SwitchBot Plug Mini (US)                           | W1901400 and W1901401 |                                   |
+| Plug Mini (JP)               | Short for SwitchBot Plug Mini (JP)                           | W2001400 and W2001401 |                                   |
+| Lock                         | Short for SwitchBot Lock                                     | W1601700              |                                   |
+| Lock Pro                     | Short for SwitchBot Lock Pro                                 | W3500000              |                                   |
+| Keypad                       | Short for SwitchBot Lock                                     | W2500010              |                                   |
+| Keypad Touch                 | Short for SwitchBot Lock                                     | W2500020              |                                   |
+| Robot Vacuum Cleaner S1      | Short for SwitchBot Robot Vacuum Cleaner S1                  | W3011000              |                                   |
+| Robot Vacuum Cleaner S1 Plus | Short for SwitchBot Robot Vacuum Cleaner S1 Plus             | W3011010              |                                   |
+| Floor Cleaning Robot S10     | Short for SwitchBot Floor Cleaning Robot S10                 | W3211800              |                                   |
+| Ceiling Light                | Short for SwitchBot Ceiling Light                            | W2612230 and W2612240 | Currently only available in Japan |
+| Ceiling Light Pro            | Short for SwitchBot Ceiling Light Pro                        | W2612210 and W2612220 | Currently only available in Japan |
+| Indoor Cam                   | Short for SwitchBot Indoor Cam                               | W1301200              |                                   |
+| Pan/Tilt Cam                 | Short for SwitchBot Pan/Tilt Cam                             | W1801200              |                                   |
+| Pan/Tilt Cam 2K              | Short for SwitchBot Pan/Tilt Cam 2K                          | W3101100              |                                   |
+| Blind Tilt                   | Short for SwitchBot Blind Tilt                               | W2701600              |                                   |
+| Battery Circulator Fan       | Short for SwitchBot Battery Circulator Fan                   | W3800510              |                                   |
+
+**Cloud Services: A SwitchBot app feature that:**
+ 1. Enables SwitchBot products to be discovered and communicated with third-party services such as Alexa, Google Home, IFTTT, and so forth
+ 2. Allows users to create customized smart scenes and  widgets. For BLE-based devices such as Bot and Curtain
+ 3. You MUST first add a Hub/Hub Mini/Hub Plus
+ 4. Then enable Cloud Services on the Settings page in order to make use of the web API!
 
 
 
