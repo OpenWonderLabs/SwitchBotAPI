@@ -48,6 +48,8 @@
       - [Color Bulb](#color-bulb)
       - [Robot Vacuum Cleaner S1](#robot-vacuum-cleaner-s1)
       - [Robot Vacuum Cleaner S1 Plus](#robot-vacuum-cleaner-s1-plus)
+      - [Mini Robot Vacuum K10+](#mini-robot-vacuum-k10+)
+      - [Mini Robot Vacuum K10+ Pro](#mini-robot-vacuum-k10+-pro)
       - [Floor Cleaning Robot S10](#floor-cleaning-robot-s10)
       - [Humidifier](#humidifier)
       - [Indoor Cam](#indoor-cam)
@@ -84,6 +86,8 @@
       - [Color Bulb](#color-bulb-1)
       - [Robot Vacuum Cleaner S1](#robot-vacuum-cleaner-s1-1)
       - [Robot Vacuum Cleaner S1 Plus](#robot-vacuum-cleaner-s1-plus-1)
+      - [Mini Robot Vacuum K10+](#mini-robot-vacuum-k10+-1)
+      - [Mini Robot Vacuum K10+ Pro](#mini-robot-vacuum-k10+-pro-1)
       - [Floor Cleaning Robot S10](#floor-cleaning-robot-s10-1)
       - [Humidifier](#humidifier-1)
       - [Blind Tilt](#blind-tilt-1)
@@ -108,6 +112,8 @@
       - [Strip Light](#strip-light-2)
       - [Robot Vacuum Cleaner S1](#robot-vacuum-cleaner-s1-2)
       - [Robot Vacuum Cleaner S1 Plus](#robot-vacuum-cleaner-s1-plus-2)
+      - [Mini Robot Vacuum K10+](#mini-robot-vacuum-k10+-2)
+      - [Mini Robot Vacuum K10+ Pro](#mini-robot-vacuum-k10+-pro-2)
       - [Floor Cleaning Robot S10](#floor-cleaning-robot-s10-2)
       - [Ceiling Light](#ceiling-light-2)
       - [Ceiling Light Pro](#ceiling-light-pro-2)
@@ -183,6 +189,8 @@
     + [Plug Mini (JP)](#plug-mini-jp-3)
     + [Robot Vacuum Cleaner S1](#robot-vacuum-cleaner-s1-3)
     + [Robot Vacuum Cleaner S1 Plus](#robot-vacuum-cleaner-s1-plus-3)
+    + [Mini Robot Vacuum K10+](#mini-robot-vacuum-k10+-3)
+    + [Mini Robot Vacuum K10+ Pro](#mini-robot-vacuum-k10+-pro-3)
     + [Floor Cleaning Robot S10](#floor-cleaning-robot-s10-3)
     + [Ceiling Light](#ceiling-light-3)
     + [Ceiling Light Pro](#ceiling-light-pro-3)
@@ -499,23 +507,26 @@ The following table provides definitions to the terms to be frequently mentioned
 | Curtain 3                    | Short for SwitchBot Curtain 3                                | W2400000              |                                   |
 | Plug                         | Short for SwitchBot Plug                                     | SP11                  | Currently only available in Japan |
 | Meter                        | Short for SwitchBot Thermometer and Hygrometer               | SwitchBot MeterTH S1  |                                   |
-| Meter Plus (JP)              | Short for SwitchBot Thermometer and Hygrometer Plus (JP).    | W2201500              |                                   |
-| Meter Plus (US)              | Short for SwitchBot Thermometer and Hygrometer Plus (US)     | W2301500              |                                   |
+| Meter Plus (JP)              | Short for SwitchBot Thermometer and Hygrometer Plus (JP).    | W2201500              | Only available in Japan |
+| Meter Plus (US)              | Short for SwitchBot Thermometer and Hygrometer Plus (US)     | W2301500              | Only available in US |
 | Outdoor Meter                | Short for Indoor/Outdoor Thermo-Hygrometer                   | W3400010              |                                   |
 | Motion Sensor                | Short for SwitchBot Motion Sensor                            | W1101500              |                                   |
 | Contact Sensor               | Short for SwitchBot Contact Sensor                           | W1201500              |                                   |
 | Water Leak Detector | Short for SwitchBot Water Leak Detector                               | W4402000              |                                   |
 | Color Bulb                   | Short for SwitchBot Color Bulb                               | W1401400              |                                   |
 | Strip Light                  | Short for SwitchBot LED Strip Light                          | W1701100              |                                   |
-| Plug Mini (US)               | Short for SwitchBot Plug Mini (US)                           | W1901400 and W1901401 |                                   |
-| Plug Mini (JP)               | Short for SwitchBot Plug Mini (JP)                           | W2001400 and W2001401 |                                   |
+| Plug Mini (US)               | Short for SwitchBot Plug Mini (US)                           | W1901400 and W1901401 | Only available in US |
+| Plug Mini (JP)               | Short for SwitchBot Plug Mini (JP)                           | W2001400 and W2001401 | Only available in Japan |
 | Lock                         | Short for SwitchBot Lock                                     | W1601700              |                                   |
 | Lock Pro                     | Short for SwitchBot Lock Pro                                 | W3500000              |                                   |
 | Keypad                       | Short for SwitchBot Lock                                     | W2500010              |                                   |
 | Keypad Touch                 | Short for SwitchBot Lock                                     | W2500020              |                                   |
 | Robot Vacuum Cleaner S1      | Short for SwitchBot Robot Vacuum Cleaner S1                  | W3011000              |                                   |
 | Robot Vacuum Cleaner S1 Plus | Short for SwitchBot Robot Vacuum Cleaner S1 Plus             | W3011010              |                                   |
+| Mini Robot Vacuum K10+ | Short for SwitchBot Mini Robot Vacuum K10+ | W3011020 | |
+| Mini Robot Vacuum K10+ Pro | Short for SwitchBot Mini Robot Vacuum K10+ Pro | W3011026 | |
 | Floor Cleaning Robot S10     | Short for SwitchBot Floor Cleaning Robot S10                 | W3211800              |                                   |
+| K10+ | Short for SwitchBot Mini Robot Vacuum K10+ | W3011020 | |
 | Ceiling Light                | Short for SwitchBot Ceiling Light                            | W2612230 and W2612240 | Currently only available in Japan |
 | Ceiling Light Pro            | Short for SwitchBot Ceiling Light Pro                        | W2612210 and W2612220 | Currently only available in Japan |
 | Indoor Cam                   | Short for SwitchBot Indoor Cam                               | W1301200              |                                   |
@@ -626,9 +637,11 @@ Physical devices refer to the following SwitchBot products,
  -  Outdoor Meter
  -  Battery Circulator Fan
  -  Curtain 3
- -  `new` Lock Pro
- -  `new` Floor Cleaning Robot S10
- -  `new` Water Leak Detector
+ -  Lock Pro
+ -  Floor Cleaning Robot S10
+ -   Water Leak Detector
+ -  `new` Mini Robot Vacuum K10+
+ -  `new` Mini Robot Vacuum K10+ Pro
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
@@ -947,12 +960,33 @@ The `deviceList` array contains a list of objects with the following key-value a
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
-##### Floor Cleaning Robot S10
+##### Mini Robot Vacuum K10+
+
 | Key                | Value Type | Description                                                  |
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
 | deviceName         | String     | device name                                                  |
-| deviceType         | String     | device type. *Robot Vacuum Cleaner S10*                  |
+| deviceType         | String     | device type. *K10+*                                          |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Mini Robot Vacuum K10+ Pro
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *K10+ Pro*                                      |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Floor Cleaning Robot S10
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Robot Vacuum Cleaner S10*                      |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
@@ -1103,9 +1137,11 @@ Physical devices refer to the following SwitchBot products,
  -  Hub 2
  -  Outdoor Meter
  -  Battery Circulator Fan
- -  `new` Lock Pro
- -  `new` Floor Cleaning Robot S10
- -  `new` Water Leak Detector
+ -  Lock Pro
+ -  Floor Cleaning Robot S10
+ -  Water Leak Detector
+ -  `new` Mini Robot Vacuum K10+
+ -  `new` Mini Robot Vacuum K10+ Pro
 
 #### Path parameters
 
@@ -1388,7 +1424,32 @@ The `body` object contains the following properties,
 | onlineStatus    | String     | the connection status of the device. *online* or *offline* |
 | battery                | Integer    |  the current battery level                                            |
 
+##### Mini Robot Vacuum K10+
+
+| Key           | Value Type | Description                                                  |
+| ------------- | ---------- | ------------------------------------------------------------ |
+| deviceId      | String     | device ID                                                    |
+| deviceName    | String     | device name                                                  |
+| deviceType    | String     | device type. *K10+*                                          |
+| hubDeviceId   | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| workingStatus | String     | the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
+| onlineStatus  | String     | the connection status of the device. *online* or *offline*   |
+| battery       | Integer    | the current battery level `0-100`                            |
+
+##### Mini Robot Vacuum K10+ Pro
+
+| Key           | Value Type | Description                                                  |
+| ------------- | ---------- | ------------------------------------------------------------ |
+| deviceId      | String     | device ID                                                    |
+| deviceName    | String     | device name                                                  |
+| deviceType    | String     | device type. *K10+ Pro*                                      |
+| hubDeviceId   | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| workingStatus | String     | the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
+| onlineStatus  | String     | the connection status of the device. *online* or *offline*   |
+| battery       | Integer    | the current battery level `0-100`                            |
+
 ##### Floor Cleaning Robot S10
+
 | Key                | Value Type | Description                                                  |
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
@@ -1627,7 +1688,26 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Robot Vacuum Cleaner S1 Plus | command     | dock                | default                                                      | return to charging dock                                      |
 | Robot Vacuum Cleaner S1 Plus | command     | PowLevel            | `{0-3}`                                                      | set suction power level: 0 (Quiet), 1 (Standard), 2 (Strong), 3 (MAX) |
 
+##### Mini Robot Vacuum K10+
+
+| deviceType | commandType | Command  | command parameter | Description                                                  |
+| ---------- | ----------- | -------- | ----------------- | ------------------------------------------------------------ |
+| K10+       | command     | start    | default           | start vacuuming                                              |
+| K10+       | command     | stop     | default           | stop vacuuming                                               |
+| K10+       | command     | dock     | default           | return to charging dock                                      |
+| K10+       | command     | PowLevel | `{0-3}`           | set suction power level: 0 (Quiet), 1 (Standard), 2 (Strong), 3 (MAX) |
+
+##### Mini Robot Vacuum K10+ Pro
+
+| deviceType | commandType | Command  | command parameter | Description                                                  |
+| ---------- | ----------- | -------- | ----------------- | ------------------------------------------------------------ |
+| K10+ Pro   | command     | start    | default           | start vacuuming                                              |
+| K10+ Pro   | command     | stop     | default           | stop vacuuming                                               |
+| K10+ Pro   | command     | dock     | default           | return to charging dock                                      |
+| K10+ Pro   | command     | PowLevel | `{0-3}`           | set suction power level: 0 (Quiet), 1 (Standard), 2 (Strong), 3 (MAX) |
+
 ##### Floor Cleaning Robot S10
+
 | deviceType               | commandType | Command         | command parameter                                            | Description                                                  |
 | ------------------------ | ----------- | --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Floor Cleaning Robot S10 | command     | startClean      | {"action": clean_mode_str, "param": {"fanLevel": fan_level_int, "waterLevel": water_level_int, "times": clean_cycle_int}} | start cleaning.<br />`action`, the cleaning mode, *sweep* or *sweep_mop*.<br />`fanLevel`, the vacuum level, `1-4`.<br />`waterLevel`, the mop moisture level, `1-2`.<br />`times`, the number of cycles, `1-2639999`, in theory. |
@@ -2921,6 +3001,62 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
     "eventVersion": "1",
     "context": {
         "deviceType": "WoSweeperPlus",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "workingStatus"："StandBy",
+        "onlineStatus": "online",
+        "battery": 100,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Mini Robot Vacuum K10+
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | attributes of the context object. the type of the device |
+| deviceMac    | String     | attributes of the context object. the MAC address of the device |
+| workingStatus    | String     | attributes of the context object. the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
+| onlineStatus    | String     | attributes of the context object. the connection status of the device. *online* or *offline* |
+| battery | Integer | attributes of the context object. the battery level, range from 0 to 100 |
+| timeOfSample    | Long | attributes of the context object. the time stamp when the event is sent |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoSweeperMini",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "workingStatus"："StandBy",
+        "onlineStatus": "online",
+        "battery": 100,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Mini Robot Vacuum K10+ Pro
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | attributes of the context object. the type of the device |
+| deviceMac    | String     | attributes of the context object. the MAC address of the device |
+| workingStatus    | String     | attributes of the context object. the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
+| onlineStatus    | String     | attributes of the context object. the connection status of the device. *online* or *offline* |
+| battery | Integer | attributes of the context object. the battery level, range from 0 to 100 |
+| timeOfSample    | Long | attributes of the context object. the time stamp when the event is sent |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoSweeperMiniPro",
         "deviceMac": DEVICE_MAC_ADDR,
         "workingStatus"："StandBy",
         "onlineStatus": "online",
