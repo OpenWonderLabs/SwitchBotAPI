@@ -215,12 +215,22 @@ Hence, we strongly recommend all SwitchBot users to migrate to the new API versi
 ## Getting Started
 Please follow these steps,
 1. Download the SwitchBot app on App Store or Google Play Store
+
 2. Register a SwitchBot account and log in into your account
+
 3. Generate an Open Token within the app
-a) Go to Profile > Preference
-b) Tap App Version 10 times. Developer Options will show up
-c) Tap Developer Options
-d) Tap Get Token
+  For app version ≥ V9.0,
+  a) Go to Profile > Preferences > About
+  b) Tap App Version 10 times. Developer Options will show up
+  c) Tap Developer Options
+  d) Tap Get Token
+
+  For app version < V9.0,
+  a) Go to Profile > Preferences
+  b) Tap App Version 10 times. Developer Options will show up
+  c) Tap Developer Options
+  d) Tap Get Token
+
 4. Roll up your sleeves and get your hands dirty with SwitchBot OpenAPI!
 
 ## Authentication
@@ -535,10 +545,15 @@ The following table provides definitions to the terms to be frequently mentioned
 | Blind Tilt                   | Short for SwitchBot Blind Tilt                               | W2701600              |                                   |
 | Battery Circulator Fan       | Short for SwitchBot Battery Circulator Fan                   | W3800510              |                                   |
 
-**Cloud Services: A SwitchBot app feature that:**
- 1. Enables SwitchBot products to be discovered and communicated with third-party services such as Alexa, Google Home, IFTTT, and so forth
+### `Legacy` Cloud Services
+
+> Important note: Beyond V9.0, there will NOT be a Cloud Services option in the app. You will see Third-party Services instead. Please read this article for more information, https://support.switch-bot.com/hc/en-us/articles/7257579858455
+
+A SwitchBot app feature, which appears in the app <V9.0 that
+
+ 1. Enables SwitchBot products to be discovered and communicated with third-party services such as Home Assistant, Alexa, Google Home, IFTTT, SmartThings, and so forth
  2. Allows users to create customized smart scenes and  widgets. For BLE-based devices such as Bot and Curtain
- 3. You MUST first add a Hub/Hub Mini/Hub Plus
+ 3. You MUST first add a SwitchBot Hub such as Hub 2, Hub Mini with Matter Enabled, or Hub Mini
  4. Then enable Cloud Services on the Settings page in order to make use of the web API!
 
 
