@@ -31,6 +31,8 @@
       - [Meter](#meter)
       - [Meter Plus](#meter-plus)
       - [Outdoor Meter](#outdoor-meter)
+      - [Meter Pro](#meter-pro)
+      - [Meter Pro CO2 Monitor](#meter-pro-co2-monitor)
       - [Lock](#lock)
       - [Lock Pro](#lock-pro)
       - [Keypad](#keypad)
@@ -57,6 +59,7 @@
       - [Pan/Tilt Cam 2K](#pantilt-cam-2k)
       - [Blind Tilt](#blind-tilt)
       - [Battery Circulator Fan](#battery-circulator-fan)
+      - [Circulator Fan](#circulator-fan)
       - [Virtual infrared remote devices](#virtual-infrared-remote-devices)
     + [Sample](#sample)
       - [Get all devices](#get-all-devices)
@@ -70,6 +73,8 @@
       - [Meter](#meter-1)
       - [Meter Plus](#meter-plus-1)
       - [Outdoor Meter](#outdoor-meter-1)
+      - [Meter Pro](#meter-pro-1)
+      - [Meter Pro CO2 Monitor](#meter-pro-co2-monitor-1)
       - [Lock](#lock-1)
       - [Lock Pro](#lock-pro-1)
       - [Keypad](#keypad-1)
@@ -93,6 +98,7 @@
       - [Blind Tilt](#blind-tilt-1)
       - [Hub 2](#hub-2)
       - [Battery Circulator Fan](#battery-circulator-fan-1)
+      - [Circulator Fan](#circulator-fan-1)
     + [Sample](#sample-1)
       - [SwitchBot Meter example](#switchbot-meter-example)
       - [SwitchBot Curtain example](#switchbot-curtain-example)
@@ -121,6 +127,7 @@
       - [Keypad Touch](#keypad-touch-2)
       - [Blind Tilt](#blind-tilt-2)
       - [Battery Circulator Fan](#battery-circulator-fan-2)
+      - [Circulator Fan](#circulator-fan-2)
     + [Command set for virtual infrared remote devices](#command-set-for-virtual-infrared-remote-devices)
     + [Path parameters](#path-parameters-1)
     + [Request body parameters](#request-body-parameters)
@@ -179,6 +186,8 @@
     + [Meter](#meter-2)
     + [Meter Plus](#meter-plus-2)
     + [Outdoor Meter](#outdoor-meter-2)
+    + [Meter Pro](#meter-pro-2)
+    + [Meter Pro CO2 Monitor](#meter-pro-co2-monitor-2)
     + [Lock](#lock-3)
     + [Lock Pro](#lock-pro-3)
     + [Indoor Cam](#indoor-cam-1)
@@ -202,6 +211,7 @@
       - [Delete a passcode](#delete-a-passcode-1)
     + [Hub 2](#hub-2-1)
     + [Battery Circulator Fan](#battery-circulator-fan-3)
+    + [Circulator Fan](#circulator-fan-3)
 
 ## Introduction
 This document describes a collection of SwitchBot API methods, examples, and best practices for, but not limited to, IoT hobbyists, developers, and gurus to make their own smart home programs or applications. 
@@ -219,11 +229,11 @@ Please follow these steps,
 2. Register a SwitchBot account and log in into your account
 
 3. Generate an Open Token within the app
-  For app version ≥ V9.0,
-  a) Go to Profile > Preferences > About
-  b) Tap App Version 10 times. Developer Options will show up
-  c) Tap Developer Options
-  d) Tap Get Token
+    For app version ≥ V9.0,
+    a) Go to Profile > Preferences > About
+    b) Tap App Version 10 times. Developer Options will show up
+    c) Tap Developer Options
+    d) Tap Get Token
 
   For app version < V9.0,
   a) Go to Profile > Preferences
@@ -520,6 +530,8 @@ The following table provides definitions to the terms to be frequently mentioned
 | Meter Plus (JP)              | Short for SwitchBot Thermometer and Hygrometer Plus (JP).    | W2201500              | Only available in Japan |
 | Meter Plus (US)              | Short for SwitchBot Thermometer and Hygrometer Plus (US)     | W2301500              | Only available in US |
 | Outdoor Meter                | Short for Indoor/Outdoor Thermo-Hygrometer                   | W3400010              |                                   |
+| Meter Pro | Short for SwitchBot Meter Pro | W4900000 | |
+| Meter Pro (CO2 Monitor) | Short for SwitchBot Meter Pro (CO2 Monitor) | W4900010 | |
 | Motion Sensor                | Short for SwitchBot Motion Sensor                            | W1101500              |                                   |
 | Contact Sensor               | Short for SwitchBot Contact Sensor                           | W1201500              |                                   |
 | Water Leak Detector | Short for SwitchBot Water Leak Detector                               | W4402000              |                                   |
@@ -544,6 +556,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Pan/Tilt Cam 2K              | Short for SwitchBot Pan/Tilt Cam 2K                          | W3101100              |                                   |
 | Blind Tilt                   | Short for SwitchBot Blind Tilt                               | W2701600              |                                   |
 | Battery Circulator Fan       | Short for SwitchBot Battery Circulator Fan                   | W3800510              |                                   |
+| Circulator Fan | Short for SwitchBot Circulator Fan | W3800511 | |
 
 ### `Legacy` Cloud Services
 
@@ -655,8 +668,11 @@ Physical devices refer to the following SwitchBot products,
  -  Lock Pro
  -  Floor Cleaning Robot S10
  -   Water Leak Detector
- -  `new` Mini Robot Vacuum K10+
- -  `new` Mini Robot Vacuum K10+ Pro
+ -  Mini Robot Vacuum K10+
+ -  Mini Robot Vacuum K10+ Pro
+ -  `new` Meter Pro
+ -  `new` Meter Pro CO2
+ -  `new` Circulator Fan
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
@@ -768,6 +784,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 
 ##### Outdoor Meter
+
 | Key                | Value Type | Description                                                  |
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
@@ -776,6 +793,25 @@ The `deviceList` array contains a list of objects with the following key-value a
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 
+##### Meter Pro
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *MeterPro*                                     |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+##### Meter Pro CO2
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *MeterPro(CO2)*                                 |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
 
 ##### Lock
 
@@ -1067,6 +1103,18 @@ The `deviceList` array contains a list of objects with the following key-value a
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 
+##### Circulator Fan
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Circulator Fan*                        |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+
+
 ##### Virtual infrared remote devices
 
 
@@ -1155,8 +1203,11 @@ Physical devices refer to the following SwitchBot products,
  -  Lock Pro
  -  Floor Cleaning Robot S10
  -  Water Leak Detector
- -  `new` Mini Robot Vacuum K10+
- -  `new` Mini Robot Vacuum K10+ Pro
+ -  Mini Robot Vacuum K10+
+ -  Mini Robot Vacuum K10+ Pro
+ -  `new` Meter Pro
+ -  `new` Meter Pro CO2
+ -  `new` Circulator Fan
 
 #### Path parameters
 
@@ -1254,8 +1305,33 @@ The `body` object contains the following properties,
 | temperature            | Float      |  temperature in celsius                                       |
 | humidity               | Integer    | humidity percentage |
 
+##### Meter Pro
+
+| Key         | Value Type | Description                             |
+| ----------- | ---------- | --------------------------------------- |
+| deviceId    | String     | device ID                               |
+| deviceType  | String     | device type. *MeterPro*                |
+| hubDeviceId | String     | device's parent Hub ID                  |
+| battery     | Integer    | the current battery level, 0-100        |
+| version     | String     | the current firmware version, e.g. V4.2 |
+| temperature | Float      | temperature in celsius                  |
+| humidity    | Integer    | humidity percentage                     |
+
+##### Meter Pro CO2
+
+| Key         | Value Type | Description                             |
+| ----------- | ---------- | --------------------------------------- |
+| deviceId    | String     | device ID                               |
+| deviceType  | String     | device type. *MeterPro(CO2)*   |
+| hubDeviceId | String     | device's parent Hub ID                  |
+| battery     | Integer    | the current battery level, 0-100        |
+| version     | String     | the current firmware version, e.g. V4.2 |
+| temperature | Float      | temperature in celsius                  |
+| humidity    | Integer    | humidity percentage                     |
+| CO2    | Integer    | CO2 ppm value, 0-9999 |
 
 ##### Lock
+
 | Key                | Value Type      | Description                                                  |
 | ------------------ | --------------- | ------------------------------------------------------------ |
 | deviceId           | String          | device ID                                                    |
@@ -1532,6 +1608,20 @@ The `body` object contains the following properties,
 | oscillation | String | set horizontal oscillation. turn on: *on*; turn off: *off* |
 | verticalOscillation | String | set vertical oscillation. turn on: *on*; turn off: *off* |
 | chargingStatus | String | battery charge status. *charging* or *uncharged* |
+| fanSpeed | Integer | fan speed. 1~100 |
+
+##### Circulator Fan
+| Key                 | Value Type      | Description                                                  |
+| ------------------- | --------------- | ------------------------------------------------------------ |
+| deviceId            | String          | device ID                                                    |
+| deviceName          | String          | device name                                                  |
+| deviceType          | String          | device type. *Circulator Fan*                                    |
+| mode     | String     |fan mode. direct mode: *direct*; natural mode: "natural"; sleep mode: "sleep"; ultra quiet mode: "baby" |
+| version     | String     | the current firmware version, e.g. V4.2 |
+| power                  | String     | ON/OFF state                                                 |
+| nightStatus                | Integer    |  set nightlight status. turn off: *off*; mode 1: *1*; mode 2: *2*  |
+| oscillation | String | set horizontal oscillation. turn on: *on*; turn off: *off* |
+| verticalOscillation | String | set vertical oscillation. turn on: *on*; turn off: *off* |
 | fanSpeed | Integer | fan speed. 1~100 |
 
 #### Sample
@@ -1819,6 +1909,16 @@ The following table describes the parameter object for `deleteKey`,
 | Battery Circulator Fan | command     | setNightLightMode | `off`, `1`, or `2`                      | `off`, turn off nightlight,<br />`1`, bright <br />`2`, dim  |
 | Battery Circulator Fan | command     | setWindMode       | `direct`, `natural`, `sleep`, or `baby` | Set fan mode. `direct`: direct mode. `natural`:  natural mode. `sleep`: sleep mode. `baby`: ultra quiet mode |
 | Battery Circulator Fan | command     | setWindSpeed      | `{1-100}` e.g. `10`                     | Set fan speed.1~100                                          |
+
+##### Circulator Fan
+
+| deviceType     | commandType | Command           | command parameter                       | Description                                                  |
+| -------------- | ----------- | ----------------- | --------------------------------------- | ------------------------------------------------------------ |
+| Circulator Fan | command     | turnOff           | default                                 | Set to OFF state                                             |
+| Circulator Fan | command     | turnOn            | default                                 | Set to ON state                                              |
+| Circulator Fan | command     | setNightLightMode | `off`, `1`, or `2`                      | `off`, turn off nightlight,<br />`1`, bright <br />`2`, dim  |
+| Circulator Fan | command     | setWindMode       | `direct`, `natural`, `sleep`, or `baby` | Set fan mode. `direct`: direct mode. `natural`:  natural mode. `sleep`: sleep mode. `baby`: ultra quiet mode |
+| Circulator Fan | command     | setWindSpeed      | `{1-100}` e.g. `10`                     | Set fan speed.1~100                                          |
 
 #### Command set for virtual infrared remote devices
 
@@ -2599,6 +2699,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | deviceType     | String     | the type of the device                                       |
 | deviceMac      | String     | the MAC address of the device                                |
 | detectionState | String     | the motion state of the device, "DETECTED" stands for motion is detected; "NOT_DETECTED" stands for motion has not been detected for some time |
+| battery        | Integer    | the current battery level, `0-100`                           |
 | timeOfSample   | Long       | the time stamp when the event is sent                        |
 
 ```js
@@ -2609,6 +2710,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "deviceType": "WoPresence",
         "deviceMac": DEVICE_MAC_ADDR,
         "detectionState": "NOT_DETECTED",
+        "battery":100,
         "timeOfSample": 123456789
     }
 }
@@ -2627,6 +2729,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | doorMode       | String     | when the enter or exit mode gets triggered, "IN_DOOR" or "OUT_DOOR" is returned |
 | brightness     | String     | the level of brightness, can be "bright" or "dim"            |
 | openState      | String     | the state of the contact sensor, can be "open" or "close" or "timeOutNotClose" |
+| battery        | Integer    | the current battery level, `0-100`                           |
 | timeOfSample   | Long       | the time stamp when the event is sent                        |
 
 ```js
@@ -2640,6 +2743,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "doorMode":"OUT_DOOR",
         "brightness": "dim",
         "openState": "open",
+        "battery":100,
         "timeOfSample": 123456789
     }
 }
@@ -2684,6 +2788,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | temperature  | Float      | the current temperature reading            |
 | scale        | String     | the current temperature unit being used    |
 | humidity     | Integer    | the current humidity reading in percentage |
+| battery      | Integer    | the current battery level, `0-100`         |
 | timeOfSample | Long       | the time stamp when the event is sent      |
 
 ```js
@@ -2696,6 +2801,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "temperature": 22.5,
         "scale": "CELSIUS",
         "humidity": 31,
+        "battery":100,
         "timeOfSample": 123456789
     }
 }
@@ -2713,6 +2819,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | temperature  | Float      | the current temperature reading            |
 | scale        | String     | the current temperature unit being used    |
 | humidity     | Integer    | the current humidity reading in percentage |
+| battery      | Integer    | the current battery level, `0-100`         |
 | timeOfSample | Long       | the time stamp when the event is sent      |
 
 ```js
@@ -2725,6 +2832,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "temperature": 22.5,
         "scale": "CELSIUS",
         "humidity": 31,
+        "battery":100,
         "timeOfSample": 123456789
     }
 }
@@ -2742,6 +2850,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | temperature  | Float      | the current temperature reading            |
 | scale        | String     | the current temperature unit being used    |
 | humidity     | Integer    | the current humidity reading in percentage |
+| battery      | Integer    | the current battery level, `0-100`         |
 | timeOfSample | Long       | the time stamp when the event is sent      |
 
 ```js
@@ -2754,6 +2863,71 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "temperature": 22.5,
         "scale": "CELSIUS",
         "humidity": 31,
+        "battery":100,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Meter Pro
+
+| Key Name     | Value Type | Description                                |
+| ------------ | ---------- | ------------------------------------------ |
+| eventType    | String     | the type of events                         |
+| eventVersion | String     | the current event version                  |
+| context      | Object     | the detail info of the event               |
+| deviceType   | String     | the type of the device                     |
+| deviceMac    | String     | the MAC address of the device              |
+| temperature  | Float      | the current temperature reading            |
+| scale        | String     | the current temperature unit being used    |
+| humidity     | Integer    | the current humidity reading in percentage |
+| battery      | Integer    | the current battery level, `0-100`         |
+| timeOfSample | Long       | the time stamp when the event is sent      |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "MeterPro",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "temperature": 22.5,
+        "scale": "CELSIUS",
+        "humidity": 31,
+        "battery":100,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Meter Pro CO2
+
+| Key Name     | Value Type | Description                                |
+| ------------ | ---------- | ------------------------------------------ |
+| eventType    | String     | the type of events                         |
+| eventVersion | String     | the current event version                  |
+| context      | Object     | the detail info of the event               |
+| deviceType   | String     | the type of the device                     |
+| deviceMac    | String     | the MAC address of the device              |
+| temperature  | Float      | the current temperature reading            |
+| scale        | String     | the current temperature unit being used    |
+| humidity     | Integer    | the current humidity reading in percentage |
+| CO2          | Integer    | CO2 ppm value, 0-9999                      |
+| battery      | Integer    | the current battery level, `0-100`         |
+| timeOfSample | Long       | the time stamp when the event is sent      |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "MeterPro(CO2)",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "temperature": 22.5,
+        "scale": "CELSIUS",
+        "humidity": 31,
+        "CO2": 1203,
+        "battery":100,
         "timeOfSample": 123456789
     }
 }
@@ -2769,6 +2943,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | deviceType   | String     | the type of the device                                       |
 | deviceMac    | String     | the MAC address of the device                                |
 | lockState    | String     | the state of the device, "LOCKED" stands for the motor is rotated to locking position; "UNLOCKED" stands for the motor is rotated to unlocking position; "JAMMED" stands for the motor is jammed while rotating |
+| battery      | Integer    | the current battery level, `0-100`                           |
 | timeOfSample | Long       | the time stamp when the event is sent                        |
 
 ```js
@@ -2779,6 +2954,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "deviceType": "WoLock",
         "deviceMac": DEVICE_MAC_ADDR,
         "lockState": "LOCKED",
+        "battery":100,
         "timeOfSample": 123456789
     }
 }
@@ -2794,6 +2970,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | deviceType   | String     | the type of the device                                       |
 | deviceMac    | String     | the MAC address of the device                                |
 | lockState    | String     | the state of the device, "LOCKED" stands for the motor is rotated to locking position; "UNLOCKED" stands for the motor is rotated to unlocking position; "JAMMED" stands for the motor is jammed while rotating |
+| battery      | Integer    | the current battery level, `0-100`                           |
 | timeOfSample | Long       | the time stamp when the event is sent                        |
 
 ```js
@@ -2804,6 +2981,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "deviceType": "WoLockPro",
         "deviceMac": DEVICE_MAC_ADDR,
         "lockState": "LOCKED",
+        "battery":100,
         "timeOfSample": 123456789
     }
 }
@@ -3326,6 +3504,43 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "oscillation": "on",
         "verticalOscillation": "on",
         "chargingStatus": "charging",
+        "fanSpeed": 3,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Circulator Fan
+
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | the type of the device                               |
+| deviceMac    | String     | the MAC address of the device                        |
+| mode                | String  | fan mode. direct mode: *direct*; natural mode: "natural"; sleep mode: "sleep"; ultra quiet mode: "baby" |
+| version             | String  | the current firmware version, e.g. V4.2                      |
+| powerState     | String  | ON/OFF state                                                 |
+| nightStatus         | Integer | set nightlight status. turn off: *off*; mode 1: *1*; mode 2: *2* |
+| oscillation         | String  | set horizontal oscillation. turn on: *on*; turn off: *off*   |
+| verticalOscillation | String  | set vertical oscillation. turn on: *on*; turn off: *off*     |
+| fanSpeed            | Integer | fan speed. 1~100                                             |
+| timeOfSample | Long       | the time stamp when the event is sent                |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoFan2",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "mode": "direct",
+        "version": "V3.1",
+        "powerState": "ON",
+        "nightStatus": "off",
+        "oscillation": "on",
+        "verticalOscillation": "on",
         "fanSpeed": 3,
         "timeOfSample": 123456789
     }
