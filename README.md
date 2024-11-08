@@ -32,7 +32,7 @@
       - [Meter Plus](#meter-plus)
       - [Outdoor Meter](#outdoor-meter)
       - [Meter Pro](#meter-pro)
-      - [Meter Pro CO2 Monitor](#meter-pro-co2-monitor)
+      - [Meter Pro CO2](#meter-pro-co2)
       - [Lock](#lock)
       - [Lock Pro](#lock-pro)
       - [Keypad](#keypad)
@@ -52,14 +52,24 @@
       - [Robot Vacuum Cleaner S1 Plus](#robot-vacuum-cleaner-s1-plus)
       - [Mini Robot Vacuum K10+](#mini-robot-vacuum-k10+)
       - [Mini Robot Vacuum K10+ Pro](#mini-robot-vacuum-k10+-pro)
+      - [K10+ Pro Combo](#k10+-pro-combo)
       - [Floor Cleaning Robot S10](#floor-cleaning-robot-s10)
       - [Humidifier](#humidifier)
+      - [Evaporative Humidifier](#evaporative-humidifier)
+      - [Evaporative Humidifier (Auto-refill)](#evaporative-humidifier-auto-refill)
+      - [Air Purifier VOC](#air-purifier-voc)
+      - [Air Purifier Table VOC](#air-purifier-table-voc)
+      - [Air Purifier PM2.5](#air-purifier-pm2.5)
+      - [Air Purifier Table PM2.5](#air-purifier-table-pm2.5)
       - [Indoor Cam](#indoor-cam)
       - [Pan/Tilt Cam](#pantilt-cam)
       - [Pan/Tilt Cam 2K](#pantilt-cam-2k)
       - [Blind Tilt](#blind-tilt)
       - [Battery Circulator Fan](#battery-circulator-fan)
       - [Circulator Fan](#circulator-fan)
+      - [Roller Shade](#roller-shade)
+      - [Relay Switch 1PM](#relay-switch-1pm)
+      - [Relay Switch 1](#relay-switch-1)
       - [Virtual infrared remote devices](#virtual-infrared-remote-devices)
     + [Sample](#sample)
       - [Get all devices](#get-all-devices)
@@ -93,12 +103,22 @@
       - [Robot Vacuum Cleaner S1 Plus](#robot-vacuum-cleaner-s1-plus-1)
       - [Mini Robot Vacuum K10+](#mini-robot-vacuum-k10+-1)
       - [Mini Robot Vacuum K10+ Pro](#mini-robot-vacuum-k10+-pro-1)
+      - [K10+ Pro Combo](#k10+-pro-combo-1)
       - [Floor Cleaning Robot S10](#floor-cleaning-robot-s10-1)
       - [Humidifier](#humidifier-1)
+      - [Evaporative Humidifier](#evaporative-humidifier-1)
+      - [Evaporative Humidifier (Auto-refill)](#evaporative-humidifier-auto-refill-1)
+      - [Air Purifier VOC](#air-purifier-voc-1)
+      - [Air Purifier Table VOC](#air-purifier-table-voc-1)
+      - [Air Purifier PM2.5](#air-purifier-pm2.5-1)
+      - [Air Purifier Table PM2.5](#air-purifier-table-pm2.5-1)
       - [Blind Tilt](#blind-tilt-1)
       - [Hub 2](#hub-2)
       - [Battery Circulator Fan](#battery-circulator-fan-1)
       - [Circulator Fan](#circulator-fan-1)
+      - [Roller Shade](#roller-shade-1)
+      - [Relay Switch 1PM](#relay-switch-1pm-1)
+      - [Relay Switch 1](#relay-switch-1-1)
     + [Sample](#sample-1)
       - [SwitchBot Meter example](#switchbot-meter-example)
       - [SwitchBot Curtain example](#switchbot-curtain-example)
@@ -111,6 +131,12 @@
       - [Lock](#lock-2)
       - [Lock Pro](#lock-pro-2)
       - [Humidifier](#humidifier-2)
+      - [Evaporative Humidifier](#evaporative-humidifier-2)
+      - [Evaporative Humidifier (Auto-refill)](#evaporative-humidifier-auto-refill-2)
+      - [Air Purifier VOC](#air-purifier-voc-2)
+      - [Air Purifier Table VOC](#air-purifier-table-voc-2)
+      - [Air Purifier PM2.5](#air-purifier-pm2.5-2)
+      - [Air Purifier Table PM2.5](#air-purifier-table-pm2.5-2)
       - [Plug](#plug-2)
       - [Plug Mini (US)](#plug-mini-us-2)
       - [Plug Mini (JP)](#plug-mini-jp-2)
@@ -120,6 +146,7 @@
       - [Robot Vacuum Cleaner S1 Plus](#robot-vacuum-cleaner-s1-plus-2)
       - [Mini Robot Vacuum K10+](#mini-robot-vacuum-k10+-2)
       - [Mini Robot Vacuum K10+ Pro](#mini-robot-vacuum-k10+-pro-2)
+      - [K10+ Pro Combo](#k10+-pro-combo-2)
       - [Floor Cleaning Robot S10](#floor-cleaning-robot-s10-2)
       - [Ceiling Light](#ceiling-light-2)
       - [Ceiling Light Pro](#ceiling-light-pro-2)
@@ -128,6 +155,9 @@
       - [Blind Tilt](#blind-tilt-2)
       - [Battery Circulator Fan](#battery-circulator-fan-2)
       - [Circulator Fan](#circulator-fan-2)
+      - [Roller Shade](#roller-shade-2)
+      - [Relay Switch 1PM](#relay-switch-1pm-2)
+      - [Relay Switch 1](#relay-switch-1-2)
     + [Command set for virtual infrared remote devices](#command-set-for-virtual-infrared-remote-devices)
     + [Path parameters](#path-parameters-1)
     + [Request body parameters](#request-body-parameters)
@@ -200,6 +230,7 @@
     + [Robot Vacuum Cleaner S1 Plus](#robot-vacuum-cleaner-s1-plus-3)
     + [Mini Robot Vacuum K10+](#mini-robot-vacuum-k10+-3)
     + [Mini Robot Vacuum K10+ Pro](#mini-robot-vacuum-k10+-pro-3)
+    + [K10+ Pro Combo](#k10+-pro-combo-3)
     + [Floor Cleaning Robot S10](#floor-cleaning-robot-s10-3)
     + [Ceiling Light](#ceiling-light-3)
     + [Ceiling Light Pro](#ceiling-light-pro-3)
@@ -212,6 +243,15 @@
     + [Hub 2](#hub-2-1)
     + [Battery Circulator Fan](#battery-circulator-fan-3)
     + [Circulator Fan](#circulator-fan-3)
+    + [Roller Shade](#roller-shade-3)
+    + [Relay Switch 1PM](#relay-switch-1pm-3)
+    + [Relay Switch 1](#relay-switch-1-3)
+    + [Evaporative Humidifier](#evaporative-humidifier-3)
+    + [Evaporative Humidifier (Auto-refill)](#evaporative-humidifier-auto-refill-3)
+    + [Air Purifier VOC](#air-purifier-voc-3)
+    + [Air Purifier Table VOC](#air-purifier-table-voc-3)
+    + [Air Purifier PM2.5](#air-purifier-pm2.5-3)
+    + [Air Purifier Table PM2.5](#air-purifier-table-pm2.5-3)
 
 ## Introduction
 This document describes a collection of SwitchBot API methods, examples, and best practices for, but not limited to, IoT hobbyists, developers, and gurus to make their own smart home programs or applications. 
@@ -543,12 +583,12 @@ The following table provides definitions to the terms to be frequently mentioned
 | Lock Pro                     | Short for SwitchBot Lock Pro                                 | W3500000              |                                   |
 | Keypad                       | Short for SwitchBot Lock                                     | W2500010              |                                   |
 | Keypad Touch                 | Short for SwitchBot Lock                                     | W2500020              |                                   |
-| Robot Vacuum Cleaner S1      | Short for SwitchBot Robot Vacuum Cleaner S1                  | W3011000              |                                   |
-| Robot Vacuum Cleaner S1 Plus | Short for SwitchBot Robot Vacuum Cleaner S1 Plus             | W3011010              |                                   |
-| Mini Robot Vacuum K10+ | Short for SwitchBot Mini Robot Vacuum K10+ | W3011020 | |
-| Mini Robot Vacuum K10+ Pro | Short for SwitchBot Mini Robot Vacuum K10+ Pro | W3011026 | |
-| Floor Cleaning Robot S10     | Short for SwitchBot Floor Cleaning Robot S10                 | W3211800              |                                   |
+| S1      | Short for SwitchBot Robot Vacuum Cleaner S1                  | W3011000              |                                   |
+| S1 Plus | Short for SwitchBot Robot Vacuum Cleaner S1 Plus             | W3011010              |                                   |
 | K10+ | Short for SwitchBot Mini Robot Vacuum K10+ | W3011020 | |
+| K10+ Pro | Short for SwitchBot Mini Robot Vacuum K10+ Pro | W3011026 | |
+| S10   | Short for SwitchBot Floor Cleaning Robot S10                 | W3211800              |                                   |
+| K10+ Pro Combo | Short for SwitchBot Robot Vacuum K10+ Pro Combo | W3002500 | |
 | Ceiling Light                | Short for SwitchBot Ceiling Light                            | W2612230 and W2612240 | Currently only available in Japan |
 | Ceiling Light Pro            | Short for SwitchBot Ceiling Light Pro                        | W2612210 and W2612220 | Currently only available in Japan |
 | Indoor Cam                   | Short for SwitchBot Indoor Cam                               | W1301200              |                                   |
@@ -557,6 +597,15 @@ The following table provides definitions to the terms to be frequently mentioned
 | Blind Tilt                   | Short for SwitchBot Blind Tilt                               | W2701600              |                                   |
 | Battery Circulator Fan       | Short for SwitchBot Battery Circulator Fan                   | W3800510              |                                   |
 | Circulator Fan | Short for SwitchBot Circulator Fan | W3800511 | |
+| Evaporative Humidifier | Short for SwitchBot Evaporative Humidifier | W3902300 | |
+| Evaporative Humidifier (Auto-refill) | Short for SwitchBot Evaporative Humidifier (Auto-refill) | W3902310 | |
+| Air Purifier PM2.5 | Short for SwitchBot Air Purifier | W5302300 | |
+| Air Purifier Table PM2.5 | Short for SwitchBot Air Purifier Table | W5302310 | |
+| Air Purifier VOC | Short for SwitchBot Air Purifier | W5302300 | Currently only available in Japan |
+| Air Purifier Table VOC | Short for SwitchBot Air Purifier Table | W5302310 | Currently only available in Japan |
+| Roller Shade | Short for SwitchBot Roller Shade | W5000000 |  |
+| Relay Switch 1PM | Short for SwitchBot Relay Switch 1PM | W5502310 |  |
+| Relay Switch 1 | Short for SwitchBot Relay Switch 1 | W5502300 |  |
 
 ### `Legacy` Cloud Services
 
@@ -673,6 +722,16 @@ Physical devices refer to the following SwitchBot products,
  -  `new` Meter Pro
  -  `new` Meter Pro CO2
  -  `new` Circulator Fan
+ -  `new` Evaporative Humidifier
+ -  `new` Evaporative Humidifier (Auto-refill)
+ -  `new` K10+ Pro Combo
+ -  `new` Air Purifier VOC
+ -  `new` Air Purifier Table VOC
+ -  `new` Air Purifier PM2.5
+ -  `new` Air Purifier Table PM2.5
+ -  `new` Roller Shade
+ -  `new` Relay Switch 1PM
+ -  `new` Relay Switch 1
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
@@ -1031,6 +1090,16 @@ The `deviceList` array contains a list of objects with the following key-value a
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
+##### K10+ Pro Combo
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Robot Vacuum Cleaner K10+ Pro Combo*           |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | returns `null` if not a bluetooth device                     |
+
 ##### Floor Cleaning Robot S10
 
 | Key                | Value Type | Description                                                  |
@@ -1051,7 +1120,66 @@ The `deviceList` array contains a list of objects with the following key-value a
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
+##### Evaporative Humidifier
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Humidifier2*                                   |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | returns `null` if not a bluetooth device                     |
+
+##### Evaporative Humidifier (Auto-refill)
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Humidifier2*                                   |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | returns `null` if not a bluetooth device                     |
+
+##### Air Purifier VOC
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Air Purifier VOC*                              |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | returns `null` if not a bluetooth device                     |
+
+##### Air Purifier Table VOC
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Air Purifier Table VOC*                        |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | returns `null` if not a bluetooth device                     |
+
+##### Air Purifier PM2.5
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Air Purifier PM2.5*                            |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | returns `null` if not a bluetooth device                     |
+
+##### Air Purifier Table PM2.5
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Air Purifier Table PM2.5*                      |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | returns `null` if not a bluetooth device                     |
+
 ##### Indoor Cam
+
 | Key                | Value Type | Description                                                  |
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
@@ -1113,7 +1241,38 @@ The `deviceList` array contains a list of objects with the following key-value a
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 
+##### Roller Shade
 
+| Key                | Value Type      | Description                                                  |
+| ------------------ | --------------- | ------------------------------------------------------------ |
+| deviceId           | String          | device ID                                                    |
+| deviceName         | String          | device name                                                  |
+| deviceType         | String          | device type. *Roller Shade*                                  |
+| bleVersion         | Integer         | firmware version                                             |
+| enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String          | device's parent Hub ID                                       |
+| groupingDevicesIds | Array<deviceId> | a list of device IDs such that the Roller Shade devices are being paired or grouped |
+| group              | Boolean         | determines if a device is paired with or grouped with one or more devices of the same type or not |
+| master             | Boolean         | determines if a device is the master device or not when paired with or grouped with one or more devices of the same type |
+| groupName          | String          | the name of the device group                                 |
+
+##### Relay Switch 1PM
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Relay Switch 1PM*                              |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Relay Switch 1
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Relay Switch 1*                                |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
 ##### Virtual infrared remote devices
 
@@ -1208,6 +1367,16 @@ Physical devices refer to the following SwitchBot products,
  -  `new` Meter Pro
  -  `new` Meter Pro CO2
  -  `new` Circulator Fan
+ -  `new` Evaporative Humidifier
+ -  `new` Evaporative Humidifier (Auto-refill)
+ -  `new` K10+ Pro Combo
+ -  `new` Air Purifier VOC
+ -  `new` Air Purifier Table VOC
+ -  `new` Air Purifier PM2.5
+ -  `new` Air Purifier Table PM2.5
+ -  `new` Roller Shade
+ -  `new` Relay Switch 1PM
+ -  `new` Relay Switch 1
 
 #### Path parameters
 
@@ -1539,6 +1708,19 @@ The `body` object contains the following properties,
 | onlineStatus  | String     | the connection status of the device. *online* or *offline*   |
 | battery       | Integer    | the current battery level `0-100`                            |
 
+##### K10+ Pro Combo
+| Key           | Value Type | Description                                                  |
+| ------------- | ---------- | ------------------------------------------------------------ |
+| deviceId      | String     | device ID                                                    |
+| deviceName    | String     | device name                                                  |
+| deviceType    | String     | device type. *Robot Vacuum Cleaner K10+ Pro Combo*           |
+| hubDeviceId   | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| workingStatus | String     | the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
+| onlineStatus  | String     | the connection status of the device. *online* or *offline*   |
+| battery       | Integer    | the current battery level `0-100`                            |
+| taskType      | String     | the current task in progress. *standBy*, *explore*, *cleanAll*, *cleanArea*, *cleanRoom*, *backToCharge*, *collectDust*, *remoteControl*, *cleanWithExplorer* |
+
+
 ##### Floor Cleaning Robot S10
 
 | Key                | Value Type | Description                                                  |
@@ -1559,7 +1741,6 @@ The `body` object contains the following properties,
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
 | deviceType         | String     | device type. *Humidifier*                                    |
-| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 | power                  | String     | ON/OFF state                                                 |
 | humidity               | Integer    | humidity percentage                                          |
 | temperature            | Float      | temperature in celsius                                       |
@@ -1569,7 +1750,83 @@ The `body` object contains the following properties,
 | sound                  | Boolean    | determines if a Humidifier is muted or not                   |
 | lackWater | Boolean | determines if the water tank is empty or not |
 
+##### Evaporative Humidifier
+
+| Key           | Value Type | Description                                                  |
+| ------------- | ---------- | ------------------------------------------------------------ |
+| deviceId      | String     | device ID                                                    |
+| deviceType    | String     | device type. *Humidifier2*                                   |
+| power         | String     | ON/OFF state                                                 |
+| humidity      | Integer    | humidity percentage                                          |
+| mode          | Integer    | the current mode. `1`, level 4; `2`, level 3; `3`, level 2; `4`, level 1; `5`, humidity mode; `6`, sleep mode; `7`, auto mode; `8`, drying mode |
+| drying        | Boolean    | determines if the device is drying its filter or not         |
+| childLock     | Boolean    | determines if the safety lock is on or not                   |
+| filterElement | Object     | contains status info of the filter. e.g. {"effectiveUsageHours": 240, "usedHours": 20}. `effectiveUsageHours`, the effective duration of the filter in hours; `usedHours`, the number of hours the filter has been used. |
+| version       | Integer    | firmware version                                             |
+
+##### Evaporative Humidifier (Auto-refill)
+
+| Key           | Value Type | Description                                                  |
+| ------------- | ---------- | ------------------------------------------------------------ |
+| deviceId      | String     | device ID                                                    |
+| deviceType    | String     | device type. *Humidifier2*                                   |
+| power         | String     | ON/OFF state                                                 |
+| humidity      | Integer    | humidity percentage                                          |
+| mode          | Integer    | the current mode. `1`, level 4; `2`, level 3; `3`, level 2; `4`, level 1; `5`, humidity mode; `6`, sleep mode; `7`, auto mode; `8`, drying mode |
+| drying        | Boolean    | determines if the device is drying its filter or not         |
+| childLock     | Boolean    | determines if the safety lock is on or not                   |
+| filterElement | Object     | contains status info of the filter. e.g. {"effectiveUsageHours": 240, "usedHours": 20}. `effectiveUsageHours`, the effective duration of the filter in hours; `usedHours`, the number of hours the filter has been used. |
+| version       | Integer    | firmware version                                             |
+
+##### Air Purifier VOC
+| Key         | Value Type | Description                                                  |
+| ----------- | ---------- | ------------------------------------------------------------ |
+| deviceId    | String     | device ID                                                    |
+| deviceType  | String     | device type. *Air Purifier VOC*                              |
+| power       | String     | current state; `ON`, on; `OFF`, off                          |
+| version     | String     | the current firmware version, e.g. V4.2                      |
+| hubDeviceId | String     | returns `null` if not a bluetooth device                     |
+| mode        | Integter   | the current mode. `1`, normal or fan mode; `2`, auto mode; `3`, sleep mode; `4`, pet mode |
+| childLock   | Integter   | child lock. `0`, disabled; `1`, enabled                      |
+
+##### Air Purifier Table VOC
+
+| Key         | Value Type | Description                                                  |
+| ----------- | ---------- | ------------------------------------------------------------ |
+| deviceId    | String     | device ID                                                    |
+| deviceType  | String     | device type. *Air Purifier Table VOC*                        |
+| power       | String     | current state; `ON`, on; `OFF`, off                          |
+| version     | String     | the current firmware version, e.g. V4.2                      |
+| hubDeviceId | String     | returns `null` if not a bluetooth device                     |
+| mode        | Integter   | the current mode. `1`, normal or fan mode; `2`, auto mode; `3`, sleep mode; `4`, pet mode |
+| childLock   | Integter   | child lock. `0`, disabled; `1`, enabled                      |
+
+##### Air Purifier PM2.5
+
+| Key         | Value Type | Description                                                  |
+| ----------- | ---------- | ------------------------------------------------------------ |
+| deviceId    | String     | device ID                                                    |
+| deviceType  | String     | device type. *Air Purifier PM2.5*                            |
+| power       | String     | current state; `ON`, on; `OFF`, off                          |
+| version     | String     | the current firmware version, e.g. V4.2                      |
+| hubDeviceId | String     | returns `null` if not a bluetooth device                     |
+| mode        | Integter   | the current mode. `1`, normal or fan mode; `2`, auto mode; `3`, sleep mode; `4`, pet mode |
+| childLock   | Integter   | child lock. `0`, disabled; `1`, enabled                      |
+
+##### Air Purifier Table PM2.5
+
+| Key         | Value Type | Description                                                  |
+| ----------- | ---------- | ------------------------------------------------------------ |
+| deviceId    | String     | device ID                                                    |
+| deviceType  | String     | device type. *Air Purifier Table PM2.5*                      |
+| power       | String     | current state; `ON`, on; `OFF`, off                          |
+| version     | String     | the current firmware version, e.g. V4.2                      |
+| hubDeviceId | String     | returns `null` if not a bluetooth device                     |
+| mode        | Integter   | the current mode. `1`, normal or fan mode; `2`, auto mode; `3`, sleep mode; `4`, pet mode |
+| childLock   | Integter   | child lock. `0`, disabled; `1`, enabled                      |
+
 ##### Blind Tilt
+
 | Key           | Value Type | Description                                                  |
 | ------------- | ---------- | ------------------------------------------------------------ |
 | deviceId      | String     | device ID                                                    |
@@ -1581,6 +1838,18 @@ The `body` object contains the following properties,
 | moving        | Boolean    | determines if the device is moving or not                    |
 | direction     | String     | the opening direction of a Blind Tilt device                 |
 | slidePosition | Integer    | the current position, 0-100                                  |
+
+##### Roller Shade
+| Key           | Value Type | Description                                                  |
+| ------------- | ---------- | ------------------------------------------------------------ |
+| deviceId      | String     | device ID                                                    |
+| deviceType    | String     | device type. *Roller Shade*                                  |
+| hubDeviceId   | String     | device's parent Hub ID                                       |
+| version       | String     | the current firmware version, e.g. V4.2                      |
+| calibrate     | Boolean    | determines if the open and the closed positions have been properly calibrated or not |
+| battery       | Integer    | the current battery level `0-100`                            |
+| moving        | Boolean    | determines if the device is moving or not                    |
+| slidePosition | Integer    | the current position, `0-100`                                |
 
 ##### Hub 2
 
@@ -1623,6 +1892,29 @@ The `body` object contains the following properties,
 | oscillation | String | set horizontal oscillation. turn on: *on*; turn off: *off* |
 | verticalOscillation | String | set vertical oscillation. turn on: *on*; turn off: *off* |
 | fanSpeed | Integer | fan speed. 1~100 |
+
+##### Relay Switch 1PM
+
+| Key             | Value Type | Description                                               |
+| --------------- | ---------- | --------------------------------------------------------- |
+| deviceId        | String     | device ID                                                 |
+| deviceType      | String     | device type. *Relay Switch 1PM*                           |
+| switchStatus    | Integer    | the current switch state. `0`, off; `1`, on               |
+| voltage         | Integer    | the current voltage, measured in Volt                     |
+| version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
+| power           | Integer    | the current power, measured in Watts                      |
+| usedElectricity | Integer    | daily power consumption, measured in watt-minutes         |
+| electricCurrent | Integer    | the electrical current measured in mA                     |
+
+##### Relay Switch 1
+
+| Key             | Value Type | Description                                               |
+| --------------- | ---------- | --------------------------------------------------------- |
+| deviceId        | String     | device ID                                                 |
+| deviceType      | String     | device type. *Relay Switch 1*                             |
+| switchStatus    | Integer    | the current switch state. `0`, off; `1`, on               |
+| version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
+| power           | Integer    | the current power, measured in Watts                      |
 
 #### Sample
 
@@ -1738,7 +2030,56 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Humidifier                   | command     | turnOn              | default                                                      | set to ON state                                              |
 | Humidifier                   | command     | setMode             | `auto` or `101` or<br />  `102` or `103` or `{0~100}`        | auto, set to Auto Mode,<br />101, set atomization efficiency to 34%,<br />102, set atomization efficiency to 67%,<br />103, set atomization efficiency to 100% |
 
+##### Evaporative Humidifier
+| deviceType  | commandType | Command      | command parameter                                  | Description                                                  |
+| ----------- | ----------- | ------------ | -------------------------------------------------- | ------------------------------------------------------------ |
+| Humidifier2 | command     | turnOff      | default                                            | set to OFF state                                             |
+| Humidifier2 | command     | turnOn       | default                                            | set to ON state                                              |
+| Humidifier2 | command     | setMode      | {"mode": mode_int, "targetHumidify": humidity_int} | set the mode. `mode_int`, `1`, level 4; `2`, level 3; `3`, level 2; `4`, level 1; `5`, humidity mode; `6`, sleep mode; `7`, auto mode; `8`, drying mode; `targetHumidify`, the target humidity level in percentage, `0~100`. |
+| Humidifier2 | command     | setChildLock | `true` or `false`                                  | enable or disable child lock. `true`, enable; `false`, disable |
+
+##### Evaporative Humidifier (Auto-refill)
+| deviceType  | commandType | Command      | command parameter                                  | Description                                                  |
+| ----------- | ----------- | ------------ | -------------------------------------------------- | ------------------------------------------------------------ |
+| Humidifier2 | command     | turnOff      | default                                            | set to OFF state                                             |
+| Humidifier2 | command     | turnOn       | default                                            | set to ON state                                              |
+| Humidifier2 | command     | setMode      | {"mode": mode_int, "targetHumidify": humidity_int} | set the mode. `mode_int`, `1`, level 4; `2`, level 3; `3`, level 2; `4`, level 1; `5`, humidity mode; `6`, sleep mode; `7`, auto mode; `8`, drying mode; `targetHumidify`, the target humidity level in percentage, `0~100`. |
+| Humidifier2 | command     | setChildLock | `true` or `false`                                  | enable or disable child lock. `true`, enable; `false`, disable |
+
+##### Air Purifier VOC
+| deviceType       | commandType | Command      | command parameter                            | Description                                                  |
+| ---------------- | ----------- | ------------ | -------------------------------------------- | ------------------------------------------------------------ |
+| Air Purifier VOC | command     | turnOff      | default                                      | set to OFF state                                             |
+| Air Purifier VOC | command     | turnOn       | default                                      | set to ON state                                              |
+| Air Purifier VOC | command     | setMode      | {"mode": mode_int, "fanGear": fan_level_int} | set the mode. `mode_int`,  `1`, normal or fan mode; `2`, auto mode; `3`, sleep mode; `4`, pet mode; `fan_level_int`, the fan level can only be set if `mode_int` is set to `1`, `1~3` |
+| Air Purifier VOC | command     | setChildLock | `0` or `1`                                   | enable or disable child lock. `1`, enable; `0`, disable      |
+
+##### Air Purifier Table VOC
+| deviceType             | commandType | Command      | command parameter                            | Description                                                  |
+| ---------------------- | ----------- | ------------ | -------------------------------------------- | ------------------------------------------------------------ |
+| Air Purifier Table VOC | command     | turnOff      | default                                      | set to OFF state                                             |
+| Air Purifier Table VOC | command     | turnOn       | default                                      | set to ON state                                              |
+| Air Purifier Table VOC | command     | setMode      | {"mode": mode_int, "fanGear": fan_level_int} | set the mode. `mode_int`,  `1`, normal or fan mode; `2`, auto mode; `3`, sleep mode; `4`, pet mode; `fan_level_int`, the fan level can only be set if `mode_int` is set to `1`, `1~3` |
+| Air Purifier Table VOC | command     | setChildLock | `0` or `1`                                   | enable or disable child lock. `1`, enable; `0`, disable      |
+
+##### Air Purifier PM2.5
+| deviceType         | commandType | Command      | command parameter                            | Description                                                  |
+| ------------------ | ----------- | ------------ | -------------------------------------------- | ------------------------------------------------------------ |
+| Air Purifier PM2.5 | command     | turnOff      | default                                      | set to OFF state                                             |
+| Air Purifier PM2.5 | command     | turnOn       | default                                      | set to ON state                                              |
+| Air Purifier PM2.5 | command     | setMode      | {"mode": mode_int, "fanGear": fan_level_int} | set the mode. `mode_int`,  `1`, normal or fan mode; `2`, auto mode; `3`, sleep mode; `4`, pet mode; `fan_level_int`, the fan level can only be set if `mode_int` is set to `1`, `1~3` |
+| Air Purifier PM2.5 | command     | setChildLock | `0` or `1`                                   | enable or disable child lock. `1`, enable; `0`, disable      |
+
+##### Air Purifier Table PM2.5
+| deviceType               | commandType | Command      | command parameter                            | Description                                                  |
+| ------------------------ | ----------- | ------------ | -------------------------------------------- | ------------------------------------------------------------ |
+| Air Purifier Table PM2.5 | command     | turnOff      | default                                      | set to OFF state                                             |
+| Air Purifier Table PM2.5 | command     | turnOn       | default                                      | set to ON state                                              |
+| Air Purifier Table PM2.5 | command     | setMode      | {"mode": mode_int, "fanGear": fan_level_int} | set the mode. `mode_int`,  `1`, normal or fan mode; `2`, auto mode; `3`, sleep mode; `4`, pet mode; `fan_level_int`, the fan level can only be set if `mode_int` is set to `1`, `1~3` |
+| Air Purifier Table PM2.5 | command     | setChildLock | `0` or `1`                                   | enable or disable child lock. `1`, enable; `0`, disable      |
+
 ##### Plug
+
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Plug                         | command     | turnOn              | default                                                      | set to ON state                                              |
@@ -1757,6 +2098,22 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Plug Mini (JP)        | command     | turnOn              | default                                                      | set to ON state                                              |
 | Plug Mini (JP)            | command     | turnOff             | default                                                      | set to OFF state                                             |
 | Plug Mini (JP)            | command     | toggle              | default                                                      | toggle state                                                 |
+
+##### Relay Switch 1PM
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Relay Switch 1PM | command     | turnOn              | default                                                      | set to ON state                                              |
+| Relay Switch 1PM | command     | turnOff             | default                                                      | set to OFF state                                             |
+| Relay Switch 1PM | command     | toggle              | default                                                      | toggle state                                                 |
+| Relay Switch 1PM | command | setMode | `0~3` | set the switch mode. `0`, toggle mode; `1`, edge switch mode; `2`, detached switch mode; `3`, momentary switch mode |
+
+##### Relay Switch 1
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Relay Switch 1 | command     | turnOn              | default                                                      | set to ON state                                              |
+| Relay Switch 1 | command     | turnOff             | default                                                      | set to OFF state                                             |
+| Relay Switch 1 | command     | toggle              | default                                                      | toggle state                                                 |
+| Relay Switch 1 | command | setMode | `0~3` | set the switch mode. `0`, toggle mode; `1`, edge switch mode; `2`, detached switch mode; `3`, momentary switch mode |
 
 ##### Color Bulb
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
@@ -1810,6 +2167,17 @@ Send control commands to physical devices and virtual infrared remote devices.
 | K10+ Pro   | command     | stop     | default           | stop vacuuming                                               |
 | K10+ Pro   | command     | dock     | default           | return to charging dock                                      |
 | K10+ Pro   | command     | PowLevel | `{0-3}`           | set suction power level: 0 (Quiet), 1 (Standard), 2 (Strong), 3 (MAX) |
+
+##### K10+ Pro Combo
+
+| deviceType                          | commandType | Command     | command parameter                                            | Description                                                  |
+| ----------------------------------- | ----------- | ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Robot Vacuum Cleaner K10+ Pro Combo | command     | startClean  | {"action": action_str, "param": {"fanLevel": fan_level_int, "times": clean_cycle_int}} | start cleaning. <br />`action_str`, the cleaning mode, *sweep* or *mop*.<br />`fanLevel`, the vacuum level, `1-4`.<br />`times`, the number of cycles, `1-2639999`, in theory. |
+| Robot Vacuum Cleaner K10+ Pro Combo | command     | pause       | default                                                      | pause cleaning                                               |
+| Robot Vacuum Cleaner K10+ Pro Combo | command     | dock        | default                                                      | return to charging dock                                      |
+| Robot Vacuum Cleaner K10+ Pro Combo | command     | setVolume   | `{0-100}`                                                    | set the robot volume                                         |
+| Robot Vacuum Cleaner K10+ Pro Combo | command     | changeParam | {"fanLevel": fan_level_int, "waterLevel": water_level_int, "times": clean_cycle_int} | change clean parameters. `fan_level_int`, the vacuum level, `1-4`; `water_level_int`, the mop moisture level, `1-2`; `times`, the number of cycles, `1-2639999`, in theory. |
+
 
 ##### Floor Cleaning Robot S10
 
@@ -1899,6 +2267,12 @@ The following table describes the parameter object for `deleteKey`,
 | Blind Tilt | command     | fullyOpen   | default                              | Set the position of Blind Tilt to open, equivalent to setting the position to `up;100` or `down;100` |
 | Blind Tilt | command     | closeUp     | default                              | Set the position of Blind Tilt to closed up, equivalent to setting the position to `up;0` |
 | Blind Tilt | command     | closeDown   | default                              | Set the position of Blind Tilt to closed down, equivalent to setting the position to `down;0` |
+
+##### Roller Shade
+
+| deviceType   | commandType | Command     | command parameter | Description                                                  |
+| ------------ | ----------- | ----------- | ----------------- | ------------------------------------------------------------ |
+| Roller Shade | command     | setPosition | `0~100`           | `0`, open; `100`, closed                                     |
 
 ##### Battery Circulator Fan
 
@@ -2602,6 +2976,18 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | WoHub2 | Hub 2 |
 | Robot Vacuum Cleaner S10 | Floor Cleaning Robot S10 |
 | Water Detector | Water Leak Detector |
+| MeterPro | Meter Pro |
+| MeterPro(CO2) | Meter Pro CO2 Monitor |
+| WoFan2 | Battery Circulator Fan or Circulator Fan |
+| Humidifier2 | Evaporative Humidifier or Evaporative Humidifier (Auto-refill) |
+| Robot Vacuum Cleaner K10+ Pro Combo | K10+ Pro Combo |
+| Air Purifier VOC | Air Purifier VOC |
+| Air Purifier Table VOC | Air Purifier Table VOC |
+| Air Purifier PM2.5 | Air Purifier PM2.5 |
+| Air Purifier Table PM2.5 | Air Purifier Table PM2.5 |
+| WoRollerShade | Roller Shade |
+| Relay Switch 1PM | Relay Switch 1PM |
+| Relay Switch 1 | Relay Switch 1 |
 
 #### Bot
 | Key Name       | Value Type | Description                                                  |
@@ -3259,6 +3645,36 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 }
 ```
 
+#### K10+ Pro Combo
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | attributes of the context object. the type of the device |
+| deviceMac    | String     | attributes of the context object. the MAC address of the device |
+| workingStatus    | String     | attributes of the context object. the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
+| onlineStatus    | String     | attributes of the context object. the connection status of the device. *online* or *offline* |
+| battery | Integer | attributes of the context object. the battery level, range from 0 to 100 |
+| taskType | String | attributes of the context object. the current task in progress. *standBy*, *explore*, *cleanAll*, *cleanArea*, *cleanRoom*, *backToCharge*, *collectDust*, *remoteControl*, *cleanWithExplorer* |
+| timeOfSample    | Long | attributes of the context object. the time stamp when the event is sent |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Robot Vacuum Cleaner K10+ Pro Combo",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "workingStatus"："StandBy",
+        "onlineStatus": "online",
+        "battery": 100,
+        "taskType": "explore",
+        "timeOfSample": 123456789
+    }
+}
+```
+
 #### Floor Cleaning Robot S10
 | Key Name     | Value Type | Description                                          |
 | ------------ | ---------- | ---------------------------------------------------- |
@@ -3542,6 +3958,272 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "oscillation": "on",
         "verticalOscillation": "on",
         "fanSpeed": 3,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Evaporative Humidifier
+
+| Key Name     | Value Type | Description                                |
+| ------------ | ---------- | ------------------------------------------ |
+| eventType    | String     | the type of events                         |
+| eventVersion | String     | the current event version                  |
+| context      | Object     | the detail info of the event               |
+| deviceType   | String     | the type of the device                     |
+| deviceMac    | String     | the MAC address of the device |
+| power | String | the power state of the device |
+| mode | Integer | the current mode. `1`, level 4; `2`, level 3; `3`, level 2; `4`, level 1; `5`, humidity mode; `6`, sleep mode; `7`, auto mode; `8`, drying mode |
+| drying  | Boolean | determines if the device is drying its filter or not |
+| timeOfSample | Long       | the time stamp when the event is sent      |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Humidifier2",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "power": "on",
+        "mode": 1,
+        "drying": false,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Evaporative Humidifier (Auto-refill)
+
+| Key Name     | Value Type | Description                                |
+| ------------ | ---------- | ------------------------------------------ |
+| eventType    | String     | the type of events                         |
+| eventVersion | String     | the current event version                  |
+| context      | Object     | the detail info of the event               |
+| deviceType   | String     | the type of the device                     |
+| deviceMac    | String     | the MAC address of the device |
+| power | String | the power state of the device |
+| mode | Integer | the current mode. `1`, level 4; `2`, level 3; `3`, level 2; `4`, level 1; `5`, humidity mode; `6`, sleep mode; `7`, auto mode; `8`, drying mode |
+| drying  | Boolean | determines if the device is drying its filter or not |
+| timeOfSample | Long       | the time stamp when the event is sent      |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Humidifier2",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "power": "on",
+        "mode": 1,
+        "drying": false,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Air Purifier VOC
+
+| Key Name     | Value Type | Description                                |
+| ------------ | ---------- | ------------------------------------------ |
+| eventType    | String     | the type of events                         |
+| eventVersion | String     | the current event version                  |
+| context      | Object     | the detail info of the event               |
+| deviceType   | String     | the type of the device                     |
+| deviceMac    | String     | the MAC address of the device |
+| power | String | the power state of the device |
+| mode | Integer | the current mode. `1`, level 4; `2`, level 3; `3`, level 2; `4`, level 1; `5`, humidity mode; `6`, sleep mode; `7`, auto mode; `8`, drying mode |
+| drying  | Boolean | determines if the device is drying its filter or not |
+| childLock | Integer | child lock. `0`, disabled; `1`, enabled |
+| timeOfSample | Long       | the time stamp when the event is sent      |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Air Purifier VOC",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "power": "ON",
+        "mode": 4,
+        "childLock": 0,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Air Purifier Table VOC
+
+| Key Name     | Value Type | Description                                |
+| ------------ | ---------- | ------------------------------------------ |
+| eventType    | String     | the type of events                         |
+| eventVersion | String     | the current event version                  |
+| context      | Object     | the detail info of the event               |
+| deviceType   | String     | the type of the device                     |
+| deviceMac    | String     | the MAC address of the device |
+| power | String | the power state of the device |
+| mode | Integer | the current mode. `1`, level 4; `2`, level 3; `3`, level 2; `4`, level 1; `5`, humidity mode; `6`, sleep mode; `7`, auto mode; `8`, drying mode |
+| drying  | Boolean | determines if the device is drying its filter or not |
+| childLock | Integer | child lock. `0`, disabled; `1`, enabled |
+| timeOfSample | Long       | the time stamp when the event is sent      |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Air Purifier Table VOC",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "power": "ON",
+        "mode": 4,
+        "childLock": 0,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Air Purifier PM2.5
+
+| Key Name     | Value Type | Description                                |
+| ------------ | ---------- | ------------------------------------------ |
+| eventType    | String     | the type of events                         |
+| eventVersion | String     | the current event version                  |
+| context      | Object     | the detail info of the event               |
+| deviceType   | String     | the type of the device                     |
+| deviceMac    | String     | the MAC address of the device |
+| power | String | the power state of the device |
+| mode | Integer | the current mode. `1`, level 4; `2`, level 3; `3`, level 2; `4`, level 1; `5`, humidity mode; `6`, sleep mode; `7`, auto mode; `8`, drying mode |
+| drying  | Boolean | determines if the device is drying its filter or not |
+| childLock | Integer | child lock. `0`, disabled; `1`, enabled |
+| timeOfSample | Long       | the time stamp when the event is sent      |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Air Purifier PM2.5",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "power": "ON",
+        "mode": 4,
+        "childLock": 0,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Air Purifier Table PM2.5
+
+| Key Name     | Value Type | Description                                |
+| ------------ | ---------- | ------------------------------------------ |
+| eventType    | String     | the type of events                         |
+| eventVersion | String     | the current event version                  |
+| context      | Object     | the detail info of the event               |
+| deviceType   | String     | the type of the device                     |
+| deviceMac    | String     | the MAC address of the device |
+| power | String | the power state of the device |
+| mode | Integer | the current mode. `1`, level 4; `2`, level 3; `3`, level 2; `4`, level 1; `5`, humidity mode; `6`, sleep mode; `7`, auto mode; `8`, drying mode |
+| drying  | Boolean | determines if the device is drying its filter or not |
+| childLock | Integer | child lock. `0`, disabled; `1`, enabled |
+| timeOfSample | Long       | the time stamp when the event is sent      |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Air Purifier Table PM2.5",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "power": "ON",
+        "mode": 4,
+        "childLock": 0,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Roller Shade
+| Key Name       | Value Type | Description                                                  |
+| -------------- | ---------- | ------------------------------------------------------------ |
+| eventType      | String     | the type of events                                           |
+| eventVersion   | String     | the current event version                                    |
+| context        | Object     | the detail info of the event                                 |
+| deviceType     | String     | the type of the device                                       |
+| deviceMac      | String     | the MAC address of the device                                |
+| calibrate          | Boolean         | determines if the open position and the close position of a device have been properly calibrated or not |
+| slidePosition             | Integer         | the percentage of the distance between the calibrated open position and closed position that the device has traversed |
+| battery      | Integer          | the battery level                           |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoRollerShade",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "calibrate":false,
+        "slidePosition":50, //0~100
+        "battery":100,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Relay Switch 1PM
+
+| Key Name        | Value Type | Description                                                  |
+| --------------- | ---------- | ------------------------------------------------------------ |
+| eventType       | String     | the type of events                                           |
+| eventVersion    | String     | the current event version                                    |
+| context         | Object     | the detail info of the event                                 |
+| deviceType      | String     | the type of the device                                       |
+| deviceMac       | String     | the MAC address of the device                                |
+| online          | Boolean    | determines if the device is connected to the internet or disconnected |
+| switchStatus    | Integer    | the switch state of the device. `1`, on; `0`, off            |
+| overload        | Boolean    | determines if the device is power overloaded or not          |
+| overTemperature | Boolean    | determines if the working temperature is over 100 degree celcius or not |
+| timeOfSample    | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Relay Switch 1PM",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "online": false,
+        "overTemperature": true,
+        "overload": true,
+        "switchStatus": 1,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Relay Switch 1
+
+| Key Name        | Value Type | Description                                                  |
+| --------------- | ---------- | ------------------------------------------------------------ |
+| eventType       | String     | the type of events                                           |
+| eventVersion    | String     | the current event version                                    |
+| context         | Object     | the detail info of the event                                 |
+| deviceType      | String     | the type of the device                                       |
+| deviceMac       | String     | the MAC address of the device                                |
+| online          | Boolean    | determines if the device is connected to the internet or disconnected |
+| switchStatus    | Integer    | the switch state of the device. `1`, on; `0`, off            |
+| overTemperature | Boolean    | determines if the working temperature is over 100 degree celcius or not |
+| timeOfSample    | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Relay Switch 1",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "online": false,
+        "overTemperature": true,
+        "switchStatus": 1,
         "timeOfSample": 123456789
     }
 }
