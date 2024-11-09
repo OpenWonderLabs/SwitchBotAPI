@@ -4068,8 +4068,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | deviceType   | String     | the type of the device                     |
 | deviceMac    | String     | the MAC address of the device |
 | power | String | the power state of the device |
-| mode | Integer | the current mode. `1`, level 4; `2`, level 3; `3`, level 2; `4`, level 1; `5`, humidity mode; `6`, sleep mode; `7`, auto mode; `8`, drying mode |
-| drying  | Boolean | determines if the device is drying its filter or not |
+| mode | Integer | the current mode. `1`, normal or fan mode; `2`, auto mode; `3`, sleep mode; `4`, pet mode |
 | childLock | Integer | child lock. `0`, disabled; `1`, enabled |
 | timeOfSample | Long       | the time stamp when the event is sent      |
 
@@ -4098,8 +4097,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | deviceType   | String     | the type of the device                     |
 | deviceMac    | String     | the MAC address of the device |
 | power | String | the power state of the device |
-| mode | Integer | the current mode. `1`, level 4; `2`, level 3; `3`, level 2; `4`, level 1; `5`, humidity mode; `6`, sleep mode; `7`, auto mode; `8`, drying mode |
-| drying  | Boolean | determines if the device is drying its filter or not |
+| mode | Integer | the current mode. `1`, normal or fan mode; `2`, auto mode; `3`, sleep mode; `4`, pet mode |
 | childLock | Integer | child lock. `0`, disabled; `1`, enabled |
 | timeOfSample | Long       | the time stamp when the event is sent      |
 
@@ -4128,8 +4126,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | deviceType   | String     | the type of the device                     |
 | deviceMac    | String     | the MAC address of the device |
 | power | String | the power state of the device |
-| mode | Integer | the current mode. `1`, level 4; `2`, level 3; `3`, level 2; `4`, level 1; `5`, humidity mode; `6`, sleep mode; `7`, auto mode; `8`, drying mode |
-| drying  | Boolean | determines if the device is drying its filter or not |
+| mode | Integer | the current mode. `1`, normal or fan mode; `2`, auto mode; `3`, sleep mode; `4`, pet mode |
 | childLock | Integer | child lock. `0`, disabled; `1`, enabled |
 | timeOfSample | Long       | the time stamp when the event is sent      |
 
@@ -4158,8 +4155,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | deviceType   | String     | the type of the device                     |
 | deviceMac    | String     | the MAC address of the device |
 | power | String | the power state of the device |
-| mode | Integer | the current mode. `1`, level 4; `2`, level 3; `3`, level 2; `4`, level 1; `5`, humidity mode; `6`, sleep mode; `7`, auto mode; `8`, drying mode |
-| drying  | Boolean | determines if the device is drying its filter or not |
+| mode | Integer | the current mode. `1`, normal or fan mode; `2`, auto mode; `3`, sleep mode; `4`, pet mode |
 | childLock | Integer | child lock. `0`, disabled; `1`, enabled |
 | timeOfSample | Long       | the time stamp when the event is sent      |
 
