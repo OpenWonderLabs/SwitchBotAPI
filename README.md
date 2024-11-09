@@ -2213,7 +2213,7 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Robot Vacuum Cleaner K10+ Pro Combo | command     | pause       | default                                                      | pause cleaning                                               |
 | Robot Vacuum Cleaner K10+ Pro Combo | command     | dock        | default                                                      | return to charging dock                                      |
 | Robot Vacuum Cleaner K10+ Pro Combo | command     | setVolume   | `{0-100}`                                                    | set the robot volume                                         |
-| Robot Vacuum Cleaner K10+ Pro Combo | command     | changeParam | {"fanLevel": fan_level_int, "waterLevel": water_level_int, "times": clean_cycle_int} | change clean parameters. `fan_level_int`, the vacuum level, `1-4`; `water_level_int`, the mop moisture level, `1-2`; `times`, the number of cycles, `1-2639999`, in theory. |
+| Robot Vacuum Cleaner K10+ Pro Combo | command     | changeParam | {"fanLevel": fan_level_int, "times": clean_cycle_int} | change clean parameters. `fan_level_int`, the vacuum level, `1-4`; `times`, the number of cycles, `1-2639999`, in theory. |
 
 
 ##### Floor Cleaning Robot S10
