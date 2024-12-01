@@ -553,6 +553,43 @@ function guidv4($data = null) {
 
 ```
 
+#### Swift example code
+
+```swift
+import CryptoKit 
+
+let token = 'TTTTTTT'
+let secret = 'SSSS'
+
+func getDevices() async throws -> Any {
+    let hostname = "https://api.switch-bot.com"
+    
+    var components = URLComponents(string: hostname)!
+    components.path = "/v1.1/devices"
+    components.port = 443
+    
+    var request = URLRequest(url: components.url!)
+    
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.setValue("utf-8", forHTTPHeaderField: "charset")
+    let timestamp = Int(Date().timeIntervalSince1970.rounded() * 1000) // Date().timeInterval returns seconds, not milliseconds, since1970
+    let nonce =  UUID().uuidString
+    
+    let timeAdjustedToken = token + "\(timestamp)" + nonce
+    let key = SymmetricKey(data: Data(secret.utf8))
+    let authenticationCode = HMAC<SHA256>.authenticationCode(for: Data(timeAdjustedToken.utf8), using: key)
+    let signatureToken = Data(authenticationCode).base64EncodedString()
+
+    request.setValue(token, forHTTPHeaderField: "Authorization")
+    request.setValue(signatureToken, forHTTPHeaderField: "sign")
+    request.setValue(nonce, forHTTPHeaderField: "nonce")
+    request.setValue("\(timestamp)", forHTTPHeaderField: "t")
+    
+    let (data, response) = try await URLSession.shared.data(for: request)
+    return try JSONSerialization.jsonObject(with: data)
+}
+```
+
 ## Glossary
 
 The following table provides definitions to the terms to be frequently mentioned in the subsequent sections.
