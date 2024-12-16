@@ -1951,7 +1951,6 @@ The `body` object contains the following properties,
 | deviceType      | String     | device type. *Relay Switch 1*                             |
 | switchStatus    | Integer    | the current switch state. `0`, off; `1`, on               |
 | version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
-| power           | Integer    | the current power, measured in Watts                      |
 
 #### Sample
 
