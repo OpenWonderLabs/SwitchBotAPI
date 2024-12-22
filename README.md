@@ -389,10 +389,10 @@ const secret = "yourSecret";
 const t = Date.now();
 const nonce = "requestID";
 const data = token + t + nonce;
-const signTerm = crypto.createHmac('sha256', secret)
-    .update(Buffer.from(data, 'utf-8'))
-    .digest();
-const sign = signTerm.toString("base64");
+const sign = crypto
+    .createHmac('sha256', secret)
+    .update(data)
+    .digest('base64');
 console.log(sign);
 
 const body = JSON.stringify({
