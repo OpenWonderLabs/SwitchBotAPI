@@ -1910,7 +1910,7 @@ The `body` object contains the following properties,
 | version     | String     | the current firmware version, e.g. V4.2 |
 | battery                | Integer    |  the current battery level                                            |
 | power                  | String     | ON/OFF state                                                 |
-| nightStatus                | Integer    |  set nightlight status. turn off: *off*; mode 1: *1*; mode 2: *2*  |
+| nightStatus                | String    |  set nightlight status. turn off: *off*; mode 1: *1*; mode 2: *2*  |
 | oscillation | String | set horizontal oscillation. turn on: *on*; turn off: *off* |
 | verticalOscillation | String | set vertical oscillation. turn on: *on*; turn off: *off* |
 | chargingStatus | String | battery charge status. *charging* or *uncharged* |
@@ -1925,7 +1925,7 @@ The `body` object contains the following properties,
 | mode     | String     |fan mode. direct mode: *direct*; natural mode: "natural"; sleep mode: "sleep"; ultra quiet mode: "baby" |
 | version     | String     | the current firmware version, e.g. V4.2 |
 | power                  | String     | ON/OFF state                                                 |
-| nightStatus                | Integer    |  set nightlight status. turn off: *off*; mode 1: *1*; mode 2: *2*  |
+| nightStatus                | String    |  set nightlight status. turn off: *off*; mode 1: *1*; mode 2: *2*  |
 | oscillation | String | set horizontal oscillation. turn on: *on*; turn off: *off* |
 | verticalOscillation | String | set vertical oscillation. turn on: *on*; turn off: *off* |
 | fanSpeed | Integer | fan speed. 1~100 |
