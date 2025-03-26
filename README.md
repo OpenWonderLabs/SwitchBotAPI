@@ -12,6 +12,7 @@
     + [C# example code](#c-example-code)
     + [Java 11+ example code](#java-11-example-code)
     + [PHP example code](#php-example-code)
+    + [Go example code](#go-example-code)
 - [Glossary](#glossary)
 - [API Usage](#api-usage)
   * [Host Domain](#host-domain)
@@ -587,6 +588,69 @@ func getDevices() async throws -> Any {
     
     let (data, response) = try await URLSession.shared.data(for: request)
     return try JSONSerialization.jsonObject(with: data)
+}
+```
+
+#### Go example code
+
+```go
+package main
+
+import (
+    "crypto/hmac"
+    "crypto/sha256"
+    "encoding/base64"
+    "fmt"
+    "io"
+    "log"
+    "net/http"
+    "strings"
+    "time"
+
+    "github.com/google/uuid"
+)
+
+func main() {
+    token := "XXXXXXXXXXXXXXXXXXX"      // copy and paste from the SwitchBot app V6.14 or later
+    secret := "YYYYYYYYYYY"             // copy and paste from the SwitchBot app V6.14 or later
+    nonce := uuid.NewString()           // generate random UUID v4
+    timestamp := time.Now().UnixMilli() // 13-digit milliseconds Unix timestamp
+
+    data := fmt.Sprintf("%s%d%s", token, timestamp, nonce)
+
+    mac := hmac.New(sha256.New, []byte(secret))
+    if _, err := mac.Write([]byte(data)); err != nil {
+        log.Fatalf("Error generating signature: %v", err)
+    }
+
+    signature := mac.Sum(nil)
+    signatureB64 := strings.ToUpper(base64.StdEncoding.EncodeToString(signature))
+
+    url := "https://api.switch-bot.com/v1.1/devices"
+    req, err := http.NewRequest("GET", url, nil)
+    if err != nil {
+        log.Fatalf("Error creating request: %v", err)
+    }
+
+    req.Header.Set("Content-Type", "application/json")
+    req.Header.Set("Authorization", token)
+    req.Header.Set("sign", signatureB64)
+    req.Header.Set("nonce", nonce)
+    req.Header.Set("t", fmt.Sprintf("%d", timestamp))
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    if err != nil {
+        log.Fatalf("Error sending request: %v", err)
+    }
+    defer resp.Body.Close()
+
+    body, err := io.ReadAll(resp.Body)
+    if err != nil {
+        log.Fatalf("Error reading response: %v", err)
+    }
+
+    fmt.Println(string(body)) // Response in JSON format
 }
 ```
 
