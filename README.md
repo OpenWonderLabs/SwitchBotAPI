@@ -12,6 +12,7 @@
     + [C# example code](#c-example-code)
     + [Java 11+ example code](#java-11-example-code)
     + [PHP example code](#php-example-code)
+    + [Swift example code](#swift-example-code)
     + [Go example code](#go-example-code)
 - [Glossary](#glossary)
 - [API Usage](#api-usage)
