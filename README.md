@@ -70,6 +70,7 @@
       - [Roller Shade](#roller-shade)
       - [Relay Switch 1PM](#relay-switch-1pm)
       - [Relay Switch 1](#relay-switch-1)
+      - [Relay Switch 2PM](#relay-switch-2pm)
       - [Virtual infrared remote devices](#virtual-infrared-remote-devices)
     + [Sample](#sample)
       - [Get all devices](#get-all-devices)
@@ -114,11 +115,13 @@
       - [Air Purifier Table PM2.5](#air-purifier-table-pm2.5-1)
       - [Blind Tilt](#blind-tilt-1)
       - [Hub 2](#hub-2)
+        [Hub 3](#hub-3)
       - [Battery Circulator Fan](#battery-circulator-fan-1)
       - [Circulator Fan](#circulator-fan-1)
       - [Roller Shade](#roller-shade-1)
       - [Relay Switch 1PM](#relay-switch-1pm-1)
       - [Relay Switch 1](#relay-switch-1-1)
+      - [Relay Switch 2PM](#relay-switch-2PM-1)
     + [Sample](#sample-1)
       - [SwitchBot Meter example](#switchbot-meter-example)
       - [SwitchBot Curtain example](#switchbot-curtain-example)
@@ -158,6 +161,7 @@
       - [Roller Shade](#roller-shade-2)
       - [Relay Switch 1PM](#relay-switch-1pm-2)
       - [Relay Switch 1](#relay-switch-1-2)
+      - [Relay Switch 2PM](#relay-switch-2pm-2)
     + [Command set for virtual infrared remote devices](#command-set-for-virtual-infrared-remote-devices)
     + [Path parameters](#path-parameters-1)
     + [Request body parameters](#request-body-parameters)
@@ -241,11 +245,13 @@
       - [Create a passcode](#create-a-passcode-1)
       - [Delete a passcode](#delete-a-passcode-1)
     + [Hub 2](#hub-2-1)
+    + [Hub 3](#hub-3)
     + [Battery Circulator Fan](#battery-circulator-fan-3)
     + [Circulator Fan](#circulator-fan-3)
     + [Roller Shade](#roller-shade-3)
     + [Relay Switch 1PM](#relay-switch-1pm-3)
     + [Relay Switch 1](#relay-switch-1-3)
+    + [Relay Switch 2PM](#relay-switch-2pm-3)
     + [Evaporative Humidifier](#evaporative-humidifier-3)
     + [Evaporative Humidifier (Auto-refill)](#evaporative-humidifier-auto-refill-3)
     + [Air Purifier VOC](#air-purifier-voc-3)
@@ -599,6 +605,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Hub Mini                     | Short for SwitchBot Hub Mini                                 | W0202200              |                                   |
 | Hub Plus                     | Short for SwitchBot Hub Plus                                 | SwitchBot Hub S1      |                                   |
 | Hub 2                        | Short for SwitchBot Hub 2                                    | W3202100              |                                   |
+| Hub 3                        | Short for SwitchBot Hub 3                                    |               | 
 | Bot                          | Short for SwitchBot Bot                                      | SwitchBot S1          |                                   |
 | Curtain                      | Short for SwitchBot Curtain                                  | W0701600              |                                   |
 | Curtain 3                    | Short for SwitchBot Curtain 3                                | W2400000              |                                   |
@@ -643,7 +650,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Roller Shade | Short for SwitchBot Roller Shade | W5000000 |  |
 | Relay Switch 1PM | Short for SwitchBot Relay Switch 1PM | W5502310 |  |
 | Relay Switch 1 | Short for SwitchBot Relay Switch 1 | W5502300 |  |
-
+| Relay Switch 2PM | Short for SwitchBot Relay Switch 2PM |  |  |
 ### `Legacy` Cloud Services
 
 > Important note: Beyond V9.0, there will NOT be a Cloud Services option in the app. You will see Third-party Services instead. Please read this article for more information, https://support.switch-bot.com/hc/en-us/articles/7257579858455
@@ -748,6 +755,7 @@ Physical devices refer to the following SwitchBot products,
  -  Ceiling Light Pro
  -  Blind Tilt
  -  Hub 2
+ -  Hub 3
  -  Outdoor Meter
  -  Battery Circulator Fan
  -  Curtain 3
@@ -756,19 +764,21 @@ Physical devices refer to the following SwitchBot products,
  -   Water Leak Detector
  -  Mini Robot Vacuum K10+
  -  Mini Robot Vacuum K10+ Pro
- -  `new` Meter Pro
- -  `new` Meter Pro CO2
- -  `new` Circulator Fan
- -  `new` Evaporative Humidifier
- -  `new` Evaporative Humidifier (Auto-refill)
- -  `new` K10+ Pro Combo
- -  `new` Air Purifier VOC
- -  `new` Air Purifier Table VOC
- -  `new` Air Purifier PM2.5
- -  `new` Air Purifier Table PM2.5
- -  `new` Roller Shade
- -  `new` Relay Switch 1PM
- -  `new` Relay Switch 1
+ -  Meter Pro
+ -  Meter Pro CO2
+ -  Circulator Fan
+ -  Evaporative Humidifier
+ -  Evaporative Humidifier (Auto-refill)
+ -  K10+ Pro Combo
+ -  Air Purifier VOC
+ -  Air Purifier Table VOC
+ -  Air Purifier PM2.5
+ -  Air Purifier Table PM2.5
+ -  Roller Shade
+ -  Relay Switch 1PM
+ -  Relay Switch 1
+ -  `new` Hub3
+ -  `new` Relay Switch 2PM
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
@@ -851,13 +861,13 @@ The `deviceList` array contains a list of objects with the following key-value a
 | master             | Boolean         | determines if a Curtain is the master device or not when paired with or grouped with another Curtain |
 | openDirection      | String          | the opening direction of a Curtain                           |
 
-##### Hub/Hub Plus/Hub Mini/Hub 2
+##### Hub/Hub Plus/Hub Mini/Hub 2/Hub 3
 
 | Key                | Value Type | Description                                                  |
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
 | deviceName         | String     | device name                                                  |
-| deviceType         | String     | device type. *Hub*, *Hub Plus*, *Hub Mini*, or *Hub 2*.      |
+| deviceType         | String     | device type. *Hub*, *Hub Plus*, *Hub Mini*, *Hub 2* or  *Hub 3*.      |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
@@ -1311,6 +1321,15 @@ The `deviceList` array contains a list of objects with the following key-value a
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
+##### Relay Switch 2PM
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Relay Switch 2PM*                              |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
 ##### Virtual infrared remote devices
 
 
@@ -1401,20 +1420,21 @@ Physical devices refer to the following SwitchBot products,
  -  Water Leak Detector
  -  Mini Robot Vacuum K10+
  -  Mini Robot Vacuum K10+ Pro
- -  `new` Meter Pro
- -  `new` Meter Pro CO2
- -  `new` Circulator Fan
- -  `new` Evaporative Humidifier
- -  `new` Evaporative Humidifier (Auto-refill)
- -  `new` K10+ Pro Combo
- -  `new` Air Purifier VOC
- -  `new` Air Purifier Table VOC
- -  `new` Air Purifier PM2.5
- -  `new` Air Purifier Table PM2.5
- -  `new` Roller Shade
- -  `new` Relay Switch 1PM
- -  `new` Relay Switch 1
-
+ -  Meter Pro
+ -  Meter Pro CO2
+ -  Circulator Fan
+ -  Evaporative Humidifier
+ -  Evaporative Humidifier (Auto-refill)
+ -  K10+ Pro Combo
+ -  Air Purifier VOC
+ -  Air Purifier Table VOC
+ -  Air Purifier PM2.5
+ -  Air Purifier Table PM2.5
+ -  Roller Shade
+ -  Relay Switch 1PM
+ -  Relay Switch 1
+ -  `new` Hub3
+ -  `new` Relay Switch 2PM
 #### Path parameters
 
 | Name     | Type   | Required | Description |
@@ -1952,6 +1972,19 @@ The `body` object contains the following properties,
 | switchStatus    | Integer    | the current switch state. `0`, off; `1`, on               |
 | version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
 
+##### Relay Switch 2PM
+
+| Key             | Value Type | Description                                               |
+| --------------- | ---------- | --------------------------------------------------------- |
+| deviceId        | String     | device ID                                                 |
+| deviceType      | String     | device type. *Relay Switch 2PM*                           |
+| switchStatus    | Integer    | the current switch state. `0`, off; `1`, on               |
+| voltage         | Integer    | the current voltage, measured in Volt                     |
+| version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
+| power           | Integer    | the current power, measured in Watts                      |
+| usedElectricity | Integer    | daily power consumption, measured in watt-minutes         |
+| electricCurrent | Integer    | the electrical current measured in mA                     |
+
 #### Sample
 
 ##### SwitchBot Meter example
@@ -2150,6 +2183,14 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Relay Switch 1 | command     | turnOff             | default                                                      | set to OFF state                                             |
 | Relay Switch 1 | command     | toggle              | default                                                      | toggle state                                                 |
 | Relay Switch 1 | command | setMode | `0~3` | set the switch mode. `0`, toggle mode; `1`, edge switch mode; `2`, detached switch mode; `3`, momentary switch mode |
+
+##### Relay Switch 2PM
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Relay Switch 2PM | command     | turnOn              | default                                                      | set to ON state                                              |
+| Relay Switch 2PM | command     | turnOff             | default                                                      | set to OFF state                                             |
+| Relay Switch 2PM | command     | toggle              | default                                                      | toggle state                                                 |
+| Relay Switch 2PM | command | setMode | `0~3` | set the switch mode. `0`, toggle mode; `1`, edge switch mode; `2`, detached switch mode; `3`, momentary switch mode |
 
 ##### Color Bulb
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
@@ -3010,6 +3051,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | WoKeypad      | Keypad |
 | WoKeypadTouch | Keypad Touch |
 | WoHub2 | Hub 2 |
+| WoHub3 | Hub 3 |
 | Robot Vacuum Cleaner S10 | Floor Cleaning Robot S10 |
 | Water Detector | Water Leak Detector |
 | MeterPro | Meter Pro |
@@ -3024,7 +3066,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | WoRollerShade | Roller Shade |
 | Relay Switch 1PM | Relay Switch 1PM |
 | Relay Switch 1 | Relay Switch 1 |
-
+| Relay Switch 2PM | Relay Switch 2PM |
 #### Bot
 | Key Name       | Value Type | Description                                                  |
 | -------------- | ---------- | ------------------------------------------------------------ |
@@ -3921,6 +3963,38 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 }
 ```
 
+#### Hub 3
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | attributes of the context object. the type of the device |
+| deviceMac    | String     | attributes of the context object. the MAC address of the device |
+| detectionState | String     | the motion state of the device, "DETECTED" stands for motion is detected; "NOT_DETECTED" stands for motion has not been detected for some time |
+| temperature  | Float      | the current temperature reading            |
+| humidity     | Integer    | the current humidity reading in percentage |
+| lightLevel  | Integer      | the level of illuminance of the ambience light, 1~20            |
+| scale        | String     | the current temperature unit being used    |
+| timeOfSample    | Long | attributes of the context object. the time stamp when the event is sent |
+
+```js
+{
+  "eventType": "changeReport",
+  "eventVersion": "1",
+  "context": {
+    "detectionState": "DETECTED",// 枚举值：DETECTED、NOT_DETECTED
+    "deviceMac": "B0E9FE582974",
+    "deviceType": "Hub 3",
+    "humidity": 45,
+    "lightLevel": 20,
+    "scale": "CELSIUS",
+    "temperature": 30.3,
+    "timeOfSample": 1742807095763
+  }
+}
+```
+
 #### Battery Circulator Fan
 
 | Key Name     | Value Type | Description                                          |
@@ -4261,6 +4335,41 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "overTemperature": true,
         "switchStatus": 1,
         "timeOfSample": 123456789
+    }
+}
+```
+
+#### Relay Switch 2PM
+
+| Key Name        | Value Type | Description                                                  |
+| --------------- | ---------- | ------------------------------------------------------------ |
+| eventType       | String     | the type of events                                           |
+| eventVersion    | String     | the current event version                                    |
+| context         | Object     | the detail info of the event                                 |
+| deviceType      | String     | the type of the device                                       |
+| deviceMac       | String     | the MAC address of the device                                |
+| online          | Boolean    | determines if the device is connected to the internet or disconnected |
+| switchStatus    | Integer    | the switch state of the device. `1`, on; `0`, off            |
+| overload        | Boolean    | determines if the device is power overloaded or not          |
+| overTemperature | Boolean    | determines if the working temperature is over 100 degree celcius or not |
+| timeOfSample    | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Relay Switch 2PM",
+        "deviceMac": "FFFFFFFFFFF",
+        "online": false,
+        "overTemperature": true,
+        "switch1Status": 1,
+        "switch2Status": 1,
+        "switch1Overload": true,
+        "switch2Overload": true,
+        "calibrate": true,
+        "position": 0,
+        "isStuck": true
     }
 }
 ```
