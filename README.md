@@ -2446,9 +2446,9 @@ Send control commands to physical devices and virtual infrared remote devices.
 ##### Keypad Vision
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Relay Switch 2PM | command     | turnOn              | default                                                      | set to ON state                                              |
-| Relay Switch 2PM | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Relay Switch 2PM | command     | toggle              | default                                                      | toggle state                                                 |
+|  Keypad Vision | command     | turnOn              | default                                                      | set to ON state                                              |
+|  Keypad Vision | command     | turnOff             | default                                                      | set to OFF state                                             |
+|  Keypad Vision | command     | toggle              | default                                                      | toggle state                                                 |
 
 
 ##### Color Bulb
