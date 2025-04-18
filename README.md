@@ -687,6 +687,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Lock Lite | Short for SwitchBot Lock Lite | W5110000 |  |
 | Video Doorbell | Short for SwitchBot Video Doorbell | W6702000 |  |
 | Keypad Vision | Short for SwitchBot Keypad Vision | W5600003 |  |
+
 ### `Legacy` Cloud Services
 
 > Important note: Beyond V9.0, there will NOT be a Cloud Services option in the app. You will see Third-party Services instead. Please read this article for more information, https://support.switch-bot.com/hc/en-us/articles/7257579858455
@@ -1205,7 +1206,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
 | deviceName         | String     | device name                                                  |
-| deviceType         | String     | device type. *Robot Vacuum Cleaner S10*                      |
+| deviceType         | String     | device type. *Robot Vacuum Cleaner S20*                      |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
@@ -1412,22 +1413,26 @@ The `infraredRemoteList` array contains a list of objects with the following key
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 
 ##### LED Strip Light 3
-| Key         | Value Type | Description                   |
-| ----------- | ---------- | ----------------------------- |
-| deviceId    | String     | device ID                     |
-| deviceName  | String     | device name                   |
-| remoteType  | String     | device type                   |
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Strip Light*                                   |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
-| hubDeviceId        | String     | device's parent Hub ID                                       |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |                          |
 
 ##### Lock Lite
-| Key         | Value Type | Description                   |
-| ----------- | ---------- | ----------------------------- |
-| deviceId    | String     | device ID                     |
-| deviceName  | String     | device name                   |
-| remoteType  | String     | device type                   |
-| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
-| hubDeviceId        | String     | device's parent Hub ID                                       |
+| Key                | Value Type      | Description                                                  |
+| ------------------ | --------------- | ------------------------------------------------------------ |
+| deviceId           | String          | device ID                                                    |
+| deviceName         | String          | device name                                                  |
+| deviceType         | String          | device type. *Smart Lock*                                  |
+| enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String          | device's parent Hub ID                                       |
+| group              | Boolean         | determines if a Lock is grouped with another Lock or not |
+| master             | Boolean         | determines if a Lock is the master device or not when grouped with another Lock in Dual Lock mode |
+| groupName              | String         | the name of the Lock group |
+| lockDevicesIds              | Array<deviceId>         | a list of Lock device IDs such that the Lock devices are being grouped in Dual Lock mode |
 
 ##### Video Doorbell
 | Key         | Value Type | Description                   |
@@ -2140,7 +2145,7 @@ The `body` object contains the following properties,
 | Key             | Value Type | Description                                               |
 | --------------- | ---------- | --------------------------------------------------------- |
 | deviceId        | String     | device ID                                                 |
-| deviceType      | String     | device type. *Garage Door Opener*                           |
+| deviceType      | String     | device type. *Floor Lamp*                           |
 | switchStatus    | Integer    | the current switch state. `0`, off; `1`, on               |
 | voltage         | Integer    | the current voltage, measured in Volt                     |
 | version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
@@ -2153,7 +2158,7 @@ The `body` object contains the following properties,
 | Key             | Value Type | Description                                               |
 | --------------- | ---------- | --------------------------------------------------------- |
 | deviceId        | String     | device ID                                                 |
-| deviceType      | String     | device type. *Garage Door Opener*                           |
+| deviceType      | String     | device type. *LED Strip Light 3*                           |
 | switchStatus    | Integer    | the current switch state. `0`, off; `1`, on               |
 | voltage         | Integer    | the current voltage, measured in Volt                     |
 | version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
@@ -2166,7 +2171,7 @@ The `body` object contains the following properties,
 | Key             | Value Type | Description                                               |
 | --------------- | ---------- | --------------------------------------------------------- |
 | deviceId        | String     | device ID                                                 |
-| deviceType      | String     | device type. *Garage Door Opener*                           |
+| deviceType      | String     | device type. *Lock Lite*                           |
 | switchStatus    | Integer    | the current switch state. `0`, off; `1`, on               |
 | voltage         | Integer    | the current voltage, measured in Volt                     |
 | version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
@@ -2179,7 +2184,7 @@ The `body` object contains the following properties,
 | Key             | Value Type | Description                                               |
 | --------------- | ---------- | --------------------------------------------------------- |
 | deviceId        | String     | device ID                                                 |
-| deviceType      | String     | device type. *Garage Door Opener*                           |
+| deviceType      | String     | device type. *Video Doorbell*                           |
 | switchStatus    | Integer    | the current switch state. `0`, off; `1`, on               |
 | voltage         | Integer    | the current voltage, measured in Volt                     |
 | version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
@@ -2189,16 +2194,11 @@ The `body` object contains the following properties,
 
 ##### Keypad Vision
 
-| Key             | Value Type | Description                                               |
-| --------------- | ---------- | --------------------------------------------------------- |
-| deviceId        | String     | device ID                                                 |
-| deviceType      | String     | device type. *Garage Door Opener*                           |
-| switchStatus    | Integer    | the current switch state. `0`, off; `1`, on               |
-| voltage         | Integer    | the current voltage, measured in Volt                     |
-| version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
-| power           | Integer    | the current power, measured in Watts                      |
-| usedElectricity | Integer    | daily power consumption, measured in watt-minutes         |
-| electricCurrent | Integer    | the electrical current measured in mA                     |
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Keypad Vision*                                        |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
 
 #### Sample
 
@@ -2411,42 +2411,37 @@ Send control commands to physical devices and virtual infrared remote devices.
 ##### Garage Door Opener
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Relay Switch 2PM | command     | turnOn              | default                                                      | set to ON state                                              |
-| Relay Switch 2PM | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Relay Switch 2PM | command     | toggle              | default                                                      | toggle state                                                 |
-| Relay Switch 2PM | command | setMode | `0~3` | set the switch mode. `0`, toggle mode; `1`, edge switch mode; `2`, detached switch mode; `3`, momentary switch mode |
+|Garage Door Opener | command     | turnOn              | default                                                      | set to ON state                                              |
+| Garage Door Opener | command     | turnOff             | default                                                      | set to OFF state                                             |
+| Garage Door Opener | command     | toggle              | default                                                      | toggle state                                                 |
 
 ##### Floor Lamp
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Relay Switch 2PM | command     | turnOn              | default                                                      | set to ON state                                              |
-| Relay Switch 2PM | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Relay Switch 2PM | command     | toggle              | default                                                      | toggle state                                                 |
-| Relay Switch 2PM | command | setMode | `0~3` | set the switch mode. `0`, toggle mode; `1`, edge switch mode; `2`, detached switch mode; `3`, momentary switch mode |
+| Floor Lamp | command     | turnOn              | default                                                      | set to ON state                                              |
+| Floor Lamp | command     | turnOff             | default                                                      | set to OFF state                                             |
+| Floor Lamp | command     | toggle              | default                                                      | toggle state                                                 |
 
 ##### LED Strip Light 3
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Relay Switch 2PM | command     | turnOn              | default                                                      | set to ON state                                              |
-| Relay Switch 2PM | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Relay Switch 2PM | command     | toggle              | default                                                      | toggle state                                                 |
-| Relay Switch 2PM | command | setMode | `0~3` | set the switch mode. `0`, toggle mode; `1`, edge switch mode; `2`, detached switch mode; `3`, momentary switch mode |
+| LED Strip Light 3 | command     | turnOn              | default                                                      | set to ON state                                              |
+| LED Strip Light 3 | command     | turnOff             | default                                                      | set to OFF state                                             |
+| LED Strip Light 3 | command     | toggle              | default                                                      | toggle state                                                 |
+| LED Strip Light 3               | command     | setBrightness       | `{1-100}`                                                    | set brightness                                               |
+| LED Strip Light 3               | command     | setColor            | `"{0-255}:{0-255}:{0-255}"`                                  | set RGB color value  
 
 ##### Lock Lite
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Relay Switch 2PM | command     | turnOn              | default                                                      | set to ON state                                              |
-| Relay Switch 2PM | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Relay Switch 2PM | command     | toggle              | default                                                      | toggle state                                                 |
-| Relay Switch 2PM | command | setMode | `0~3` | set the switch mode. `0`, toggle mode; `1`, edge switch mode; `2`, detached switch mode; `3`, momentary switch mode |
+| Lock Lite                       | command     | lock                | default                                                      | rotate to locked position                                    |
+| Lock Lite                     | command     | unlock              | default                                                      | rotate to unlocked position   
 
 ##### Video Doorbell
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Relay Switch 2PM | command     | turnOn              | default                                                      | set to ON state                                              |
-| Relay Switch 2PM | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Relay Switch 2PM | command     | toggle              | default                                                      | toggle state                                                 |
-| Relay Switch 2PM | command | setMode | `0~3` | set the switch mode. `0`, toggle mode; `1`, edge switch mode; `2`, detached switch mode; `3`, momentary switch mode |
+| Video Doorbell | command     | turnOn              | default                                                      | set to ON state                                              |
+| Video Doorbell | command     | toggle              | default                                                      | toggle state                                                 |
 
 ##### Keypad Vision
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
@@ -2454,7 +2449,7 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Relay Switch 2PM | command     | turnOn              | default                                                      | set to ON state                                              |
 | Relay Switch 2PM | command     | turnOff             | default                                                      | set to OFF state                                             |
 | Relay Switch 2PM | command     | toggle              | default                                                      | toggle state                                                 |
-| Relay Switch 2PM | command | setMode | `0~3` | set the switch mode. `0`, toggle mode; `1`, edge switch mode; `2`, detached switch mode; `3`, momentary switch mode |
+
 
 ##### Color Bulb
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
