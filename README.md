@@ -2433,10 +2433,10 @@ Send control commands to physical devices and virtual infrared remote devices.
 ##### Relay Switch 2PM
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Relay Switch 2PM | command     | turnOn              | default                                                      | set to ON state                                              |
+| Relay Switch 2PM | command     | turnOn              | “1”or"2"                                                      | set to ON state 1 represents channel 1 2 represents channel 2                                             |
 | Relay Switch 2PM | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Relay Switch 2PM | command     | toggle              | default                                                      | toggle state                                                 |
-| Relay Switch 2PM | command | setMode | `0~3` | set the switch mode. `0`, toggle mode; `1`, edge switch mode; `2`, detached switch mode; `3`, momentary switch mode |
+| Relay Switch 2PM | command     | toggle              | “1”or"2"                                                    | toggle 1 represents channel 1 2 represents channel 2state                                                 |
+| Relay Switch 2PM | command | setMode | “1”/“2”，`0~3` | The first item represents the switching of channel number, 1 represents channel number 1 and 2 represents channel number 2. The second item represents set the switch mode. `0`, toggle mode; `1`, edge switch mode; `2`, detached switch mode; `3`, momentary switch mode |
 | Relay Switch 2PM | command | setPosition | `0~100` | Set roller blind opening and closing percentage. `0`, Open All; `100`, Close All  |
 
 ##### Garage Door Opener
@@ -2452,6 +2452,8 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Floor Lamp | command     | turnOff             | default                                                      | set to OFF state                                             |
 | Floor Lamp | command     | toggle              | default                                                      | toggle state                                                 |
 | Floor Lamp               | command     | setBrightness       | `{0-100}`                                                    | set brightness                                               |
+| Floor Lamp | command     | setColor            | `"{0-255}:{0-255}:{0-255}"`                                  | set RGB color value  
+| Floor Lamp | command     | setColorTemperature | `{2700-6500}`                                                | set color temperature   
 
 ##### LED Strip Light 3
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
@@ -2482,10 +2484,29 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Video Doorbell | command     | disableMotionDetection              | default                                                     | Set to disabled state                                                 |
 
 ##### Keypad Vision
+
+The control commands for this product work differently than the other products. Due to security concerns, the passcodes are stored locally. This mechanism dramatically prolongs the time needed to successfully create a passcode and get the correct result through the Web API. Hence, the actual results of the following commands are returned from the SwitchBot server asynchronously and are delivered through a webhook. 
+
+You need to configure a webhook to receive the correct result. Refer to this product's webhook definition.
+
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Keypad Vision | command     | createKey | { "name": passcode _name_str, "type": passcode_type_str, "password": passcode_str, "startTime": valid_from_long, "endTime": valid_to_long } | create a new passcode |
 | Keypad Vision | command     | deleteKey | { "id": passcode_id_int }  | delete an existing passcode |
+
+The following table describes the parameter object for `createKey`,
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| name | String | a unique name for the passcode. duplicates under the same device are not allowed. |
+| type |String | type of the passcode. *permanent*, a permanent passcode. *timeLimit*, a temporary passcode. *disposable*, a one-time passcode. *urgent*, an emergency passcode. |
+| password | String | a 6 to 12-digit passcode in plain text                       |
+| startTime | Long |set the time the passcode becomes valid from, mandatory for one-time passcode and temporary passcode. a 10-digit timestamp.|
+| endTime | Long |set the time the passcode becomes expired, mandatory for one-time passcode and temporary passcode. a 10-digit timestamp.|
+
+The following table describes the parameter object for `deleteKey`,
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| id | String | the id of the passcode |
 
 ##### Color Bulb
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
