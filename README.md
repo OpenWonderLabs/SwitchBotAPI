@@ -1407,7 +1407,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ----------- | ---------- | ----------------------------- |
 | deviceId    | String     | device ID                     |
 | deviceName  | String     | device name                   |
-| remoteType  | String     | device type. *Garage Door Opener*     |
+| deviceType  | String     | device type. *Garage Door Opener*     |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 
@@ -1416,7 +1416,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ----------- | ---------- | ----------------------------- |
 | deviceId    | String     | device ID                     |
 | deviceName  | String     | device name                   |
-| remoteType  | String     | device type. *Floor Lamp*     |
+| deviceType  | String     | device type. *Floor Lamp*     |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 
@@ -1425,7 +1425,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
 | deviceName         | String     | device name                                                  |
-| deviceType         | String     | device type. *LED Strip Light 3t*                                   |
+| deviceType         | String     | device type. *LED Strip Light 3*                                   |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |                          |
 
@@ -1447,7 +1447,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ----------- | ---------- | ----------------------------- |
 | deviceId    | String     | device ID                     |
 | deviceName  | String     | device name                   |
-| remoteType  | String     | device type. *Video Doorbell*       |
+| deviceType  | String     | device type. *Video Doorbell*       |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 
@@ -1456,7 +1456,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ----------- | ---------- | ----------------------------- |
 | deviceId    | String     | device ID                     |
 | deviceName  | String     | device name                   |
-| remoteType  | String     | device type. *Keypad Vision*    |
+| deviceType  | String     | device type. *Keypad Vision*    |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 | lockDeviceId       | String     | MAC address of the Lock that the current device is paired with |
@@ -1539,8 +1539,8 @@ Physical devices refer to the following SwitchBot products,
  -  Meter Plus (US)
  -  Robot Vacuum Cleaner S1
  -  Robot Vacuum Cleaner S1 Plus
- -  Keypad (MUST enable Cloud Service first)
- -  Keypad Touch (MUST enable Cloud Service first)
+ -  Keypad
+ -  Keypad Touch
  -  Ceiling Light
  -  Ceiling Light Pro
  -  Hub 2
@@ -2085,7 +2085,7 @@ The `body` object contains the following properties,
 | lightLevel | Integer      | the level of illuminance of the ambience light, 1~10 |
 | humidity    | Integer    | humidity percentage                     |
 | moveDetected           | Boolean    | determines if motion is detected |
-| onlineStatus    | String     | the connection status of the device. *online* or *offline* |
+| online  | String     | the connection status of the device. *online* or *offline* |
 
 ##### Battery Circulator Fan
 | Key                 | Value Type      | Description                                                  |
@@ -2145,15 +2145,22 @@ The `body` object contains the following properties,
 | --------------- | ---------- | --------------------------------------------------------- |
 | deviceId        | String     | device ID                                                 |
 | deviceType      | String     | device type. *Relay Switch 2PM*                           |
-| switchStatus    | Integer    | the current switch state. `0`, off; `1`, on               |
-| voltage         | Integer    | the current voltage, measured in Volt                     |
+| online    | Boolean     | the connection status of the device. *true* or *false* |
+| switch1Status    | Integer    | the current switch1 state. `0`, off; `1`, on               |
+| switch2Status    | Integer    | the current switch2 state. `0`, off; `1`, on               |
+| switch1voltage         | Integer    | the switch1 current voltage, measured in Volt                     |
+| switch2voltage         | Integer    | the switch2 current voltage, measured in Volt                     |
 | version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
-| power           | Integer    | the current power, measured in Watts                      |
-| usedElectricity | Integer    | daily power consumption, measured in watt-minutes         |
-| electricCurrent | Integer    | the electrical current measured in mA                     |
+| switch1power           | Integer    | the switch1 current power, measured in Watts                      |
+| switch2power           | Integer    | the switch2 current power, measured in Watts                      |
+| switch1usedElectricity | Integer    | switch1 daily power consumption, measured in watt-minutes         |
+| switch2usedElectricity | Integer    | switch2 daily power consumption, measured in watt-minutes         |
+| switch1electricCurrent | Integer    | the switch1 electrical current measured in mA                     |
+| switch2electricCurrent | Integer    | the switch2 electrical current measured in mA                     |
 | calibrate     | Boolean      | determines if the open and the closed positions have been properly calibrated or not |
-| Position       | Integer     | the current position, 0-100                               |
+| position      | Integer     | the current position, 0-100                               |
 | isStuck       | String       | determine if the roller blind is stuck                               |
+
 
 ##### Garage Door Opener
 
@@ -2162,7 +2169,7 @@ The `body` object contains the following properties,
 | deviceId        | String     | device ID                                                 |
 | deviceType      | String     | device type. *Garage Door Opener*                         |
 | doorStatus      | Integer    | the current switch state. `0`, on; `1`, off                          |
-| onlineStatus    | String     | the connection status of the device. *online* or *offline* |
+| online    | Boolean     | the connection status of the device. *true* or *false* |
 | version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
 
 ##### Floor Lamp
@@ -2171,6 +2178,7 @@ The `body` object contains the following properties,
 | --------------- | ---------- | --------------------------------------------------------- |
 | deviceId        | String     | device ID                                                 |
 | deviceType      | String     | device type. *Floor Lamp*                           |
+| online    | Boolean     | the connection status of the device. *true* or *false* |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 | version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
 | power                  | String     | ON/OFF state                                                 |
@@ -2183,6 +2191,7 @@ The `body` object contains the following properties,
 | Key             | Value Type | Description                                               |
 | --------------- | ---------- | --------------------------------------------------------- |
 | deviceId        | String     | device ID                                                 |
+| online    | Boolean     | the connection status of the device. *true* or *false* |
 | deviceType      | String     | device type. *LED Strip Light 3*                           |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 | version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
@@ -2212,7 +2221,7 @@ The `body` object contains the following properties,
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 | version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
 | battery                | Integer    |  the current battery level                                            |
-| online     | String     | the connection status of the device. *trye* or *false* |
+| online     | Boolean     | the connection status of the device. *true* or *false* |
 
 ##### Keypad Vision
 
