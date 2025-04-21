@@ -1001,7 +1001,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ------------------ | --------------- | ------------------------------------------------------------ |
 | deviceId           | String          | device ID                                                    |
 | deviceName         | String          | device name                                                  |
-| deviceType         | String          | device type. *Smart Lock Pro*                |
+| deviceType         | String          | device type. *Smart Lock Ultra*                |
 | enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String          | device's parent Hub ID                                       |
 | group              | Boolean         | determines if a Lock is grouped with another Lock or not |
@@ -1321,7 +1321,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
 | deviceName         | String     | device name                                                  |
-| deviceType         | String     | device type. *Pan/Tilt Cam*                                    |
+| deviceType         | String     | device type. *Pan/Tilt Cam 2K*                                    |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
@@ -1407,7 +1407,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ----------- | ---------- | ----------------------------- |
 | deviceId    | String     | device ID                     |
 | deviceName  | String     | device name                   |
-| remoteType  | String     | device type                   |
+| remoteType  | String     | device type. *Garage Door Opener*     |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 
@@ -1416,7 +1416,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ----------- | ---------- | ----------------------------- |
 | deviceId    | String     | device ID                     |
 | deviceName  | String     | device name                   |
-| remoteType  | String     | device type                   |
+| remoteType  | String     | device type. *Floor Lamp*     |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 
@@ -1425,7 +1425,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
 | deviceName         | String     | device name                                                  |
-| deviceType         | String     | device type. *Strip Light*                                   |
+| deviceType         | String     | device type. *LED Strip Light 3t*                                   |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |                          |
 
@@ -1434,7 +1434,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ------------------ | --------------- | ------------------------------------------------------------ |
 | deviceId           | String          | device ID                                                    |
 | deviceName         | String          | device name                                                  |
-| deviceType         | String          | device type. *Smart Lock*                                  |
+| deviceType         | String          | device type. *Lock Lite*                                  |
 | enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String          | device's parent Hub ID                                       |
 | group              | Boolean         | determines if a Lock is grouped with another Lock or not |
@@ -1447,7 +1447,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ----------- | ---------- | ----------------------------- |
 | deviceId    | String     | device ID                     |
 | deviceName  | String     | device name                   |
-| remoteType  | String     | device type                   |
+| remoteType  | String     | device type. *Video Doorbell*       |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 
@@ -1456,7 +1456,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ----------- | ---------- | ----------------------------- |
 | deviceId    | String     | device ID                     |
 | deviceName  | String     | device name                   |
-| remoteType  | String     | device type                   |
+| remoteType  | String     | device type. *Keypad Vision*    |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 | lockDeviceId       | String     | MAC address of the Lock that the current device is paired with |
