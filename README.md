@@ -4341,7 +4341,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | deviceMac    | String     | attributes of the context object. the MAC address of the device |
 | deviceType   | String     | attributes of the context object. the type of the device |
 | humidity     | Integer    | the current humidity reading in percentage |
-| lightLevel  | Integer      | the level of illuminance of the ambience light, 1~20            |
+| lightLevel  | Integer      | the level of illuminance of the ambience light, 1~10            |
 | scale        | String     | the current temperature unit being used    |
 | temperature  | Float      | the current temperature reading            |
 | timeOfSample    | Long | attributes of the context object. the time stamp when the event is sent |
@@ -4355,7 +4355,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
     "deviceMac": "B0E9FE582974",
     "deviceType": "Hub 3",
     "humidity": 45,
-    "lightLevel": 20,
+    "lightLevel": 10,
     "scale": "CELSIUS",
     "temperature": 30.3,
     "timeOfSample": 1742807095763
@@ -4838,6 +4838,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | battery      | Integer          | the battery level                           |
 | detectionState | String     | the motion state of the device, "DETECTED" stands for motion is detected; "NOT_DETECTED" stands for motion has not been detected for some time |
 | timeOfSample   | Long       | the time stamp when the event is sent                        |
+| press   | Boolean      |the Doorbell button was pressed                      |
 
 ```js
 {
@@ -4867,20 +4868,37 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | commandId    | String     | attributes of the context object. the command id |
 | result    | String     | attributes of the context object. the result of the command. *success*, *failed*, or *timeout*. timeout duration is 1 minute |
 | timeOfSample   | Long       | the time stamp when the event is sent                        |
+
+##### Create a passcode
 ```js
 {
     "eventType": "changeReport",
     "eventVersion": "1",
     "context": {
-        "deviceType": "Keypad Vision",
+        "deviceType": "WoKeypadTouch",
         "deviceMac": DEVICE_MAC_ADDR,
-        "eventName": "createKey",   
-        "commandId": "CMD-1663558451952-01",  
-        "result": "success", 
+        "eventName": "createKey",
+        "commandId": "CMD-1663558451952-01",
+        "result": "success",
         "timeOfSample": 123456789
     }
 }
+```
 
+##### Delete a passcode
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoKeypadTouch",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "eventName": "deleteKey ",
+        "commandId": "CMD-1663558451952-01",
+        "result": "success",
+        "timeOfSample": 123456789
+    }
+}
 ```
 
 #### Lock Ultra
