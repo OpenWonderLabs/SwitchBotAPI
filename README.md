@@ -27,7 +27,7 @@
       - [Bot](#bot)
       - [Curtain](#curtain)
       - [Curtain 3](#curtain-3)
-      - [Hub/Hub Plus/Hub Mini/Hub 2](#hubhub-plushub-minihub-2)
+      - [Hub/Hub Plus/Hub Mini/Hub 2/Hub 3](#hubhub-plushub-minihub-2hub-3)
       - [Meter](#meter)
       - [Meter Plus](#meter-plus)
       - [Outdoor Meter](#outdoor-meter)
@@ -35,6 +35,7 @@
       - [Meter Pro CO2](#meter-pro-co2)
       - [Lock](#lock)
       - [Lock Pro](#lock-pro)
+      - [Lock Ultra](#lock-ultra)
       - [Keypad](#keypad)
       - [Keypad Touch](#keypad-touch)
       - [Remote](#remote)
@@ -54,6 +55,8 @@
       - [Mini Robot Vacuum K10+ Pro](#mini-robot-vacuum-k10+-pro)
       - [K10+ Pro Combo](#k10+-pro-combo)
       - [Floor Cleaning Robot S10](#floor-cleaning-robot-s10)
+      - [Floor Cleaning Robot S20](#floor-cleaning-robot-s20)
+      - [K20+ Pro](#mini-robot-vacuum-k20)
       - [Humidifier](#humidifier)
       - [Evaporative Humidifier](#evaporative-humidifier)
       - [Evaporative Humidifier (Auto-refill)](#evaporative-humidifier-auto-refill)
@@ -70,6 +73,13 @@
       - [Roller Shade](#roller-shade)
       - [Relay Switch 1PM](#relay-switch-1pm)
       - [Relay Switch 1](#relay-switch-1)
+      - [Relay Switch 2PM](#relay-switch-2pm)
+      - [Garage Door Opener](#Garage-Door-Opener)
+      - [Floor Lamp](#Floor-Lamp)
+      - [LED Strip Light 3](#LED-Strip-Light-3)
+      - [Lock Lite](#Lock-Lite)
+      - [Video Doorbell](#Video-Doorbell)
+      - [Keypad Vision](#Keypad-Vision)
       - [Virtual infrared remote devices](#virtual-infrared-remote-devices)
     + [Sample](#sample)
       - [Get all devices](#get-all-devices)
@@ -104,7 +114,9 @@
       - [Mini Robot Vacuum K10+](#mini-robot-vacuum-k10+-1)
       - [Mini Robot Vacuum K10+ Pro](#mini-robot-vacuum-k10+-pro-1)
       - [K10+ Pro Combo](#k10+-pro-combo-1)
+      - [K20+ Pro](#mini-robot-vacuum-20-1)
       - [Floor Cleaning Robot S10](#floor-cleaning-robot-s10-1)
+      - [Floor Cleaning Robot S20](#floor-cleaning-robot-s20-1)
       - [Humidifier](#humidifier-1)
       - [Evaporative Humidifier](#evaporative-humidifier-1)
       - [Evaporative Humidifier (Auto-refill)](#evaporative-humidifier-auto-refill-1)
@@ -114,11 +126,20 @@
       - [Air Purifier Table PM2.5](#air-purifier-table-pm2.5-1)
       - [Blind Tilt](#blind-tilt-1)
       - [Hub 2](#hub-2)
+      - [Hub 3](#hub-3)
       - [Battery Circulator Fan](#battery-circulator-fan-1)
       - [Circulator Fan](#circulator-fan-1)
       - [Roller Shade](#roller-shade-1)
       - [Relay Switch 1PM](#relay-switch-1pm-1)
       - [Relay Switch 1](#relay-switch-1-1)
+      - [Relay Switch 2PM](#relay-switch-2PM-1)
+      - [Garage Door Opener](#Garage-Door-Opener-1)
+      - [Floor Lamp](#Floor-Lamp-1)
+      - [LED Strip Light 3](#LED-Strip-Light-3-1)
+      - [Lock Lite](#Lock-Lite-1)
+      - [Lock Ultra](#Lock-ultra-1)
+      - [Video Doorbell](#Video-Doorbell-1)
+      - [Keypad Vision](#Keypad-Vision-1)
     + [Sample](#sample-1)
       - [SwitchBot Meter example](#switchbot-meter-example)
       - [SwitchBot Curtain example](#switchbot-curtain-example)
@@ -130,6 +151,7 @@
       - [Curtain 3](#curtain-3-2)
       - [Lock](#lock-2)
       - [Lock Pro](#lock-pro-2)
+      - [Lock Ultra](#lock-ultra-2)
       - [Humidifier](#humidifier-2)
       - [Evaporative Humidifier](#evaporative-humidifier-2)
       - [Evaporative Humidifier (Auto-refill)](#evaporative-humidifier-auto-refill-2)
@@ -147,7 +169,9 @@
       - [Mini Robot Vacuum K10+](#mini-robot-vacuum-k10+-2)
       - [Mini Robot Vacuum K10+ Pro](#mini-robot-vacuum-k10+-pro-2)
       - [K10+ Pro Combo](#k10+-pro-combo-2)
+      - [Mini Robot Vacuum K20](#mini-robot-vacuum-k20-2)
       - [Floor Cleaning Robot S10](#floor-cleaning-robot-s10-2)
+      - [Floor Cleaning Robot S20](#floor-cleaning-robot-s20-2)
       - [Ceiling Light](#ceiling-light-2)
       - [Ceiling Light Pro](#ceiling-light-pro-2)
       - [Keypad](#keypad-2)
@@ -158,6 +182,12 @@
       - [Roller Shade](#roller-shade-2)
       - [Relay Switch 1PM](#relay-switch-1pm-2)
       - [Relay Switch 1](#relay-switch-1-2)
+      - [Relay Switch 2PM](#relay-switch-2pm-2)
+      - [Garage Door Opener](#Garage-Door-Opener-2)
+      - [Floor Lamp](#Floor-Lamp-2)
+      - [LED Strip Light 3](#LED-Strip-Light-3-2)
+      - [Video Doorbell](#Video-Doorbell-2)
+      - [Keypad Vision](#Keypad-Vision-2)
     + [Command set for virtual infrared remote devices](#command-set-for-virtual-infrared-remote-devices)
     + [Path parameters](#path-parameters-1)
     + [Request body parameters](#request-body-parameters)
@@ -165,6 +195,7 @@
     + [Errors](#errors)
     + [Sample](#sample-2)
       - [Floor Cleaning Robot S10 example](#floor-cleaning-robot-s10-example)
+      - [Floor Cleaning Robot S20 example](#floor-cleaning-robot-s20-example)
       - [Keypad example](#keypad-example)
       - [Bot example](#bot-example)
       - [Infrared remote device example](#infrared-remote-device-example)
@@ -231,7 +262,9 @@
     + [Mini Robot Vacuum K10+](#mini-robot-vacuum-k10+-3)
     + [Mini Robot Vacuum K10+ Pro](#mini-robot-vacuum-k10+-pro-3)
     + [K10+ Pro Combo](#k10+-pro-combo-3)
+    + [Mini Robot Vacuum 20](#mini-robot-vacuum-k20-2)
     + [Floor Cleaning Robot S10](#floor-cleaning-robot-s10-3)
+    + [Floor Cleaning Robot S20](#floor-cleaning-robot-s20-3)
     + [Ceiling Light](#ceiling-light-3)
     + [Ceiling Light Pro](#ceiling-light-pro-3)
     + [Keypad](#keypad-3)
@@ -241,17 +274,26 @@
       - [Create a passcode](#create-a-passcode-1)
       - [Delete a passcode](#delete-a-passcode-1)
     + [Hub 2](#hub-2-1)
+    + [Hub 3](#hub-3-1)
     + [Battery Circulator Fan](#battery-circulator-fan-3)
     + [Circulator Fan](#circulator-fan-3)
     + [Roller Shade](#roller-shade-3)
     + [Relay Switch 1PM](#relay-switch-1pm-3)
     + [Relay Switch 1](#relay-switch-1-3)
+    + [Relay Switch 2PM](#relay-switch-2pm-3)
     + [Evaporative Humidifier](#evaporative-humidifier-3)
     + [Evaporative Humidifier (Auto-refill)](#evaporative-humidifier-auto-refill-3)
     + [Air Purifier VOC](#air-purifier-voc-3)
     + [Air Purifier Table VOC](#air-purifier-table-voc-3)
     + [Air Purifier PM2.5](#air-purifier-pm2.5-3)
     + [Air Purifier Table PM2.5](#air-purifier-table-pm2.5-3)
+    + [Garage Door Opener](#Garage-Door-Opener-3)
+    + [Floor Lamp](#Floor-Lamp-3)
+    + [LED Strip Light 3](#LED-Strip-Light-3-3)
+    + [Lock Lite](#Lock-Lite-3)
+    + [Video Doorbell](#Video-Doorbell-3)
+    + [Keypad Vision](#Keypad-Vision-3)
+    + [Lock Ultra](#lock-ultra-3)
 
 ## Introduction
 This document describes a collection of SwitchBot API methods, examples, and best practices for, but not limited to, IoT hobbyists, developers, and gurus to make their own smart home programs or applications. 
@@ -599,6 +641,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Hub Mini                     | Short for SwitchBot Hub Mini                                 | W0202200              |                                   |
 | Hub Plus                     | Short for SwitchBot Hub Plus                                 | SwitchBot Hub S1      |                                   |
 | Hub 2                        | Short for SwitchBot Hub 2                                    | W3202100              |                                   |
+| Hub 3                        | Short for SwitchBot Hub 3                                    | W7202100              | 
 | Bot                          | Short for SwitchBot Bot                                      | SwitchBot S1          |                                   |
 | Curtain                      | Short for SwitchBot Curtain                                  | W0701600              |                                   |
 | Curtain 3                    | Short for SwitchBot Curtain 3                                | W2400000              |                                   |
@@ -625,7 +668,9 @@ The following table provides definitions to the terms to be frequently mentioned
 | K10+ | Short for SwitchBot Mini Robot Vacuum K10+ | W3011020 | |
 | K10+ Pro | Short for SwitchBot Mini Robot Vacuum K10+ Pro | W3011026 | |
 | S10   | Short for SwitchBot Floor Cleaning Robot S10                 | W3211800              |                                   |
+| S20   | Short for SwitchBot Floor Cleaning Robot S10                 | W6602310            |                                   |
 | K10+ Pro Combo | Short for SwitchBot Robot Vacuum K10+ Pro Combo | W3002500 | |
+| K20 | Short for SwitchBot  SwitchBot Robot Vacuum K20 | W3002520 | |
 | Ceiling Light                | Short for SwitchBot Ceiling Light                            | W2612230 and W2612240 | Currently only available in Japan |
 | Ceiling Light Pro            | Short for SwitchBot Ceiling Light Pro                        | W2612210 and W2612220 | Currently only available in Japan |
 | Indoor Cam                   | Short for SwitchBot Indoor Cam                               | W1301200              |                                   |
@@ -643,7 +688,14 @@ The following table provides definitions to the terms to be frequently mentioned
 | Roller Shade | Short for SwitchBot Roller Shade | W5000000 |  |
 | Relay Switch 1PM | Short for SwitchBot Relay Switch 1PM | W5502310 |  |
 | Relay Switch 1 | Short for SwitchBot Relay Switch 1 | W5502300 |  |
-
+| Relay Switch 2PM | Short for SwitchBot Relay Switch 2PM | W5502320 |  |
+| Garage Door Opener | Short for SwitchBot Garage Door Opener | W5502330 |  |
+| Floor Lamp | Short for SwitchBot Floor Lamp | W1702100 |  |
+| LED Strip Light 3 | Short for LED Strip Light 3 | W1702110 |  |
+| Lock Lite | Short for SwitchBot Lock Lite | W5110000 |  |
+| Video Doorbell | Short for SwitchBot Video Doorbell | W6702000 |  |
+| Keypad Vision | Short for SwitchBot Keypad Vision | W5600003 |  |
+| Lock Ultra | Short for SwitchBot Lock Ultra | W5600000 |  |
 ### `Legacy` Cloud Services
 
 > Important note: Beyond V9.0, there will NOT be a Cloud Services option in the app. You will see Third-party Services instead. Please read this article for more information, https://support.switch-bot.com/hc/en-us/articles/7257579858455
@@ -748,6 +800,7 @@ Physical devices refer to the following SwitchBot products,
  -  Ceiling Light Pro
  -  Blind Tilt
  -  Hub 2
+ -  Hub 3
  -  Outdoor Meter
  -  Battery Circulator Fan
  -  Curtain 3
@@ -756,19 +809,31 @@ Physical devices refer to the following SwitchBot products,
  -   Water Leak Detector
  -  Mini Robot Vacuum K10+
  -  Mini Robot Vacuum K10+ Pro
- -  `new` Meter Pro
- -  `new` Meter Pro CO2
- -  `new` Circulator Fan
- -  `new` Evaporative Humidifier
- -  `new` Evaporative Humidifier (Auto-refill)
- -  `new` K10+ Pro Combo
- -  `new` Air Purifier VOC
- -  `new` Air Purifier Table VOC
- -  `new` Air Purifier PM2.5
- -  `new` Air Purifier Table PM2.5
- -  `new` Roller Shade
- -  `new` Relay Switch 1PM
- -  `new` Relay Switch 1
+ -  Meter Pro
+ -  Meter Pro CO2
+ -  Circulator Fan
+ -  Evaporative Humidifier
+ -  Evaporative Humidifier (Auto-refill)
+ -  K10+ Pro Combo
+ -  Air Purifier VOC
+ -  Air Purifier Table VOC
+ -  Air Purifier PM2.5
+ -  Air Purifier Table PM2.5
+ -  Roller Shade
+ -  Relay Switch 1PM
+ -  Relay Switch 1
+ -  `new` Hub3
+ -  `new` Relay Switch 2PM
+ -  `new` Floor Cleaning Robot S20
+ -  `new` Floor Lamp 
+ -  `new` LED Strip Light 3
+ -  `new` Garage Door Opener
+ -  `new` Lock Lite
+ -  `new` Video Doorbell
+ -  `new` Keypad Vision
+ -  `new` Lock Ultra
+ -  `new` Lock Ultra
+ -  `new` Mini Robot Vacuum K20
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
@@ -851,13 +916,13 @@ The `deviceList` array contains a list of objects with the following key-value a
 | master             | Boolean         | determines if a Curtain is the master device or not when paired with or grouped with another Curtain |
 | openDirection      | String          | the opening direction of a Curtain                           |
 
-##### Hub/Hub Plus/Hub Mini/Hub 2
+##### Hub/Hub Plus/Hub Mini/Hub 2/Hub 3
 
 | Key                | Value Type | Description                                                  |
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
 | deviceName         | String     | device name                                                  |
-| deviceType         | String     | device type. *Hub*, *Hub Plus*, *Hub Mini*, or *Hub 2*.      |
+| deviceType         | String     | device type. *Hub*, *Hub Plus*, *Hub Mini*, *Hub 2* or  *Hub 3*.      |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
@@ -930,6 +995,20 @@ The `deviceList` array contains a list of objects with the following key-value a
 | deviceId           | String          | device ID                                                    |
 | deviceName         | String          | device name                                                  |
 | deviceType         | String          | device type. *Smart Lock Pro*                |
+| enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String          | device's parent Hub ID                                       |
+| group              | Boolean         | determines if a Lock is grouped with another Lock or not |
+| master             | Boolean         | determines if a Lock is the master device or not when grouped with another Lock in Dual Lock mode |
+| groupName              | String         | the name of the Lock group |
+| lockDevicesIds              | Array<deviceId>         | a list of Lock device IDs such that the Lock devices are being grouped in Dual Lock mode |
+
+##### Lock Ultra
+
+| Key                | Value Type      | Description                                                  |
+| ------------------ | --------------- | ------------------------------------------------------------ |
+| deviceId           | String          | device ID                                                    |
+| deviceName         | String          | device name                                                  |
+| deviceType         | String          | device type. *Smart Lock Ultra*                |
 | enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String          | device's parent Hub ID                                       |
 | group              | Boolean         | determines if a Lock is grouped with another Lock or not |
@@ -1147,6 +1226,26 @@ The `deviceList` array contains a list of objects with the following key-value a
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
+##### Floor Cleaning Robot S20
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Robot Vacuum Cleaner S20*                      |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Mini Robot Vacuum K20
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Mini Robot Vacuum K20*                      |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
 ##### Humidifier
 
 | Key                | Value Type | Description                                                  |
@@ -1239,7 +1338,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
 | deviceName         | String     | device name                                                  |
-| deviceType         | String     | device type. *Pan/Tilt Cam*                                    |
+| deviceType         | String     | device type. *Pan/Tilt Cam 2K*                                    |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
@@ -1311,8 +1410,76 @@ The `deviceList` array contains a list of objects with the following key-value a
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
-##### Virtual infrared remote devices
+##### Relay Switch 2PM
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Relay Switch 2PM*                              |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
+##### Garage Door Opener
+| Key         | Value Type | Description                   |
+| ----------- | ---------- | ----------------------------- |
+| deviceId    | String     | device ID                     |
+| deviceName  | String     | device name                   |
+| deviceType  | String     | device type. *Garage Door Opener*     |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+##### Floor Lamp
+| Key         | Value Type | Description                   |
+| ----------- | ---------- | ----------------------------- |
+| deviceId    | String     | device ID                     |
+| deviceName  | String     | device name                   |
+| deviceType  | String     | device type. *Floor Lamp*     |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+##### LED Strip Light 3
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *LED Strip Light 3*                                   |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |                          |
+
+##### Lock Lite
+| Key                | Value Type      | Description                                                  |
+| ------------------ | --------------- | ------------------------------------------------------------ |
+| deviceId           | String          | device ID                                                    |
+| deviceName         | String          | device name                                                  |
+| deviceType         | String          | device type. *Lock Lite*                                  |
+| enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String          | device's parent Hub ID                                       |
+| group              | Boolean         | determines if a Lock is grouped with another Lock or not |
+| master             | Boolean         | determines if a Lock is the master device or not when grouped with another Lock in Dual Lock mode |
+| groupName              | String         | the name of the Lock group |
+| lockDevicesIds              | Array<deviceId>         | a list of Lock device IDs such that the Lock devices are being grouped in Dual Lock mode |
+
+##### Video Doorbell
+| Key         | Value Type | Description                   |
+| ----------- | ---------- | ----------------------------- |
+| deviceId    | String     | device ID                     |
+| deviceName  | String     | device name                   |
+| deviceType  | String     | device type. *Video Doorbell*       |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+##### Keypad Vision
+| Key         | Value Type | Description                   |
+| ----------- | ---------- | ----------------------------- |
+| deviceId    | String     | device ID                     |
+| deviceName  | String     | device name                   |
+| deviceType  | String     | device type. *Keypad Vision*    |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| lockDeviceId       | String     | MAC address of the Lock that the current device is paired with |
+| keyList            | Object     | a list of passcodes                                          |
+
+##### Virtual infrared remote devices
 
 The `infraredRemoteList` array contains a list of objects with the following key-value attributes,
 
@@ -1389,8 +1556,8 @@ Physical devices refer to the following SwitchBot products,
  -  Meter Plus (US)
  -  Robot Vacuum Cleaner S1
  -  Robot Vacuum Cleaner S1 Plus
- -  Keypad (MUST enable Cloud Service first)
- -  Keypad Touch (MUST enable Cloud Service first)
+ -  Keypad
+ -  Keypad Touch
  -  Ceiling Light
  -  Ceiling Light Pro
  -  Hub 2
@@ -1401,20 +1568,30 @@ Physical devices refer to the following SwitchBot products,
  -  Water Leak Detector
  -  Mini Robot Vacuum K10+
  -  Mini Robot Vacuum K10+ Pro
- -  `new` Meter Pro
- -  `new` Meter Pro CO2
- -  `new` Circulator Fan
- -  `new` Evaporative Humidifier
- -  `new` Evaporative Humidifier (Auto-refill)
- -  `new` K10+ Pro Combo
- -  `new` Air Purifier VOC
- -  `new` Air Purifier Table VOC
- -  `new` Air Purifier PM2.5
- -  `new` Air Purifier Table PM2.5
- -  `new` Roller Shade
- -  `new` Relay Switch 1PM
- -  `new` Relay Switch 1
-
+ -  Meter Pro
+ -  Meter Pro CO2
+ -  Circulator Fan
+ -  Evaporative Humidifier
+ -  Evaporative Humidifier (Auto-refill)
+ -  K10+ Pro Combo
+ -  Air Purifier VOC
+ -  Air Purifier Table VOC
+ -  Air Purifier PM2.5
+ -  Air Purifier Table PM2.5
+ -  Roller Shade
+ -  Relay Switch 1PM
+ -  Relay Switch 1
+ -  `new` Hub3
+ -  `new` Relay Switch 2PM
+ -  `new` Garage Door Opener
+ -  `new` Floor Cleaning Robot S20
+ -  `new` Floor Lamp 
+ -  `new` LED Strip Light 3
+ -  `new` Lock Lite
+ -  `new` Lock Ultra
+ -  `new` Video Doorbell
+ -  `new` Keypad Vision
+ -  `new` Mini Robot Vacuum K20
 #### Path parameters
 
 | Name     | Type   | Required | Description |
@@ -1772,6 +1949,20 @@ The `body` object contains the following properties,
 | waterBaseBattery | Integer | the current battery level `0-100` |
 | taskType | String | the current task in progress. *standBy*, *explore*, *cleanAll*, *cleanArea*, *cleanRoom*, *fillWater*, *deepWashing*, *backToCharge*, *markingWaterBase*, *drying*, *collectDust*, *remoteControl*, *cleanWithExplorer*, *fillWaterForHumi*, *markingHumi* |
 
+##### Floor Cleaning Robot S20
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Robot Vacuum Cleaner S20*                  |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| workingStatus    | String     | the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
+| onlineStatus    | String     | the connection status of the device. *online* or *offline* |
+| battery                | Integer    |  the current battery level `0-100` |
+| waterBaseBattery | Integer | the current battery level `0-100` |
+| taskType | String | the current task in progress. *standBy*, *explore*, *cleanAll*, *cleanArea*, *cleanRoom*, *fillWater*, *deepWashing*, *backToCharge*, *markingWaterBase*, *drying*, *collectDust*, *remoteControl*, *cleanWithExplorer*, *fillWaterForHumi*, *markingHumi* |
+
 ##### Humidifier
 
 | Key                | Value Type | Description                                                  |
@@ -1900,6 +2091,20 @@ The `body` object contains the following properties,
 | version     | String     | the current firmware version, e.g. V4.2 |
 | humidity    | Integer    | humidity percentage                     |
 
+##### Hub 3
+
+| Key         | Value Type | Description                             |
+| ----------- | ---------- | --------------------------------------- |
+| deviceId    | String     | device ID                               |
+| deviceType  | String     | device type. *Hub 3*                    |
+| hubDeviceId | String     | Hub ID, equivalent to device ID |
+| version     | String     | the current firmware version, e.g. V4.2 |
+| temperature | Float      | temperature in celsius                  |
+| lightLevel | Integer      | the level of illuminance of the ambience light, 1~10 |
+| humidity    | Integer    | humidity percentage                     |
+| moveDetected           | Boolean    | determines if motion is detected |
+| online  | String     | the connection status of the device. *online* or *offline* |
+
 ##### Battery Circulator Fan
 | Key                 | Value Type      | Description                                                  |
 | ------------------- | --------------- | ------------------------------------------------------------ |
@@ -1951,6 +2156,110 @@ The `body` object contains the following properties,
 | deviceType      | String     | device type. *Relay Switch 1*                             |
 | switchStatus    | Integer    | the current switch state. `0`, off; `1`, on               |
 | version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
+
+##### Relay Switch 2PM
+
+| Key             | Value Type | Description                                               |
+| --------------- | ---------- | --------------------------------------------------------- |
+| deviceId        | String     | device ID                                                 |
+| deviceType      | String     | device type. *Relay Switch 2PM*                           |
+| online    | Boolean     | the connection status of the device. *true* or *false* |
+| switch1Status    | Integer    | the current switch1 state. `0`, off; `1`, on               |
+| switch2Status    | Integer    | the current switch2 state. `0`, off; `1`, on               |
+| switch1voltage         | Integer    | the switch1 current voltage, measured in Volt                     |
+| switch2voltage         | Integer    | the switch2 current voltage, measured in Volt                     |
+| version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
+| switch1power           | Integer    | the switch1 current power, measured in Watts                      |
+| switch2power           | Integer    | the switch2 current power, measured in Watts                      |
+| switch1usedElectricity | Integer    | switch1 daily power consumption, measured in watt-minutes         |
+| switch2usedElectricity | Integer    | switch2 daily power consumption, measured in watt-minutes         |
+| switch1electricCurrent | Integer    | the switch1 electrical current measured in mA                     |
+| switch2electricCurrent | Integer    | the switch2 electrical current measured in mA                     |
+| calibrate     | Boolean      | determines if the open and the closed positions have been properly calibrated or not |
+| position      | Integer     | the current position, 0-100                               |
+| isStuck       | String       | determine if the roller blind is stuck                               |
+
+
+##### Garage Door Opener
+
+| Key             | Value Type | Description                                               |
+| --------------- | ---------- | --------------------------------------------------------- |
+| deviceId        | String     | device ID                                                 |
+| deviceType      | String     | device type. *Garage Door Opener*                         |
+| doorStatus      | Integer    | the current switch state. `0`, on; `1`, off                          |
+| online    | Boolean     | the connection status of the device. *true* or *false* |
+| version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
+
+##### Floor Lamp
+
+| Key             | Value Type | Description                                               |
+| --------------- | ---------- | --------------------------------------------------------- |
+| deviceId        | String     | device ID                                                 |
+| deviceType      | String     | device type. *Floor Lamp*                           |
+| online    | Boolean     | the connection status of the device. *true* or *false* |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
+| power                  | String     | ON/OFF state                                                 |
+| brightness             | Integer    | the brightness value, range from 1 to 100                    |
+| color                  | String     |  the color value, RGB "255:255:255"                           |
+| colorTemperature | Integer | the color temperature value, range from 2700 to 6500 |
+
+##### LED Strip Light 3
+
+| Key             | Value Type | Description                                               |
+| --------------- | ---------- | --------------------------------------------------------- |
+| deviceId        | String     | device ID                                                 |
+| online    | Boolean     | the connection status of the device. *true* or *false* |
+| deviceType      | String     | device type. *LED Strip Light 3*                           |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
+| power                  | String     | ON/OFF state                                                 |
+| brightness             | Integer    | the brightness value, range from 1 to 100                    |
+| color                  | String     |  the color value, RGB "255:255:255"                           |
+| colorTemperature | Integer | the color temperature value, range from 2700 to 6500 |
+
+##### Lock Lite
+
+| Key             | Value Type | Description                                               |
+| --------------- | ---------- | --------------------------------------------------------- |
+| deviceId        | String     | device ID                                                 |
+| deviceType      | String     | device type. *Lock Lite*                           |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| battery                | Integer    |  the current battery level                                            |
+| version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
+| lockState              | String     | determines if locked or not, *jammed*, *unlock* or *lock* |
+| calibrate     | Boolean      | determines if the open and the closed positions have been properly calibrated or not |
+
+##### Video Doorbell
+
+| Key             | Value Type | Description                                               |
+| --------------- | ---------- | --------------------------------------------------------- |
+| deviceId        | String     | device ID                                                 |
+| deviceType      | String     | device type. *Video Doorbell*                           |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
+| battery                | Integer    |  the current battery level                                            |
+| online     | Boolean     | the connection status of the device. *true* or *false* |
+
+##### Mini Robot Vacuum K20
+
+| Key             | Value Type | Description                                               |
+| --------------- | ---------- | --------------------------------------------------------- |
+| deviceId        | String     | device ID                                                 |
+| deviceType      | String     | device type. *Video Doorbell*                           |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| workingStatus    | String     | the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
+| onlineStatus    | String     | the connection status of the device. *online* or *offline* |
+| battery                | Integer    |  the current battery level `0-100` |
+| taskType | String | the current task in progress. *standBy*, *explore*, *cleanAll*, *cleanArea*, *cleanRoom*, *backToCharge*, *collectDust*, *remoteControl*, *cleanWithExplorer*|
+
+##### Keypad Vision
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Keypad Vision*                                        |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
 
 #### Sample
 
@@ -2151,6 +2460,84 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Relay Switch 1 | command     | toggle              | default                                                      | toggle state                                                 |
 | Relay Switch 1 | command | setMode | `0~3` | set the switch mode. `0`, toggle mode; `1`, edge switch mode; `2`, detached switch mode; `3`, momentary switch mode |
 
+##### Relay Switch 2PM
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Relay Switch 2PM | command     | turnOn              | “1”or"2"                                                      | set to ON state 1 represents channel 1 2 represents channel 2                                             |
+| Relay Switch 2PM | command     | turnOff             | default                                                      | set to OFF state                                             |
+| Relay Switch 2PM | command     | toggle              | “1”or"2"                                                    | toggle 1 represents channel 1 2 represents channel 2state                                                 |
+| Relay Switch 2PM | command | setMode | “1”/“2”，`0~3` | The first item represents the switching of channel number, 1 represents channel number 1 and 2 represents channel number 2. The second item represents set the switch mode. `0`, toggle mode; `1`, edge switch mode; `2`, detached switch mode; `3`, momentary switch mode |
+| Relay Switch 2PM | command | setPosition | `0~100` | Set roller blind opening and closing percentage. `0`, Open All; `100`, Close All  |
+
+##### Garage Door Opener
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Garage Door Opener | command     | turnOn              | default                                                      | set to ON state                                              |
+| Garage Door Opener | command     | turnOff             | default                                                      | set to OFF state                                             |
+
+##### Floor Lamp
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Floor Lamp | command     | turnOn              | default                                                      | set to ON state                                              |
+| Floor Lamp | command     | turnOff             | default                                                      | set to OFF state                                             |
+| Floor Lamp | command     | toggle              | default                                                      | toggle state                                                 |
+| Floor Lamp               | command     | setBrightness       | `{0-100}`                                                    | set brightness                                               |
+| Floor Lamp | command     | setColor            | `"{0-255}:{0-255}:{0-255}"`                                  | set RGB color value  
+| Floor Lamp | command     | setColorTemperature | `{2700-6500}`                                                | set color temperature   
+
+##### LED Strip Light 3
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| LED Strip Light 3 | command     | turnOn              | default                                                      | set to ON state                                              |
+| LED Strip Light 3 | command     | turnOff             | default                                                      | set to OFF state                                             |
+| LED Strip Light 3 | command     | toggle              | default                                                      | toggle state                                                 |
+| LED Strip Light 3               | command     | setBrightness       | `{1-100}`                                                    | set brightness                                               |
+| LED Strip Light 3               | command     | setColor            | `"{0-255}:{0-255}:{0-255}"`                                  | set RGB color value  
+| LED Strip Light 3               | command     | setColorTemperature | `{2700-6500}`                                                | set color temperature                                        |
+
+##### Lock Lite
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Lock Lite                       | command     | lock                | default                                                      | rotate to locked position                                    |
+| Lock Lite                     | command     | unlock              | default                                                      | rotate to unlocked position   
+
+##### Lock Ultra
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Lock Ultra                     | command     | lock                | default                                                      | rotate to locked position                                    |
+| Lock Ultra                    | command      | unlock              | default                                                      | rotate to unlocked position   
+
+##### Video Doorbell
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Video Doorbell | command     | enableMotionDetection              | default                                                      | Set to enabled state                                              |
+| Video Doorbell | command     | disableMotionDetection              | default                                                     | Set to disabled state                                                 |
+
+##### Keypad Vision
+
+The control commands for this product work differently than the other products. Due to security concerns, the passcodes are stored locally. This mechanism dramatically prolongs the time needed to successfully create a passcode and get the correct result through the Web API. Hence, the actual results of the following commands are returned from the SwitchBot server asynchronously and are delivered through a webhook. 
+
+You need to configure a webhook to receive the correct result. Refer to this product's webhook definition.
+
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Keypad Vision | command     | createKey | { "name": passcode _name_str, "type": passcode_type_str, "password": passcode_str, "startTime": valid_from_long, "endTime": valid_to_long } | create a new passcode |
+| Keypad Vision | command     | deleteKey | { "id": passcode_id_int }  | delete an existing passcode |
+
+The following table describes the parameter object for `createKey`,
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| name | String | a unique name for the passcode. duplicates under the same device are not allowed. |
+| type |String | type of the passcode. *permanent*, a permanent passcode. *timeLimit*, a temporary passcode. *disposable*, a one-time passcode. *urgent*, an emergency passcode. |
+| password | String | a 6 to 12-digit passcode in plain text                       |
+| startTime | Long |set the time the passcode becomes valid from, mandatory for one-time passcode and temporary passcode. a 10-digit timestamp.|
+| endTime | Long |set the time the passcode becomes expired, mandatory for one-time passcode and temporary passcode. a 10-digit timestamp.|
+
+The following table describes the parameter object for `deleteKey`,
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| id | String | the id of the passcode |
+
 ##### Color Bulb
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2204,6 +2591,16 @@ Send control commands to physical devices and virtual infrared remote devices.
 | K10+ Pro   | command     | dock     | default           | return to charging dock                                      |
 | K10+ Pro   | command     | PowLevel | `{0-3}`           | set suction power level: 0 (Quiet), 1 (Standard), 2 (Strong), 3 (MAX) |
 
+##### Mini Robot Vacuum K20
+
+| deviceType                          | commandType | Command     | command parameter                                            | Description                                                  |
+| ----------------------------------- | ----------- | ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Mini Robot Vacuum K20 | command     | startClean  | {"action": action_str, "param": {"fanLevel": fan_level_int, "times": clean_cycle_int}} | start cleaning. <br />`action_str`, the cleaning mode, *sweep* or *mop*.<br />`fanLevel`, the vacuum level, `1-4`.<br />`times`, the number of cycles, `1-2639999`, in theory. |
+| Mini Robot Vacuum K20 | command     | pause       | default                                                      | pause cleaning                                               |
+| Mini Robot Vacuum K20 | command     | dock        | default                                                      | return to charging dock                                      |
+| Mini Robot Vacuum K20 | command     | setVolume   | `{0-100}`                                                    | set the robot volume                                         |
+| Mini Robot Vacuum K20 | command     | changeParam | {"fanLevel": fan_level_int, "waterLevel": water_level_int, "times": clean_cycle_int} | change clean parameters. `fan_level_int`, the vacuum level, `1-4`; `water_level_int`, the mop moisture level, `1-2`; `times`, the number of cycles, `1-2639999`, in theory. |
+
 ##### K10+ Pro Combo
 
 | deviceType                          | commandType | Command     | command parameter                                            | Description                                                  |
@@ -2226,6 +2623,18 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Floor Cleaning Robot S10 | command     | setVolume       | `0-100`                                                      | set volume, `1-100`                                          |
 | Floor Cleaning Robot S10 | command     | selfClean       | `1` or `2` or `3`                                            | mode `1`, wash the mop.<br />mode `2`, dry itself.<br /> mode `3`, terminate. |
 | Floor Cleaning Robot S10 | command     | changeParam     | {"fanLevel": fan_level_int, "waterLevel": water_level_int, "times": clean_cycle_int} | `fanLevel`, the vacuum level, `1-4`.<br />`waterLevel`, the mop moisture level, `1-2`.<br />`times`, the number of cycles, `1-2639999`, in theory. |
+
+##### Floor Cleaning Robot S20
+
+| deviceType               | commandType | Command         | command parameter                                            | Description                                                  |
+| ------------------------ | ----------- | --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Floor Cleaning Robot S20 | command     | startClean      | {"action": clean_mode_str, "param": {"fanLevel": fan_level_int, "waterLevel": water_level_int, "times": clean_cycle_int}} | start cleaning.<br />`action`, the cleaning mode, *sweep* or *sweep_mop*.<br />`fanLevel`, the vacuum level, `1-4`.<br />`waterLevel`, the mop moisture level, `1-2`.<br />`times`, the number of cycles, `1-2639999`, in theory. |
+| Floor Cleaning Robot S20 | command     | addWaterForHumi | default                                                      | refill the mind blowing Evaporative Humidifier (Auto-refill). |
+| Floor Cleaning Robot S20 | command     | pause           | default                                                      | pause.                                                       |
+| Floor Cleaning Robot S20 | command     | dock            | default                                                      | return to Auto-empty Station and charge.                     |
+| Floor Cleaning Robot S20 | command     | setVolume       | `0-100`                                                      | set volume, `1-100`                                          |
+| Floor Cleaning Robot S20 | command     | selfClean       | `1` or `2` or `3`                                            | mode `1`, wash the mop.<br />mode `2`, dry itself.<br /> mode `3`, terminate. |
+| Floor Cleaning Robot S20 | command     | changeParam     | {"fanLevel": fan_level_int, "waterLevel": water_level_int, "times": clean_cycle_int} | `fanLevel`, the vacuum level, `1-4`.<br />`waterLevel`, the mop moisture level, `1-2`.<br />`times`, the number of cycles, `1-2639999`, in theory. |
 
 ##### Ceiling Light
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
@@ -2383,7 +2792,7 @@ The table below describes all the available commands for virtual infrared remote
 | commandType | String | No       | for customized buttons, this needs to be set to `customzie` |
 
 #### Response
-
+lig
 The response is basically a JSON object, which contains the following properties,
 
 | Key Name   | Value Type   |
@@ -3010,6 +3419,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | WoKeypad      | Keypad |
 | WoKeypadTouch | Keypad Touch |
 | WoHub2 | Hub 2 |
+| WoHub3 | Hub 3 |
 | Robot Vacuum Cleaner S10 | Floor Cleaning Robot S10 |
 | Water Detector | Water Leak Detector |
 | MeterPro | Meter Pro |
@@ -3024,6 +3434,15 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | WoRollerShade | Roller Shade |
 | Relay Switch 1PM | Relay Switch 1PM |
 | Relay Switch 1 | Relay Switch 1 |
+| Relay Switch 2PM | Relay Switch 2PM |
+| Garage Door Opener | Garage Door Opener |
+| Floor Lamp | Floor Lamp |
+| Lock Lite | Lock Lite |
+| Video Doorbell | Video Doorbell |
+| Keypad Vision | Keypad Vision |
+| Lock Ultra | Lock Ultra |
+| LED Strip Light 3 | LED Strip Light 3 |
+| Mini Robot Vacuum K20 | Mini Robot Vacuum K20 |
 
 #### Bot
 | Key Name       | Value Type | Description                                                  |
@@ -3743,6 +4162,38 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 }
 ```
 
+#### Floor Cleaning Robot S20
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | attributes of the context object. the type of the device |
+| deviceMac    | String     | attributes of the context object. the MAC address of the device |
+| workingStatus    | String     | attributes of the context object. the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
+| onlineStatus    | String     | attributes of the context object. the connection status of the device. *online* or *offline* |
+| battery | Integer | attributes of the context object. the battery level, `0-100` |
+| waterBaseBattery | Integer | the current battery level `0-100` |
+| taskType | String | the current task in progress. *standBy*, *explore*, *cleanAll*, *cleanArea*, *cleanRoom*, *fillWater*, *deepWashing*, *backToCharge*, *markingWaterBase*, *drying*, *collectDust*, *remoteControl*, *cleanWithExplorer*, *fillWaterForHumi*, *markingHumi* |
+| timeOfSample    | Long | attributes of the context object. the time stamp when the event is sent |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Robot Vacuum Cleaner s20",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "workingStatus"："StandBy",
+        "onlineStatus": "online",
+        "battery": 100,// 0-100
+        "waterBaseBattery": 100,
+        "taskType": "explore",
+        "timeOfSample": 123456789
+    }
+}
+```
+
 #### Ceiling Light
 
 | Key Name     | Value Type | Description                                          |
@@ -3918,6 +4369,38 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "scale": "CELSIUS",
         "timeOfSample": 123456789
     }
+}
+```
+
+#### Hub 3
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| detectionState | String     | the motion state of the device, "DETECTED" stands for motion is detected; "NOT_DETECTED" stands for motion has not been detected for some time |
+| deviceMac    | String     | attributes of the context object. the MAC address of the device |
+| deviceType   | String     | attributes of the context object. the type of the device |
+| humidity     | Integer    | the current humidity reading in percentage |
+| lightLevel  | Integer      | the level of illuminance of the ambience light, 1~10            |
+| scale        | String     | the current temperature unit being used    |
+| temperature  | Float      | the current temperature reading            |
+| timeOfSample    | Long | attributes of the context object. the time stamp when the event is sent |
+
+```js
+{
+  "eventType": "changeReport",
+  "eventVersion": "1",
+  "context": {
+    "detectionState": "DETECTED",
+    "deviceMac": "B0E9FE582974",
+    "deviceType": "Hub 3",
+    "humidity": 45,
+    "lightLevel": 10,
+    "scale": "CELSIUS",
+    "temperature": 30.3,
+    "timeOfSample": 1742807095763
+  }
 }
 ```
 
@@ -4260,6 +4743,289 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "online": false,
         "overTemperature": true,
         "switchStatus": 1,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Relay Switch 2PM
+
+| Key Name        | Value Type | Description                                                  |
+| --------------- | ---------- | ------------------------------------------------------------ |
+| eventType       | String     | the type of events                                           |
+| eventVersion    | String     | the current event version                                    |
+| context         | Object     | the detail info of the event                                 |
+| deviceType      | String     | the type of the device                                       |
+| deviceMac       | String     | the MAC address of the device                                |
+| online          | Boolean    | determines if the device is connected to the internet or disconnected |
+| switchStatus    | Integer    | the switch state of the device. `1`, on; `0`, off            |
+| overload        | Boolean    | determines if the device is power overloaded or not          |
+| calibrate          | Boolean         | determines if the open position and the close position of a device have been properly calibrated or not |
+| position          | Integer          | determine the percentage of the device that is open or closed |
+| isStuck          | Boolean           | determine if the device is stuck |
+
+
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Relay Switch 2PM",
+        "deviceMac": "FFFFFFFFFFF",
+        "online": false,
+        "overTemperature": true,
+        "switch1Status": 1,
+        "switch2Status": 1,
+        "switch1Overload": true,
+        "switch2Overload": true,
+        "calibrate": true,
+        "position": 0,
+        "isStuck": true
+    }
+}
+```
+
+#### Garage Door Opener
+
+| Key Name        | Value Type | Description                                                  |
+| --------------- | ---------- | ------------------------------------------------------------ |
+| eventType       | String     | the type of events                                           |
+| eventVersion    | String     | the current event version                                    |
+| context         | Object     | the detail info of the event                                 |
+| deviceType      | String     | the type of the device                                       |
+| deviceMac       | String     | the MAC address of the device                                |
+| doorStatus      | Integer     | he switch state of the device. `0`, on; `1`, off                               |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Garage Door Opener",
+        "deviceMac": "FFFFFFFFFFF",
+        "doorStatus": 1, 
+    }
+}
+```
+
+#### Floor Lamp
+
+| Key Name        | Value Type | Description                                                  |
+| --------------- | ---------- | ------------------------------------------------------------ |
+| eventType       | String     | the type of events                                           |
+| eventVersion    | String     | the current event version                                    |
+| context         | Object     | the detail info of the event                                 |
+| deviceType      | String     | the type of the device                                       |
+| deviceMac       | String     | the MAC address of the device                                |
+| powerState     | String  | ON/OFF state                                                 |
+| brightness | Integer | attributes of the context object. the brightness value, range from 1 to 100 |
+| colorTemperature | Integer | attributes of the context object. the color temperature value, range from 2700 to 6500 |
+| color            | String     | the color value, in the format of RGB value, "255:255:255" |
+| timeOfSample | Long       | the time stamp when the event is sent                |
+
+```js
+{
+   "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Floor Lamp",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "powerState": "ON",
+        "brightness": 10,
+        "color": "255:255:0",
+        "colorTemperature": 3500,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Lock Lite
+
+| Key Name        | Value Type | Description                                                  |
+| --------------- | ---------- | ------------------------------------------------------------ |
+| eventType       | String     | the type of events                                           |
+| eventVersion    | String     | the current event version                                    |
+| context         | Object     | the detail info of the event                                 |
+| deviceType      | String     | the type of the device                                       |
+| deviceMac       | String     | the MAC address of the device                                |
+| lockState       | String     | determines if locked or not |
+| battery      | Integer          | the battery level                           |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoLockLite",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "lockState": "LOCKED",
+        "battery": 90,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Video Doorbell
+
+| Key Name        | Value Type | Description                                                  |
+| --------------- | ---------- | ------------------------------------------------------------ |
+| eventType       | String     | the type of events                                           |
+| eventVersion    | String     | the current event version                                    |
+| context         | Object     | the detail info of the event                                 |
+| deviceType      | String     | the type of the device                                       |
+| deviceMac       | String     | the MAC address of the device                                |
+| battery      | Integer          | the battery level                           |
+| detectionState | String     | the motion state of the device, "DETECTED" stands for motion is detected; "NOT_DETECTED" stands for motion has not been detected for some time |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+| press   | Boolean      |the Doorbell button was pressed                      |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Video Doorbell",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "battery": 80,
+        "detectionState": "DETECTED",
+        "press": true,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Keypad Vision
+
+| Key Name        | Value Type | Description                                                  |
+| --------------- | ---------- | ------------------------------------------------------------ |
+| eventType       | String     | the type of events                                           |
+| eventVersion    | String     | the current event version                                    |
+| context         | Object     | the detail info of the event                                 |
+| deviceType      | String     | the type of the device                                       |
+| deviceMac       | String     | the MAC address of the device                                |
+| eventName    | String     | attributes of the context object. the name of the command being sent |
+| commandId    | String     | attributes of the context object. the command id |
+| result    | String     | attributes of the context object. the result of the command. *success*, *failed*, or *timeout*. timeout duration is 1 minute |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+
+##### Create a passcode
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoKeypadTouch",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "eventName": "createKey",
+        "commandId": "CMD-1663558451952-01",
+        "result": "success",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+##### Delete a passcode
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoKeypadTouch",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "eventName": "deleteKey ",
+        "commandId": "CMD-1663558451952-01",
+        "result": "success",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Lock Ultra
+
+| Key Name        | Value Type | Description                                                  |
+| --------------- | ---------- | ------------------------------------------------------------ |
+| eventType       | String     | the type of events                                           |
+| eventVersion    | String     | the current event version                                    |
+| context         | Object     | the detail info of the event                                 |
+| deviceType      | String     | the type of the device                                       |
+| deviceMac       | String     | the MAC address of the device                                |
+| lockState    | String     | the state of the device, "LOCKED" stands for the motor is rotated to locking position; "UNLOCKED" stands for the motor is rotated to unlocking position; "JAMMED" stands for the motor is jammed while rotating |
+| battery      | Integer          | the battery level                           |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Smart Lock Ultra",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "lockState": "LOCKED",
+        "battery": 90,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### LED Strip Light 3
+
+| Key Name        | Value Type | Description                                                  |
+| --------------- | ---------- | ------------------------------------------------------------ |
+| eventType       | String     | the type of events                                           |
+| eventVersion    | String     | the current event version                                    |
+| context         | Object     | the detail info of the event                                 |
+| deviceType      | String     | the type of the device                                       |
+| deviceMac       | String     | the MAC address of the device                                |
+| powerState     | String  | ON/OFF state                                                 |
+| colorTemperature | Integer | attributes of the context object. the color temperature value, range from 2700 to 6500 |
+| color            | String     | the color value, in the format of RGB value, "255:255:255" |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Strip Light 3",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "powerState": "ON",//"ON"or"OFF"
+        "brightness": 10,
+        "color": "255:255:0",
+        "colorTemperature": 3500,
+        "timeOfSample": 123456789
+    }
+}
+
+```
+
+#### Mini Robot Vacuum K20
+
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | attributes of the context object. the type of the device |
+| deviceMac    | String     | attributes of the context object. the MAC address of the device |
+| workingStatus    | String     | attributes of the context object. the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
+| onlineStatus    | String     | attributes of the context object. the connection status of the device. *online* or *offline* |
+| battery | Integer | attributes of the context object. the battery level, range from 0 to 100 |
+| taskType | String | attributes of the context object. the current task in progress. *standBy*, *explore*, *cleanAll*, *cleanArea*, *cleanRoom*, *backToCharge*, *collectDust*, *remoteControl*, *cleanWithExplorer* |
+| timeOfSample    | Long | attributes of the context object. the time stamp when the event is sent |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Robot Vacuum Cleaner K10+ Pro Combo",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "workingStatus"："StandBy",
+        //StandBy,Clearing,Paused,GotoChargeBase,Charging,ChargeDone,Dormant,InTrouble,InRemoteControl,InDustCollecting
+        "onlineStatus": "online",//online,offline
+        "battery": 100,// 0-100
+        "waterBaseBattery": 100,
+    "taskType": "explore", // standBy,explore,cleanAll,cleanArea,cleanRoom,deepWashing,backToCharge,drying,collectDust,remoteControl,cleanWithExplorer
         "timeOfSample": 123456789
     }
 }
