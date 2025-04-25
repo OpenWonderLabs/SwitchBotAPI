@@ -56,7 +56,7 @@
       - [K10+ Pro Combo](#k10+-pro-combo)
       - [Floor Cleaning Robot S10](#floor-cleaning-robot-s10)
       - [Floor Cleaning Robot S20](#floor-cleaning-robot-s20)
-      - [Multitasking Household Robot K20+ Pro](#mini-robot-vacuum-k20)
+      - [K20+ Pro](#mini-robot-vacuum-k20)
       - [Humidifier](#humidifier)
       - [Evaporative Humidifier](#evaporative-humidifier)
       - [Evaporative Humidifier (Auto-refill)](#evaporative-humidifier-auto-refill)
@@ -114,7 +114,7 @@
       - [Mini Robot Vacuum K10+](#mini-robot-vacuum-k10+-1)
       - [Mini Robot Vacuum K10+ Pro](#mini-robot-vacuum-k10+-pro-1)
       - [K10+ Pro Combo](#k10+-pro-combo-1)
-      - [Multitasking Household Robot K20+ Pro](#mini-robot-vacuum-20-1)
+      - [K20+ Pro](#mini-robot-vacuum-20-1)
       - [Floor Cleaning Robot S10](#floor-cleaning-robot-s10-1)
       - [Floor Cleaning Robot S20](#floor-cleaning-robot-s20-1)
       - [Humidifier](#humidifier-1)
@@ -169,7 +169,7 @@
       - [Mini Robot Vacuum K10+](#mini-robot-vacuum-k10+-2)
       - [Mini Robot Vacuum K10+ Pro](#mini-robot-vacuum-k10+-pro-2)
       - [K10+ Pro Combo](#k10+-pro-combo-2)
-      - [Multitasking Household Robot K20+ Pro](#mini-robot-vacuum-k20-2)
+      - [Mini Robot Vacuum K20](#mini-robot-vacuum-k20-2)
       - [Floor Cleaning Robot S10](#floor-cleaning-robot-s10-2)
       - [Floor Cleaning Robot S20](#floor-cleaning-robot-s20-2)
       - [Ceiling Light](#ceiling-light-2)
@@ -262,7 +262,7 @@
     + [Mini Robot Vacuum K10+](#mini-robot-vacuum-k10+-3)
     + [Mini Robot Vacuum K10+ Pro](#mini-robot-vacuum-k10+-pro-3)
     + [K10+ Pro Combo](#k10+-pro-combo-3)
-    + [Multitasking Household Robot K20+ Pro](#mini-robot-vacuum-k20-2)
+    + [Mini Robot Vacuum 20](#mini-robot-vacuum-k20-2)
     + [Floor Cleaning Robot S10](#floor-cleaning-robot-s10-3)
     + [Floor Cleaning Robot S20](#floor-cleaning-robot-s20-3)
     + [Ceiling Light](#ceiling-light-3)
@@ -670,7 +670,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | S10   | Short for SwitchBot Floor Cleaning Robot S10                 | W3211800              |                                   |
 | S20   | Short for SwitchBot Floor Cleaning Robot S10                 | W6602310            |                                   |
 | K10+ Pro Combo | Short for SwitchBot Robot Vacuum K10+ Pro Combo | W3002500 | |
-| K20 | Short for SwitchBot  SwitchBot Robot Vacuum Cleaner K20 | W3002520 | |
+| K20 | Short for SwitchBot  SwitchBot Robot Vacuum K20 | W3002520 | |
 | Ceiling Light                | Short for SwitchBot Ceiling Light                            | W2612230 and W2612240 | Currently only available in Japan |
 | Ceiling Light Pro            | Short for SwitchBot Ceiling Light Pro                        | W2612210 and W2612220 | Currently only available in Japan |
 | Indoor Cam                   | Short for SwitchBot Indoor Cam                               | W1301200              |                                   |
@@ -833,7 +833,8 @@ Physical devices refer to the following SwitchBot products,
  -  `new` Keypad Vision
  -  `new` Lock Ultra
  -  `new` Lock Ultra
- -  `new` Multitasking Household Robot K20+ Pro
+ -  `new` Mini Robot Vacuum K20
+
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
  -  TV
@@ -1241,7 +1242,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
 | deviceName         | String     | device name                                                  |
-| deviceType         | String     | device type. *Robot Vacuum Cleaner K20 Plus Pro*                      |
+| deviceType         | String     | device type. *Mini Robot Vacuum K20*                      |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
@@ -1590,7 +1591,7 @@ Physical devices refer to the following SwitchBot products,
  -  `new` Lock Ultra
  -  `new` Video Doorbell
  -  `new` Keypad Vision
- -  `new` Robot Vacuum Cleaner K20 Plus Pro
+ -  `new` Mini Robot Vacuum K20
 #### Path parameters
 
 | Name     | Type   | Required | Description |
@@ -2245,7 +2246,7 @@ The `body` object contains the following properties,
 | Key             | Value Type | Description                                               |
 | --------------- | ---------- | --------------------------------------------------------- |
 | deviceId        | String     | device ID                                                 |
-| deviceType      | String     | device type. *Robot Vacuum Cleaner K20 Plus Pro*                           |
+| deviceType      | String     | device type. *Video Doorbell*                           |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 | workingStatus    | String     | the working status of the device. *StandBy*, *Clearing*, *Paused*, *GotoChargeBase*, *Charging*, *ChargeDone*, *Dormant*, *InTrouble*, *InRemoteControl*, or *InDustCollecting* |
 | onlineStatus    | String     | the connection status of the device. *online* or *offline* |
@@ -2594,11 +2595,11 @@ The following table describes the parameter object for `deleteKey`,
 
 | deviceType                          | commandType | Command     | command parameter                                            | Description                                                  |
 | ----------------------------------- | ----------- | ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Multitasking Household Robot K20+ Pro | command     | startClean  | {"action": action_str, "param": {"fanLevel": fan_level_int, "times": clean_cycle_int}} | start cleaning. <br />`action_str`, the cleaning mode, *sweep* or *mop*.<br />`fanLevel`, the vacuum level, `1-4`.<br />`times`, the number of cycles, `1-2639999`, in theory. |
-| Multitasking Household Robot K20+ Prod | command     | pause       | default                                                      | pause cleaning                                               |
-| Multitasking Household Robot K20+ Pro | command     | dock        | default                                                      | return to charging dock                                      |
-| Multitasking Household Robot K20+ Pro | command     | setVolume   | `{0-100}`                                                    | set the robot volume                                         |
-| Multitasking Household Robot K20+ Pro | command     | changeParam | {"fanLevel": fan_level_int, "waterLevel": water_level_int, "times": clean_cycle_int} | change clean parameters. `fan_level_int`, the vacuum level, `1-4`; `water_level_int`, the mop moisture level, `1-2`; `times`, the number of cycles, `1-2639999`, in theory. |
+| Mini Robot Vacuum K20 | command     | startClean  | {"action": action_str, "param": {"fanLevel": fan_level_int, "times": clean_cycle_int}} | start cleaning. <br />`action_str`, the cleaning mode, *sweep* or *mop*.<br />`fanLevel`, the vacuum level, `1-4`.<br />`times`, the number of cycles, `1-2639999`, in theory. |
+| Mini Robot Vacuum K20 | command     | pause       | default                                                      | pause cleaning                                               |
+| Mini Robot Vacuum K20 | command     | dock        | default                                                      | return to charging dock                                      |
+| Mini Robot Vacuum K20 | command     | setVolume   | `{0-100}`                                                    | set the robot volume                                         |
+| Mini Robot Vacuum K20 | command     | changeParam | {"fanLevel": fan_level_int, "waterLevel": water_level_int, "times": clean_cycle_int} | change clean parameters. `fan_level_int`, the vacuum level, `1-4`; `water_level_int`, the mop moisture level, `1-2`; `times`, the number of cycles, `1-2639999`, in theory. |
 
 ##### K10+ Pro Combo
 
@@ -3441,7 +3442,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | Keypad Vision | Keypad Vision |
 | Lock Ultra | Lock Ultra |
 | LED Strip Light 3 | LED Strip Light 3 |
-| Multitasking Household Robot K20+ Pro | Multitasking Household Robot K20+ Pro |
+| Mini Robot Vacuum K20 | Mini Robot Vacuum K20 |
 
 #### Bot
 | Key Name       | Value Type | Description                                                  |
