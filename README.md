@@ -1440,7 +1440,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
 | deviceName         | String     | device name                                                  |
-| deviceType         | String     | device type. *LED Strip Light 3*                                   |
+| deviceType         | String     | device type. *Strip Light 3*                                   |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |                          |
 
@@ -2207,8 +2207,7 @@ The `body` object contains the following properties,
 | Key             | Value Type | Description                                               |
 | --------------- | ---------- | --------------------------------------------------------- |
 | deviceId        | String     | device ID                                                 |
-| online    | Boolean     | the connection status of the device. *true* or *false* |
-| deviceType      | String     | device type. *LED Strip Light 3*                           |
+| deviceType      | String     | device type. *Strip Light 3*                           |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 | version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
 | power                  | String     | ON/OFF state                                                 |
