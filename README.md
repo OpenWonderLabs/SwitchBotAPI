@@ -2164,18 +2164,15 @@ The `body` object contains the following properties,
 | online    | Boolean     | the connection status of the device. *true* or *false* |
 | switch1Status    | Integer    | the current switch1 state. `0`, off; `1`, on               |
 | switch2Status    | Integer    | the current switch2 state. `0`, off; `1`, on               |
-| switch1voltage         | Integer    | the switch1 current voltage, measured in Volt                     |
-| switch2voltage         | Integer    | the switch2 current voltage, measured in Volt                     |
+| switch1Voltage         | Float    | the switch1 current voltage, measured in Volt                     |
+| switch2Voltage         | Float    | the switch2 current voltage, measured in Volt                     |
 | version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
-| switch1power           | Integer    | the switch1 current power, measured in Watts                      |
-| switch2power           | Integer    | the switch2 current power, measured in Watts                      |
-| switch1usedElectricity | Integer    | switch1 daily power consumption, measured in watt-minutes         |
-| switch2usedElectricity | Integer    | switch2 daily power consumption, measured in watt-minutes         |
-| switch1electricCurrent | Integer    | the switch1 electrical current measured in mA                     |
-| switch2electricCurrent | Integer    | the switch2 electrical current measured in mA                     |
-| calibrate     | Boolean      | determines if the open and the closed positions have been properly calibrated or not |
-| position      | Integer     | the current position, 0-100                               |
-| isStuck       | String       | determine if the roller blind is stuck                               |
+| switch1Power           | Float    | the switch1 current power, measured in Watts                      |
+| switch2Power           | Float    | the switch2 current power, measured in Watts                      |
+| switch1UsedElectricity | Integer    | switch1 daily power consumption, measured in watt-minutes         |
+| switch2UsedElectricity | Integer    | switch2 daily power consumption, measured in watt-minutes         |
+| switch1ElectricCurrent | Integer    | the switch1 electrical current measured in mA                     |
+| switch2ElectricCurrent | Integer    | the switch2 electrical current measured in mA                     |
 
 
 ##### Garage Door Opener
