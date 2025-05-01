@@ -5014,14 +5014,13 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
     "eventType": "changeReport",
     "eventVersion": "1",
     "context": {
-        "deviceType": "Robot Vacuum Cleaner K10+ Pro Combo",
+        "deviceType": "Robot Vacuum Cleaner K20+ Pro",
         "deviceMac": DEVICE_MAC_ADDR,
         "workingStatus"："StandBy",
         //StandBy,Clearing,Paused,GotoChargeBase,Charging,ChargeDone,Dormant,InTrouble,InRemoteControl,InDustCollecting
         "onlineStatus": "online",//online,offline
         "battery": 100,// 0-100
-        "waterBaseBattery": 100,
-    "taskType": "explore", // standBy,explore,cleanAll,cleanArea,cleanRoom,deepWashing,backToCharge,drying,collectDust,remoteControl,cleanWithExplorer
+        "taskType": "explore", // standBy,explore,cleanAll,cleanArea,cleanRoom,deepWashing,backToCharge,drying,collectDust,remoteControl,cleanWithExplorer
         "timeOfSample": 123456789
     }
 }
