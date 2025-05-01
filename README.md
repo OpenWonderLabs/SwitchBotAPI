@@ -2140,9 +2140,9 @@ The `body` object contains the following properties,
 | deviceId        | String     | device ID                                                 |
 | deviceType      | String     | device type. *Relay Switch 1PM*                           |
 | switchStatus    | Integer    | the current switch state. `0`, off; `1`, on               |
-| voltage         | Integer    | the current voltage, measured in Volt                     |
+| voltage         | Float      | the current voltage, measured in Volt                     |
 | version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
-| power           | Integer    | the current power, measured in Watts                      |
+| power           | Float      | the current power, measured in Watts                      |
 | usedElectricity | Integer    | daily power consumption, measured in watt-minutes         |
 | electricCurrent | Integer    | the electrical current measured in mA                     |
 
