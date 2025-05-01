@@ -2228,6 +2228,18 @@ The `body` object contains the following properties,
 | lockState              | String     | determines if locked or not, *jammed*, *unlock* or *lock* |
 | calibrate     | Boolean      | determines if the open and the closed positions have been properly calibrated or not |
 
+##### Lock Ultra
+| Key                | Value Type      | Description                                                  |
+| ------------------ | --------------- | ------------------------------------------------------------ |
+| deviceId           | String          | device ID                                                    |
+| deviceType         | String          | device type. *Lock Ultra*                                |
+| hubDeviceId        | String          | device's parent Hub ID                                       |
+| battery              | Integer | the current battery level, 0-100 |
+| version              | String     | the current firmware version, e.g. V4.2 |
+| lockState              | String     | determines if locked or not, *jammed*, *unlock* or *lock* |
+| doorState              | String     | determines if the door is closed or not, *open* or *close* |
+| calibrate          | Boolean         | determines if Lock has been calibrated or not |
+
 ##### Video Doorbell
 
 | Key             | Value Type | Description                                               |
