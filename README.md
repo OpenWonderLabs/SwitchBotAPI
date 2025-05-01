@@ -2145,6 +2145,7 @@ The `body` object contains the following properties,
 | power           | Float      | the current power, measured in Watts                      |
 | usedElectricity | Integer    | daily power consumption, measured in watt-minutes         |
 | electricCurrent | Integer    | the electrical current measured in mA                     |
+| hubDeviceId     | String     | Hub ID, equivalent to device ID                           |
 
 ##### Relay Switch 1
 
@@ -2154,6 +2155,7 @@ The `body` object contains the following properties,
 | deviceType      | String     | device type. *Relay Switch 1*                             |
 | switchStatus    | Integer    | the current switch state. `0`, off; `1`, on               |
 | version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
+| hubDeviceId     | String     | Hub ID, equivalent to device ID                           |
 
 ##### Relay Switch 2PM
 
@@ -2173,6 +2175,7 @@ The `body` object contains the following properties,
 | switch2UsedElectricity | Integer    | switch2 daily power consumption, measured in watt-minutes         |
 | switch1ElectricCurrent | Integer    | the switch1 electrical current measured in mA                     |
 | switch2ElectricCurrent | Integer    | the switch2 electrical current measured in mA                     |
+| hubDeviceId     | String     | Hub ID, equivalent to device ID                           |
 
 
 ##### Garage Door Opener
