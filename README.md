@@ -4910,7 +4910,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
     "eventType": "changeReport",
     "eventVersion": "1",
     "context": {
-        "deviceType": "WoKeypadTouch",
+        "deviceType": "WoKeypadVision",
         "deviceMac": DEVICE_MAC_ADDR,
         "eventName": "createKey",
         "commandId": "CMD-1663558451952-01",
@@ -4926,7 +4926,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
     "eventType": "changeReport",
     "eventVersion": "1",
     "context": {
-        "deviceType": "WoKeypadTouch",
+        "deviceType": "WoKeypadVision",
         "deviceMac": DEVICE_MAC_ADDR,
         "eventName": "deleteKey ",
         "commandId": "CMD-1663558451952-01",
