@@ -607,14 +607,12 @@ import (
     "net/http"
     "strings"
     "time"
-
-    "github.com/google/uuid"
 )
 
 func main() {
     token := "XXXXXXXXXXXXXXXXXXX"      // copy and paste from the SwitchBot app V6.14 or later
     secret := "YYYYYYYYYYY"             // copy and paste from the SwitchBot app V6.14 or later
-    nonce := uuid.NewString()           // generate random UUID v4
+    nonce := UUID()                     // generate random UUID v4
     timestamp := time.Now().UnixMilli() // 13-digit milliseconds Unix timestamp
 
     data := fmt.Sprintf("%s%d%s", token, timestamp, nonce)
@@ -652,6 +650,21 @@ func main() {
     }
 
     fmt.Println(string(body)) // Response in JSON format
+}
+
+// UUID returns an RFC 4122/9562–compliant random UUIDv4 string.
+func UUID() string {
+    var uuid [16]byte                 // 128-bit long array
+    rand.Read(uuid[:])                // Use cryptographically secure random source
+    uuid[6] = (uuid[6] & 0x0F) | 0x40 // Version (UUIDv4 = 0100)
+    uuid[8] = (uuid[8] & 0x3F) | 0x80 // Variant (RFC9562 / RFC4122 = 10xxxxxx)
+
+    return fmt.Sprintf("%08x-%04x-%04x-%04x-%012x",
+        uuid[0:4],  // 4 bytes
+        uuid[4:6],  // 2 bytes
+        uuid[6:8],  // 2 bytes (version included)
+        uuid[8:10], // 2 bytes (variant included)
+        uuid[10:])  // 6 bytes
 }
 ```
 
