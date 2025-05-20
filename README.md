@@ -2098,10 +2098,10 @@ The `body` object contains the following properties,
 | hubDeviceId | String     | Hub ID, equivalent to device ID |
 | version     | String     | the current firmware version, e.g. V4.2 |
 | temperature | Float      | temperature in celsius                  |
-| lightLevel | Integer      | the level of illuminance of the ambience light, 1~10 |
+| lightLevel  | Integer    | the level of illuminance of the ambience light, 1~10 |
 | humidity    | Integer    | humidity percentage                     |
-| moveDetected           | Boolean    | determines if motion is detected |
-| online  | String     | the connection status of the device. *online* or *offline* |
+| moveDetected | Boolean   | determines if motion is detected |
+| onlineStatus | String    | the connection status of the device. *online* or *offline* |
 
 ##### Battery Circulator Fan
 | Key                 | Value Type      | Description                                                  |
