@@ -2175,6 +2175,9 @@ The `body` object contains the following properties,
 | switch2UsedElectricity | Integer    | switch2 daily power consumption, measured in watt-minutes         |
 | switch1ElectricCurrent | Integer    | the switch1 electrical current measured in mA                     |
 | switch2ElectricCurrent | Integer    | the switch2 electrical current measured in mA                     |
+| calibrate     | Boolean      | determines if the open and the closed positions have been properly calibrated or not |
+| position      | Integer     | the current position, 0-100                               |
+| isStuck       | String       | determine if the roller blind is stuck                               |
 | hubDeviceId     | String     | Hub ID, equivalent to device ID                           |
 
 
@@ -2476,6 +2479,7 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Relay Switch 2PM | command     | turnOff             | “1”or"2"                                                      | set to OFF state 1 represents channel 1 2 represents channel 2                                            |
 | Relay Switch 2PM | command     | toggle              | “1”or"2"                                                    | toggle 1 represents channel 1 2 represents channel 2state                                                 |
 | Relay Switch 2PM | command | setMode | channel;mode<br>e.g `1;0` | The first item represents the switching of channel number, 1 represents channel number 1 and 2 represents channel number 2. The second item represents set the switch mode. `0`, toggle mode; `1`, edge switch mode; `2`, detached switch mode; `3`, momentary switch mode |
+| Relay Switch 2PM | command | setPosition | `0~100` | Set roller blind opening and closing percentage. `0`, Open All; `100`, Close All  |
 
 ##### Garage Door Opener
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
