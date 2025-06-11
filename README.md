@@ -1699,7 +1699,7 @@ The `body` object contains the following properties,
 | deviceId           | String     | device ID                                                    |
 | deviceType         | String     | device type. *Bot*                                           |
 | power              | String     | ON/OFF state                                                 |
-| battery              | Integer | the current battery level, 0-100 |
+| battery              | Integer | Four-segment battery level division,`00:<10%;01:>=10% <20%;10:>=20 <60%;11:>=60%`|
 | version              | String     | the current firmware version, e.g. V6.3 |
 | deviceMode              | String     | *pressMode*, *switchMode*, or *customizeMode*                                                 |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
@@ -1713,7 +1713,7 @@ The `body` object contains the following properties,
 | calibrate          | Boolean         | determines if the open position and the close position of a device have been properly calibrated or not |
 | group              | Boolean         | determines if a Curtain is paired with or grouped with another Curtain or not |
 | moving             | Boolean         | determines if a Curtain is moving or not |
-| battery              | Integer | the current battery level, 0-100 |
+| battery              | Integer | Four-segment battery level division,`00:<10%;01:>=10% <20%;10:>=20 <60%;11:>=60%`|
 | version              | String     | the current firmware version, e.g. V4.2 |
 | slidePosition      | String          | the percentage of the distance between the calibrated open position and closed position that Curtain has traversed |
 
@@ -1726,7 +1726,7 @@ The `body` object contains the following properties,
 | calibrate          | Boolean         | determines if the open position and the close position of a device have been properly calibrated or not |
 | group              | Boolean         | determines if a Curtain is paired with or grouped with another Curtain or not |
 | moving             | Boolean         | determines if a Curtain is moving or not |
-| battery              | Integer | the current battery level, 0-100 |
+| battery              | Integer | Four-segment battery level division,`00:<10%;01:>=10% <20%;10:>=20 <60%;11:>=60%`|
 | version              | String     | the current firmware version, e.g. V4.2 |
 | slidePosition      | String          | the percentage of the distance between the calibrated open position and closed position that Curtain has traversed |
 
@@ -1738,7 +1738,7 @@ The `body` object contains the following properties,
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 | temperature            | Float      |  temperature in celsius                                       |
 | version              | String     | the current firmware version, e.g. V4.2 |
-| battery              | Integer | the current battery level, 0-100 |
+| battery              | Integer | Four-segment battery level division,`00:<10%;01:>=10% <20%;10:>=20 <60%;11:>=60%`|
 | humidity               | Integer    | humidity percentage |
 
 
@@ -1748,7 +1748,7 @@ The `body` object contains the following properties,
 | deviceId           | String     | device ID                                                    |
 | deviceType         | String     | device type. *MeterPlus*                                         |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
-| battery              | Integer | the current battery level, 0-100 |
+| battery              | Integer | Four-segment battery level division,`00:<10%;01:>=10% <20%;10:>=20 <60%;11:>=60%`|
 | version              | String     | the current firmware version, e.g. V4.2 |
 | temperature            | Float      |  temperature in celsius                                       |
 | humidity               | Integer    | humidity percentage |
@@ -1759,7 +1759,7 @@ The `body` object contains the following properties,
 | deviceId           | String     | device ID                                                    |
 | deviceType         | String     | device type. *WoIOSensor*                                         |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
-| battery              | Integer | the current battery level, 0-100 |
+| battery              | Integer | Four-segment battery level division,`00:<10%;01:>=10% <20%;10:>=20 <60%;11:>=60%`|
 | version              | String     | the current firmware version, e.g. V4.2 |
 | temperature            | Float      |  temperature in celsius                                       |
 | humidity               | Integer    | humidity percentage |
@@ -1796,7 +1796,7 @@ The `body` object contains the following properties,
 | deviceId           | String          | device ID                                                    |
 | deviceType         | String          | device type. *Smart Lock*                                    |
 | hubDeviceId        | String          | device's parent Hub ID                                       |
-| battery              | Integer | the current battery level, 0-100 |
+| battery              | Integer | Four-segment battery level division,`00:<10%;01:>=10% <20%;10:>=20 <60%;11:>=60%`|
 | version              | String     | the current firmware version, e.g. V4.2 |
 | lockState              | String     | determines if locked or not |
 | doorState              | String     | determines if the door is closed or not  |
@@ -1837,7 +1837,7 @@ The `body` object contains the following properties,
 | deviceId           | String     | device ID                                                    |
 | deviceType         | String     | device type. *Motion Sensor*                                 |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
-| battery              | Integer | the current battery level, 0-100 |
+| battery              | Integer | Four-segment battery level division,`00:<10%;01:>=10% <20%;10:>=20 <60%;11:>=60%`|
 | version              | String     | the current firmware version, e.g. V4.2 |
 | moveDetected           | Boolean    | determines if motion is detected |
 | brightness             | String     | the ambient brightness picked up by the sensor. *bright*  or *dim* |
@@ -1849,7 +1849,7 @@ The `body` object contains the following properties,
 | deviceId           | String     | device ID                                                    |
 | deviceType         | String     | device type. *Contact Sensor*                                |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
-| battery              | Integer | the current battery level, 0-100 |
+| battery              | Integer | Four-segment battery level division,00:<10%;01:>=10% <20%;10:>=20 <60%;11:>=60%|
 | version              | String     | the current firmware version, e.g. V4.2 |
 | moveDetected           | Boolean    | determines if motion is detected |
 | openState  | String | the open state of the sensor. *open*, *close*, or *timeOutNotClose* |
