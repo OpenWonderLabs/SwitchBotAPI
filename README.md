@@ -2441,8 +2441,8 @@ Send control commands to physical devices and virtual infrared remote devices.
 ##### Lock Pro
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Lock                         | command     | lock                | default                                                      | rotate to locked position                                    |
-| Lock                         | command     | unlock              | default                                                      | rotate to unlocked position                                  |
+| Lock Pro                     | command     | lock                | default                                                      | rotate to locked position                                    |
+| Lock Pro                     | command     | unlock              | default                                                      | rotate to unlocked position                                  |
 
 ##### Humidifier
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
