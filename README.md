@@ -2447,16 +2447,18 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Curtain 3  | command     | pause       | default                                    | set to PAUSE state                                           |
 
 ##### Lock
-| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
-| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Lock                         | command     | lock                | default                                                      | rotate to locked position                                    |
-| Lock                         | command     | unlock              | default                                                      | rotate to unlocked position                                  |
+| deviceType | commandType | Command  | command parameter | Description                 |
+| ---------- | ----------- | -------- | ----------------- | --------------------------- |
+| Lock       | command     | lock     | default           | rotate to locked position   |
+| Lock       | command     | unlock   | default           | rotate to unlocked position |
+| Lock       | command     | deadbolt | default           | disengage deadbolt or latch |
 
 ##### Lock Pro
-| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
-| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Lock Pro                     | command     | lock                | default                                                      | rotate to locked position                                    |
-| Lock Pro                     | command     | unlock              | default                                                      | rotate to unlocked position                                  |
+| deviceType | commandType | Command  | command parameter | Description                 |
+| ---------- | ----------- | -------- | ----------------- | --------------------------- |
+| Lock Pro   | command     | lock     | default           | rotate to locked position   |
+| Lock Pro   | command     | unlock   | default           | rotate to unlocked position |
+| Lock Pro   | command     | deadbolt | default           | disengage deadbolt or latch |
 
 ##### Humidifier
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
@@ -2595,7 +2597,8 @@ Send control commands to physical devices and virtual infrared remote devices.
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Lock Ultra                     | command     | lock                | default                                                      | rotate to locked position                                    |
-| Lock Ultra                    | command      | unlock              | default                                                      | rotate to unlocked position   
+| Lock Ultra                    | command      | unlock              | default                                                      | rotate to unlocked position   |
+| Lock Ultra | command | deadbolt | default | disengage deadbolt or latch |
 
 ##### Video Doorbell
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
