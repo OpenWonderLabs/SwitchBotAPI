@@ -1901,7 +1901,7 @@ The `body` object contains the following properties,
 | version              | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
 | weight                 | Float      | the power consumed in a day, measured in Watts |
 | electricityOfDay       | Integer    | the duration that the device has been used during a day, measured in minutes  |
-| electricCurrent        | Float      | the current of the device at the moment, measured in Amp |
+| electricCurrent        | Float      | the current of the device at the moment, measured in mAmp |
 
 
 ##### Plug Mini (JP)
@@ -1915,7 +1915,7 @@ The `body` object contains the following properties,
 | version              | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
 | weight                 | Float      | the power consumed in a day, measured in Watts |
 | electricityOfDay       | Integer    | the duration that the device has been used during a day, measured in minutes  |
-| electricCurrent        | Float      | the current of the device at the moment, measured in Amp |
+| electricCurrent        | Float      | the current of the device at the moment, measured in mAmp |
 
 ##### Plug
 | Key                | Value Type | Description                                                  |
