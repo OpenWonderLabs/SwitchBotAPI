@@ -790,7 +790,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | K10+ | Short for SwitchBot Mini Robot Vacuum K10+ | W3011020 | |
 | K10+ Pro | Short for SwitchBot Mini Robot Vacuum K10+ Pro | W3011026 | |
 | S10   | Short for SwitchBot Floor Cleaning Robot S10                 | W3211800              |                                   |
-| S20   | Short for SwitchBot Floor Cleaning Robot S10                 | W6602310            |                                   |
+| S20   | Short for SwitchBot Floor Cleaning Robot S20                 | W6602310            |                                   |
 | K10+ Pro Combo | Short for SwitchBot Robot Vacuum K10+ Pro Combo | W3002500 | |
 | K20+ Pro | Short for SwitchBot Multitasking Household Robot K20+ Pro | W3002520 | |
 | K11+ | Short for Robot Vacuum K11+| W3003100 and W3003100 | |
