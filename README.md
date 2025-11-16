@@ -793,7 +793,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | S20   | Short for SwitchBot Floor Cleaning Robot S20                 | W6602310            |                                   |
 | K10+ Pro Combo | Short for SwitchBot Robot Vacuum K10+ Pro Combo | W3002500 | |
 | K20+ Pro | Short for SwitchBot Multitasking Household Robot K20+ Pro | W3002520 | |
-| K11+ | Short for Robot Vacuum K11+| W3003100 and W3003100 | |
+| K11+ | Short for Robot Vacuum K11+| W3003100 | |
 | Ceiling Light                | Short for SwitchBot Ceiling Light                            | W2612230 and W2612240 | Currently only available in Japan |
 | Ceiling Light Pro            | Short for SwitchBot Ceiling Light Pro                        | W2612210 and W2612220 | Currently only available in Japan |
 | RGBICWW Strip Light          | Short for SwitchBot RGBICWW Strip Light                      | W1702109              |                                   |
