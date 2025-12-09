@@ -2997,7 +2997,7 @@ The following table describes the parameter object for `deleteKey`,
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Smart Radiator Thermostat | command     | turnOn              | default                                                      | set to ON state                                              |
 | Smart Radiator Thermostat | command     | turnOff             | default                                                      | set to OFF state                                             |
-| Smart Radiator Thermostat | command | setMode | `0~5` | set the switch mode. `0`,`0`, schedule mode; `1`,manual mode; `2`, power off mode; `3`, energy saving mode; `4`, comfort mode;`5`, quick heating mode |
+| Smart Radiator Thermostat | command | setMode | `0~5` | set the switch mode. `0`, schedule mode; `1`,manual mode; `2`, power off mode; `3`, energy saving mode; `4`, comfort mode;`5`, quick heating mode |
 | Smart Radiator Thermostat | command | setManualModeTemperature | `4~35` | set the radiator thermostat temperature. Temperature range: 4–35 °C (inclusive) |
 
 ##### Keypad
