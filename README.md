@@ -49,7 +49,7 @@
       - [RGBICWW Strip Light](#rgbicww-strip-light)
       - [RGBICWW Floor Lamp](#rgbicww-floor-light)
       - [RGBIC Neon Wire Rope Light](#rgbic-neon-wire-rope-light)
-      - [Smart Radiator Thermostat](#smart-radiato-thermostat)
+      - [Smart Radiator Thermostat](#smart-radiator-thermostat)
       - [Plug Mini (US)](#plug-mini-us)
       - [Plug Mini (JP)](#plug-mini-jp)
       - [Plug Mini (EU)](#plug-mini-eu)
@@ -115,7 +115,7 @@
       - [RGBICWW Strip Light](#rgbicww-strip-light-1)
       - [RGBICWW Floor Lamp](#rgbicww-floor-light-1)
       - [RGBIC Neon Wire Rope Light](#rgbic-neon-wire-rope-light-1)
-      - [Smart Radiator Thermostat](#smart-radiato-thermostat-1)
+      - [Smart Radiator Thermostat](#smart-radiator-thermostat-1)
       - [Plug Mini (US)](#plug-mini-us-1)
       - [Plug Mini (JP)](#plug-mini-jp-1)
       - [Plug Mini (EU)](#plug-mini-eu-1)
@@ -193,7 +193,7 @@
       - [RGBICWW Strip Light](#rgbicww-strip-light-2)
       - [RGBICWW Floor Lamp](#rgbicww-floor-light-2)
       - [RGBIC Neon Wire Rope Light](#rgbic-neon-wire-rope-light-2)
-      - [Smart Radiator Thermostat](#smart-radiato-thermostat--2)
+      - [Smart Radiator Thermostat](#smart-radiator-thermostat-2)
       - [Keypad](#keypad-2)
       - [Keypad Touch](#keypad-touch-2)
       - [Blind Tilt](#blind-tilt-2)
@@ -292,7 +292,7 @@
     + [RGBICWW Strip Light](#rgbicww-strip-light-3)
     + [RGBICWW Floor Lamp](#rgbicww-floor-light-3)
     + [RGBIC Neon Wire Rope Light](#rgbic-neon-wire-rope-light-3)
-    + [Smart Radiator Thermostat ](#smart-radiato-thermostat-3)
+    + [Smart Radiator Thermostat](#smart-radiator-thermostat-3)
     + [Keypad](#keypad-3)
       - [Create a passcode](#create-a-passcode)
       - [Delete a passcode](#delete-a-passcode)
@@ -4753,7 +4753,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 }
 ```
 
-#### Smart Radiator Thermostat 
+#### Smart Radiator Thermostat
 | Key Name     | Value Type | Description                                          |
 | ------------ | ---------- | ---------------------------------------------------- |
 | eventType    | String     | the type of events                                   |
