@@ -3138,7 +3138,6 @@ The table below describes all the available commands for virtual infrared remote
 | commandType | String | No       | for customized buttons, this needs to be set to `customzie` |
 
 #### Response
-lig
 The response is basically a JSON object, which contains the following properties,
 
 | Key Name   | Value Type   |
