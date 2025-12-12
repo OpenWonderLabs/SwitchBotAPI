@@ -43,12 +43,14 @@
       - [Remote](#remote)
       - [Motion Sensor](#motion-sensor)
       - [Contact Sensor](#contact-sensor)
+      - [Presence Sensor](#presence-sensor)
       - [Water Leak Detector](#water-leak-detector)
       - [Ceiling Light](#ceiling-light)
       - [Ceiling Light Pro](#ceiling-light-pro)
       - [RGBICWW Strip Light](#rgbicww-strip-light)
       - [RGBICWW Floor Lamp](#rgbicww-floor-light)
       - [RGBIC Neon Wire Rope Light](#rgbic-neon-wire-rope-light)
+      - [RGBIC Neon Rope Light](#rgbic-neno-rope-light)
       - [Smart Radiato Thermostat](#smart-radiato-thermostat)
       - [Plug Mini (US)](#plug-mini-us)
       - [Plug Mini (JP)](#plug-mini-jp)
@@ -88,6 +90,14 @@
       - [Lock Lite](#Lock-Lite)
       - [Video Doorbell](#Video-Doorbell)
       - [Keypad Vision](#Keypad-Vision)
+      - [Keypad Vision Pro](#Keypad-Vision-pro)
+      - [Standing Circulator Fan](#Standing-Circulator-Fan)
+      - [Pan/Tilt Cam Plus 2K](#Pan/Tilt-Cam-Plus-2K)
+      - [Pan/Tilt Cam Plus 3K](#Pan/Tilt-Cam-Plus-3K)
+      - [AI Hub](#AI-Hub)
+      - [Candle Warmer Lamp](#Candle-Warmer-Lamp)
+      - [Home Climate Panel](#Home-Climate-Panel)
+      - [AI Art Frame](#AI-Art-Frame)
       - [Virtual infrared remote devices](#virtual-infrared-remote-devices)
     + [Sample](#sample)
       - [Get all devices](#get-all-devices)
@@ -109,12 +119,14 @@
       - [Keypad Touch](#keypad-touch-1)
       - [Motion Sensor](#motion-sensor-1)
       - [Contact Sensor](#contact-sensor-1)
+      - [Presence Sensor](#presence-sensor-1)
       - [Water Leak Detector](#water-leak-detector-1)
       - [Ceiling Light](#ceiling-light-1)
       - [Ceiling Light Pro](#ceiling-light-pro-1)
       - [RGBICWW Strip Light](#rgbicww-strip-light-1)
       - [RGBICWW Floor Lamp](#rgbicww-floor-light-1)
       - [RGBIC Neon Wire Rope Light](#rgbic-neon-wire-rope-light-1)
+      - [RGBIC Neon Rope Light](#rgbic-neon-rope-light-1)
       - [Smart Radiato Thermostat](#smart-radiato-thermostat-1)
       - [Plug Mini (US)](#plug-mini-us-1)
       - [Plug Mini (JP)](#plug-mini-jp-1)
@@ -154,6 +166,12 @@
       - [Lock Ultra](#Lock-ultra-1)
       - [Video Doorbell](#Video-Doorbell-1)
       - [Keypad Vision](#Keypad-Vision-1)
+      - [Keypad Vision Pro](#Keypad-Vision-pro-1)
+      - [Standing-Circulator-Fan](#Standing-Circulator-Fan-1)
+      - [AI Hub](#AI-Hub-1)
+      - [Candle Warmer Lamp](#Candle-Warmer-Lamp-1)
+      - [Home Climate Panel](#Home-Climate-Panel-1)
+      - [AI Art Frame](#AI-Art-Frame-1)
     + [Sample](#sample-1)
       - [SwitchBot Meter example](#switchbot-meter-example)
       - [SwitchBot Curtain example](#switchbot-curtain-example)
@@ -193,6 +211,7 @@
       - [RGBICWW Strip Light](#rgbicww-strip-light-2)
       - [RGBICWW Floor Lamp](#rgbicww-floor-light-2)
       - [RGBIC Neon Wire Rope Light](#rgbic-neon-wire-rope-light-2)
+      - [RGBIC Neon Rope Light](#rgbic-neon-rope-light-2)
       - [Smart Radiato Thermostat](#smart-radiato-thermostat--2)
       - [Keypad](#keypad-2)
       - [Keypad Touch](#keypad-touch-2)
@@ -208,6 +227,10 @@
       - [LED Strip Light 3](#LED-Strip-Light-3-2)
       - [Video Doorbell](#Video-Doorbell-2)
       - [Keypad Vision](#Keypad-Vision-2)
+      - [Keypad Vision Pro](#Keypad-Vision-pro-2)
+      - [Standing Circulator Fan](#Standing-Circulator-Fan-2)
+      - [Candle Warmer Lamp](#Candle-Warmer-Lamp-2)
+      - [AI Art Frame](#AI-Art-Frame-2)
     + [Command set for virtual infrared remote devices](#command-set-for-virtual-infrared-remote-devices)
     + [Path parameters](#path-parameters-1)
     + [Request body parameters](#request-body-parameters)
@@ -263,6 +286,7 @@
     + [Curtain 3](#curtain-3-3)
     + [Motion Sensor](#motion-sensor-2)
     + [Contact Sensor](#contact-sensor-2)
+    + [Presence Sensor](#presence-sensor-2)
     + [Water Leak Detector](#water-leak-detector-2)
     + [Meter](#meter-2)
     + [Meter Plus](#meter-plus-2)
@@ -292,6 +316,7 @@
     + [RGBICWW Strip Light](#rgbicww-strip-light-3)
     + [RGBICWW Floor Lamp](#rgbicww-floor-light-3)
     + [RGBIC Neon Wire Rope Light](#rgbic-neon-wire-rope-light-3)
+    + [RGBIC Neon Rope Light](#rgbic-neon-rope-light-3)
     + [Smart Radiato Thermostat ](#smart-radiato-thermostat-3)
     + [Keypad](#keypad-3)
       - [Create a passcode](#create-a-passcode)
@@ -319,8 +344,12 @@
     + [Lock Lite](#Lock-Lite-3)
     + [Video Doorbell](#Video-Doorbell-3)
     + [Keypad Vision](#Keypad-Vision-3)
+    + [Keypad Vision Pro](#Keypad-Vision-pro-3)
+    + [Standing-Circulator-Fan](#Standing-Circulator-Fan-3)
+    + [Candle Warmer Lamp](#Candle-Warmer-Lamp-3)
+    + [Home Climate Panel](#Home-Climate-Panel-3)
     + [Lock Ultra](#lock-ultra-3)
-
+    + [AI Art Frame](#AI-Art-Frame-3)
 ## Introduction
 This document describes a collection of SwitchBot API methods, examples, and best practices for, but not limited to, IoT hobbyists, developers, and gurus to make their own smart home programs or applications. 
 
@@ -775,6 +804,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Meter Pro (CO2 Monitor) | Short for SwitchBot Meter Pro (CO2 Monitor) | W4900010 | |
 | Motion Sensor                | Short for SwitchBot Motion Sensor                            | W1101500              |                                   |
 | Contact Sensor               | Short for SwitchBot Contact Sensor                           | W1201500              |                                   |
+| Prensence Sensor               | Short for SwitchBot Prensence Sensor                       | W8200000              |                                   |
 | Water Leak Detector | Short for SwitchBot Water Leak Detector                               | W4402000              |                                   |
 | Color Bulb                   | Short for SwitchBot Color Bulb                               | W1401400              |                                   |
 | Strip Light                  | Short for SwitchBot LED Strip Light                          | W1701100              |                                   |
@@ -798,8 +828,8 @@ The following table provides definitions to the terms to be frequently mentioned
 | Ceiling Light Pro            | Short for SwitchBot Ceiling Light Pro                        | W2612210 and W2612220 | Currently only available in Japan |
 | RGBICWW Strip Light          | Short for SwitchBot RGBICWW Strip Light                      | W1702109              |                                   |
 | RGBICWW Floor Lamp           | Short for SwitchBot RGBICWW Floor Lamp                       | W1702101              |                                   |
+| RGBIC Neon Rope Light   | Short for SwitchBot RGBIC Neon Rope Light                         | W1702107              |                                   |
 | RGBIC Neon Wire Rope Light   | Short for SwitchBot RGBIC Neon Wire Rope Light               | W1702108              |                                   |
-| Smart Radiator Thermostat    | Short for SwitchBot Smart Radiator Thermostat                | W7830000              |                                   |
 | Indoor Cam                   | Short for SwitchBot Indoor Cam                               | W1301200              |                                   |
 | Pan/Tilt Cam                 | Short for SwitchBot Pan/Tilt Cam                             | W1801200              |                                   |
 | Pan/Tilt Cam 2K              | Short for SwitchBot Pan/Tilt Cam 2K                          | W3101100              |                                   |
@@ -822,7 +852,17 @@ The following table provides definitions to the terms to be frequently mentioned
 | Lock Lite | Short for SwitchBot Lock Lite | W5110000 |  |
 | Video Doorbell | Short for SwitchBot Video Doorbell | W6702000 |  |
 | Keypad Vision | Short for SwitchBot Keypad Vision | W5600003 |  |
+| Keypad Vision Pro | Short for SwitchBot Keypad Vision Pro | W5600009 |  |
 | Lock Ultra | Short for SwitchBot Lock Ultra | W5600000 |  |
+| Standing Circulator Fan | Short for SwitchBot Standing Circulator Fan | W3800520 |  |
+| Pan/Tilt Cam Plus 2K | Short for SwitchBot Pan/Tilt Cam Plus 2K | W3101102 |  |
+| Pan/Tilt Cam Plus 3K | Short for SwitchBot Pan/Tilt Cam Plus 3K | W4001100 |  |
+| AI Hub | Short for SwitchBot AI Hub | W8002100 |  |
+| Candle Warmer Lamp | Short for SwitchBot Candle Warmer Lamp | W8302100 and W8302101 |  |
+| Home Climate Panel | Short for SwitchBot Home Climate Panel | W7400000 |  |
+| Smart Radiator Thermostat    | Short for SwitchBot Smart Radiator Thermostat                | W7830000              |                                   |
+| AI Art Frame    | Short for SwitchBot AI Art Frame                | W8402000 and W8402010 and W8402020          |                                   |
+
 ### `Legacy` Cloud Services
 
 > Important note: Beyond V9.0, there will NOT be a Cloud Services option in the app. You will see Third-party Services instead. Please read this article for more information, https://support.switch-bot.com/hc/en-us/articles/7257579858455
@@ -959,12 +999,22 @@ Physical devices refer to the following SwitchBot products,
  -  Keypad Vision
  -  Lock Ultra
  -  K20+ Pro
- -  `new` K11+
- -  `new` Plug Mini (EU)
- -  `new` RGBICWW Strip Light
- -  `new` RGBICWW Floor Lamp
- -  `new` RGBIC Neon Wire Rope Light
- -  `new` Smart Radiator Thermostat
+ -  K11+
+ -  Plug Mini (EU)
+ -  RGBICWW Strip Light
+ -  RGBICWW Floor Lamp
+ -  RGBIC Neon Wire Rope Light
+ -  Smart Radiator Thermostat
+ -  Pan/Tilt Cam Plus 2K
+ -  Pan/Tilt Cam Plus 3K
+ -  `new` Standing Circulator Fan
+ -  `new` AI Hub
+ -  `new` Keypad Vision Pro
+ -  `new` Candle Warmer Lamp
+ -  `new` Presence Sensor
+ -  `new` Home Climate Panel
+ -  `new` RGBIC Neon Rope Light
+ -  `new` AI Art Frame
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, Hub 3 or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
@@ -1222,6 +1272,15 @@ The `deviceList` array contains a list of objects with the following key-value a
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 
+##### Presence Sensor
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *Presence Sensor*                                |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
 ##### Water Leak Detector
 | Key                | Value Type | Description                                                  |
 | ------------------ | ---------- | ------------------------------------------------------------ |
@@ -1264,6 +1323,15 @@ The `deviceList` array contains a list of objects with the following key-value a
 | deviceId           | String     | device ID                                                    |
 | deviceName         | String     | device name                                                  |
 | deviceType         | String     | device type. *RGBICWW Floor Lamp*                             |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### RGBIC Neon Rope Light
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *RGBIC Neon Rope Light*                             |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
 
@@ -1665,6 +1733,80 @@ The `deviceList` array contains a list of objects with the following key-value a
 | lockDeviceId       | String     | MAC address of the Lock that the current device is paired with |
 | keyList            | Object     | a list of passcodes                                          |
 
+##### Keypad Vision Pro
+| Key         | Value Type | Description                   |
+| ----------- | ---------- | ----------------------------- |
+| deviceId    | String     | device ID                     |
+| deviceName  | String     | device name                   |
+| deviceType  | String     | device type. *Keypad Vision Pro*    |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| lockDeviceId       | String     | MAC address of the Lock that the current device is paired with |
+| keyList            | Object     | a list of passcodes                                          |
+
+##### Standing Circulator Fan
+| Key         | Value Type | Description                   |
+| ----------- | ---------- | ----------------------------- |
+| deviceId    | String     | device ID                     |
+| deviceName  | String     | device name                   |
+| deviceType  | String     | device type. *Standing Circulator Fan*    |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+##### Pan/Tilt Cam Plus 2K
+| Key         | Value Type | Description                   |
+| ----------- | ---------- | ----------------------------- |
+| deviceId    | String     | device ID                     |
+| deviceName  | String     | device name                   |
+| deviceType  | String     | device type. *Pan/Tilt Cam Plus 2K*    |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Pan/Tilt Cam Plus 3K
+| Key         | Value Type | Description                   |
+| ----------- | ---------- | ----------------------------- |
+| deviceId    | String     | device ID                     |
+| deviceName  | String     | device name                   |
+| deviceType  | String     | device type. *Pan/Tilt Cam Plus 3K*    |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### AI Hub
+| Key         | Value Type | Description                   |
+| ----------- | ---------- | ----------------------------- |
+| deviceId    | String     | device ID                     |
+| deviceName  | String     | device name                   |
+| deviceType  | String     | device type. *AI Hub*    |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Candle Warmer Lamp
+| Key         | Value Type | Description                   |
+| ----------- | ---------- | ----------------------------- |
+| deviceId    | String     | device ID                     |
+| deviceName  | String     | device name                   |
+| deviceType  | String     | device type. *Candle Warmer Lamp*    |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
+##### Home Climate Panel
+| Key         | Value Type | Description                   |
+| ----------- | ---------- | ----------------------------- |
+| deviceId    | String     | device ID                     |
+| deviceName  | String     | device name                   |
+| deviceType  | String     | device type. *Home Climate Panel*    |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
+##### AI Art Frame
+| Key         | Value Type | Description                   |
+| ----------- | ---------- | ----------------------------- |
+| deviceId    | String     | device ID                     |
+| deviceName  | String     | device name                   |
+| deviceType  | String     | device type. *AI Art Frame*    |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+
 ##### Virtual infrared remote devices
 
 The `infraredRemoteList` array contains a list of objects with the following key-value attributes,
@@ -1778,8 +1920,16 @@ Physical devices refer to the following SwitchBot products,
  -  Video Doorbell
  -  Keypad Vision
  -  K20+ Pro
- -  `new` Plug Mini (EU)
- -  `new` K11+
+ -  Plug Mini (EU)
+ -  K11+
+ -  `new` Standing Circulator Fan
+ -  `new` AI Hub
+ -  `new` Keypad Vision Pro
+ -  `new` Candle Warmer Lamp
+ -  `new` Presence Sensor
+ -  `new` Home Climate Panel
+ -  `new` RGBIC Neon Rope Light
+ -  `new` AI Art Frame
 #### Path parameters
 
 | Name     | Type   | Required | Description |
@@ -1967,6 +2117,18 @@ The `body` object contains the following properties,
 | openState  | String | the open state of the sensor. *open*, *close*, or *timeOutNotClose* |
 | brightness             | String     | the ambient brightness picked up by the sensor. *bright*  or *dim* |
 
+##### Presence Sensor
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Presence Sensor*                                |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| battery              | Integer | Four-segment battery level division,`<10%, shown as 10;10%~20%, shown as 20;20%~60%, shown as 60;≥60%, shown as 100`|
+| version              | String     | the current firmware version, e.g. V4.2 |
+| lightLevel  | Integer    | the level of illuminance of the ambience light, 1~20 |
+| Detected           | Boolean    | determines if human is detected |
+
 ##### Water Leak Detector
 
 | Key                | Value Type | Description                                                  |
@@ -2045,8 +2207,19 @@ The `body` object contains the following properties,
 | onlineStatus    | String     | the connection status of the device. *online* or *offline* |
 | brightness | Integer | the brightness value, range from 1 to 100 |
 | color                  | String     |  the color value, RGB "255:255:255"                           |
-| colorTemperature | Integer | the color temperature value, range from 2700 to 6500 |
+
+##### RGBIC Neon Rope Light
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *RGBIC Neon Rope Light*                             |
+| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| version              | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
+| power | String | ON/OFF state |
 | onlineStatus    | String     | the connection status of the device. *online* or *offline* |
+| brightness | Integer | the brightness value, range from 1 to 100 |
+| color                  | String     |  the color value, RGB "255:255:255"                           |
 
 ##### Smart Radiator Thermostat
 
@@ -2492,7 +2665,6 @@ The `body` object contains the following properties,
 | brightness             | Integer    | the brightness value, range from 1 to 100                    |
 | color                  | String     |  the color value, RGB "255:255:255"                           |
 | colorTemperature | Integer | the color temperature value, range from 2700 to 6500 |
-| onlineStatus    | String     | the connection status of the device. *online* or *offline* |
 
 ##### Lock Lite
 
@@ -2546,8 +2718,79 @@ The `body` object contains the following properties,
 | Key                | Value Type | Description                                                  |
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
-| deviceType         | String     | device type. *Keypad Vision*                                        |
+| deviceType         | String     | device type. *Keypad Vision*                                 |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
+
+##### Keypad Vision Pro
+
+| Key         | Value Type | Description                      |
+| ----------- | ---------- | -------------------------------- |
+| deviceId    | String     | device ID                        |
+| deviceType  | String     | device type. *Keypad Vision Pro* |
+| hubDeviceId | String     | device's parent Hub ID           |
+
+##### Standing Circulator Fan
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Standing Circulator Fan*                                        |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| mode     | String     |fan mode. direct mode: *direct*; natural mode: "natural"; sleep mode: "sleep"; ultra quiet mode: "baby" |
+| version     | String     | the current firmware version, e.g. V4.2 |
+| power                  | String     | ON/OFF state                                                 |
+| nightStatus                | String    |  set nightlight status. turn off: *off*; mode 1: *1*; mode 2: *2*  |
+| oscillation | String | set horizontal oscillation. turn on: *on*; turn off: *off* |
+| verticalOscillation | String | set vertical oscillation. turn on: *on*; turn off: *off* |
+| fanSpeed | Integer | fan speed. 1~100 |
+| battery                | Integer    |  the current battery level                                            |
+| chargingStatus | String | battery charge status. *charging* or *uncharged* |
+
+##### Candle Warmer Lamp
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Candle Warmer Lamp*                                        |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| onlineStatus    | String     | the connection status of the device. *online* or *offline* |
+| brightness             | Integer    | the brightness value, range from 1 to 100                    |
+| version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
+| power                  | String     | ON/OFF state                                                 |
+
+##### AI Hub
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *AI Hub*                                        |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| version     | String     | the current firmware version, e.g. V4.2 |
+| onlineStatus    | String     | attributes of the context object. the connection status of the device. *online* or *offline* |
+
+##### Home Climate Panel
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *Home Climate Panel*                                        |
+| battery                | Integer    |  the current battery level `0-100` |
+| version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
+| temperature | Float      | temperature in celsius                  |
+| humidity    | Integer    | humidity percentage                     |
+| moveDetected           | Boolean    | determines if motion is detected |
+| brightness             | Integer    | the brightness value, range from 1 to 100                    |
+
+##### AI Art Frame
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceType         | String     | device type. *AI Art Frame*                                        |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+| battery            | Integer    |  the current battery level `0-100` |
+| imageUrl           | String    |  the URL of the image currently displayed on the photo frame |
+| version     | String     | the current firmware version, e.g. V4.2 |
 
 #### Sample
 
@@ -2836,6 +3079,31 @@ The following table describes the parameter object for `deleteKey`,
 | ------------ | ---------- | ---------------------------------------------------- |
 | id | String | the id of the passcode |
 
+##### Keypad Vision Pro
+
+The control commands for this product work differently than the other products. Due to security concerns, the passcodes are stored locally. This mechanism dramatically prolongs the time needed to successfully create a passcode and get the correct result through the Web API. Hence, the actual results of the following commands are returned from the SwitchBot server asynchronously and are delivered through a webhook. 
+
+You need to configure a webhook to receive the correct result. Refer to this product's webhook definition.
+
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Keypad Vision Pro | command     | createKey | { "name": passcode _name_str, "type": passcode_type_str, "password": passcode_str, "startTime": valid_from_long, "endTime": valid_to_long } | create a new passcode |
+| Keypad Vision Pro | command     | deleteKey | { "id": passcode_id_int }  | delete an existing passcode |
+
+The following table describes the parameter object for `createKey`,
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| name | String | a unique name for the passcode. duplicates under the same device are not allowed. |
+| type |String | type of the passcode. *permanent*, a permanent passcode. *timeLimit*, a temporary passcode. *disposable*, a one-time passcode. *urgent*, an emergency passcode. |
+| password | String | a 6 to 12-digit passcode in plain text                       |
+| startTime | Long |set the time the passcode becomes valid from, mandatory for one-time passcode and temporary passcode. a 10-digit timestamp.|
+| endTime | Long |set the time the passcode becomes expired, mandatory for one-time passcode and temporary passcode. a 10-digit timestamp.|
+
+The following table describes the parameter object for `deleteKey`,
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| id | String | the id of the passcode |
+
 ##### Color Bulb
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
 | ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -2989,8 +3257,16 @@ The following table describes the parameter object for `deleteKey`,
 | RGBIC Neon Wire Rope Light | command     | turnOff             | default                                                      | set to OFF state                                             |
 | RGBIC Neon Wire Rope Light | command     | toggle              | default                                                      | toggle state                                                 |
 | RGBIC Neon Wire Rope Light | command     | setBrightness       | `{0-100}`                                                    | set brightness                                               |
-| RGBIC Neon Wire Rope Light | command     | setColorTemperature | `{2700-6500}`                                                | set color temperature                                         |
 | RGBIC Neon Wire Rope Light | command     | setColor            | `"{0-255}:{0-255}:{0-255}"`                                  | set RGB color value
+
+##### RGBIC Neon Rope Light
+| deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
+| ---------------------------- | ----------- | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| RGBIC Neon Rope Light | command     | turnOn              | default                                                      | set to ON state                                              |
+| RGBIC Neon Rope Light | command     | turnOff             | default                                                      | set to OFF state                                             |
+| RGBIC Neon Rope Light | command     | toggle              | default                                                      | toggle state                                                 |
+| RGBIC Neon Rope Light | command     | setBrightness       | `{0-100}`                                                    | set brightness                                               |
+| RGBIC Neon Rope Light | command     | setColor            | `"{0-255}:{0-255}:{0-255}"`                                  | set RGB color value
 
 ##### Smart Radiator Thermostat
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
@@ -3074,6 +3350,7 @@ The following table describes the parameter object for `deleteKey`,
 | Battery Circulator Fan | command     | setNightLightMode | `off`, `1`, or `2`                      | `off`, turn off nightlight,<br />`1`, bright <br />`2`, dim  |
 | Battery Circulator Fan | command     | setWindMode       | `direct`, `natural`, `sleep`, or `baby` | Set fan mode. `direct`: direct mode. `natural`:  natural mode. `sleep`: sleep mode. `baby`: ultra quiet mode |
 | Battery Circulator Fan | command     | setWindSpeed      | `{1-100}` e.g. `10`                     | Set fan speed.1~100                                          |
+| Battery Circulator Fann | command     | closeDelay        | `{1-36000}` e.g. `10`                   | Set fan close time                                          |
 
 ##### Circulator Fan
 
@@ -3084,6 +3361,34 @@ The following table describes the parameter object for `deleteKey`,
 | Circulator Fan | command     | setNightLightMode | `off`, `1`, or `2`                      | `off`, turn off nightlight,<br />`1`, bright <br />`2`, dim  |
 | Circulator Fan | command     | setWindMode       | `direct`, `natural`, `sleep`, or `baby` | Set fan mode. `direct`: direct mode. `natural`:  natural mode. `sleep`: sleep mode. `baby`: ultra quiet mode |
 | Circulator Fan | command     | setWindSpeed      | `{1-100}` e.g. `10`                     | Set fan speed.1~100                                          |
+| Circulator Fann | command     | closeDelay        | `{1-36000}` e.g. `10`                   | Set fan close time                                          |
+
+##### Standing Circulator Fan
+
+| deviceType     | commandType | Command           | command parameter                       | Description                                                  |
+| -------------- | ----------- | ----------------- | --------------------------------------- | ------------------------------------------------------------ |
+| Standing Circulator Fan | command     | turnOff           | default                                 | Set to OFF state                                             |
+| Standing Circulator Fan | command     | turnOn            | default                                 | Set to ON state                                              |
+| Standing Circulator Fan | command     | setNightLightMode | `off`, `1`, or `2`                      | `off`, turn off nightlight,<br />`1`, bright <br />`2`, dim  |
+| Standing Circulator Fan | command     | setWindMode       | `direct`, `natural`, `sleep`, or `baby` | Set fan mode. `direct`: direct mode. `natural`:  natural mode. `sleep`: sleep mode. `baby`: ultra quiet mode |
+| Standing Circulator Fan | command     | setWindSpeed      | `{1-100}` e.g. `10`                     | Set fan speed.1~100                                          |
+| Standing Circulator Fann | command     | closeDelay        | `{1-36000}` e.g. `10`                   | Set fan close time                                          |
+
+##### Candle Warmer Lamp
+
+| deviceType     | commandType | Command           | command parameter                       | Description                                                  |
+| -------------- | ----------- | ----------------- | --------------------------------------- | ------------------------------------------------------------ |
+| Candle Warmer Lamp | command     | turnOn              | default                                                      | set to ON state                                              |
+| Candle Warmer Lamp | command     | turnOff             | default                                                      | set to OFF state                                             |
+| Candle Warmer Lamp | command     | toggle              | default                                                      | toggle state                                                 |
+| Candle Warmer Lamp  | command     | setBrightness       | `{0-100}`                                                    | set brightness                                               |
+
+##### AI Art Frame
+
+| deviceType     | commandType | Command           | command parameter                       | Description                                                  |
+| -------------- | ----------- | ----------------- | --------------------------------------- | ------------------------------------------------------------ |
+| AI Art Frame | command     | next              | default                                                      | Switch to the next image                                              |
+| AI Art Frame | command     | previous             | default                                                   | Switch to the previous image                                          |
 
 #### Command set for virtual infrared remote devices
 
@@ -3787,13 +4092,20 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | Lock Lite | Lock Lite |
 | Video Doorbell | Video Doorbell |
 | Keypad Vision | Keypad Vision |
+| Keypad Vision Pro | Keypad Vision Pro |
 | Lock Ultra | Lock Ultra |
 | Strip Light 3 | Strip Light 3 |
 | K20+ Pro | K20+ Pro |
 | RGBICWW Strip Light | RGBICWW Strip Light |
 | RGBICWW Floor Lamp | RGBICWW Floor Lamp |
+| RGBIC Neon Rope Light | RGBIC Neon Rope Light |
 | RGBIC Neon Wire Rope Light | RGBIC Neon Wire Rope Light |
-| Smart  Radiator Thermostat | Smart  Radiator Thermostat |
+| Smart Radiator Thermostat | Smart  Radiator Thermostat |
+| Standing Fan | Standing Circulator Fan |
+| climate Panel | Home Climate Panel |
+| AI Art Frame | AI Art Frame |
+| Presence Sensor | Presence Sensor |
+| Candle Warmer Lamp | Candle Warmer Lamp |
 
 #### Bot
 | Key Name       | Value Type | Description                                                  |
@@ -3936,6 +4248,35 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "brightness": "dim",
         "openState": "open",
         "battery":100,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Presence Sensor
+
+| Key Name       | Value Type | Description                                                  |
+| -------------- | ---------- | ------------------------------------------------------------ |
+| eventType      | String     | the type of events                                           |
+| eventVersion   | String     | the current event version                                    |
+| context        | Object     | the detail info of the event                                 |
+| deviceType     | String     | the type of the device                                       |
+| deviceMac      | String     | the MAC address of the device                                |
+| detectionState | String     | the motion state of the device, "DETECTED" stands for motion is detected; "NOT_DETECTED" stands for motion has not been detected for some time |
+| battery        | Integer    | the current battery level, `0-100`                           |
+| lightLevel  | Integer      | the level of illuminance of the ambience light, 1~20            |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoContact",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "detectionState": "NOT_DETECTED",
+        "battery":100,
+        "lightLevel": 19,
         "timeOfSample": 123456789
     }
 }
@@ -4734,7 +5075,6 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | powerState | String | attributes of the context object. ON/OFF state |
 | brightness | Integer | attributes of the context object. the brightness value, range from 1 to 100 |
 | color        | String     | the color value, in the format of RGB value, "255:255:255" |
-| colorTemperature | Integer | attributes of the context object. the color temperature value, range from 2700 to 6500 |
 | timeOfSample    | Long | attributes of the context object. the time stamp when the event is sent |
 
 ```js
@@ -4747,7 +5087,34 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "powerState": "ON",//"ON"or"OFF"
         "brightness": 10,
         "color": "255:255:0",
-        "colorTemperature": 3500,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### RGBIC Neon Rope Light
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | attributes of the context object. the type of the device |
+| deviceMac    | String     | attributes of the context object. the MAC address of the device |
+| powerState | String | attributes of the context object. ON/OFF state |
+| brightness | Integer | attributes of the context object. the brightness value, range from 1 to 100 |
+| color        | String     | the color value, in the format of RGB value, "255:255:255" |
+| timeOfSample    | Long | attributes of the context object. the time stamp when the event is sent |
+
+```js
+{
+   "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "RGBIC Neon Rope Light",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "powerState": "ON",//"ON"or"OFF"
+        "brightness": 10,
+        "color": "255:255:0",
         "timeOfSample": 123456789
     }
 }
@@ -5440,7 +5807,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
     "eventType": "changeReport",
     "eventVersion": "1",
     "context": {
-        "deviceType": "WoKeypadVision",
+        "deviceType": "Keypad Vision",
         "deviceMac": DEVICE_MAC_ADDR,
         "eventName": "createKey",
         "commandId": "CMD-1663558451952-01",
@@ -5456,7 +5823,53 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
     "eventType": "changeReport",
     "eventVersion": "1",
     "context": {
-        "deviceType": "WoKeypadVision",
+        "deviceType": "Keypad Vision",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "eventName": "deleteKey ",
+        "commandId": "CMD-1663558451952-01",
+        "result": "success",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Keypad Vision Pro
+
+| Key Name        | Value Type | Description                                                  |
+| --------------- | ---------- | ------------------------------------------------------------ |
+| eventType       | String     | the type of events                                           |
+| eventVersion    | String     | the current event version                                    |
+| context         | Object     | the detail info of the event                                 |
+| deviceType      | String     | the type of the device                                       |
+| deviceMac       | String     | the MAC address of the device                                |
+| eventName    | String     | attributes of the context object. the name of the command being sent |
+| commandId    | String     | attributes of the context object. the command id |
+| result    | String     | attributes of the context object. the result of the command. *success*, *failed*, or *timeout*. timeout duration is 1 minute |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+
+##### Create a passcode
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Keypad Vision Pro",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "eventName": "createKey",
+        "commandId": "CMD-1663558451952-01",
+        "result": "success",
+        "timeOfSample": 123456789
+    }
+}
+```
+
+##### Delete a passcode
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Keypad Vision Pro",
         "deviceMac": DEVICE_MAC_ADDR,
         "eventName": "deleteKey ",
         "commandId": "CMD-1663558451952-01",
@@ -5503,6 +5916,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | deviceType      | String     | the type of the device                                       |
 | deviceMac       | String     | the MAC address of the device                                |
 | powerState     | String  | ON/OFF state                                                 |
+| brightness | Integer | attributes of the context object. the brightness value, range from 1 to 100 |
 | colorTemperature | Integer | attributes of the context object. the color temperature value, range from 2700 to 6500 |
 | color            | String     | the color value, in the format of RGB value, "255:255:255" |
 | timeOfSample   | Long       | the time stamp when the event is sent                        |
@@ -5551,6 +5965,133 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "onlineStatus": "online",//online,offline
         "battery": 100,// 0-100
         "taskType": "explore", // standBy,explore,cleanAll,cleanArea,cleanRoom,deepWashing,backToCharge,drying,collectDust,remoteControl,cleanWithExplorer
+        "timeOfSample": 123456789
+    }
+}
+
+```
+
+#### Candle Warmer Lamp
+
+| Key Name        | Value Type | Description                                                  |
+| --------------- | ---------- | ------------------------------------------------------------ |
+| eventType       | String     | the type of events                                           |
+| eventVersion    | String     | the current event version                                    |
+| context         | Object     | the detail info of the event                                 |
+| deviceType      | String     | the type of the device                                       |
+| deviceMac       | String     | the MAC address of the device                                |
+| powerState     | String  | ON/OFF state                                                 |
+| brightness | Integer | attributes of the context object. the brightness value, range from 1 to 100 |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+  "eventType": "changeReport",
+  "eventVersion": "1",
+  "context": {
+    "brightness": 100,
+    "deviceMac": "3C842777C07E",
+    "deviceType": "Candle Warmer Lamp",
+    "powerState": "ON",
+    "timeOfSample": 1759136920594
+  }
+}
+```
+
+#### Standing Circulator Fan
+
+| Key Name     | Value Type | Description                                          |
+| ------------ | ---------- | ---------------------------------------------------- |
+| eventType    | String     | the type of events                                   |
+| eventVersion | String     | the current event version                            |
+| context      | Object     | the detail info of the event                         |
+| deviceType   | String     | the type of the device                               |
+| deviceMac    | String     | the MAC address of the device                        |
+| mode                | String  | fan mode. direct mode: *direct*; natural mode: "natural"; sleep mode: "sleep"; ultra quiet mode: "baby" |
+| version             | String  | the current firmware version, e.g. V4.2                      |
+| powerState     | String  | ON/OFF state                                                 |
+| nightStatus         | String | set nightlight status. turn off: *off*; mode 1: *1*; mode 2: *2* |
+| oscillation         | String  | set horizontal oscillation. turn on: *on*; turn off: *off*   |
+| verticalOscillation | String  | set vertical oscillation. turn on: *on*; turn off: *off*     |
+| fanSpeed            | Integer | fan speed. 1~100                                             |
+| timeOfSample | Long       | the time stamp when the event is sent                |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "Standing Fan",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "mode":"direct" ,
+        "powerState": "ON",
+        "nightStatus":"off",
+        "oscillation":"on",
+        "verticalOscillation":"on",
+        "fanSpeed":3,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Home Climate Panel
+
+| Key Name        | Value Type | Description                                                  |
+| --------------- | ---------- | ------------------------------------------------------------ |
+| eventType       | String     | the type of events                                           |
+| eventVersion    | String     | the current event version                                    |
+| context         | Object     | the detail info of the event                                 |
+| deviceType      | String     | the type of the device                                       |
+| deviceMac       | String     | the MAC address of the device                                |
+| temperature  | Float      | the current temperature reading            |
+| humidity     | Integer    | the current humidity reading in percentage |
+| scale        | String     | the current temperature unit being used    |
+| battery             | Integer | the current battery level                                    |
+| detectionState | String     | the motion state of the device, "DETECTED" stands for motion is detected; "NOT_DETECTED" stands for motion has not been detected for some time |
+| brightness | String | the brightness level. "bright" or "dim" |
+| timeOfSample   | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "climate Panel",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "temperature":13,
+        "humidity":18,
+        "scale": "CELSIUS",
+        "battery":100,
+        "detectionState": "DETECTED",
+        "brightness":"bright" // bright,dim
+        "timeOfSample": 123456789
+    }
+}
+
+```
+
+#### AI Art Frame
+
+| Key Name        | Value Type | Description                                                  |
+| --------------- | ---------- | ------------------------------------------------------------ |
+| eventType       | String     | the type of events                                           |
+| eventVersion    | String     | the current event version                                    |
+| context         | Object     | the detail info of the event                                 |
+| deviceType      | String     | the type of the device                                       |
+| deviceMac       | String     | the MAC address of the device                                |
+| displayMode     | String   | Current mode of the device                                |
+| battery         | Integer | the current battery level                                       |
+| timeOfSample    | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+   "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "AI Art Frame",
+        "deviceMac": "B0E9FEA5D7F0",
+        "displayMode": 1, // Display mode: 0 = Static image; 1 = Slideshow
+        "battery": 100,      
         "timeOfSample": 123456789
     }
 }
