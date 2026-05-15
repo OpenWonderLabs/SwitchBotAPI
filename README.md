@@ -33,11 +33,15 @@
       - [Meter](#meter)
       - [Meter Plus](#meter-plus)
       - [Outdoor Meter](#outdoor-meter)
+      - [Weather Station](#weather-station)
       - [Meter Pro](#meter-pro)
       - [Meter Pro CO2](#meter-pro-co2)
       - [Lock](#lock)
       - [Lock Pro](#lock-pro)
+      - [Lock Pro Matter Enabled](#lock-pro-matter-enabled)
       - [Lock Ultra](#lock-ultra)
+      - [Lock Vision](#lock-vision)
+      - [Lock Vision Pro](#lock-vision-pro)
       - [Keypad](#keypad)
       - [Keypad Touch](#keypad-touch)
       - [Remote](#remote)
@@ -111,10 +115,12 @@
       - [Meter](#meter-1)
       - [Meter Plus](#meter-plus-1)
       - [Outdoor Meter](#outdoor-meter-1)
+      - [Weather Station](#weather-station-1)
       - [Meter Pro](#meter-pro-1)
       - [Meter Pro CO2 Monitor](#meter-pro-co2-monitor-1)
       - [Lock](#lock-1)
       - [Lock Pro](#lock-pro-1)
+      - [Lock Pro Matter Enabled](#lock-pro-matter-enabled-1)
       - [Keypad](#keypad-1)
       - [Keypad Touch](#keypad-touch-1)
       - [Motion Sensor](#motion-sensor-1)
@@ -164,6 +170,8 @@
       - [LED Strip Light 3](#LED-Strip-Light-3-1)
       - [Lock Lite](#Lock-Lite-1)
       - [Lock Ultra](#Lock-ultra-1)
+      - [Lock Vision](#Lock-Vision-1)
+      - [Lock Vision Pro](#Lock-Vision-Pro-1)
       - [Video Doorbell](#Video-Doorbell-1)
       - [Keypad Vision](#Keypad-Vision-1)
       - [Keypad Vision Pro](#Keypad-Vision-pro-1)
@@ -183,7 +191,10 @@
       - [Curtain 3](#curtain-3-2)
       - [Lock](#lock-2)
       - [Lock Pro](#lock-pro-2)
+      - [Lock Pro Matter Enabled](#lock-pro-matter-enabled-2)
       - [Lock Ultra](#lock-ultra-2)
+      - [Lock Vision](#lock-vision-2)
+      - [Lock Vision Pro](#lock-vision-pro-2)
       - [Humidifier](#humidifier-2)
       - [Evaporative Humidifier](#evaporative-humidifier-2)
       - [Evaporative Humidifier (Auto-refill)](#evaporative-humidifier-auto-refill-2)
@@ -231,6 +242,7 @@
       - [Standing Circulator Fan](#Standing-Circulator-Fan-2)
       - [Candle Warmer Lamp](#Candle-Warmer-Lamp-2)
       - [AI Art Frame](#AI-Art-Frame-2)
+      - [Weather Station](#weather-station-2)
     + [Command set for virtual infrared remote devices](#command-set-for-virtual-infrared-remote-devices)
     + [Path parameters](#path-parameters-1)
     + [Request body parameters](#request-body-parameters)
@@ -295,6 +307,7 @@
     + [Meter Pro CO2 Monitor](#meter-pro-co2-monitor-2)
     + [Lock](#lock-3)
     + [Lock Pro](#lock-pro-3)
+    + [Lock Pro Matter Enabled](#lock-pro-matter-enabled-3)
     + [Indoor Cam](#indoor-cam-1)
     + [Pan/Tilt Cam](#pantilt-cam-1)
     + [Color Bulb](#color-bulb-3)
@@ -349,7 +362,10 @@
     + [Candle Warmer Lamp](#Candle-Warmer-Lamp-3)
     + [Home Climate Panel](#Home-Climate-Panel-3)
     + [Lock Ultra](#lock-ultra-3)
+    + [Lock Vision](#lock-vision-3)
+    + [Lock Vision Pro](#lock-vision-pro-3)
     + [AI Art Frame](#AI-Art-Frame-3)
+    + [Weather Station](#weather-station-3)
 ## Introduction
 This document describes a collection of SwitchBot API methods, examples, and best practices for, but not limited to, IoT hobbyists, developers, and gurus to make their own smart home programs or applications. 
 
@@ -800,6 +816,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Meter Plus (JP)              | Short for SwitchBot Thermometer and Hygrometer Plus (JP).    | W2201500              | Only available in Japan |
 | Meter Plus (US)              | Short for SwitchBot Thermometer and Hygrometer Plus (US)     | W2301500              | Only available in US |
 | Outdoor Meter                | Short for Indoor/Outdoor Thermo-Hygrometer                   | W3400010              |                                   |
+| Weather Station              | Short for SwitchBot Weather Station                          | W3400010              |                                   |
 | Meter Pro | Short for SwitchBot Meter Pro | W4900000 | |
 | Meter Pro (CO2 Monitor) | Short for SwitchBot Meter Pro (CO2 Monitor) | W4900010 | |
 | Motion Sensor                | Short for SwitchBot Motion Sensor                            | W1101500              |                                   |
@@ -812,7 +829,10 @@ The following table provides definitions to the terms to be frequently mentioned
 | Plug Mini (JP)               | Short for SwitchBot Plug Mini (JP)                           | W2001400 and W2001401 | Only available in Japan |
 | Plug Mini (EU)               | Short for SwitchBot Plug Mini (EU)                           | W7732300 | Only available in Europe |
 | Lock                         | Short for SwitchBot Lock                                     | W1601700              |                                   |
-| Lock Pro                     | Short for SwitchBot Lock Pro                                 | W3500000              |                                   |
+| Lock Pro                    | Short for SwitchBot Lock Pro                                  | W3500000              |                                   |
+| Lock Pro Matter Enabled               | Short for SwitchBot Lock Pro Matter Enabled                   | W8102000              |                                   |
+| Lock Vision                 | Short for SwitchBot Lock Vision                               | W1141000              |                                   |
+| Lock Vision Pro             | Short for SwitchBot Lock Vision Pro                           | W1141001              |                                   |
 | Keypad                       | Short for SwitchBot Lock                                     | W2500010              |                                   |
 | Keypad Touch                 | Short for SwitchBot Lock                                     | W2500020              |                                   |
 | S1      | Short for SwitchBot Robot Vacuum Cleaner S1                  | W3011000              |                                   |
@@ -968,6 +988,7 @@ Physical devices refer to the following SwitchBot products,
  -  Hub 2
  -  Hub 3
  -  Outdoor Meter
+ -  Weather Station
  -  Battery Circulator Fan
  -  Curtain 3
  -  Lock Pro
@@ -998,6 +1019,8 @@ Physical devices refer to the following SwitchBot products,
  -  Video Doorbell
  -  Keypad Vision
  -  Lock Ultra
+ -  Lock Vision
+ -  Lock Vision Pro
  -  K20+ Pro
  -  K11+
  -  Plug Mini (EU)
@@ -1007,14 +1030,14 @@ Physical devices refer to the following SwitchBot products,
  -  Smart Radiator Thermostat
  -  Pan/Tilt Cam Plus 2K
  -  Pan/Tilt Cam Plus 3K
- -  `new` Standing Circulator Fan
- -  `new` AI Hub
- -  `new` Keypad Vision Pro
- -  `new` Candle Warmer Lamp
- -  `new` Presence Sensor
- -  `new` Home Climate Panel
- -  `new` RGBIC Neon Rope Light
- -  `new` AI Art Frame
+ -  Standing Circulator Fan
+ -  AI Hub
+ -  Keypad Vision Pro
+ -  Candle Warmer Lamp
+ -  Presence Sensor
+ -  Home Climate Panel
+ -  RGBIC Neon Rope Light
+ -  AI Art Frame
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, Hub 3 or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
  -  Air Conditioner
@@ -1135,6 +1158,16 @@ The `deviceList` array contains a list of objects with the following key-value a
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
 
+##### Weather Station
+
+| Key                | Value Type | Description                                                  |
+| ------------------ | ---------- | ------------------------------------------------------------ |
+| deviceId           | String     | device ID                                                    |
+| deviceName         | String     | device name                                                  |
+| deviceType         | String     | device type. *WeatherStation*                       |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
+
 ##### Meter Pro
 
 | Key                | Value Type | Description                                                  |
@@ -1183,6 +1216,34 @@ The `deviceList` array contains a list of objects with the following key-value a
 | groupName              | String         | the name of the Lock group |
 | lockDevicesIds              | Array<deviceId>         | a list of Lock device IDs such that the Lock devices are being grouped in Dual Lock mode |
 
+##### Lock Pro Matter Enabled
+
+| Key                | Value Type      | Description                                                  |
+| ------------------ | --------------- | ------------------------------------------------------------ |
+| deviceId           | String          | device ID                                                    |
+| deviceName         | String          | device name                                                  |
+| deviceType         | String          | device type. *Smart Lock Pro Wifi*                           |
+| enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String          | device's parent Hub ID                                       |
+
+Device status example (GET `/v1.1/devices/{deviceId}/status`),
+
+```json
+{
+  "deviceId": "FFFFFFFFFFF",
+  "deviceType": "Smart Lock Pro Wifi",
+  "hubDeviceId": "FFFFFFFFFFF",
+  "battery": 100,
+  "version": "V6.3",
+  "lockState": "unlock",
+  "doorState": "open",
+  "calibrate": true
+}
+```
+
+`lockState` can be `jammed`, `unlock`, `lock`, `latchBoltLocked`.
+`doorState` can be `open` or `close`.
+
 ##### Lock Ultra
 
 | Key                | Value Type      | Description                                                  |
@@ -1196,6 +1257,52 @@ The `deviceList` array contains a list of objects with the following key-value a
 | master             | Boolean         | determines if a Lock is the master device or not when grouped with another Lock in Dual Lock mode |
 | groupName              | String         | the name of the Lock group |
 | lockDevicesIds              | Array<deviceId>         | a list of Lock device IDs such that the Lock devices are being grouped in Dual Lock mode |
+
+##### Lock Vision
+
+| Key                | Value Type      | Description                                                  |
+| ------------------ | --------------- | ------------------------------------------------------------ |
+| deviceId           | String          | device ID                                                    |
+| deviceName         | String          | device name                                                  |
+| deviceType         | String          | device type. *Lock Vision*                                   |
+| enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String          | device's parent Hub ID                                       |
+| keyList            | Object          | a list of passcodes                                          |
+
+`keyList` maintains a list of passcodes,
+
+| Key        | Value Type | Description                                                  |
+| ---------- | ---------- | ------------------------------------------------------------ |
+| id         | Integer    | passcode ID                                                  |
+| name       | String     | name of the passcode                                         |
+| type       | String     | type of the passcode. *permanent*, a permanent passcode. *timeLimit*, a temporary passcode. *disposable*, a one-time passcode. |
+| password   | String     | the passcode string encrypted with the developer secret key using the aes-128-cbc algorithm |
+| iv         | String     | an arbitrary number used for the encryption                  |
+| status     | String     | validity of the passcode. *normal*, the passcode is valid. *expired*, the passcode is invalid. |
+| createTime | Long       | the time when the passcode is generated                      |
+
+##### Lock Vision Pro
+
+| Key                | Value Type      | Description                                                  |
+| ------------------ | --------------- | ------------------------------------------------------------ |
+| deviceId           | String          | device ID                                                    |
+| deviceName         | String          | device name                                                  |
+| deviceType         | String          | device type. *Lock Vision Pro*                               |
+| enableCloudService | Boolean         | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String          | device's parent Hub ID                                       |
+| keyList            | Object          | a list of passcodes                                          |
+
+`keyList` maintains a list of passcodes,
+
+| Key        | Value Type | Description                                                  |
+| ---------- | ---------- | ------------------------------------------------------------ |
+| id         | Integer    | passcode ID                                                  |
+| name       | String     | name of the passcode                                         |
+| type       | String     | type of the passcode. *permanent*, a permanent passcode. *timeLimit*, a temporary passcode. *disposable*, a one-time passcode. |
+| password   | String     | the passcode string encrypted with the developer secret key using the aes-128-cbc algorithm |
+| iv         | String     | an arbitrary number used for the encryption                  |
+| status     | String     | validity of the passcode. *normal*, the passcode is valid. *expired*, the passcode is invalid. |
+| createTime | Long       | the time when the passcode is generated                      |
 
 ##### Keypad
 | Key                | Value Type | Description                                                  |
@@ -1713,6 +1820,16 @@ The `deviceList` array contains a list of objects with the following key-value a
 | groupName              | String         | the name of the Lock group |
 | lockDevicesIds              | Array<deviceId>         | a list of Lock device IDs such that the Lock devices are being grouped in Dual Lock mode |
 
+> Note: Some clients refer to this product as **Smart Lock Lite**. In this document we use `deviceType: "Lock Lite"`.
+
+Lock Lite supports the following commands,
+
+| deviceType  | commandType | Command   | command parameter | Description                 |
+| ----------- | ----------- | --------- | ----------------- | --------------------------- |
+| Lock Lite   | command     | lock      | default           | rotate to locked position   |
+| Lock Lite   | command     | unlock    | default           | rotate to unlocked position |
+| Lock Lite   | command     | deadbolt  | default           | disengage deadbolt or latch |
+
 ##### Video Doorbell
 | Key         | Value Type | Description                   |
 | ----------- | ---------- | ----------------------------- |
@@ -1805,7 +1922,7 @@ The `deviceList` array contains a list of objects with the following key-value a
 | deviceName  | String     | device name                   |
 | deviceType  | String     | device type. *AI Art Frame*    |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
-| hubDeviceId        | String     | device's parent Hub ID. *000000000000* when the device itself is a Hub or it is connected through Wi-Fi. |
+| hubDeviceId        | String     | device's parent Hub ID                                       |
 
 ##### Virtual infrared remote devices
 
@@ -1922,14 +2039,18 @@ Physical devices refer to the following SwitchBot products,
  -  K20+ Pro
  -  Plug Mini (EU)
  -  K11+
- -  `new` Standing Circulator Fan
- -  `new` AI Hub
- -  `new` Keypad Vision Pro
- -  `new` Candle Warmer Lamp
- -  `new` Presence Sensor
- -  `new` Home Climate Panel
- -  `new` RGBIC Neon Rope Light
- -  `new` AI Art Frame
+ -  Standing Circulator Fan
+ -  AI Hub
+ -  Keypad Vision Pro
+ -  Candle Warmer Lamp
+ -  Presence Sensor
+ -  Home Climate Panel
+ -  RGBIC Neon Rope Light
+ -  AI Art Frame
+ -  `new` Weather Station
+ -  `new` Lock Pro Matter Enabled
+ -  `new` Lock Vision
+ -  `new` Lock Vision Pro
 #### Path parameters
 
 | Name     | Type   | Required | Description |
@@ -2019,12 +2140,24 @@ The `body` object contains the following properties,
 | Key                | Value Type | Description                                                  |
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
-| deviceType         | String     | device type. *WoIOSensor*                                         |
+| deviceType         | String     | device type. *WoIOSensor*                                    |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
-| battery              | Integer | Four-segment battery level division,`<10%, shown as 10;10%~20%, shown as 20;20%~60%, shown as 60;≥60%, shown as 100`|
-| version              | String     | the current firmware version, e.g. V4.2 |
-| temperature            | Float      |  temperature in celsius                                       |
-| humidity               | Integer    | humidity percentage |
+| battery            | Integer    | Four-segment battery level division,`<10%, shown as 10;10%~20%, shown as 20;20%~60%, shown as 60;≥60%, shown as 100`|
+| version            | String     | the current firmware version, e.g. V4.2                      |
+| temperature        | Float      | temperature in celsius                                       |
+| humidity           | Integer    | humidity percentage                                          |
+
+##### Weather Station
+
+| Key         | Value Type | Description                             |
+| ----------- | ---------- | --------------------------------------- |
+| deviceId    | String     | device ID                               |
+| deviceType  | String     | device type. *WeatherStation*  |
+| hubDeviceId | String     | device's parent Hub ID                  |
+| battery     | Integer    | the current battery level, 0-100        |
+| version     | String     | the current firmware version, e.g. V6.3 |
+| temperature | Float      | temperature in celsius                  |
+| humidity    | Integer    | humidity percentage                     |
 
 ##### Meter Pro
 
@@ -2075,6 +2208,19 @@ The `body` object contains the following properties,
 | lockState              | String     | determines if locked or not, *jammed*, *unlock* or *lock* |
 | doorState              | String     | determines if the door is closed or not, *open* or *close* |
 | calibrate          | Boolean         | determines if Lock has been calibrated or not |
+
+##### Lock Pro Matter Enabled
+| Key         | Value Type | Description |
+| ----------- | ---------- | ----------- |
+| deviceId    | String     | device ID |
+| deviceType  | String     | device type. *Smart Lock Pro Wifi* |
+| hubDeviceId | String     | device's parent Hub ID |
+| battery     | Integer    | the current battery level, 0-100 |
+| version     | String     | the current firmware version, e.g. V6.3 |
+| lockState   | String     | jammed, unlock, lock, latchBoltLocked |
+| doorState   | String     | open, close |
+| calibrate   | Boolean    | determines if Lock has been calibrated or not |
+| onlineStatus    | String     | the connection status of the device. *online* or *offline* |
 
 ##### Keypad
 
@@ -2682,13 +2828,41 @@ The `body` object contains the following properties,
 | Key                | Value Type      | Description                                                  |
 | ------------------ | --------------- | ------------------------------------------------------------ |
 | deviceId           | String          | device ID                                                    |
-| deviceType         | String          | device type. *Lock Ultra*                                |
+| deviceType         | String          | device type. *Lock Ultra*                                    |
 | hubDeviceId        | String          | device's parent Hub ID                                       |
-| battery              | Integer | the current battery level, 0-100 |
-| version              | String     | the current firmware version, e.g. V4.2 |
-| lockState              | String     | determines if locked or not, *jammed*, *unlock* or *lock* |
-| doorState              | String     | determines if the door is closed or not, *open* or *close* |
-| calibrate          | Boolean         | determines if Lock has been calibrated or not |
+| battery            | Integer         | the current battery level, 0-100                              |
+| version            | String          | the current firmware version, e.g. V6.3                       |
+| lockState          | String          | jammed, unlock, lock, latchBoltLocked                         |
+| doorState          | String          | open, close                                                   |
+| calibrate          | Boolean         | determines if Lock has been calibrated or not                 |
+
+##### Lock Vision
+
+| Key        | Value Type | Description                          |
+| ---------- | ---------- | ------------------------------------ |
+| deviceId   | String     | device ID                            |
+| deviceType | String     | device type. *Lock Vision*           |
+| hubDeviceId| String     | device's parent Hub ID               |
+| battery    | Integer    | the current battery level, 0-100     |
+| version    | String     | the current firmware version, e.g. V6.3 |
+| lockState  | String     | jammed, unlock, lock, latchBoltLocked |
+| doorState  | String     | open, close                          |
+| calibrate  | Boolean    | determines if Lock has been calibrated or not |
+| onlineStatus    | String     | the connection status of the device. *online* or *offline* |
+
+##### Lock Vision Pro
+
+| Key        | Value Type | Description                          |
+| ---------- | ---------- | ------------------------------------ |
+| deviceId   | String     | device ID                            |
+| deviceType | String     | device type. *Lock Vision Pro*       |
+| hubDeviceId| String     | device's parent Hub ID               |
+| battery    | Integer    | the current battery level, 0-100     |
+| version    | String     | the current firmware version, e.g. V6.3 |
+| lockState  | String     | jammed, unlock, lock, latchBoltLocked |
+| doorState  | String     | open, close                          |
+| calibrate  | Boolean    | determines if Lock has been calibrated or not |
+| onlineStatus    | String     | the connection status of the device. *online* or *offline* |
 
 ##### Video Doorbell
 
@@ -2786,11 +2960,12 @@ The `body` object contains the following properties,
 | Key                | Value Type | Description                                                  |
 | ------------------ | ---------- | ------------------------------------------------------------ |
 | deviceId           | String     | device ID                                                    |
-| deviceType         | String     | device type. *AI Art Frame*                                        |
+| deviceType         | String     | device type. *AI Art Frame*                                  |
 | hubDeviceId        | String     | device's parent Hub ID                                       |
-| battery            | Integer    |  the current battery level `0-100` |
-| imageUrl           | String    |  the URL of the image currently displayed on the photo frame |
-| version     | String     | the current firmware version, e.g. V4.2 |
+| battery            | Integer    | the current battery level, 0-100                             |
+| displayMode        | Integer    | display mode: 0 = Static image; 1 = Slideshow                |
+| imageUrl           | String     | the URL of the image currently displayed on the photo frame  |
+| version            | String     | the current firmware version, e.g. V0.0-0.5                  |
 
 #### Sample
 
@@ -2900,6 +3075,30 @@ Send control commands to physical devices and virtual infrared remote devices.
 | Lock Pro   | command     | lock     | default           | rotate to locked position   |
 | Lock Pro   | command     | unlock   | default           | rotate to unlocked position |
 | Lock Pro   | command     | deadbolt | default           | disengage deadbolt or latch |
+
+##### Lock Pro Matter Enabled
+| deviceType    | commandType | Command          | command parameter | Description                 |
+| -----------   | ----------- | ---------------- | ----------------- | --------------------------- |
+| Smart Lock Pro Wifi  | command     | lock             | default           | rotate to locked position   |
+| Smart Lock Pro Wifi  | command     | unlock           | default           | rotate to unlocked position |
+| Smart Lock Pro Wifi  | command     | nightLatchUnlock | default           | unlock night latch (EU)     |
+| Smart Lock Pro Wifi  | command     | deadbolt         | default           | disengage deadbolt or latch |
+
+##### Lock Vision
+| deviceType   | commandType | Command          | command parameter | Description                 |
+| ------------ | ----------- | ---------------- | ----------------- | --------------------------- |
+| Lock Vision  | command     | lock             | default           | rotate to locked position   |
+| Lock Vision  | command     | unlock           | default           | rotate to unlocked position |
+| Lock Vision  | command     | deleteKey        | {"id": ""}        | delete a passcode by id     |
+| Lock Vision  | command     | createKey        | {"name":"","type":"","password":"","startTime":0,"endTime":0} | create a passcode          |
+
+##### Lock Vision Pro
+| deviceType       | commandType | Command          | command parameter | Description                 |
+| ---------------- | ----------- | ---------------- | ----------------- | --------------------------- |
+| Lock Vision Pro  | command     | lock             | default           | rotate to locked position   |
+| Lock Vision Pro  | command     | unlock           | default           | rotate to unlocked position |
+| Lock Vision Pro  | command     | deleteKey        | {"id": ""}        | delete a passcode by id     |
+| Lock Vision Pro  | command     | createKey        | {"name":"","type":"","password":"","startTime":0,"endTime":0} | create a passcode          |
 
 ##### Humidifier
 | deviceType                   | commandType | Command             | command parameter                                            | Description                                                  |
@@ -3385,10 +3584,19 @@ The following table describes the parameter object for `deleteKey`,
 
 ##### AI Art Frame
 
-| deviceType     | commandType | Command           | command parameter                       | Description                                                  |
-| -------------- | ----------- | ----------------- | --------------------------------------- | ------------------------------------------------------------ |
-| AI Art Frame | command     | next              | default                                                      | Switch to the next image                                              |
-| AI Art Frame | command     | previous             | default                                                   | Switch to the previous image                                          |
+| deviceType   | commandType | Command     | command parameter                                                               | Description |
+| ----------- | ----------- | ----------- | ------------------------------------------------------------------------------- | ----------- |
+| AI Art Frame | command     | next        | default                                                                         | Switch to the next image |
+| AI Art Frame | command     | previous    | default                                                                         | Switch to the previous image |
+| AI Art Frame | command     | uploadImage |{"imageUrl":"https://..."} OR {"imageBase64":"data:image/jpeg;base64,..."}       | Upload an image (choose one of imageUrl / imageBase64) |
+
+##### Weather Station
+
+| deviceType   | commandType | Command     | command parameter                                                               | Description |
+| ----------- | ----------- | ----------- | ------------------------------------------------------------------------------- | ----------- |
+| Weather Station | command | customQuote | custom text, e.g. `"Oh sea, you have so much water!"` | Set a custom quote |
+| Weather Station | command | cancelCustom | `default` | Cancel the custom quote and revert to default |
+| Weather Station | command | customPage  | custom text, e.g. `"Oh, the ocean is so huge!"` | Set a custom quote |
 
 #### Command set for virtual infrared remote devices
 
@@ -4054,6 +4262,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | WoContact     | Contact Sensor  |
 | WoLock        | Lock            |
 | WoLockPro | Lock Pro |
+| WoLock Pro Matter Enabled | Lock Pro Matter Enabled |
 | WoCamera      | Indoor Cam      |
 | WoPanTiltCam  | Pan/Tilt Cam    |
 | WoBulb        | Color Bulb      |
@@ -4094,6 +4303,8 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | Keypad Vision | Keypad Vision |
 | Keypad Vision Pro | Keypad Vision Pro |
 | Lock Ultra | Lock Ultra |
+| Lock Vision | Lock Vision |
+| Lock Vision Pro | Lock Vision Pro |
 | Strip Light 3 | Strip Light 3 |
 | K20+ Pro | K20+ Pro |
 | RGBICWW Strip Light | RGBICWW Strip Light |
@@ -4106,6 +4317,7 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | AI Art Frame | AI Art Frame |
 | Presence Sensor | Presence Sensor |
 | Candle Warmer Lamp | Candle Warmer Lamp |
+| WeatherStation | Weather Station |
 
 #### Bot
 | Key Name       | Value Type | Description                                                  |
@@ -4402,6 +4614,37 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 }
 ```
 
+#### Weather Station
+
+| Key Name     | Value Type | Description                                |
+| ------------ | ---------- | ------------------------------------------ |
+| eventType    | String     | the type of events                         |
+| eventVersion | String     | the current event version                  |
+| context      | Object     | the detail info of the event               |
+| deviceType   | String     | the type of the device                     |
+| deviceMac    | String     | the MAC address of the device              |
+| temperature  | Float      | the current temperature reading            |
+| scale        | String     | the current temperature unit being used    |
+| humidity     | Integer    | the current humidity reading in percentage |
+| battery      | Integer    | the current battery level, `0-100`         |
+| timeOfSample | Long       | the time stamp when the event is sent      |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WeatherStation",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "temperature": 13,
+        "humidity": 18,
+        "scale": "CELSIUS",
+        "battery": 100,
+        "timeOfSample": 123456789
+    }
+}
+```
+
 #### Meter Pro
 
 | Key Name     | Value Type | Description                                |
@@ -4515,6 +4758,34 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
         "deviceMac": DEVICE_MAC_ADDR,
         "lockState": "LOCKED",
         "battery":100,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+
+#### Lock Pro Matter Enabled
+
+| Key Name     | Value Type | Description                                                  |
+| ------------ | ---------- | ------------------------------------------------------------ |
+| eventType    | String     | the type of events                                           |
+| eventVersion | String     | the current event version                                    |
+| context      | Object     | the detail info of the event                                 |
+| deviceType   | String     | the type of the device                                       |
+| deviceMac    | String     | the MAC address of the device                                |
+| lockState    | String     | the state of the device, "LOCKED" stands for the motor is rotated to locking position; "UNLOCKED" stands for the motor is rotated to unlocking position; "JAMMED" stands for the motor is jammed while rotating |
+| battery      | Integer    | the current battery level, `0-100`                           |
+| timeOfSample | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "WoLockProWifi",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "lockState": "LOCKED",
+        "battery": 90,
         "timeOfSample": 123456789
     }
 }
@@ -5888,9 +6159,9 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | context         | Object     | the detail info of the event                                 |
 | deviceType      | String     | the type of the device                                       |
 | deviceMac       | String     | the MAC address of the device                                |
-| lockState    | String     | the state of the device, "LOCKED" stands for the motor is rotated to locking position; "UNLOCKED" stands for the motor is rotated to unlocking position; "JAMMED" stands for the motor is jammed while rotating |
-| battery      | Integer          | the battery level                           |
-| timeOfSample   | Long       | the time stamp when the event is sent                        |
+| lockState       | String     | the state of the device, "LOCKED" stands for the motor is rotated to locking position; "UNLOCKED" stands for the motor is rotated to unlocking position; "JAMMED" stands for the motor is jammed while rotating |
+| battery         | Integer    | the battery level                                            |
+| timeOfSample    | Long       | the time stamp when the event is sent                        |
 
 ```js
 {
@@ -5898,6 +6169,60 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
     "eventVersion": "1",
     "context": {
         "deviceType": "Smart Lock Ultra",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "lockState": "LOCKED",
+        "battery": 90,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Lock Vision
+
+| Key Name     | Value Type | Description                                                  |
+| ------------ | ---------- | ------------------------------------------------------------ |
+| eventType    | String     | the type of events                                           |
+| eventVersion | String     | the current event version                                    |
+| context      | Object     | the detail info of the event                                 |
+| deviceType   | String     | the type of the device                                       |
+| deviceMac    | String     | the MAC address of the device                                |
+| lockState    | String     | the state of the device, "LOCKED" stands for the motor is rotated to locking position; "UNLOCKED" stands for the motor is rotated to unlocking position; "JAMMED" stands for the motor is jammed while rotating |
+| battery      | Integer    | the battery level                                            |
+| timeOfSample | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "W1141000",
+        "deviceMac": DEVICE_MAC_ADDR,
+        "lockState": "LOCKED",
+        "battery": 90,
+        "timeOfSample": 123456789
+    }
+}
+```
+
+#### Lock Vision Pro
+
+| Key Name     | Value Type | Description                                                  |
+| ------------ | ---------- | ------------------------------------------------------------ |
+| eventType    | String     | the type of events                                           |
+| eventVersion | String     | the current event version                                    |
+| context      | Object     | the detail info of the event                                 |
+| deviceType   | String     | the type of the device                                       |
+| deviceMac    | String     | the MAC address of the device                                |
+| lockState    | String     | the state of the device, "LOCKED" stands for the motor is rotated to locking position; "UNLOCKED" stands for the motor is rotated to unlocking position; "JAMMED" stands for the motor is jammed while rotating |
+| battery      | Integer    | the battery level                                            |
+| timeOfSample | Long       | the time stamp when the event is sent                        |
+
+```js
+{
+    "eventType": "changeReport",
+    "eventVersion": "1",
+    "context": {
+        "deviceType": "W1141001",
         "deviceMac": DEVICE_MAC_ADDR,
         "lockState": "LOCKED",
         "battery": 90,
@@ -6079,8 +6404,8 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 | context         | Object     | the detail info of the event                                 |
 | deviceType      | String     | the type of the device                                       |
 | deviceMac       | String     | the MAC address of the device                                |
-| displayMode     | String   | Current mode of the device                                |
-| battery         | Integer | the current battery level                                       |
+| displayMode     | Integer  | display mode: 0 = Static image; 1 = Slideshow               |
+| battery         | Integer  | the current battery level, 0-100                            |
 | timeOfSample    | Long       | the time stamp when the event is sent                        |
 
 ```js
@@ -6104,4 +6429,3 @@ When an event gets triggered, SwitchBot server will send a `POST` request to the
 * [SwitchBot (Official website)](https://www.switch-bot.com/)
 * [Facebook @SwitchBotRobot](https://www.facebook.com/SwitchBotRobot/) 
 * [Twitter @SwitchBot](https://twitter.com/switchbot) 
-
