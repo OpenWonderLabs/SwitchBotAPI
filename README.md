@@ -89,13 +89,13 @@
       - [Curtain event example](#curtain-event-example)
   - [Device Specifications and Supported Features List](#device-specifications-and-supported-features-list)
     - [Hubs](#hubs)
-    - [Locks \& Security](#locks--security)
-    - [Curtains \& Blinds](#curtains--blinds)
+    - [Locks & Security](#locks--security)
+    - [Curtains & Blinds](#curtains--blinds)
     - [Sensors](#sensors)
     - [Lighting](#lighting)
     - [Robot Vacuum](#robot-vacuum)
     - [Climate Control](#climate-control)
-    - [Plugs \& Switches](#plugs--switches)
+    - [Plugs & Switches](#plugs--switches)
     - [Cameras](#cameras)
     - [Others](#others)
 
@@ -613,6 +613,11 @@ The following table provides definitions to the terms to be frequently mentioned
 | Home Climate Panel                   | Short for SwitchBot Home Climate Panel                    | W7400000                           |                                   |
 | Smart Radiator Thermostat            | Short for SwitchBot Smart Radiator Thermostat             | W7830000                           |                                   |
 | AI Art Frame                         | Short for SwitchBot AI Art Frame                          | W8402000 and W8402010 and W8402020 |                                   |
+| Permanent Outdoor Lights             | Short for SwitchBot Permanent Outdoor Lights                 | W1702120                                      |              |
+| RGBICWW Ceiling Light                | Short for SwitchBot RGBICWW Ceiling Light                    | W10802300 and W10802310                       |              |
+| Battery Circulator Fan 2 Pro         | Short for SwitchBot Battery Circulator Fan 2 Pro             | W9502500, W9502501, W9502502, and W9502503    |              |
+| Kata Friends                         | Short for SwitchBot Kata Friends                             | W7912300                                      |              |
+| AI MindClip                          | Short for SwitchBot AI MindClip                              | W6902000 and W6902003                         |              |
 
 ### `Legacy` Cloud Services
 
@@ -762,14 +767,19 @@ Physical devices refer to the following SwitchBot products,
 - Smart Radiator Thermostat
 - Pan/Tilt Cam Plus 2K
 - Pan/Tilt Cam Plus 3K
-- `new` Standing Circulator Fan
-- `new` AI Hub
-- `new` Keypad Vision Pro
-- `new` Candle Warmer Lamp
-- `new` Presence Sensor
-- `new` Home Climate Panel
-- `new` RGBIC Neon Rope Light
-- `new` AI Art Frame
+- Standing Circulator Fan
+- AI Hub
+- Keypad Vision Pro
+- Candle Warmer Lamp
+- Presence Sensor
+- Home Climate Panel
+- RGBIC Neon Rope Light
+- AI Art Frame
+- `new` [Permanent Outdoor Lights](devices/lighting/permanent-outdoor-lights.md)
+- `new` [RGBICWW Ceiling Light](devices/lighting/rgbicww-ceiling-light.md)
+- `new` [Battery Circulator Fan 2 Pro](devices/climate-control/battery-circulator-fan-2-pro.md)
+- `new` [Kata Friends](devices/others/kata-friends.md)
+- `new` [AI MindClip](devices/others/ai-mindclip.md)
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, Hub 3 or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
 
@@ -1528,6 +1538,7 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
     }
 }
 ```
+
 #### Curtain event example
 
 ```json
@@ -1612,6 +1623,8 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | [RGBICWW Strip Light](devices/lighting/rgbicww-strip-light.md)               | ✓    | ✓      | ✓       | ✓       |
 | [Strip Light](devices/lighting/strip-light.md)                               | ✓    | ✓      | ✓       | ✓       |
 | [Strip Light 3](devices/lighting/strip-light-3.md)                           | ✓    | ✓      | ✓       | ✓       |
+| [Permanent Outdoor Lights](devices/lighting/permanent-outdoor-lights.md)      | ✓    | ✓      | ✓       | ✓       |
+| [RGBICWW Ceiling Light](devices/lighting/rgbicww-ceiling-light.md)            | ✓    | ✓      | ✓       | ✓       |
 
 ### Robot Vacuum
 
@@ -1643,6 +1656,7 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | [Humidifier](devices/climate-control/humidifier.md)                                                   | ✓    | ✓      | ✓       | -       |
 | [Smart Radiator Thermostat](devices/climate-control/smart-radiator-thermostat.md)                     | ✓    | ✓      | ✓       | ✓       |
 | [Standing Circulator Fan](devices/climate-control/standing-circulator-fan.md)                         | ✓    | ✓      | ✓       | ✓       |
+| [Battery Circulator Fan 2 Pro](devices/climate-control/battery-circulator-fan-2-pro.md)             | ✓    | ✓      | ✓       | ✓       |
 
 ### Plugs & Switches
 
@@ -1676,10 +1690,12 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | [AI Art Frame](devices/others/ai-art-frame.md)                                       | ✓    | ✓      | ✓       | ✓       |
 | [Weather Station](devices/others/weather-station.md)                                 | ✓    | ✓      | ✓       | ✓       |
 | [Virtual infrared remote devices](devices/others/virtual-infrared-remote-devices.md) | ✓    | -      | ✓       | -       |
+| [Kata Friends](devices/others/kata-friends.md)                                      | ✓    | ✓      | ✓       | ✓       |
+| [AI MindClip](devices/others/ai-mindclip.md)                                        | ✓    | ✓      | -       | ✓       |
 
 
 ----
 
 * [SwitchBot (Official website)](https://www.switch-bot.com/)
 * [Facebook @SwitchBotRobot](https://www.facebook.com/SwitchBotRobot/) 
-* [Twitter @SwitchBot](https://twitter.com/switchbot) 
+* [Twitter @SwitchBot](https://twitter.com/switchbot)
