@@ -1683,7 +1683,7 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | [Pan/Tilt Cam](devices/cameras/pantilt-cam.md)                 | ✓    | -      | -       | ✓       |
 | [Pan/Tilt Cam 2K](devices/cameras/pantilt-cam-2k.md)           | ✓    | -      | -       | -       |
 | [Pan/Tilt Cam Plus 2K](devices/cameras/pantilt-cam-plus-2k.md) | ✓    | -      | -       | -       |
-| [Pan/Tilt Cam Plus 3K](devices/cameras/pantilt-cam-plus-3k.md) | ✓    | -      | -       | -       |
+| [Pan/Tilt Cam Plus 3K](devices/cameras/pantilt-cam-plus-3k.md) | ✓    | ✓      | -       | ✓       |
 
 ### Others
 
