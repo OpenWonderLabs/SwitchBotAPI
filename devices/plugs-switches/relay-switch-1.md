@@ -18,11 +18,15 @@
 
 | Key          | Value Type | Description                                               |
 | ------------ | ---------- | --------------------------------------------------------- |
-| deviceId     | String     | device ID                                                 |
-| deviceType   | String     | device type. _Relay Switch 1_                             |
-| switchStatus | Integer    | the current switch state. `0`, off; `1`, on               |
-| version      | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
-| hubDeviceId  | String     | Hub ID, equivalent to device ID                           |
+| deviceId        | String     | device ID                                                 |
+| deviceType      | String     | device type. _Relay Switch 1_                             |
+| switchStatus    | Integer    | the current switch state. `0`, off; `1`, on               |
+| version         | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
+| hubDeviceId     | String     | Hub ID, equivalent to device ID                           |
+| voltage         | Float      | always returns `0` since the device has no power monitoring capability |
+| power           | Float      | always returns `0` since the device has no power monitoring capability |
+| usedElectricity | Integer    | always returns `0` since the device has no power monitoring capability |
+| electricCurrent | Integer    | always returns `0` since the device has no power monitoring capability |
 
 ---
 
