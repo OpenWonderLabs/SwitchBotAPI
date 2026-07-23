@@ -27,7 +27,9 @@
 | nightStatus         | String     | set nightlight status. turn off: _off_; mode 1: _1_; mode 2: _2_                                        |
 | oscillation         | String     | set horizontal oscillation. turn on: _on_; turn off: _off_                                              |
 | verticalOscillation | String     | set vertical oscillation. turn on: _on_; turn off: _off_                                                |
+| chargingStatus      | String     | battery charge status. _charging_ or _uncharged_                                                        |
 | fanSpeed            | Integer    | fan speed. 1~100                                                                                        |
+| hubDeviceId         | String     | device's parent Hub ID                                                                                  |
 
 ---
 
@@ -56,9 +58,10 @@
 | mode                | String     | fan mode. direct mode: _direct_; natural mode: "natural"; sleep mode: "sleep"; ultra quiet mode: "baby" |
 | version             | String     | the current firmware version, e.g. V4.2                                                                 |
 | powerState          | String     | ON/OFF state                                                                                            |
-| nightStatus         | Integer    | set nightlight status. turn off: _off_; mode 1: _1_; mode 2: _2_                                        |
+| nightStatus         | String     | set nightlight status. turn off: _off_; mode 1: _1_; mode 2: _2_                                        |
 | oscillation         | String     | set horizontal oscillation. turn on: _on_; turn off: _off_                                              |
 | verticalOscillation | String     | set vertical oscillation. turn on: _on_; turn off: _off_                                                |
+| chargingStatus      | String     | battery charge status. _charging_ or _uncharged_                                                        |
 | fanSpeed            | Integer    | fan speed. 1~100                                                                                        |
 | timeOfSample        | Long       | the time stamp when the event is sent                                                                   |
 
@@ -75,6 +78,7 @@
         "nightStatus": "off",
         "oscillation": "on",
         "verticalOscillation": "on",
+        "chargingStatus": "uncharged",
         "fanSpeed": 3,
         "timeOfSample": 123456789
     }
