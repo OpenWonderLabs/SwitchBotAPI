@@ -775,6 +775,10 @@ Physical devices refer to the following SwitchBot products,
 - Home Climate Panel
 - RGBIC Neon Rope Light
 - AI Art Frame
+- Weather Station
+- Lock Pro Matter Enabled
+- Lock Vision
+- Lock Vision Pro
 - `new` [Permanent Outdoor Lights](devices/lighting/permanent-outdoor-lights.md)
 - `new` [RGBICWW Ceiling Light](devices/lighting/rgbicww-ceiling-light.md)
 - `new` [Battery Circulator Fan 2 Pro](devices/climate-control/battery-circulator-fan-2-pro.md)

@@ -48,7 +48,7 @@
     "eventType": "changeReport",
     "eventVersion": "1",
     "context": {
-        "deviceType": "WoMeter",
+        "deviceType": "WoMeterPlus",
         "deviceMac": DEVICE_MAC_ADDR,
         "temperature": 22.5,
         "scale": "CELSIUS",

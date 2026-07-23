@@ -36,8 +36,9 @@
 
 | deviceType | commandType | Command | command parameter | Description                 |
 | ---------- | ----------- | ------- | ----------------- | --------------------------- |
-| Lock Lite  | command     | lock    | default           | rotate to locked position   |
-| Lock Lite  | command     | unlock  | default           | rotate to unlocked position |
+| Lock Lite  | command     | lock     | default           | rotate to locked position   |
+| Lock Lite  | command     | unlock   | default           | rotate to unlocked position |
+| Lock Lite  | command     | deadbolt | default           | disengage deadbolt or latch |
 
 ---
 
