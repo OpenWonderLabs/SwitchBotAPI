@@ -618,6 +618,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Battery Circulator Fan 2 Pro         | Short for SwitchBot Battery Circulator Fan 2 Pro             | W9502500, W9502501, W9502502, and W9502503    |              |
 | Kata Friends                         | Short for SwitchBot Kata Friends                             | W7912300                                      |              |
 | AI MindClip                          | Short for SwitchBot AI MindClip                              | W6902000 and W6902003                         |              |
+| Outdoor Pan/Tilt Cam 3K              | Short for SwitchBot Outdoor Pan/Tilt Cam 3K               |                                    |                                   |
 
 ### `Legacy` Cloud Services
 
@@ -784,6 +785,7 @@ Physical devices refer to the following SwitchBot products,
 - `new` [Battery Circulator Fan 2 Pro](devices/climate-control/battery-circulator-fan-2-pro.md)
 - `new` [Kata Friends](devices/others/kata-friends.md)
 - `new` [AI MindClip](devices/others/ai-mindclip.md)
+- `new` [Outdoor Pan/Tilt Cam 3K](devices/cameras/outdoor-pantilt-cam-3k.md)
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, Hub 3 or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
 
@@ -1684,6 +1686,7 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | [Pan/Tilt Cam 2K](devices/cameras/pantilt-cam-2k.md)           | ✓    | -      | -       | -       |
 | [Pan/Tilt Cam Plus 2K](devices/cameras/pantilt-cam-plus-2k.md) | ✓    | -      | -       | -       |
 | [Pan/Tilt Cam Plus 3K](devices/cameras/pantilt-cam-plus-3k.md) | ✓    | ✓      | -       | ✓       |
+| [Outdoor Pan/Tilt Cam 3K](devices/cameras/outdoor-pantilt-cam-3k.md) | ✓ | ✓     | -       | ✓       |
 
 ### Others
 
