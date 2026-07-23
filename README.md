@@ -619,6 +619,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Kata Friends                         | Short for SwitchBot Kata Friends                             | W7912300                                      |              |
 | AI MindClip                          | Short for SwitchBot AI MindClip                              | W6902000 and W6902003                         |              |
 | Outdoor Pan/Tilt Cam 3K              | Short for SwitchBot Outdoor Pan/Tilt Cam 3K               |                                    |                                   |
+| Universal Remote                     | Short for SwitchBot Universal Remote                      |                                    |                                   |
 
 ### `Legacy` Cloud Services
 
@@ -786,6 +787,7 @@ Physical devices refer to the following SwitchBot products,
 - `new` [Kata Friends](devices/others/kata-friends.md)
 - `new` [AI MindClip](devices/others/ai-mindclip.md)
 - `new` [Outdoor Pan/Tilt Cam 3K](devices/cameras/outdoor-pantilt-cam-3k.md)
+- `new` [Universal Remote](devices/others/universal-remote.md)
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, Hub 3 or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
 
@@ -1699,6 +1701,7 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | [Virtual infrared remote devices](devices/others/virtual-infrared-remote-devices.md) | ✓    | -      | ✓       | -       |
 | [Kata Friends](devices/others/kata-friends.md)                                      | ✓    | ✓      | ✓       | ✓       |
 | [AI MindClip](devices/others/ai-mindclip.md)                                        | ✓    | ✓      | -       | ✓       |
+| [Universal Remote](devices/others/universal-remote.md)                               | ✓    | ✓      | -       | -       |
 
 
 ----
