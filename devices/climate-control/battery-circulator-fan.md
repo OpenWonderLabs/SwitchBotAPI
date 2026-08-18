@@ -35,14 +35,14 @@
 
 ## Control Commands
 
-| deviceType              | commandType | Command           | command parameter                       | Description                                                                                                 |
-| ----------------------- | ----------- | ----------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| Battery Circulator Fan  | command     | turnOff           | default                                 | Set to OFF state                                                                                            |
-| Battery Circulator Fan  | command     | turnOn            | default                                 | Set to ON state                                                                                             |
-| Battery Circulator Fan  | command     | setNightLightMode | `off`, `1`, or `2`                      | `off`, turn off nightlight,<br />`1`, bright <br />`2`, dim                                                 |
-| Battery Circulator Fan  | command     | setWindMode       | `direct`, `natural`, `sleep`, or `baby` | Set fan mode. `direct`: direct mode. `natural`: natural mode. `sleep`: sleep mode. `baby`: ultra quiet mode |
-| Battery Circulator Fan  | command     | setWindSpeed      | `{1-100}` e.g. `10`                     | Set fan speed.1~100                                                                                         |
-| Battery Circulator Fann | command     | closeDelay        | `{1-36000}` e.g. `10`                   | Set fan close time                                                                                          |
+| deviceType             | commandType | Command           | command parameter                       | Description                                                                                                 |
+| ---------------------- | ----------- | ----------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Battery Circulator Fan | command     | turnOff           | default                                 | Set to OFF state                                                                                            |
+| Battery Circulator Fan | command     | turnOn            | default                                 | Set to ON state                                                                                             |
+| Battery Circulator Fan | command     | setNightLightMode | `off`, `1`, or `2`                      | `off`, turn off nightlight,<br />`1`, bright <br />`2`, dim                                                 |
+| Battery Circulator Fan | command     | setWindMode       | `direct`, `natural`, `sleep`, or `baby` | Set fan mode. `direct`: direct mode. `natural`: natural mode. `sleep`: sleep mode. `baby`: ultra quiet mode |
+| Battery Circulator Fan | command     | setWindSpeed      | `{1-100}` e.g. `10`                     | Set fan speed.1~100                                                                                         |
+| Battery Circulator Fan | command     | closeDelay        | `{1-36000}` e.g. `10`                   | Set fan close time                                                                                          |
 
 ---
 
