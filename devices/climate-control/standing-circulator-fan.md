@@ -8,7 +8,7 @@
 | ------------------ | ---------- | -------------------------------------------------------------------- |
 | deviceId           | String     | device ID                                                            |
 | deviceName         | String     | device name                                                          |
-| deviceType         | String     | device type. _Standing Circulator Fan_                               |
+| deviceType         | String     | device type. _Standing Fan_                               |
 | enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
 | hubDeviceId        | String     | device's parent Hub ID                                               |
 
@@ -19,7 +19,7 @@
 | Key                 | Value Type | Description                                                                                             |
 | ------------------- | ---------- | ------------------------------------------------------------------------------------------------------- |
 | deviceId            | String     | device ID                                                                                               |
-| deviceType          | String     | device type. _Standing Circulator Fan_                                                                  |
+| deviceType          | String     | device type. _Standing Fan_                                                                             |
 | hubDeviceId         | String     | device's parent Hub ID                                                                                  |
 | mode                | String     | fan mode. direct mode: _direct_; natural mode: "natural"; sleep mode: "sleep"; ultra quiet mode: "baby" |
 | version             | String     | the current firmware version, e.g. V4.2                                                                 |
@@ -35,14 +35,14 @@
 
 ## Control Commands
 
-| deviceType               | commandType | Command           | command parameter                       | Description                                                                                                 |
-| ------------------------ | ----------- | ----------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| Standing Circulator Fan  | command     | turnOff           | default                                 | Set to OFF state                                                                                            |
-| Standing Circulator Fan  | command     | turnOn            | default                                 | Set to ON state                                                                                             |
-| Standing Circulator Fan  | command     | setNightLightMode | `off`, `1`, or `2`                      | `off`, turn off nightlight,<br />`1`, bright <br />`2`, dim                                                 |
-| Standing Circulator Fan  | command     | setWindMode       | `direct`, `natural`, `sleep`, or `baby` | Set fan mode. `direct`: direct mode. `natural`: natural mode. `sleep`: sleep mode. `baby`: ultra quiet mode |
-| Standing Circulator Fan  | command     | setWindSpeed      | `{1-100}` e.g. `10`                     | Set fan speed.1~100                                                                                         |
-| Standing Circulator Fann | command     | closeDelay        | `{1-36000}` e.g. `10`                   | Set fan close time                                                                                          |
+| deviceType   | commandType | Command           | command parameter                       | Description                                                                                                 |
+| ------------ | ----------- | ----------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Standing Fan | command     | turnOff           | default                                 | Set to OFF state                                                                                            |
+| Standing Fan | command     | turnOn            | default                                 | Set to ON state                                                                                             |
+| Standing Fan | command     | setNightLightMode | `off`, `1`, or `2`                      | `off`, turn off nightlight,<br />`1`, bright <br />`2`, dim                                                 |
+| Standing Fan | command     | setWindMode       | `direct`, `natural`, `sleep`, or `baby` | Set fan mode. `direct`: direct mode. `natural`: natural mode. `sleep`: sleep mode. `baby`: ultra quiet mode |
+| Standing Fan | command     | setWindSpeed      | `{1-100}` e.g. `10`                     | Set fan speed.1~100                                                                                         |
+| Standing Fan | command     | closeDelay        | `{1-36000}` e.g. `10`                   | Set fan close time                                                                                          |
 
 ---
 
