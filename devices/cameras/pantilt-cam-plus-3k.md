@@ -21,7 +21,26 @@
 | deviceId    | String     | device ID                            |
 | deviceType  | String     | device type. _Pan/Tilt Cam Plus 3K_  |
 | hubDeviceId | String     | device's parent Hub ID               |
-| latestImage | Object     | the latest snapshot image info. an empty object when no snapshot is available |
+| latestImage | Object     | the latest snapshot image info. contains `imageUrl` and `expireAt`. an empty object when no snapshot is available |
+
+The `latestImage` object has the following attributes.
+
+| Key      | Value Type | Description                                                                                     |
+| -------- | ---------- | ----------------------------------------------------------------------------------------------- |
+| imageUrl | String     | a pre-signed URL of the latest snapshot image (taken when the latest motion event occurred)     |
+| expireAt | Long       | the time stamp (in seconds) when the pre-signed URL expires. about 10 minutes after the request |
+
+```js
+{
+    "deviceId": "FFFFFFFFFFFF",
+    "deviceType": "Pan/Tilt Cam Plus 3K",
+    "hubDeviceId": "000000000000",
+    "latestImage": {
+        "imageUrl": "https://...",
+        "expireAt": 1789445322
+    }
+}
+```
 
 ---
 
