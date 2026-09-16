@@ -23,7 +23,8 @@
 | hubDeviceId      | String     | device's parent Hub ID                                    |
 | version          | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3 |
 | power            | String     | ON/OFF state                                              |
-| brightness       | Integer    | the brightness value, range from 1 to 100                 |
+| onlineStatus     | String     | the connection status of the device. _online_ or _offline_ |
+| brightness       | Integer    | the brightness value, range from 0 to 100                 |
 | color            | String     | the color value, RGB "255:255:255"                        |
 | colorTemperature | Integer    | the color temperature value, range from 2700 to 6500      |
 
@@ -52,6 +53,7 @@
 | deviceType       | String     | the type of the device                                                                 |
 | deviceMac        | String     | the MAC address of the device                                                          |
 | powerState       | String     | ON/OFF state                                                                           |
+| online           | Boolean    | determines if the device is connected to the internet                                  |
 | brightness       | Integer    | attributes of the context object. the brightness value, range from 1 to 100            |
 | colorTemperature | Integer    | attributes of the context object. the color temperature value, range from 2700 to 6500 |
 | color            | String     | the color value, in the format of RGB value, "255:255:255"                             |
@@ -65,6 +67,7 @@
         "deviceType": "Strip Light 3",
         "deviceMac": DEVICE_MAC_ADDR,
         "powerState": "ON",//"ON"or"OFF"
+        "online": true,
         "brightness": 10,
         "color": "255:255:0",
         "colorTemperature": 3500,

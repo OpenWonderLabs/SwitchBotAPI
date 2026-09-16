@@ -53,6 +53,7 @@
 | deviceType   | String     | the type of the device                                                                                                                                                                                          |
 | deviceMac    | String     | the MAC address of the device                                                                                                                                                                                   |
 | lockState    | String     | the state of the device, "LOCKED" stands for the motor is rotated to locking position; "UNLOCKED" stands for the motor is rotated to unlocking position; "JAMMED" stands for the motor is jammed while rotating |
+| doorState    | String     | the state of the door, e.g. "OPENED"                                                                                                                                                                            |
 | battery      | Integer    | the current battery level, `0-100`                                                                                                                                                                              |
 | timeOfSample | Long       | the time stamp when the event is sent                                                                                                                                                                           |
 
@@ -64,6 +65,7 @@
         "deviceType": "WoLock",
         "deviceMac": DEVICE_MAC_ADDR,
         "lockState": "LOCKED",
+        "doorState": "OPENED",
         "battery":100,
         "timeOfSample": 123456789
     }
