@@ -58,7 +58,7 @@
     "eventType": "changeReport",
     "eventVersion": "1",
     "context": {
-        "deviceType": "Plug Mini (EU)",
+        "deviceType": "WoPlugEU",
         "deviceMac": "94A990502B72",
         "online": false,
         "overTemperature": true,
