@@ -16,14 +16,25 @@
 
 ## Device Status
 
-| Key         | Value Type | Description                                               |
-| ----------- | ---------- | --------------------------------------------------------- |
-| deviceId    | String     | device ID                                                 |
-| deviceType  | String     | device type. _Video Doorbell_                             |
-| hubDeviceId | String     | device's parent Hub ID                                    |
-| version     | String     | the current firmware version, e.g. V2.02.033              |
-| battery     | Integer    | the current battery level                                 |
-| online      | Boolean    | the connection status of the device. _true_ or _false_    |
+| Key         | Value Type | Description                                                                                    |
+| ----------- | ---------- | ---------------------------------------------------------------------------------------------- |
+| deviceId    | String     | device ID of the doorbell (outdoor unit)                                                       |
+| deviceType  | String     | device type. _Video Doorbell_                                                                  |
+| hubDeviceId | String     | device ID of the indoor monitor (base station) that the doorbell is paired with                |
+| version     | String     | the current firmware version, e.g. V2.02.033                                                   |
+| battery     | Integer    | the current battery level                                                                      |
+| online      | Boolean    | the connection status of the device. _true_ or _false_                                         |
+
+```js
+{
+    "version": "V2.02.033",
+    "battery": 100,
+    "online": true,
+    "deviceId": "FFFFFFFFFFFF",
+    "deviceType": "Video Doorbell",
+    "hubDeviceId": "EEEEEEEEEEEE"
+}
+```
 
 ---
 
