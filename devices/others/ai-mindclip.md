@@ -147,7 +147,7 @@ The `body` object contains the following properties,
 | recordingLen     | Integer    | recording length |
 | fileSize         | Integer    | recording file size |
 | deviceID         | String     | device ID |
-| transcribeStatus | Integer    | transcription status |
+| transcribeStatus | Integer    | transcription status. `1` - In progress, `2` - Successful, `3` - Failed, `4` - Timed out, `5` - Speech-to-text failed. |
 | createdTime      | Integer    | created time in Unix milliseconds |
 | folderID         | Integer    | folder ID |
 | emoji            | String     | folder or recording emoji |
@@ -180,6 +180,68 @@ Refer to [Standard HTTP Error Codes](../../README.md#standard-http-error-codes) 
 
 ```http
 GET /v1.1/mindclip/recordings/5f3a1c2e9b7d HTTP/1.1
+Host: api.switch-bot.com
+Authorization: <token>
+sign: <signature>
+nonce: <nonce>
+t: <timestamp>
+```
+
+### Get recording transcript
+
+```http
+GET /v1.1/mindclip/recordings/{recordingId}/transcript
+```
+
+**Available for:** SwitchBot AI MindClip
+
+#### Description
+
+Gets the transcript for a specified AI MindClip recording.
+
+#### Path parameters
+
+| Parameter   | Type   | Required | Description |
+| ----------- | ------ | -------- | ----------- |
+| recordingId | String | Yes      | recording ID |
+
+#### Response
+
+The `body` object contains the following properties,
+
+| Key Name         | Value Type | Description |
+| ---------------- | ---------- | ----------- |
+| transcribeStatus | Integer    | transcription status. `1` - In progress, `2` - Successful, `3` - Failed, `4` - Timed out, `5` - Speech-to-text failed. |
+| transcribeResult | String     | transcription text |
+| speakers         | Array    | an array of identified speakers info |
+| speakers[].speaker | String | speaker ID or numbering |
+| speakers[].speakerName | String | speaker's name |
+
+```json
+{
+  "statusCode": 100,
+  "body": {
+    "transcribeStatus": 2,
+    "transcribeResult": "{\"segments\":[{\"id\":\"s1\",\"text\":\"Meetings Tomorrow\",\"speaker\":\"speaker_1\",\"start\":0,\"end\":1200}]}",
+    "speakers": [
+      {
+        "speaker": "speaker_1",
+        "speakerName": "John"
+      }
+    ]
+  },
+  "message": "success"
+}
+```
+
+#### Error codes
+
+Refer to [Standard HTTP Error Codes](../../README.md#standard-http-error-codes) for error handling.
+
+#### Sample request
+
+```http
+GET /v1.1/mindclip/recordings/5f3a1c2e9b7d/transcript HTTP/1.1
 Host: api.switch-bot.com
 Authorization: <token>
 sign: <signature>
