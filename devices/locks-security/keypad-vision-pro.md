@@ -18,11 +18,13 @@
 
 ## Device Status
 
-| Key         | Value Type | Description                      |
-| ----------- | ---------- | -------------------------------- |
-| deviceId    | String     | device ID                        |
-| deviceType  | String     | device type. _Keypad Vision Pro_ |
-| hubDeviceId | String     | device's parent Hub ID           |
+| Key         | Value Type | Description                             |
+| ----------- | ---------- | --------------------------------------- |
+| deviceId    | String     | device ID                               |
+| deviceType  | String     | device type. _Keypad Vision Pro_        |
+| hubDeviceId | String     | device's parent Hub ID                  |
+| battery     | Integer    | the current battery level, `0-100`      |
+| version     | String     | the current firmware version, e.g. V3.0 |
 
 ---
 
@@ -65,6 +67,7 @@ The following table describes the parameter object for `deleteKey`,
 | eventName    | String     | attributes of the context object. the name of the command being sent                                                         |
 | commandId    | String     | attributes of the context object. the command id                                                                             |
 | result       | String     | attributes of the context object. the result of the command. _success_, _failed_, or _timeout_. timeout duration is 1 minute |
+| battery      | Integer    | attributes of the context object. the current battery level, `0-100`                                                         |
 | timeOfSample | Long       | the time stamp when the event is sent                                                                                        |
 
 ##### Create a passcode
