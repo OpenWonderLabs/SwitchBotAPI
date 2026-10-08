@@ -24,8 +24,9 @@
 | version      | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3                                                |
 | power        | String     | ON/OFF state                                                                                             |
 | onlineStatus | String     | the connection status of the device. _online_ or _offline_                                               |
-| brightness   | Integer    | the brightness value, range from 1 to 100                                                                |
+| brightness   | Integer    | the brightness value, range from 0 to 100                                                                |
 | color        | String     | the color value, RGB "255:255:255"                                                                       |
+| colorTemperature | Integer | the color temperature value                                                                             |
 
 ---
 
@@ -51,8 +52,10 @@
 | deviceType   | String     | attributes of the context object. the type of the device                    |
 | deviceMac    | String     | attributes of the context object. the MAC address of the device             |
 | powerState   | String     | attributes of the context object. ON/OFF state                              |
+| online       | Boolean    | attributes of the context object. determines if the device is connected to the internet |
 | brightness   | Integer    | attributes of the context object. the brightness value, range from 1 to 100 |
 | color        | String     | the color value, in the format of RGB value, "255:255:255"                  |
+| colorTemperature | Integer | the color temperature value                                                |
 | timeOfSample | Long       | attributes of the context object. the time stamp when the event is sent     |
 
 ```js
@@ -60,11 +63,13 @@
    "eventType": "changeReport",
     "eventVersion": "1",
     "context": {
-        "deviceType": "RGBICWW Strip Light",
+        "deviceType": "RGBIC Wire Neon Rope Light",
         "deviceMac": DEVICE_MAC_ADDR,
         "powerState": "ON",//"ON"or"OFF"
+        "online": true,
         "brightness": 10,
         "color": "255:255:0",
+        "colorTemperature": 4410,
         "timeOfSample": 123456789
     }
 }

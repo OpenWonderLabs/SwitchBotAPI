@@ -38,6 +38,7 @@
 | deviceType     | String     | the type of the device                                                                                                                         |
 | deviceMac      | String     | the MAC address of the device                                                                                                                  |
 | detectionState | String     | the motion state of the device, "DETECTED" stands for motion is detected; "NOT_DETECTED" stands for motion has not been detected for some time |
+| brightness     | String     | the ambient brightness picked up by the sensor. _bright_ or _dim_                                                                              |
 | battery        | Integer    | the current battery level, `0-100`                                                                                                             |
 | timeOfSample   | Long       | the time stamp when the event is sent                                                                                                          |
 
@@ -49,6 +50,7 @@
         "deviceType": "WoPresence",
         "deviceMac": DEVICE_MAC_ADDR,
         "detectionState": "NOT_DETECTED",
+        "brightness": "dim",
         "battery":100,
         "timeOfSample": 123456789
     }

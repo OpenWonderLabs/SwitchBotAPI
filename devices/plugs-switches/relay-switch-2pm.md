@@ -25,7 +25,7 @@
 | switch2Status          | Integer    | the current switch2 state. `0`, off; `1`, on                                         |
 | switch1Voltage         | Float      | the switch1 current voltage, measured in Volt                                        |
 | switch2Voltage         | Float      | the switch2 current voltage, measured in Volt                                        |
-| version                | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3                            |
+| version                | String     | the current firmware version, e.g. V2.1                                              |
 | switch1Power           | Float      | the switch1 current power, measured in Watts                                         |
 | switch2Power           | Float      | the switch2 current power, measured in Watts                                         |
 | switch1UsedElectricity | Integer    | switch1 daily power consumption, measured in watt-minutes                            |
@@ -61,11 +61,13 @@
 | deviceType   | String     | the type of the device                                                                                  |
 | deviceMac    | String     | the MAC address of the device                                                                           |
 | online       | Boolean    | determines if the device is connected to the internet or disconnected                                   |
-| switchStatus | Integer    | the switch state of the device. `1`, on; `0`, off                                                       |
+| switch1Status | Integer   | the switch1 state of the device. `1`, on; `0`, off. only included when the state of switch1 has changed |
+| switch2Status | Integer   | the switch2 state of the device. `1`, on; `0`, off. only included when the state of switch2 has changed |
 | overload     | Boolean    | determines if the device is power overloaded or not                                                     |
 | calibrate    | Boolean    | determines if the open position and the close position of a device have been properly calibrated or not |
 | position     | Integer    | determine the percentage of the device that is open or closed                                           |
 | isStuck      | Boolean    | determine if the device is stuck                                                                        |
+| timeOfSample | Long       | the time stamp when the event is sent                                                                   |
 
 ```js
 {
@@ -82,7 +84,8 @@
         "switch2Overload": true,
         "calibrate": true,
         "position": 0,
-        "isStuck": true
+        "isStuck": true,
+        "timeOfSample": 123456789
     }
 }
 ```

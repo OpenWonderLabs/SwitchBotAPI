@@ -22,14 +22,15 @@
 
 | Key         | Value Type | Description                                                |
 | ----------- | ---------- | ---------------------------------------------------------- |
-| deviceId    | String     | device ID                                                  |
-| deviceType  | String     | device type. _Lock Ultra_                                  |
-| hubDeviceId | String     | device's parent Hub ID                                     |
-| battery     | Integer    | the current battery level, 0-100              |
-| version     | String     | the current firmware version, e.g. V6.3       |
-| lockState   | String     | jammed, unlock, lock, latchBoltLocked         |
-| doorState   | String     | open, close                                   |
-| calibrate   | Boolean    | determines if Lock has been calibrated or not |
+| deviceId     | String     | device ID                                                  |
+| deviceType   | String     | device type. _Smart Lock Ultra_                            |
+| hubDeviceId  | String     | device's parent Hub ID                                     |
+| battery      | Integer    | the current battery level, 0-100              |
+| version      | String     | the current firmware version, e.g. V6.3       |
+| onlineStatus | String     | the online status of the device. _online_ or _offline_ |
+| lockState    | String     | jammed, unlocked, locked, latchBoltLocked     |
+| doorState    | String     | open, closed                                  |
+| calibrate    | Boolean    | determines if Lock has been calibrated or not |
 
 ---
 
@@ -53,6 +54,7 @@
 | deviceType   | String     | the type of the device                                                                                                                                                                                          |
 | deviceMac    | String     | the MAC address of the device                                                                                                                                                                                   |
 | lockState    | String     | the state of the device, "LOCKED" stands for the motor is rotated to locking position; "UNLOCKED" stands for the motor is rotated to unlocking position; "JAMMED" stands for the motor is jammed while rotating |
+| doorState    | String     | the state of the door, "OPENED" or "CLOSED"                                                                                                                                                                     |
 | battery      | Integer    | the battery level                                                                                                                                                                                               |
 | timeOfSample | Long       | the time stamp when the event is sent                                                                                                                                                                           |
 
@@ -61,9 +63,10 @@
     "eventType": "changeReport",
     "eventVersion": "1",
     "context": {
-        "deviceType": "Smart Lock Ultra",
+        "deviceType": "Lock Ultra",
         "deviceMac": DEVICE_MAC_ADDR,
         "lockState": "LOCKED",
+        "doorState": "CLOSED",
         "battery": 90,
         "timeOfSample": 123456789
     }

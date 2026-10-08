@@ -20,7 +20,8 @@
 | ---------------- | ---------- | -------------------------------------------------------------------------------------------------------- |
 | deviceId         | String     | device ID                                                                                                |
 | deviceType       | String     | device type. _Plug Mini (JP)_                                                                            |
-| hubDeviceId      | String     | device's parent Hub ID. _000000000000_ when the device itself is a Hub or it is connected through Wi-Fi. |
+| hubDeviceId      | String     | device's parent Hub ID, equivalent to device ID when the device is connected through Wi-Fi               |
+| power            | String     | ON/OFF state                                                                                             |
 | voltage          | Float      | the voltage of the device, measured in Volt                                                              |
 | version          | String     | the current BLE and Wi-Fi firmware version, e.g. V3.1-6.3                                                |
 | weight           | Float      | the power consumed in a day, measured in Watts                                                           |
@@ -49,6 +50,7 @@
 | deviceType   | String     | the type of the device                               |
 | deviceMac    | String     | the MAC address of the device                        |
 | powerState   | String     | the current power state of the device, "ON" or "OFF" |
+| online       | Boolean    | determines if the device is connected to the internet |
 | timeOfSample | Long       | the time stamp when the event is sent                |
 
 ```js
@@ -59,6 +61,7 @@
         "deviceType": "WoPlugJP",
         "deviceMac": DEVICE_MAC_ADDR,
         "powerState": "ON",
+        "online": true,
         "timeOfSample": 123456789
     }
 }

@@ -52,6 +52,7 @@
 | deviceType       | String     | the type of the device                                     |
 | deviceMac        | String     | the MAC address of the device                              |
 | powerState       | String     | the current power state of the device, "ON" or "OFF"       |
+| online           | Boolean    | determines if the device is connected to the internet      |
 | brightness       | Integer    | the brightness value, range from 1 to 100                  |
 | color            | String     | the color value, in the format of RGB value, "255:255:255" |
 | colorTemperature | Integer    | the color temperature value, range from 2700 to 6500       |
@@ -65,6 +66,7 @@
         "deviceType": "WoBulb",
         "deviceMac": DEVICE_MAC_ADDR,
         "powerState": "ON",
+        "online": true,
         "brightness": 10,
         "color":"255:245:235",
         "colorTemperature":3500,
