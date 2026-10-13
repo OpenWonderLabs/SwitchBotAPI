@@ -618,6 +618,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Battery Circulator Fan 2 Pro         | Short for SwitchBot Battery Circulator Fan 2 Pro             | W9502500, W9502501, W9502502, and W9502503    |              |
 | Kata Friends                         | Short for SwitchBot Kata Friends                             | W7912300                                      |              |
 | AI MindClip                          | Short for SwitchBot AI MindClip                              | W6902000 and W6902003                         |              |
+| RGBICWW Light Bars                   | Short for SwitchBot RGBICWW Light Bars                       | W107021000                                    |              |
 
 ### `Legacy` Cloud Services
 
@@ -779,11 +780,12 @@ Physical devices refer to the following SwitchBot products,
 - Lock Pro Matter Enabled
 - Lock Vision
 - Lock Vision Pro
-- `new` [Permanent Outdoor Lights](devices/lighting/permanent-outdoor-lights.md)
-- `new` [RGBICWW Ceiling Light](devices/lighting/rgbicww-ceiling-light.md)
-- `new` [Battery Circulator Fan 2 Pro](devices/climate-control/battery-circulator-fan-2-pro.md)
-- `new` [Kata Friends](devices/others/kata-friends.md)
-- `new` [AI MindClip](devices/others/ai-mindclip.md)
+- Permanent Outdoor Lights
+- RGBICWW Ceiling Light
+- Battery Circulator Fan 2 Pro
+- Kata Friends
+- AI MindClip
+- `new` [RGBICWW Light Bars](devices/lighting/rgbicww-light-bars.md)
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, Hub 3 or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
 
@@ -1629,6 +1631,7 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | [Strip Light 3](devices/lighting/strip-light-3.md)                           | ✓    | ✓      | ✓       | ✓       |
 | [Permanent Outdoor Lights](devices/lighting/permanent-outdoor-lights.md)      | ✓    | ✓      | ✓       | ✓       |
 | [RGBICWW Ceiling Light](devices/lighting/rgbicww-ceiling-light.md)            | ✓    | ✓      | ✓       | ✓       |
+| [RGBICWW Light Bars](devices/lighting/rgbicww-light-bars.md)                 | ✓    | ✓      | ✓       | ✓       |
 
 ### Robot Vacuum
 
