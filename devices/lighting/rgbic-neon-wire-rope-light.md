@@ -38,6 +38,7 @@
 | RGBIC Neon Wire Rope Light | command     | toggle        | default                     | toggle state        |
 | RGBIC Neon Wire Rope Light | command     | setBrightness | `{0-100}`                   | set brightness      |
 | RGBIC Neon Wire Rope Light | command     | setColor      | `"{0-255}:{0-255}:{0-255}"` | set RGB color value |
+| RGBIC Neon Wire Rope Light | command | setLightEffect | `{"effectId": effect_id_int}`<br>`effect_id_int`: Integer, required, `0–25`<br>`0`: Romance<br>`1`: Vitality<br>`2`: Heartthrob<br>`3`: Party<br>`4`: Dynamic<br>`5`: Mystery<br>`6`: Lightning<br>`7`: Rock<br>`8`: Starlight<br>`9`: Valentine's Day<br>`10`: Dream<br>`11`: Alarm<br>`12`: Fireworks<br>`13`: Waves<br>`14`: Christmas<br>`15`: Rainbow<br>`16`: Game<br>`17`: Halloween<br>`18`: Meditation<br>`19`: Starlit Sky<br>`20`: Sleep<br>`21`: Film<br>`22`: Sunrise<br>`23`: Sunset<br>`24`: New Year<br>`25`: Cherry Blossom | set a preset light effect. Example: `{"effectId": 1}` selects Vitality. |
 
 ---
 

@@ -49,7 +49,7 @@
 | deviceType      | String     | the type of the device                                                  |
 | deviceMac       | String     | the MAC address of the device                                           |
 | online          | Boolean    | determines if the device is connected to the internet or disconnected   |
-| overTemperature | Boolean    | determines if the working temperature is over 100 degree celcius or not |
+| overTemperature | Boolean    | determines if the working temperature is over 100 degree celsius or not |
 | overload        | Boolean    | determines if the device is power overloaded or not                     |
 | switchStatus    | Integer    | the switch state of the device. `1`, on; `0`, off                       |
 
@@ -58,7 +58,7 @@
     "eventType": "changeReport",
     "eventVersion": "1",
     "context": {
-        "deviceType": "WoPlugEU",
+        "deviceType": "Plug Mini (EU)",
         "deviceMac": "94A990502B72",
         "online": false,
         "overTemperature": true,
