@@ -6,24 +6,38 @@ SwitchBot Outdoor Pan/Tilt Cam 3K. Note: the `deviceType` string used by the API
 
 ## Device List Information
 
-| Key                | Value Type | Description                                                                                              |
-| ------------------ | ---------- | -------------------------------------------------------------------------------------------------------- |
-| deviceId           | String     | device ID                                                                                                |
-| deviceName         | String     | device name                                                                                              |
+| Key                | Value Type | Description                                                          |
+| ------------------ | ---------- | -------------------------------------------------------------------- |
+| deviceId           | String     | device ID                                                            |
+| deviceName         | String     | device name                                                          |
 | deviceType         | String     | device type. _Outdoor PTC 3K_. Note: this key has been observed to be missing in actual device list responses. |
-| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device                                     |
-| hubDeviceId        | String     | device's parent Hub ID                                                                                   |
+| enableCloudService | Boolean    | determines if Cloud Service is enabled or not for the current device |
+| hubDeviceId        | String     | device's parent Hub ID                                               |
 
 ---
 
 ## Device Status
 
-| Key         | Value Type | Description                          |
-| ----------- | ---------- | ------------------------------------ |
-| deviceId    | String     | device ID                            |
-| deviceType  | String     | device type. _Outdoor PTC 3K_        |
-| hubDeviceId | String     | device's parent Hub ID               |
-| latestImage | Object     | the latest snapshot image info. an empty object when no snapshot is available |
+| Key                  | Value Type | Description                                                                              |
+| -------------------- | ---------- | ---------------------------------------------------------------------------------------- |
+| deviceId             | String     | device ID                                                                                |
+| deviceType           | String     | device type. _Outdoor PTC 3K_                                                            |
+| hubDeviceId          | String     | device's parent Hub ID                                                                   |
+| latestImage          | Object     | the latest image captured by the camera. an empty object `{}` when no image is available |
+| latestImage.imageUrl | String     | the URL of the image                                                                     |
+| latestImage.expireAt | Long       | the expiration time of the image URL, Unix timestamp in seconds                          |
+
+```js
+{
+    "deviceId": "112233445566",
+    "deviceType": "Outdoor PTC 3K",
+    "hubDeviceId": "000000000000",
+    "latestImage": {
+        "imageUrl": "https://example.com/camera.jpg",
+        "expireAt": 1800000000
+    }
+}
+```
 
 ---
 

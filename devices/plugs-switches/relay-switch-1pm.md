@@ -53,7 +53,7 @@
 | online          | Boolean    | determines if the device is connected to the internet or disconnected   |
 | switchStatus    | Integer    | the switch state of the device. `1`, on; `0`, off                       |
 | overload        | Boolean    | determines if the device is power overloaded or not                     |
-| overTemperature | Boolean    | determines if the working temperature is over 100 degree celcius or not |
+| overTemperature | Boolean    | determines if the working temperature is over 100 degree celsius or not |
 | timeOfSample    | Long       | the time stamp when the event is sent                                   |
 
 ```js
