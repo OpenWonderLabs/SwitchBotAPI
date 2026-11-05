@@ -30,11 +30,13 @@
 
 ## Device Status
 
-| Key         | Value Type | Description                 |
-| ----------- | ---------- | --------------------------- |
-| deviceId    | String     | device ID                   |
-| deviceType  | String     | device type. _Keypad Touch_ |
-| hubDeviceId | String     | device's parent Hub ID      |
+| Key         | Value Type | Description                          |
+| ----------- | ---------- | ------------------------------------ |
+| deviceId    | String     | device ID                            |
+| deviceType  | String     | device type. _Keypad Touch_          |
+| hubDeviceId | String     | device's parent Hub ID               |
+| battery     | Integer    | the current battery level, `0-100`   |
+| version     | String     | the current firmware version, e.g. V3.1 |
 
 ---
 
@@ -76,7 +78,9 @@ The following table describes the parameter object for `deleteKey`,
 | deviceMac    | String     | attributes of the context object. the MAC address of the device                                                              |
 | eventName    | String     | attributes of the context object. the name of the command being sent                                                         |
 | commandId    | String     | attributes of the context object. the command id                                                                             |
+| keyName      | String     | attributes of the context object. the name of the passcode                                                                   |
 | result       | String     | attributes of the context object. the result of the command. _success_, _failed_, or _timeout_. timeout duration is 1 minute |
+| battery      | Integer    | attributes of the context object. the current battery level, `0-100`                                                         |
 | timeOfSample | Long       | attributes of the context object. the time stamp when the event is sent                                                      |
 
 ##### Create a passcode
@@ -90,7 +94,9 @@ The following table describes the parameter object for `deleteKey`,
         "deviceMac": DEVICE_MAC_ADDR,
         "eventName": "createKey",
         "commandId": "CMD-1663558451952-01",
+        "keyName": "passcode name",
         "result": "success",
+        "battery": 84,
         "timeOfSample": 123456789
     }
 }
@@ -105,9 +111,11 @@ The following table describes the parameter object for `deleteKey`,
     "context": {
         "deviceType": "WoKeypadTouch",
         "deviceMac": DEVICE_MAC_ADDR,
-        "eventName": "deleteKey ",
+        "eventName": "deleteKey",
         "commandId": "CMD-1663558451952-01",
+        "keyName": "passcode name",
         "result": "success",
+        "battery": 84,
         "timeOfSample": 123456789
     }
 }

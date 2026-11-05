@@ -24,7 +24,7 @@
 | battery     | Integer    | Four-segment battery level division,`<10%, shown as 10;10%~20%, shown as 20;20%~60%, shown as 60;≥60%, shown as 100` |
 | version     | String     | the current firmware version, e.g. V4.2                                                                              |
 | lightLevel  | Integer    | the level of illuminance of the ambience light, 1~20                                                                 |
-| Detected    | Boolean    | determines if human is detected                                                                                      |
+| detected    | Boolean    | determines if human presence is detected                                                                             |
 
 ---
 
@@ -37,7 +37,7 @@
 | context        | Object     | the detail info of the event                                                                                                                   |
 | deviceType     | String     | the type of the device                                                                                                                         |
 | deviceMac      | String     | the MAC address of the device                                                                                                                  |
-| detectionState | String     | the motion state of the device, "DETECTED" stands for motion is detected; "NOT_DETECTED" stands for motion has not been detected for some time |
+| detectionState | String     | the presence state of the device, "DETECTED" stands for human presence is detected; "NOT_DETECTED" stands for human presence has not been detected for some time |
 | battery        | Integer    | the current battery level, `0-100`                                                                                                             |
 | lightLevel     | Integer    | the level of illuminance of the ambience light, 1~20                                                                                           |
 | timeOfSample   | Long       | the time stamp when the event is sent                                                                                                          |
@@ -47,7 +47,7 @@
     "eventType": "changeReport",
     "eventVersion": "1",
     "context": {
-        "deviceType": "WoContact",
+        "deviceType": "Presence Sensor",
         "deviceMac": DEVICE_MAC_ADDR,
         "detectionState": "NOT_DETECTED",
         "battery":100,

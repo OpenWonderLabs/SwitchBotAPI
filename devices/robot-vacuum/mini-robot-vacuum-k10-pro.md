@@ -60,7 +60,7 @@
     "context": {
         "deviceType": "WoSweeperMiniPro",
         "deviceMac": DEVICE_MAC_ADDR,
-        "workingStatus"："StandBy",
+        "workingStatus": "StandBy",
         "onlineStatus": "online",
         "battery": 100,
         "timeOfSample": 123456789

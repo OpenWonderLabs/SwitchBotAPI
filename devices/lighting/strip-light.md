@@ -51,6 +51,7 @@
 | deviceType   | String     | the type of the device                                     |
 | deviceMac    | String     | the MAC address of the device                              |
 | powerState   | String     | the current power state of the device, "ON" or "OFF"       |
+| online       | Boolean    | determines if the device is connected to the internet      |
 | brightness   | Integer    | the brightness value, range from 1 to 100                  |
 | color        | String     | the color value, in the format of RGB value, "255:255:255" |
 | timeOfSample | Long       | the time stamp when the event is sent                      |
@@ -63,6 +64,7 @@
         "deviceType": "WoStrip",
         "deviceMac": DEVICE_MAC_ADDR,
         "powerState": "ON",
+        "online": true,
         "brightness": 10,
         "color": "255:245:235",
         "timeOfSample": 123456789

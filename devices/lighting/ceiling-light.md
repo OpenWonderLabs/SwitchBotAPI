@@ -51,6 +51,7 @@
 | deviceType       | String     | attributes of the context object. the type of the device                               |
 | deviceMac        | String     | attributes of the context object. the MAC address of the device                        |
 | powerState       | String     | attributes of the context object. ON/OFF state                                         |
+| online           | Boolean    | attributes of the context object. determines if the device is connected to the internet |
 | brightness       | Integer    | attributes of the context object. the brightness value, range from 1 to 100            |
 | colorTemperature | Integer    | attributes of the context object. the color temperature value, range from 2700 to 6500 |
 | timeOfSample     | Long       | attributes of the context object. the time stamp when the event is sent                |
@@ -63,6 +64,7 @@
         "deviceType": "WoCeiling",
         "deviceMac": DEVICE_MAC_ADDR,
         "powerState": "ON",
+        "online": true,
         "brightness": 10,
         "colorTemperature": 3500,
         "timeOfSample": 123456789

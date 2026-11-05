@@ -31,7 +31,7 @@
 | moving        | Boolean    | determines if a Curtain is moving or not                                                                           |
 | battery       | Integer    | Four-segment battery level division,`<10%, shown as 5;10%~20%, shown as 15;20%~60%, shown as 40;≥60%, shown as 80` |
 | version       | String     | the current firmware version, e.g. V4.2                                                                            |
-| slidePosition | String     | the percentage of the distance between the calibrated open position and closed position that Curtain has traversed |
+| slidePosition | Integer    | the percentage of the distance between the calibrated open position and closed position that Curtain has traversed |
 
 ---
 
