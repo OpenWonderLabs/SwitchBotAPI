@@ -619,6 +619,12 @@ The following table provides definitions to the terms to be frequently mentioned
 | Kata Friends                         | Short for SwitchBot Kata Friends                             | W7912300                                      |              |
 | AI MindClip                          | Short for SwitchBot AI MindClip                              | W6902000 and W6902003                         |              |
 | RGBICWW Light Bars                   | Short for SwitchBot RGBICWW Light Bars                       | W107021000                                    |              |
+| Lock Ultra Max                       | Short for SwitchBot Lock Ultra Max                           | W104000000                                    |              |
+| K11+ Pro                             | Short for SwitchBot Robot Vacuum K11+ Pro                    | W3004100                                      |              |
+| Curtain 4                            | Short for SwitchBot Curtain 4 Urail                          | W9700000                                      |              |
+| AI Art Frame 2                       | Short for SwitchBot AI Art Frame 2                           | W8502000 and W8502010 and W8502020            |              |
+| Outdoor Pan/Tilt Cam 3K              | Short for SwitchBot Outdoor Pan/Tilt Cam 3K                  | W1156000                                      |              |
+| Solar Pan/Tilt Cam 2K                | Short for SwitchBot Solar Pan/Tilt Cam 2K                    | W1099001                                      |              |
 
 ### `Legacy` Cloud Services
 
@@ -786,6 +792,12 @@ Physical devices refer to the following SwitchBot products,
 - Kata Friends
 - AI MindClip
 - `new` [RGBICWW Light Bars](devices/lighting/rgbicww-light-bars.md)
+- `new` [Lock Ultra Max](devices/locks-security/lock-ultra-max.md)
+- `new` [Robot Vacuum K11+ Pro](devices/robot-vacuum/robot-vacuum-k11-pro.md)
+- `new` [Curtain 4](devices/curtains-blinds/curtain-4.md)
+- `new` [AI Art Frame 2](devices/others/ai-art-frame-2.md)
+- `new` [Outdoor Pan/Tilt Cam 3K](devices/cameras/outdoor-pantilt-cam-3k.md)
+- `new` [Solar Pan/Tilt Cam 2K](devices/cameras/solar-pantilt-cam-2k.md)
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, Hub 3 or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
 
@@ -1587,6 +1599,7 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | [Lock Pro](devices/locks-security/lock-pro.md)                               | ✓    | ✓      | ✓       | ✓       |
 | [Lock Pro Matter Enabled](devices/locks-security/lock-pro-matter-enabled.md) | ✓    | ✓      | ✓       | ✓       |
 | [Lock Ultra](devices/locks-security/lock-ultra.md)                           | ✓    | ✓      | ✓       | ✓       |
+| [Lock Ultra Max](devices/locks-security/lock-ultra-max.md)                   | ✓    | ✓      | ✓       | ✓       |
 | [Lock Vision](devices/locks-security/lock-vision.md)                         | ✓    | ✓      | ✓       | ✓       |
 | [Lock Vision Pro](devices/locks-security/lock-vision-pro.md)                 | ✓    | ✓      | ✓       | ✓       |
 | [Video Doorbell](devices/cameras/video-doorbell.md)                          | ✓    | ✓      | ✓       | ✓       |
@@ -1598,6 +1611,7 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | [Blind Tilt](devices/curtains-blinds/blind-tilt.md)     | ✓    | ✓      | ✓       | -       |
 | [Curtain](devices/curtains-blinds/curtain.md)           | ✓    | ✓      | ✓       | ✓       |
 | [Curtain 3](devices/curtains-blinds/curtain-3.md)       | ✓    | ✓      | ✓       | ✓       |
+| [Curtain 4](devices/curtains-blinds/curtain-4.md)       | ✓    | ✓      | ✓       | ✓       |
 | [Roller Shade](devices/curtains-blinds/roller-shade.md) | ✓    | ✓      | ✓       | ✓       |
 
 ### Sensors
@@ -1629,9 +1643,9 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | [RGBICWW Strip Light](devices/lighting/rgbicww-strip-light.md)               | ✓    | ✓      | ✓       | ✓       |
 | [Strip Light](devices/lighting/strip-light.md)                               | ✓    | ✓      | ✓       | ✓       |
 | [Strip Light 3](devices/lighting/strip-light-3.md)                           | ✓    | ✓      | ✓       | ✓       |
-| [Permanent Outdoor Lights](devices/lighting/permanent-outdoor-lights.md)      | ✓    | ✓      | ✓       | ✓       |
-| [RGBICWW Ceiling Light](devices/lighting/rgbicww-ceiling-light.md)            | ✓    | ✓      | ✓       | ✓       |
 | [RGBICWW Light Bars](devices/lighting/rgbicww-light-bars.md)                 | ✓    | ✓      | ✓       | ✓       |
+| [Permanent Outdoor Lights](devices/lighting/permanent-outdoor-lights.md)     | ✓    | ✓      | ✓       | ✓       |
+| [RGBICWW Ceiling Light](devices/lighting/rgbicww-ceiling-light.md)           | ✓    | ✓      | ✓       | ✓       |
 
 ### Robot Vacuum
 
@@ -1646,6 +1660,7 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | [Robot Vacuum Cleaner S1](devices/robot-vacuum/robot-vacuum-cleaner-s1.md)           | ✓    | ✓      | ✓       | ✓       |
 | [Robot Vacuum Cleaner S1 Plus](devices/robot-vacuum/robot-vacuum-cleaner-s1-plus.md) | ✓    | ✓      | ✓       | ✓       |
 | [Robot Vacuum K11+](devices/robot-vacuum/robot-vacuum-k11.md)                        | ✓    | ✓      | ✓       | ✓       |
+| [Robot Vacuum K11+ Pro](devices/robot-vacuum/robot-vacuum-k11-pro.md)                | ✓    | ✓      | ✓       | ✓       |
 
 ### Climate Control
 
@@ -1687,6 +1702,8 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | [Pan/Tilt Cam 2K](devices/cameras/pantilt-cam-2k.md)           | ✓    | -      | -       | -       |
 | [Pan/Tilt Cam Plus 2K](devices/cameras/pantilt-cam-plus-2k.md) | ✓    | -      | -       | -       |
 | [Pan/Tilt Cam Plus 3K](devices/cameras/pantilt-cam-plus-3k.md) | ✓    | -      | -       | -       |
+| [Outdoor Pan/Tilt Cam 3K](devices/cameras/outdoor-pantilt-cam-3k.md) | ✓    | ✓      | -       | -       |
+| [Solar Pan/Tilt Cam 2K](devices/cameras/solar-pantilt-cam-2k.md)     | ✓    | ✓      | ✓       | ✓       |
 
 ### Others
 
@@ -1695,6 +1712,7 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | [Bot](devices/others/bot.md)                                                         | ✓    | ✓      | ✓       | ✓       |
 | [Remote](devices/others/remote.md)                                                   | ✓    | -      | -       | -       |
 | [AI Art Frame](devices/others/ai-art-frame.md)                                       | ✓    | ✓      | ✓       | ✓       |
+| [AI Art Frame 2](devices/others/ai-art-frame-2.md)                                   | ✓    | ✓      | ✓       | ✓       |
 | [Weather Station](devices/others/weather-station.md)                                 | ✓    | ✓      | ✓       | ✓       |
 | [Virtual infrared remote devices](devices/others/virtual-infrared-remote-devices.md) | ✓    | -      | ✓       | -       |
 | [Kata Friends](devices/others/kata-friends.md)                                      | ✓    | ✓      | ✓       | ✓       |
