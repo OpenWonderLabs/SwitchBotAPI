@@ -562,8 +562,8 @@ The following table provides definitions to the terms to be frequently mentioned
 | Lock                                 | Short for SwitchBot Lock                                  | W1601700                           |                                   |
 | Lock Pro                             | Short for SwitchBot Lock Pro                              | W3500000                           |                                   |
 | Lock Pro Matter Enabled              | Short for SwitchBot Lock Pro Matter Enabled               | W8102000                           |                                   |
-| Lock Vision                          | Short for SwitchBot Lock Vision                           | W1141000                           |                                   |
-| Lock Vision Pro                      | Short for SwitchBot Lock Vision Pro                       | W1141001                           |                                   |
+| Lock Vision                          | Short for SwitchBot Lock Vision                           | W1141000                           | Only available in North America |
+| Lock Vision Pro                      | Short for SwitchBot Lock Vision Pro                       | W1141001                           | Only available in North America |
 | Keypad                               | Short for SwitchBot Lock                                  | W2500010                           |                                   |
 | Keypad Touch                         | Short for SwitchBot Lock                                  | W2500020                           |                                   |
 | S1                                   | Short for SwitchBot Robot Vacuum Cleaner S1               | W3011000                           |                                   |
@@ -600,7 +600,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | Garage Door Opener                   | Short for SwitchBot Garage Door Opener                    | W5502330                           |                                   |
 | Floor Lamp                           | Short for SwitchBot RGBWW Floor Lamp                      | W1702100                           |                                   |
 | Strip Light 3                        | Short for SwitchBot RGBWW Strip Light 3                   | W1702110                           |                                   |
-| Lock Lite                            | Short for SwitchBot Lock Lite                             | W5110000                           |                                   |
+| Lock Lite                            | Short for SwitchBot Lock Lite                             | W5110000                           | Currently only available in Japan |
 | Video Doorbell                       | Short for SwitchBot Video Doorbell                        | W6702000                           |                                   |
 | Keypad Vision                        | Short for SwitchBot Keypad Vision                         | W5600003                           |                                   |
 | Keypad Vision Pro                    | Short for SwitchBot Keypad Vision Pro                     | W5600009                           |                                   |
@@ -611,7 +611,7 @@ The following table provides definitions to the terms to be frequently mentioned
 | AI Hub                               | Short for SwitchBot AI Hub                                | W8002100                           |                                   |
 | Candle Warmer Lamp                   | Short for SwitchBot Candle Warmer Lamp                    | W8302100 and W8302101              |                                   |
 | Home Climate Panel                   | Short for SwitchBot Home Climate Panel                    | W7400000                           |                                   |
-| Smart Radiator Thermostat            | Short for SwitchBot Smart Radiator Thermostat             | W7830000                           |                                   |
+| Smart Radiator Thermostat            | Short for SwitchBot Smart Radiator Thermostat             | W7830000                           | Only available in Europe |
 | AI Art Frame                         | Short for SwitchBot AI Art Frame                          | W8402000 and W8402010 and W8402020 |                                   |
 | Permanent Outdoor Lights             | Short for SwitchBot Permanent Outdoor Lights                 | W1702120                                      |              |
 | RGBICWW Ceiling Light                | Short for SwitchBot RGBICWW Ceiling Light                    | W10802300 and W10802310                       |              |
@@ -619,12 +619,17 @@ The following table provides definitions to the terms to be frequently mentioned
 | Kata Friends                         | Short for SwitchBot Kata Friends                             | W7912300                                      |              |
 | AI MindClip                          | Short for SwitchBot AI MindClip                              | W6902000 and W6902003                         |              |
 | RGBICWW Light Bars                   | Short for SwitchBot RGBICWW Light Bars                       | W107021000                                    |              |
-| Lock Ultra Max                       | Short for SwitchBot Lock Ultra Max                           | W104000000                                    |              |
+| Lock Ultra Max                       | Short for SwitchBot Lock Ultra Max                           | W104000000<br />W110000000                    | Only available in Japan and in Europe |
 | K11+ Pro                             | Short for SwitchBot Robot Vacuum K11+ Pro                    | W3004100                                      |              |
 | Curtain 4                            | Short for SwitchBot Curtain 4 Urail                          | W9700000                                      |              |
 | AI Art Frame 2                       | Short for SwitchBot AI Art Frame 2                           | W8502000 and W8502010 and W8502020            |              |
 | Outdoor Pan/Tilt Cam 3K              | Short for SwitchBot Outdoor Pan/Tilt Cam 3K                  | W1156000                                      |              |
 | Solar Pan/Tilt Cam 2K                | Short for SwitchBot Solar Pan/Tilt Cam 2K                    | W1099001                                      |              |
+| Floor Cleaning Robot S30             | Short for SwitchBot Floor Cleaning Robot S30                 | W12002000, W12000000, and W12000300           |              |
+| Hub 4                                | Short for SwitchBot Hub 4                                    | W108021000                                    |              |
+| Outdoor Plug (EU)                    | Short for SwitchBot Outdoor Plug (EU)                        | W103323000                                    | Only available in Europe |
+| Plug Mini (IT)                       | Short for SwitchBot Plug Mini (IT)                           | W102323010                                    | Only available in Europe |
+| Vision Doorbell                      | Short for SwitchBot Vision Doorbell                          | W6702000                                      |              |
 
 ### `Legacy` Cloud Services
 
@@ -791,13 +796,18 @@ Physical devices refer to the following SwitchBot products,
 - Battery Circulator Fan 2 Pro
 - Kata Friends
 - AI MindClip
-- `new` [RGBICWW Light Bars](devices/lighting/rgbicww-light-bars.md)
-- `new` [Lock Ultra Max](devices/locks-security/lock-ultra-max.md)
-- `new` [Robot Vacuum K11+ Pro](devices/robot-vacuum/robot-vacuum-k11-pro.md)
-- `new` [Curtain 4](devices/curtains-blinds/curtain-4.md)
-- `new` [AI Art Frame 2](devices/others/ai-art-frame-2.md)
-- `new` [Outdoor Pan/Tilt Cam 3K](devices/cameras/outdoor-pantilt-cam-3k.md)
-- `new` [Solar Pan/Tilt Cam 2K](devices/cameras/solar-pantilt-cam-2k.md)
+- RGBICWW Light Bars
+- Lock Ultra Max
+- Robot Vacuum K11+ Pro
+- Curtain 4
+- AI Art Frame 2
+- Outdoor Pan/Tilt Cam 3K
+- Solar Pan/Tilt Cam 2K
+- `new` [Floor Cleaning Robot S30](devices/robot-vacuum/floor-cleaning-robot-s30.md)
+- `new` [Hub 4](devices/hubs/hub-4.md)
+- `new` [Outdoor Plug (EU)](devices/plugs-switches/outdoor-plug-eu.md)
+- `new` [Plug Mini (IT)](devices/plugs-switches/plug-mini-it.md)
+- `new` [Vision Doorbell](devices/cameras/vision-doorbell.md)
 
 Virtual infrared remote devices refer to virtual devices that are used to simulate infrared signals of a home appliance remote control. A SwitchBot Hub Plus, Hub Mini, Hub 2, Hub 3 or Ceiling Light is required in order to be able to create these virtual devices within the app. The types of appliances supported include,
 
@@ -1584,6 +1594,7 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | [AI Hub](devices/hubs/ai-hub.md)                                                   | ✓    | ✓      | -       | -       |
 | [Hub 2](devices/hubs/hub-2.md)                                                     | ✓    | ✓      | -       | ✓       |
 | [Hub 3](devices/hubs/hub-3.md)                                                     | ✓    | ✓      | -       | ✓       |
+| [Hub 4](devices/hubs/hub-4.md)                                                     | ✓    | ✓      | -       | ✓       |
 | [Hub/Hub Plus/Hub Mini/Hub 2/Hub 3](devices/hubs/hubhub-plushub-minihub-2hub-3.md) | ✓    | -      | -       | -       |
 
 ### Locks & Security
@@ -1603,6 +1614,7 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | [Lock Vision](devices/locks-security/lock-vision.md)                         | ✓    | ✓      | ✓       | ✓       |
 | [Lock Vision Pro](devices/locks-security/lock-vision-pro.md)                 | ✓    | ✓      | ✓       | ✓       |
 | [Video Doorbell](devices/cameras/video-doorbell.md)                          | ✓    | ✓      | ✓       | ✓       |
+| [Vision Doorbell](devices/cameras/vision-doorbell.md)                        | ✓    | ✓      | -       | -       |
 
 ### Curtains & Blinds
 
@@ -1653,6 +1665,7 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | ------------------------------------------------------------------------------------ | ---- | ------ | ------- | ------- |
 | [Floor Cleaning Robot S10](devices/robot-vacuum/floor-cleaning-robot-s10.md)         | ✓    | ✓      | ✓       | ✓       |
 | [Floor Cleaning Robot S20](devices/robot-vacuum/floor-cleaning-robot-s20.md)         | ✓    | ✓      | ✓       | ✓       |
+| [Floor Cleaning Robot S30](devices/robot-vacuum/floor-cleaning-robot-s30.md)         | ✓    | ✓      | ✓       | ✓       |
 | [K10+ Pro Combo](devices/robot-vacuum/k10-pro-combo.md)                              | ✓    | ✓      | ✓       | ✓       |
 | [K20+ Pro](devices/robot-vacuum/k20-pro.md)                                          | ✓    | ✓      | ✓       | ✓       |
 | [Mini Robot Vacuum K10+](devices/robot-vacuum/mini-robot-vacuum-k10.md)              | ✓    | ✓      | ✓       | ✓       |
@@ -1685,8 +1698,10 @@ Webhook events are sent as POST requests in JSON format. The structure varies by
 | Device                                                             | List | Status | Command | Webhook |
 | ------------------------------------------------------------------ | ---- | ------ | ------- | ------- |
 | [Garage Door Opener](devices/plugs-switches/garage-door-opener.md) | ✓    | ✓      | ✓       | ✓       |
+| [Outdoor Plug (EU)](devices/plugs-switches/outdoor-plug-eu.md)     | ✓    | ✓      | ✓       | ✓       |
 | [Plug](devices/plugs-switches/plug.md)                             | ✓    | ✓      | ✓       | -       |
 | [Plug Mini (EU)](devices/plugs-switches/plug-mini-eu.md)           | ✓    | ✓      | ✓       | ✓       |
+| [Plug Mini (IT)](devices/plugs-switches/plug-mini-it.md)           | ✓    | ✓      | ✓       | ✓       |
 | [Plug Mini (JP)](devices/plugs-switches/plug-mini-jp.md)           | ✓    | ✓      | ✓       | ✓       |
 | [Plug Mini (US)](devices/plugs-switches/plug-mini-us.md)           | ✓    | ✓      | ✓       | ✓       |
 | [Relay Switch 1](devices/plugs-switches/relay-switch-1.md)         | ✓    | ✓      | ✓       | ✓       |
