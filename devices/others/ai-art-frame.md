@@ -34,7 +34,32 @@
 | ------------ | ----------- | ----------- | ------------------------------------------------------------------------------ | ------------------------------------------------------ |
 | AI Art Frame | command     | next        | default                                                                        | Switch to the next image                               |
 | AI Art Frame | command     | previous    | default                                                                        | Switch to the previous image                           |
+| AI Art Frame | command     | deleteImage | `random`, `newest` or `oldest`                                                 | Delete one image from the photo frame. **Deleted images cannot be recovered.**<br />`random`, delete a random image.<br />`newest`, delete the most recently added image.<br />`oldest`, delete the earliest added image.<br />The image currently displayed is never deleted. Images in the cloud that have not been downloaded to the frame are included. See the response below.|
 | AI Art Frame | command     | uploadImage | `{"imageUrl":"https://..."}` OR `{"imageBase64":"data:image/jpeg;base64,..."}` | Upload an image (choose one of imageUrl / imageBase64) |
+
+#### deleteImage response
+
+The command returns after the image is deleted in the cloud and the delete instruction is sent to the photo frame. It does not wait for the photo frame to finish.
+
+| Key Name          | Value Type | Description                                                                                                  |
+| ----------------- | ---------- | ------------------------------------------------------------------------------------------------------------ |
+| deletedImageIndex | Integer    | the device index of the deleted image. `0` when no image was deleted                                         |
+| remainingCount    | Integer    | the number of images remaining in the cloud, including images that have not been downloaded to the frame yet |
+
+- When only the currently displayed image is left, nothing is deleted and the response is `deletedImageIndex: 0`, `remainingCount: 1`.
+- When the album is empty, the response is `deletedImageIndex: 0`, `remainingCount: 0`.
+- If the currently displayed image cannot be determined, the command fails and nothing is deleted.
+
+```js
+{
+    "statusCode": 100,
+    "body": {
+        "deletedImageIndex": 123,
+        "remainingCount": 9
+    },
+    "message": "success"
+}
+```
 
 ---
 
